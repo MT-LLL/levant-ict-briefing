@@ -33,4 +33,4 @@ npm run dev
 
 推送到 `main` 后，`.github/workflows/pages.yml` 会安装依赖、生成静态站点并部署到 GitHub Pages。
 
-© 2026 伊拉克代表处 · 吴昊 679001 · MSSD AI 团队
+© 2026 伊拉克代表处 · 李辉 621351 · MSSD AI 团队
