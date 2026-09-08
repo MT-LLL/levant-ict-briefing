@@ -48,7 +48,7 @@ npm run dev
 |---|---|---|
 | Secrets | `LLM_API_KEY` | **必填**，LLM API 密钥（如 Moonshot/Kimi API Key） |
 | Variables | `LLM_BASE_URL` | 可选，API 地址，默认 `https://api.moonshot.cn/v1` |
-| Variables | `LLM_MODEL` | 可选，模型名，默认 `moonshot-v1-128k`（需长上下文模型，模板+素材约 6 万 token 输入、4 万 token 输出） |
+| Variables | `LLM_MODEL` | 可选，模型名，默认 `kimi-2.6`（256K 上下文；注意 `moonshot-v1` 系列已于 2026-08-31 下线，可选用 `kimi-k3` 等当前在售模型） |
 
 ### 本地调试
 

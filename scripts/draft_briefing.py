@@ -12,7 +12,7 @@ LLM 自动起草双周简报。
 环境变量：
   LLM_API_KEY   必填，API 密钥（GitHub Secrets 配置）
   LLM_BASE_URL  可选，默认 https://api.moonshot.cn/v1
-  LLM_MODEL     可选，默认 moonshot-v1-128k
+  LLM_MODEL     可选，默认 kimi-2.6（256K 上下文；moonshot-v1 系列已于 2026-08-31 下线）
 
 选项：
   --dry-run     只生成 prompt 预览（data/raw/prompt-preview.md），不调用 API
@@ -105,7 +105,7 @@ def call_llm(system, user):
     if not api_key:
         raise SystemExit("缺少 LLM_API_KEY 环境变量（请在 GitHub Secrets 配置）")
     base = (os.environ.get("LLM_BASE_URL") or "https://api.moonshot.cn/v1").rstrip("/")
-    model = os.environ.get("LLM_MODEL") or "moonshot-v1-128k"
+    model = os.environ.get("LLM_MODEL") or "kimi-2.6"
     print(f"调用 LLM：{base} / {model}")
     resp = requests.post(
         f"{base}/chat/completions",
@@ -123,6 +123,18 @@ def call_llm(system, user):
         timeout=600,
     )
     if resp.status_code != 200:
+        # 模型不存在/无权限时，列出账号当前可用模型，方便直接修正 LLM_MODEL
+        if resp.status_code in (400, 404):
+            try:
+                models = requests.get(
+                    f"{base}/models",
+                    headers={"Authorization": f"Bearer {api_key}"},
+                    timeout=30,
+                ).json()
+                ids = [m.get("id") for m in models.get("data", [])]
+                print(f"账号当前可用模型：{ids}", file=sys.stderr)
+            except Exception:  # noqa: BLE001
+                pass
         raise SystemExit(f"LLM 调用失败 {resp.status_code}: {resp.text[:500]}")
     return resp.json()["choices"][0]["message"]["content"]
 
