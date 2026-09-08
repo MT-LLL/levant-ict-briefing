@@ -12,6 +12,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write   # 用于自动创建 auto-draft 标签
 
 jobs:
   draft:
@@ -71,6 +72,7 @@ jobs:
           git add "legacy/${ISSUE}.html" data/raw/
           git commit -m "auto: ${ISSUE} 双周简报草稿（AI 生成，待人工审阅）"
           git push -f -u origin "$BRANCH"
+          gh label create "auto-draft" --color "7C3AED" --description "AI 自动起草，待人工审阅" --force || true
           gh pr create \
             --title "📰 ${ISSUE} 双周简报草稿（AI 生成，待审阅）" \
             --body "$(cat <<'EOF'
