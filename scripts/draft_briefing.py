@@ -86,7 +86,7 @@ def build_prompt(issue, template_html, items):
 1. 输出且仅输出一个完整 HTML 文件，不要输出任何解释文字，不要用 Markdown 代码围栏包裹。
 2. 完整保留模板中的全部 CSS、JS、页面骨架与页脚结构，仅替换内容区域。
 3. 必须保留这些结构标记（构建系统依赖）：id="tab-iq" / id="tab-jo" / id="tab-lb" 三个国家面板、ov-list 决策总览列表、kpi 指标卡、ch-card 栏目卡 + ni 新闻条目（ni-title / ni-date / ni-text / ni-src / opp-box）、top-meta 头部信息、retro-date 周期标注。
-4. top-meta 中的日期更新为 {today.year}年{today.month}月{today.day}日；页面标题与期号更新为 W{w1}—{w2}；retro-date 更新为统计周期。
+4. top-meta 必须更新为：伊拉克代表处 李辉 00621351 · MSSD AI团队 · 自动生成 · {today.year}年{today.month}月{today.day}日；页面标题与期号更新为 W{w1}—{w2}；retro-date 更新为统计周期。
 5. 全部正文使用简体中文；引用外文素材时翻译为中文，保留原始链接到 ni-src。
 6. 只采用与三国 ICT / 通信 / 数字化 / 网络安全 / 政商环境相关的素材，丢弃无关条目（如社会新闻、体育、娱乐）；素材不足时如实减少条目数，禁止编造新闻、数据或链接。
 7. 商机信号放入 opp-box；无法交叉验证的条目使用 unverified 徽标。
@@ -177,8 +177,13 @@ def _stream_chat(base, api_key, payload):
     if resp.status_code != 200:
         raise requests.HTTPError(f"HTTP {resp.status_code}", response=resp)
     chunks, received = [], 0
-    for line in resp.iter_lines(decode_unicode=True):
-        if not line or not line.startswith("data:"):
+    # 按原始字节迭代再手动解码 UTF-8：
+    # 响应头不含 charset 时 requests 会按 ISO-8859-1 解码，导致中文双重编码。
+    for raw_line in resp.iter_lines():
+        if not raw_line:
+            continue
+        line = raw_line.decode("utf-8", errors="replace")
+        if not line.startswith("data:"):
             continue
         data = line[5:].strip()
         if data == "[DONE]":
@@ -212,12 +217,25 @@ def extract_html(text):
     return text[start:].strip()
 
 
+def postprocess(html):
+    """确定性后处理：不依赖 LLM 的机械修正。"""
+    # 统一署名（模板中的旧署名会被 LLM 原样继承）
+    html = html.replace("吴昊679001", "李辉 00621351").replace("吴昊 679001", "李辉 00621351")
+    return html
+
+
 def validate(html):
     missing = [m for m in REQUIRED_MARKERS if m not in html]
     if missing:
         raise SystemExit(f"结构校验失败，缺少标记：{missing}")
     if len(html) < 20000:
         raise SystemExit(f"结构校验失败：HTML 过短（{len(html)} 字符），疑似截断")
+    # 编码健全性：双重编码的乱码文本不含正常中文，且含大量 Latin-1 扩展字符
+    if "伊拉克" not in html or "代表处" not in html:
+        raise SystemExit("编码校验失败：未找到正常中文（疑似乱码或内容缺失）")
+    mojibake = len(re.findall(r"[ÃÄÅ][\x80-\xbf»¼]", html))
+    if mojibake > 10:
+        raise SystemExit(f"编码校验失败：检测到 {mojibake} 处疑似双重编码乱码")
     print(f"结构校验通过（{len(html)} 字符）")
 
 
@@ -246,7 +264,7 @@ def main():
         print(f"[dry-run] prompt 已写入 {out.relative_to(ROOT)}（{len(user)} 字符），未调用 API")
         return
 
-    html = extract_html(call_llm(system, user))
+    html = postprocess(extract_html(call_llm(system, user)))
     validate(html)
 
     out_path = ROOT / "legacy" / f"w{w1}-{w2}.html"
