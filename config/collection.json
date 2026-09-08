@@ -1,0 +1,27 @@
+{
+  "days": 14,
+  "max_items_per_query": 20,
+  "news_queries": [
+    { "country": "iq", "q": "Iraq telecom OR 5G OR internet OR cybersecurity OR \"digital transformation\"" },
+    { "country": "iq", "q": "Iraq \"ministry of communications\" OR CMC OR ITPC" },
+    { "country": "jo", "q": "Jordan telecom OR 5G OR internet OR cybersecurity OR \"digital transformation\"" },
+    { "country": "jo", "q": "Jordan TRC OR \"ministry of digital economy\" OR MODEE" },
+    { "country": "lb", "q": "Lebanon telecom OR internet OR cybersecurity OR \"digital transformation\"" },
+    { "country": "lb", "q": "Lebanon Ogero OR Touch OR Alfa OR \"ministry of telecommunications\"" },
+    { "country": "iq", "q": "العراق اتصالات OR انترنت OR الجيل الخامس" },
+    { "country": "jo", "q": "الأردن اتصالات OR انترنت OR الجيل الخامس" },
+    { "country": "lb", "q": "لبنان اتصالات OR انترنت OR أوجيرو" }
+  ],
+  "telegram": {
+    "enabled": true,
+    "note": "公开频道通过 t.me/s/{handle} 抓取，无需 API key；handle 列表取自 config/sources.json"
+  },
+  "x_twitter": {
+    "enabled": false,
+    "note": "需要 X API Bearer Token（付费）。如已购买，设 enabled=true 并在 Secrets 配置 X_BEARER_TOKEN"
+  },
+  "facebook": {
+    "enabled": false,
+    "note": "公开主页抓取受限，保留人工采集"
+  }
+}

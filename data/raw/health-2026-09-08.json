@@ -1,0 +1,77 @@
+[
+ {
+  "source": "news:iq:Iraq telecom OR 5G OR internet OR cybers",
+  "status": "ok",
+  "count": 20
+ },
+ {
+  "source": "news:iq:Iraq \"ministry of communications\" OR CMC",
+  "status": "ok",
+  "count": 10
+ },
+ {
+  "source": "news:jo:Jordan telecom OR 5G OR internet OR cybe",
+  "status": "ok",
+  "count": 20
+ },
+ {
+  "source": "news:jo:Jordan TRC OR \"ministry of digital econo",
+  "status": "ok",
+  "count": 11
+ },
+ {
+  "source": "news:lb:Lebanon telecom OR internet OR cybersecu",
+  "status": "ok",
+  "count": 20
+ },
+ {
+  "source": "news:lb:Lebanon Ogero OR Touch OR Alfa OR \"minis",
+  "status": "ok",
+  "count": 20
+ },
+ {
+  "source": "news:iq:العراق اتصالات OR انترنت OR الجيل الخامس",
+  "status": "ok",
+  "count": 0
+ },
+ {
+  "source": "news:jo:الأردن اتصالات OR انترنت OR الجيل الخامس",
+  "status": "ok",
+  "count": 0
+ },
+ {
+  "source": "news:lb:لبنان اتصالات OR انترنت OR أوجيرو",
+  "status": "ok",
+  "count": 9
+ },
+ {
+  "source": "telegram:@mociraq2023",
+  "status": "ok",
+  "count": 6
+ },
+ {
+  "source": "telegram:@iraqcmc",
+  "status": "ok",
+  "count": 3
+ },
+ {
+  "source": "telegram:@iqmofa",
+  "status": "ok",
+  "count": 6
+ },
+ {
+  "source": "telegram:@MODiraq",
+  "status": "ok",
+  "count": 11
+ },
+ {
+  "source": "telegram:@moiiraqi",
+  "status": "ok",
+  "count": 9
+ },
+ {
+  "source": "telegram:@moheiq",
+  "status": "ok",
+  "count": 17
+ }
+]
