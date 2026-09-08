@@ -66,7 +66,7 @@ jobs:
                 `完成后关闭此 Issue 即可。`,
                 ``,
                 `---`,
-                `*自动提醒 · 发送人: 吴昊 679001*`
+                `*自动提醒 · 发送人: 李辉 00621351*`
               ].join('\n'),
               labels: ['biweekly-reminder', 'automation']
             });
