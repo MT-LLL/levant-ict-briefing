@@ -124,19 +124,28 @@ def call_llm(system, user):
     if os.environ.get("LLM_TEMPERATURE"):
         payload["temperature"] = float(os.environ["LLM_TEMPERATURE"])
 
-    attempts = 3
+    attempts = 5
     for attempt in range(1, attempts + 1):
         try:
             return _stream_chat(base, api_key, payload)
         except requests.HTTPError as e:
             resp = e.response
+            status = resp.status_code if resp is not None else 0
+            # 限流/服务端临时错误：退避后重试（账号并发上限为 1 时 429 较常见）
+            if status in (429, 500, 502, 503, 504):
+                wait = 30 * attempt
+                print(f"第 {attempt}/{attempts} 次请求被限流或服务异常（HTTP {status}），{wait}s 后重试", file=sys.stderr)
+                if attempt == attempts:
+                    raise SystemExit(f"LLM 多次重试仍失败（HTTP {status}）: {resp.text[:300]}")
+                time.sleep(wait)
+                continue
             # 模型不接受自定义 temperature：移除后重试
-            if resp is not None and resp.status_code == 400 and "temperature" in resp.text and "temperature" in payload:
+            if status == 400 and "temperature" in resp.text and "temperature" in payload:
                 print("模型不接受自定义 temperature，移除该参数后重试")
                 payload.pop("temperature")
                 continue
             # 模型不存在/无权限时，列出账号当前可用模型，方便直接修正 LLM_MODEL
-            if resp is not None and resp.status_code in (400, 404):
+            if status in (400, 404):
                 try:
                     models = requests.get(
                         f"{base}/models",
@@ -148,7 +157,7 @@ def call_llm(system, user):
                 except Exception:  # noqa: BLE001
                     pass
             body = resp.text[:500] if resp is not None else str(e)
-            raise SystemExit(f"LLM 调用失败 {resp.status_code if resp is not None else ''}: {body}")
+            raise SystemExit(f"LLM 调用失败 {status}: {body}")
         except (requests.ConnectionError, requests.Timeout, requests.ChunkedEncodingError) as e:
             print(f"第 {attempt}/{attempts} 次请求连接中断：{e}", file=sys.stderr)
             if attempt == attempts:
