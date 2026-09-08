@@ -20,6 +20,31 @@
 - TanStack Table
 - GitHub Actions + GitHub Pages
 
+## 项目结构
+
+```
+app/            Next.js 页面（决策总览、简报、合规、人员、信源、归档）
+components/     React 组件
+lib/            前端工具库
+config/         人工维护的配置：信源、社媒动态、合规分析、采集策略、人员清单
+legacy/         双周简报 HTML（每期的权威源文件，最新一期驱动全站内容）
+data/           构建时自动生成的站点数据（sync-data.mjs 产出，含 raw/ 采集素材）
+public/         静态资源与历史归档页（archive/ 线上可访问）
+scripts/        全部自动化脚本（见下）
+docs/           撰写规范（SKILL-*）、历史 QA 报告、监控矩阵表格等参考文档
+.github/        GitHub Actions 工作流
+```
+
+脚本一览：
+
+| 脚本 | 用途 | 运行时机 |
+|---|---|---|
+| `sync-data.mjs` | 解析 legacy/ 最新简报 + config/ 配置 → 生成 data/ | 每次构建前自动 |
+| `collect.py` | 采集 Google News RSS + Telegram 素材到 data/raw/ | draft-briefing 工作流 |
+| `draft_briefing.py` | 调用 LLM 起草新期简报到 legacy/ | draft-briefing 工作流 |
+| `check_issue_due.py` | 检查是否到出刊时间 | 双周提醒/起草工作流 |
+| `send_mail.py` | 邮件发送最新一期简报 | 每周五定时 |
+
 ## 本地运行
 
 ```bash

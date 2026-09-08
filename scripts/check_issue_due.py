@@ -14,10 +14,12 @@ DEFAULT_YEAR = 2026
 
 def main():
     weeks = []
-    for f in ROOT.glob('w*-*.html'):
-        m = re.match(r'^w(\d+)-(\d+)\.html$', f.name)
-        if m:
-            weeks.append((int(m.group(1)), int(m.group(2))))
+    # 简报统一存放于 legacy/；兼容扫描根目录（历史遗留）
+    for pattern_dir in (ROOT / 'legacy', ROOT):
+        for f in pattern_dir.glob('w*-*.html'):
+            m = re.match(r'^w(\d+)-(\d+)\.html$', f.name)
+            if m:
+                weeks.append((int(m.group(1)), int(m.group(2))))
 
     if not weeks:
         _out('due', 'true')

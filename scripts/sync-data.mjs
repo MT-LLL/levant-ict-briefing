@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import * as cheerio from "cheerio";
 
-const peopleHtml = await fs.readFile("personnel-monitoring.html", "utf8");
+const peopleHtml = await fs.readFile("config/personnel-monitoring.html", "utf8");
 const match = peopleHtml.match(/const people=(\[.*?\]);let country=/s);
 if (!match) throw new Error("Unable to extract personnel data");
 const people = JSON.parse(match[1]);

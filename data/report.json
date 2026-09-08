@@ -1,88 +1,105 @@
 {
-  "issue": "W35-36",
-  "period": "2026年8月24日 — 9月4日",
-  "generated": "2026-09-05",
-  "sourceFile": "w35-36.html",
+  "issue": "W37-38",
+  "period": "2026年8月25日 — 9月8日",
+  "generated": "2026-09-08",
+  "sourceFile": "w37-38.html",
   "summary": [
-    "🇮🇶🔥 ⭐ 本期头条：8/29 Sanad 宣布全国同步 5G（含库区）+ 频谱统一分配 — 巴格达与埃尔比勒\"联合、同步\"启动第四张牌照与 5G，联邦通信部为唯一主权代表；技术与行政分歧\"可控\"",
-    "🇮🇶📱 Telegram 一手源增量：Sanad 9/3 下调政府互联网价格 40%；CMC 电子化许可、推出测速应用，并对 Korek 多地网点采取关闭措施",
-    "🇮🇶 ⭐ Sanad 访库区谈判 5G + 过境光缆（Basra→欧洲）：把 5G 商用与过境走廊骨干绑定推进，NMTC 司法冻结仍是前置障碍",
-    "🇯🇴 ⭐ TRC 2026 双优先：MNP 号码携转（2027/4 上线）+ 5G 扩容；TRC 现任主席 Lara Khateeb，年度营收 $1.027 亿",
-    "🇯🇴 Orange Jordan（JTEL）8/24 向安曼交易所披露例行公告，三家运营商处 690 站承诺执行期",
-    "🇱🇧 ⭐ 7/30→本期延续：Hajj 部长改革蓝图落地 — Law 431 落实 + TRA + Liban Telecom；2025 已投网络超 $5000 万，光纤一期覆盖 35 万户，三年内宽带用户 5 万→50 万",
-    "🇱🇧 ⭐ Hajj 定位黎巴嫩为\"东西方数字枢纽\"：规划与伊拉克、叙利亚区域互联 + 新海缆；Starlink 定位为企业级备份而非替代",
-    "🌍 区域地缘：美伊 8/17 MOU 窗口已过，霍尔木兹与制裁走向仍是三国财政与合规的共同前置变量"
+    "🇯🇴🔥 ⭐ 本期头条：约旦一周打出 AI 组合拳 — 与沙特主权 AI HUMAIN 签署战略 MoU（Telecompaper + 金融科技门户双源交叉）+ 启动\"政府 AI\"计划 + TRC×GSMA 区域 AI 培训 + Discover Digital Jordan 2026 高管齐聚安曼，系统性卡位区域 AI 枢纽",
+    "🇯🇴📱 Sanad 数字身份激活突破 260 万 — 国家数字基础设施规模效应区，银行业 eKYC 等行业复制窗口开启；另获 APPC 电子商务团队主席职位",
+    "🇮🇶📡 CMC 监管收紧双轨：Korek 再有三个省份被（Telecompaper，单一信源核）+ 常务会议讨论\"幽灵SIM卡\"与无人机管理法规、启用本地邮件系统——合规执法与监管科技并行",
+    "🇮🇶🏛️ 部委数字化高频：通信部长 Sanad 会见阿巴斯圣地代表团谈\"数字+金融\"合作；外交部在增设统一国民身份证签发系统，eID 海外扩容",
+    "🇮🇶📰 媒体环境收紧：CMC 警告分析师、延长禁令；Al-Hadath 节目停播；媒体人 Qusay Shafiq 被捕（均为 Shafaq 单一信源，交叉验证）",
+    "🌍 美方官员称霍尔木海峡\"开放、处于美海军控制之下\" — 石油出口与财政预期改善；但英国扩大对伊制裁、库区伊朗库尔德营地遭无人机袭击，合规变量不减",
+    "🇱🇧🔴 黎以显著升级：以军空袭黎南部致 12 死（含 2 名儿童）等多起打击、发布撤离令；Aoun 总统称\"危险升级\"吁美制止——南部重建前提再度恶化",
+    "🇮🇶🇱🇧 外长开罗会见：阿盟第 166 次例会期间伊-黎外长讨论双边与地区局势，为黎凡特互联叙事提供外交背景板"
   ],
   "countries": {
     "iq": {
       "name": "伊拉克",
       "sections": [
         {
+          "category": "本国运营商最新动态",
+          "items": [
+            {
+              "title": "📌 Telecompaper：CMC 再 Korek Telecom 在另外三个省份的，监管行动范围扩大",
+              "date": "2026-09-07",
+              "badge": "未交叉验证 · 单一信源",
+              "text": "📰 Telecompaper 9/7 报道：通信与媒体委员会（CMC） Korek Telecom 在另外三个省份的。背景：这是继前期 CMC 官方宣布 Korek 卡尔巴拉总部及纳杰夫、迪瓦尼耶、巴比伦多处网点（8/31—9/2，见上期简报）之后，执法范围的进一步扩大。报道未披露省份与处罚原因；截至发稿，CMC 官方渠道尚未发布对应，本条目为单一信源，官方确认。研判：① Korek 监管风险持续升级，渠道收缩将影响新增用户、回款与网络投资节奏；② 结合本期 CMC 常务会议讨论\"幽灵SIM卡\"法规（见社媒栏目），实名制与合规执法是本轮行动主线；③ 对 Korek 项目维持更严格的合同与付款里程碑审查。",
+              "opportunity": "⚠️ 风险研判Korek 机会继续跟踪但提高合规与回款条款等级；同步评估用户向 Asiacell/Zain Iraq 迁移带来的承接方容量与客户运营扩容需求",
+              "links": [
+                {
+                  "label": "Telecompaper 9/7",
+                  "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRThfelU5eXlocWhHQXVEaTZZYktuQ2lhQkVocnpUY1RUXzZNTlNhSmJYM1ZqeG4zRDJuUnctazFQbGdWeEk0NmpIMF9SUm5VQlJlNzhIS1NNcVIyRkg5NXlRRjJVNG1BZHJlUHpUYUJMQzFtQVE1TXJ2eUdMdGJianozOEZiWlByYW8wVUlJel8zVFNEZFRneWR4anZpR2hZNmwtTDlfUQ?oc=5"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "category": "本国部委最新动态",
           "items": [
             {
-              "title": "⭐🔥 8/29 Sanad：伊拉克将全国同步启动 5G（含库区），联邦通信部统一频谱分配、担任唯一主权代表",
-              "date": "2026-08-29",
-              "badge": "INA + Iraqi News + Telecompaper 三源",
-              "text": "📰 Iraqi News 8/29 + INA 原文要点：Sanad 部长向 INA 表示联邦政府正推动 5G 服务在所有省份与库尔德斯坦地区同步商用落地，并称联邦部与 KRG 之间现存的技术与行政分歧\"可控\"，双边讨论正走向统一监管协议。四条关键信息：① 同步商用 — 库区此前已有 5G 探索性部署，联邦部要与其协调频谱分配与商用时点，全国一盘棋；② 过境光缆骨干（Basra→欧洲，经库区）— 协调这条战略国际过境光缆的相关协议；③ 统一国际代表 — 伊拉克须以单一主体面对国际电信机构与全球公司，联邦通信部为主权代表；④ 监管协调 — 处理因联邦/地区分治产生的运营商监管落差。深度研判：① 这是 Sanad 上任以来在 5G 议题上最具体的一次定调，把5G 商用 + 过境走廊 + 频谱分配三件事绑成一个\"主权统一\"叙事；② \"同步含库区\"是对 Korek（库区强势）与联邦运营商监管落差的一次收口尝试；③ 但 NMTC 与 CMC 的牌照签约司法冻结仍未解除（2025/10 一名议员起诉后法院叫停），这是全国 5G 落地的最大前置障碍。",
-              "opportunity": "🎯 商机研判（🔴 最高优先级）① 频谱统一分配 = C-band/n78 规格输入窗口就是现在——抢在 NMTC 司法解冻前把组网参数、清频路径、与 2.6G 协同方案递进 CMC 占位；② 过境光缆骨干（Basra→欧洲经库区）= ITPC DWDM + 边境 PoP 直接机会；③ 全国同步 = 联邦 + 库区双线并进，Korek（库区）关系需同步维护",
+              "title": "⭐ 通信部长 Sanad 会见阿巴斯圣地代表团：深化\"数字+金融\"领域合作，扩大数字化转型",
+              "date": "2026-09-07",
+              "badge": "Telegram · 通信部官方",
+              "text": "📰 通信部 9/7 官方发布：部长 Mustafa Sanad 在接见阿巴斯圣地（Al-Abbas Holy Shrine）代表团时，讨论了加强双方合作与协调，特别是在数字、电子与金融领域，以及如何利用现代技术提升服务水平、扩大数字化转型范围。🔍 业务解读：① 宗教机构是重要的社会服务与支付场景运营方，\"数字+金融\"合作是政务数字化向宗教/场景延伸的信号；② 通信部延续上期\"政府互联网降价 40%+无线塔提速 40%\"的民生数字化路线，选前数字化议程保持高频。",
+              "opportunity": "🎯 商机研判宗教机构数字/金融场景 = 支付、云平台、数据中心的潜在增量；可经通信部合作框架准备场景化数字方案",
               "links": [
                 {
-                  "label": "Iraqi News 8/29",
-                  "url": "https://www.iraqinews.com/iraq/iraq-simultaneous-5g-rollout-kurdistan-region-mustafa-sanad-2026/"
-                },
-                {
-                  "label": "Telecompaper 8/31",
-                  "url": "https://www.telecompaper.com/news/iraq-seeks-unified-nationwide-5g-roll-out-including-kurdistan--1581168"
+                  "label": "Telegram 原文（通信部 2026/9/7）",
+                  "url": "https://t.me/mociraq2023/1696"
                 }
               ]
             },
             {
-              "title": "📌 Sanad 访库区行程落地：5G + 第四张牌照 + 过境光缆三议题，处理巴格达-埃尔比勒分歧",
-              "date": "2026-08-22 ~ 08-30",
-              "badge": "The New Region + Shafaq",
-              "text": "📰 The New Region 8/22 + 后续报道：Sanad 8/22 对记者宣布\"下周\"访问库尔德斯坦，与库方讨论第四张移动牌照激活与 5G 服务，使两地\"联合、同步\"启动。此访随后落地并延续到本期。背景脉络：① 因 CMC 与通信部之间的分歧，政府此前暂停了 NMTC 交易；② 议员 al-Khafaji 1 月称分歧与 5G 网络的实施机制有关；③ Sanad 强调联邦部与库区交通通信部\"对外是一个主体\"，尤其在过境光缆问题上。研判：Sanad 密集处理库区关系，本质是为全国 5G 扫清\"分治\"障碍——库区若单独发 5G/频谱，会破坏联邦统一叙事，也影响过境光缆的主权归属。这条线对华为的含义：Korek（库区）与联邦运营商的采购决策可能被纳入统一框架，需两头维护。",
-              "opportunity": "🎯 商机研判库区-联邦统一框架推进 = 华为需在巴格达（ITPC/CMC）+ 埃尔比勒（Korek/KRG 交通通信部）双线同步布局，避免被单边框架排除",
+              "title": "📌 外交部在增设统一国民身份证签发系统，领事数字化服务扩容",
+              "date": "2026-09-08",
+              "badge": "Telegram · 外交部官方",
+              "text": "📰 外交部 9/8 官方发布：外长 Fuad Hussein 便利海外领事服务的指示，并与国家数字化转型方向保持一致，在启用一套新增的统一国民身份证（البطاقة الوطنيةحدة）签发系统，强化欧洲领事服务能力。🔍 业务解读：国民身份证系统是数字身份（eID）主干工程，海外节点扩容意味着身份数据链路、签发设备、使领馆网络连接与数据中心后端将持续有需求。",
+              "opportunity": "🎯 商机研判eID 海外扩容 = 使领馆连接、身份数据中台与签发终端机会；跟踪后续站点 rollout 节奏",
               "links": [
                 {
-                  "label": "The New Region 8/22",
-                  "url": "https://thenewregion.com/posts/6298"
+                  "label": "Telegram 原文（外交部 9/8）",
+                  "url": "https://t.me/iqmofa/15179"
                 }
               ]
             }
           ]
         },
         {
-          "category": "本国政治与大选进展及内幕",
+          "category": "本国政治与大选进展及",
           "items": [
             {
-              "title": "📌 11 月议会选举临近，al-Zaidi 政府进入\"政绩交付冲刺期\"，5G 被列为可视化政绩",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "背景观察",
-              "text": "📰 政治脉络：伊拉克议会选举定于 2026 年 11 月举行。al-Zaidi 政府（5/14 就任）进入选前政绩交付冲刺，5G/数字化、反腐、石油出口修复是三张可视化政绩牌。研判：① Sanad 密集推动 5G 同步落地、过境走廊叙事，部分动机是选前政绩展示；② 但司法冻结 + 财政承压 + 库区协调三重约束下，年底前更可能出\"决议/框架\"而非\"商用网络\";③ 选举结果将决定 Sanad 是否留任，进而影响 NMTC/5G 项目连续性——这是华为需跟踪的政治变量。",
-              "opportunity": "🎯 商机研判选前政绩窗口 = Sanad 有动机加速可视化项目（过境走廊/5G 试点），华为可借\"快速可交付试点\"叙事切入；但避免押注选后人事不确定性",
+              "title": "📌 外长率团出席阿盟第 166 次例会，并会见黎巴嫩外长讨论双边与地区局势",
+              "date": "2026-09-07",
+              "badge": "Telegram · 外交部官方",
+              "text": "📰 外交部 9/7 官方发布：外长 Fuad Hussein 率代表团出席在开罗举行的阿盟理事会第 166 次部长级例会，会前参加巴勒斯坦问题部长委员会会议；会议期间会见黎巴嫩外长 Youssef Raji，双方讨论双边与地区局势发展。研判：① 伊-黎外长级沟通保持热络，与黎巴嫩政府\"东西方数字枢纽 + 与区域互联\"叙事（上期）形成外交背景板；② 黎以冲突升级是双边讨论核心，在黎凡特事务中的斡旋角色上升。",
+              "opportunity": "🎯 商机研判伊-黎政府间渠道 = 未来跨境互联/走廊议题的多边铺垫；观察是否延伸至通信部长级对话",
               "links": [
                 {
-                  "label": "Iraqi News",
-                  "url": "https://www.iraqinews.com/iraq/"
+                  "label": "Telegram 原文（会见黎外长）",
+                  "url": "https://t.me/iqmofa/15170"
+                },
+                {
+                  "label": "阿盟例会",
+                  "url": "https://t.me/iqmofa/15173"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "category": "ICT 竞争对手最新动态",
-          "items": [
+            },
             {
-              "title": "📌 5G 同步落地信号引发多厂商卡位：Nokia（NMTC 独家）稳守，ZTE 增量抢先，华为存量+过境走廊双线",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "竞争情报综合",
-              "text": "📰 竞争格局拼图：① Nokia — 持 NMTC 5G 三年独家许可（司法冻结中未落地），同时执行 Zain Iraq 3,000 hop E-band 微波存量；② ZTE — 近期动作活跃，卡位过境走廊/骨干网增量（无 OFAC 高曝光顾虑，Iran-aligned 背景下接触较松）；③ 华为 — 6 月曾由 Sanad 亲自主持 5G 会议（审视基础设施就绪度），存量阵地稳固（AsiaCell 100% / Zain Iraq 73% 微波）。研判：5G 同步落地信号一出，三厂商进入卡位战。华为的差异化不在\"政治亲近\"（那是 ZTE 相对强项），而在全球骨干网案例库 + 华为金融杠杆 + 本地团队深度——过境走廊这种大体量、高复杂度、需融资的项目正是华为护城河所在。",
-              "opportunity": "🎯 商机研判把竞争拉到能力维度（骨干网案例+金融+本地团队），不在政治亲近维度跟 ZTE 缠斗；过境走廊技术方案抢先递交 CMC/ITPC 锁定规格",
+              "title": "📌 英国扩大对伊朗制裁；无人机袭击北部伊朗库尔德反对派营地",
+              "date": "2026-09-07 ~ 09-08",
+              "badge": "Iran International + Rudaw 双源",
+              "text": "📰 要点：① 英国 9/8 宣布扩大对伊朗制裁，覆盖核计划与\"敌对活动\"（Iran International）；② 9/7 一架无人机袭击了位于北部（库区）的伊朗库尔德反对派营地（Iran International 转引 Rudaw）。研判：① 对伊制裁网络继续加密，作为伊朗邻国的二级合规敞口维持高位，所有涉伊合同 OFAC 自审维持 Tier 1；② 库区无人机事件与 CMC 本期讨论的无人机管理法规形成呼应——无人机在既是议题，也是合规议题。",
+              "opportunity": "⚠️ 风险研判合规维持 Tier 1；无人机监管立法推进 → 监测/反制与频谱管理系统的长期监管科技需求",
               "links": [
                 {
-                  "label": "Telecompaper（华为-Sanad 5G 会议）",
-                  "url": "https://www.telecompaper.com/news/iraqi-minister-and-huawei-discuss-strategy-for-5g-rollout--1574638"
+                  "label": "Iran International（英国制裁）",
+                  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5icTZsdzdhaFdxRlVsai1lVkF3dnF0cjNhSmNJOVdqYldmTVdQMVdiN0R3T0dHaldrUEZ4ODFFOFlETy1BemFYMFVQNnVOVUFvX0E?oc=5"
+                },
+                {
+                  "label": "Iran International 转 Rudaw（无人机）",
+                  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE40TnNzbmZDYnAxblFJQXQ2VUF1d3pqUldwRnRqdjdDSUdpZlhWN3ktTWtDSXlQSHNVeTVGU3ZtaXA4alhFMGVlaVZUckFHU29oMVE?oc=5"
                 }
               ]
             }
@@ -92,33 +109,19 @@
           "category": "美国对本国政治和经济活动的干预",
           "items": [
             {
-              "title": "📌 美伊 8/17 MOU 窗口已过，制裁与霍尔木兹走向成为伊拉克财政与 ICT 合规的持续前置变量",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "区域局势综合",
-              "text": "📰 背景：6/17 美伊凡尔赛 MOU 设定的 60 天谈判窗口已于 8/17 到期。本期内该窗口后续进展成为伊拉克宏观环境的关键不确定源——直接影响石油出口、政府财政与 ICT 采购的 OFAC 合规环境。对华为的传导：① 财政不确定 = 运营商 CAPEX 决策可能更谨慎；② OFAC 环境不明 = 所有伊拉克合同合规须维持 Tier 1 自审；③ 财政承压时，总拥有成本与分期交付方案的权重会上升。",
-              "opportunity": "🎯 商机研判预算收缩期强化华为性价比叙事；合规维持 Tier 1；跟踪 8/17 后续谈判对回款与制裁的传导，W37-38 复盘",
+              "title": "⭐ 美方官员：霍尔木海峡\"开放、处于美海军控制之下\"；石油业受中东战事影响评估出炉",
+              "date": "2026-09-07 ~ 09-08",
+              "badge": "Iran International（转 Al Jazeera）+ New Age BD 多源",
+              "text": "📰 要点：① 美方官员称霍尔木海峡已开放并处于美国海军控制之下（Iran International 转引 Al Jazeera，9/7）；此前美英方面已讨论海峡重开安排（9/7），总统顾问亦称能源出口不会\"被海峡绑架\"。② New Age BD 9/8 刊发分析，评估中东战事对石油工业的冲击。研判：若海峡通行恢复正常经航运/保险数据坐实，石油出口与政府预期改善——运营商应收账款与政府 ICT 预算的约束有望松动；但正常化节奏（保险费率、航运恢复、制裁）仍需逐周验证，不宜一次性。",
+              "opportunity": "🎯 商机研判财政预期改善 = 运营商 CAPEX 与政府项目回款窗口可能前移；Q4 预算季前备好方案库，而动",
               "links": [
                 {
-                  "label": "Iraqi News",
-                  "url": "https://www.iraqinews.com/iraq/"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国主流媒体对华为的报道与评价",
-          "items": [
-            {
-              "title": "📌 华为-Sanad 5G 会议获通信部通稿正面报道（本期 5G 议题升温再度被引用）",
-              "date": "2026-06-18（本期回溯引用）",
-              "badge": "Telecompaper + Iraq Business News",
-              "text": "📰 报道要点：通信部通稿披露 Sanad 部长曾主持一场与华为的会议，会上审视了 5G 基础设施就绪度并跟进实施要求，作为\"发展伊拉克电信部门努力\"的一部分。同期通信部也与 Vodafone + 英国大使馆就国家移动牌照会谈。研判：① 通信部把与华为的 5G 技术会议纳入官方正面叙事，是华为在伊拉克官方渠道的正向存在；② 但同期 Vodafone（NMTC 技术伙伴）会谈并行，说明 Sanad 在\"国家牌照走 Vodafone / 网络设备可能多元\"之间保持开放；③ 本期 5G 同步落地信号使这条历史会议被重新提及，华为应把握官方正向叙事延续窗口。",
-              "opportunity": "🎯 商机研判官方正向叙事可延续——争取通信部下一次 5G 技术会议/试点的公开露出，巩固\"华为=5G 就绪技术伙伴\"认知",
-              "links": [
+                  "label": "Iran International（海峡开放）",
+                  "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB5MTlZS0M0RUMwaTd0ZDR0MEluNU43V2pyVTZaa3ZEdkJrQl92LVRjUVlyTEw3eDdtNEVkaGJPeFdWeFIxWmFWcDdRNE83dzBsRGc?oc=5"
+                },
                 {
-                  "label": "Telecompaper",
-                  "url": "https://www.telecompaper.com/news/iraqi-minister-and-huawei-discuss-strategy-for-5g-rollout--1574638"
+                  "label": "New Age BD（石油）",
+                  "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTjR5RWNYazFyNFQ3djFqa05xRDlPeVNvRk5UZUxjU0FoMTR4bEZOMXBVVmZDeG94NFZldVAxY1FSSC1tNWgwQkxHdTN1Z3BxU295blB1ZEVLLUpBbElvb1RGalhjZktQdXBCR1hiOU5XNXZ2TFVaUlpEMTlsM2piVXVfZTZQV3JmbF9JU3BreUQ?oc=5"
                 }
               ]
             }
@@ -128,15 +131,19 @@
           "category": "本国头部客户的新机会点",
           "items": [
             {
-              "title": "⭐ ITPC 过境光缆（Basra→欧洲经库区）+ 全国频谱统一分配 = 两条主线机会成型",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "8/29 信号综合",
-              "text": "📰 机会拼图：主线 1 — 过境光缆骨干：8/29 Sanad 明确协调 Basra→欧洲经库区的战略国际过境光缆。ITPC 是唯一执行主体，DWDM、边境 PoP、库区段光缆、海缆登陆全在其采购盘。主线 2 — 全国频谱统一分配：同步含库区的频谱分配，意味着 C-band/n78 的国家级规格制定即将启动，谁先递交技术输入谁占位。研判：两条主线在 8/29 定调后从\"愿景\"转入\"协调执行\"，Q4 是技术规格与清频方案的输入关键期。华为在骨干网（DWDM/OTN）与无线（n78 组网）两端均有对口方案。",
-              "opportunity": "🎯 商机研判（ITPC 🔴 最高优先级）① Q4 向 ITPC 递交过境光缆端到端方案（DWDM+边境 PoP+库区段）；② 向 CMC 递交 C-band/n78 组网与清频技术输入，抢在司法解冻前占规格；③ 库区段需 Korek/KRG 交通通信部同步接触",
+              "title": "📌 机会拼图：CMC 监管科技（幽灵SIM/无人机）+ Korek 用户再 + 部委数字化场景延伸",
+              "date": "2026-09-05 ~ 09-08",
+              "badge": "基于本期官方信源综合",
+              "text": "📰 基于本期已证实信源的机会研判：① CMC 监管科技：常务会议讨论\"幽灵SIM卡\"与无人机法规（官方 9/8）→ 实名登记/反欺诈、无人机频谱与监测、电子许可二期等监管科技需求正在立法前端形成，规格未锁；② Korek 用户再：网点连遭（Telecompaper 9/7，单一信源）→ 用户与渠道向 Asiacell/Zain Iraq 迁移，承接方需要容量与客户运营扩容；③ 部委数字化场景延伸：通信部把\"数字+金融\"合作扩展到宗教机构场景（9/7 官方），外交部 eID 海外扩容（9/8 官方）→ 政务数字化持续外溢。研判：三条线均处\"规格未锁\"早期，技术窗口开放；选前（11 月选举）可视化数字化项目有加速动力。",
+              "opportunity": "🎯 商机研判（CMC/运营商 🔴 最高）① 以监管科技方案（实名制/反欺诈/无人机监测） CMC 立法前端；② 以承接扩容方案 Asiacell/Zain；③ 以场景化数字政务通信部合作框架",
               "links": [
                 {
-                  "label": "Iraqi News 8/29",
-                  "url": "https://www.iraqinews.com/iraq/iraq-simultaneous-5g-rollout-kurdistan-region-mustafa-sanad-2026/"
+                  "label": "CMC 官方 9/8",
+                  "url": "https://t.me/iraqcmc/10968"
+                },
+                {
+                  "label": "通信部官方 9/7",
+                  "url": "https://t.me/mociraq2023/1696"
                 }
               ]
             }
@@ -146,132 +153,49 @@
           "category": "社交媒体新闻追踪",
           "items": [
             {
-              "title": "⭐ Sanad：政府机构互联网价格降低 40%，未覆盖光纤地区无线塔网速提高 40%",
-              "date": "2026-09-03",
-              "badge": "Telegram · 伊拉克通信部官方",
-              "text": "📰 官方发布：通信部长 Mustafa Sanad 指示，把供应给各政府机构的互联网价格降低 40%，保持容量不变；同时要求面向尚未覆盖光纤的地区，提高居民无线塔互联网速率 40%。🔍 业务解读：政府专线降价会直接挤压运营收入，倒逼 ITPC 与服务商优化带宽成本；无线塔提速则意味着回传、微波和边缘扩容需求将前移。",
-              "opportunity": "🎯 商机研判优先向 ITPC/合作 ISP 推进低 TCO 的 IP+光传送扩容组合，并针对未 FTTH 覆盖区准备微波回传扩容清单",
-              "links": [
-                {
-                  "label": "Telegram 原文",
-                  "url": "https://t.me/mociraq2023/1695"
-                }
-              ]
-            },
-            {
-              "title": "Sanad 会见中国新任驻伊大使，讨论通信、邮政及数字基础设施合作",
-              "date": "2026-08-27",
-              "badge": "Telegram · 伊拉克通信部官方",
-              "text": "📰 官方发布：Sanad 与中国驻伊拉克新任大使就通信和邮政领域合作、数字基础设施建设及技术经验交流展开讨论。🔍 业务解读：这是中伊 ICT 合作的高级别官方窗口，可衔接 5G、国家骨干网、数据中心和数字政府方案。",
-              "opportunity": "🎯 商机研判以使馆—通信部双边合作议题为牵引，准备数字基础设施合作清单与可快速落地的示范项目",
-              "links": [
-                {
-                  "label": "Telegram 原文",
-                  "url": "https://t.me/mociraq2023/1686"
-                }
-              ]
-            },
-            {
-              "title": "⚠️ CMC 关闭 Korek 在纳杰夫、迪瓦尼耶、巴比伦的多处网点，包括纳杰夫机场网点",
-              "date": "2026-09-02",
+              "title": "📱 CMC 执行主席主持常务会议：启用本地邮件系统，讨论\"幽灵SIM卡\"与无人机管理法规",
+              "date": "2026-09-08",
               "badge": "Telegram · CMC 官方",
-              "text": "📰 官方发布：CMC 联合国家安全机构执行监管行动，关闭 Korek 在三省的多处办公室和服务中心。此前 8/31，CMC 还关闭了 Korek 在卡尔巴拉的总部。🔍 业务解读：Korek 的监管与渠道风险明显升高，可能影响新增用户、回款及网络投资节奏；相关项目应提高合规和付款条件审查等级。",
-              "opportunity": "🎯 风险研判Korek 机会继续跟踪，但合同、交付和回款采用更严格里程碑；同步评估监管变化对库区 5G 协调的传导",
+              "text": "📝 官方发布（9/8）：CMC 执行主席 Baligh Abu Kalal 主持高级职员例会，各省通过视频参会，讨论组织与技术档案及项目执行进度；会上指示启用该局\"本地邮件\"（البريدلي）系统（原文未细述系统性质），并讨论\"幽灵SIM卡\"（الشرائح الوية，冒名/未登记 SIM）与无人机（سيّرة）管理法规。🔍 业务解读：① 监管机构自身数字化（邮件/系统）起步；② 幽灵SIM 法规直指实名制与反欺诈——与 Korek 执法行动同属\"合规收紧\"主线；③ 无人机法规涉及频谱/空域协同管理，属新型监管范畴，与库区无人机事件呼应。",
+              "opportunity": "🎯 商机研判CMC 自身 IT（邮件/门户）+ 监管科技（实名制、无人机监测）双线；重点跟踪法规征求意见稿的发布",
               "links": [
                 {
                   "label": "Telegram 原文",
-                  "url": "https://t.me/iraqcmc/10925"
+                  "url": "https://t.me/iraqcmc/10968"
+                }
+              ]
+            },
+            {
+              "title": "📱 CMC 与足协商体育媒体话语：\"职业媒体以国家利益\"",
+              "date": "2026-09-07",
+              "badge": "Telegram · CMC 官方",
+              "text": "📝 官方发布（9/7）：CMC 执行主席 Baligh Abu Kalal 在巴格达总部接见足协主席 Younis Mahmoud 及负责媒体执委 Ahmed Al-Mousawi，讨论体育媒体档案对 national teams 的支持作用。🔍 业务解读：CMC 媒体治理触角延伸至体育传播领域，是媒体监管职能的常态化延伸；与本期媒体执法收紧（下条）看，监管机构对媒体行业的在加深。本条直接商机有限，作为 CMC 维护场景记录。",
+              "opportunity": "🎯 商机研判媒体治理数字化（监测、播出合规系统）长期观察；现阶段以 CMC 维护为主",
+              "links": [
+                {
+                  "label": "Telegram 原文",
+                  "url": "https://t.me/iraqcmc/10956"
+                }
+              ]
+            },
+            {
+              "title": "📱 媒体监管执法收紧：分析师被警告、禁令延长；Al-Hadath 节目停播；媒体人 Qusay Shafiq 被捕",
+              "date": "2026-09-07 ~ 09-08",
+              "badge": "未交叉验证 · Shafaq 单一媒体源",
+              "text": "📝 据 Shafaq News 本周期多篇报道：① CMC 警告一名分析师并延长另一人的禁令（9/8）；② Al-Hadath 节目因\"播出违规\"被叫停（9/8）；③ 媒体人士 Qusay Shafiq 被捕（9/7，报道未披露是否与监管处罚）。⚠️ 验证状态：三条均为 Shafaq 单一媒体源，未获第二信源或 CMC 官方交叉验证。🔍 业务解读：无论个案细节如何，选前媒体环境收紧的方向与 CMC 官方动作（体育媒体治理、幽灵SIM 法规）一致；涉媒体/平台业务需提高合规审查等级。",
+              "opportunity": "⚠️ 风险研判媒体合规收紧期，平台侧合作提高审查等级；反向看，监管收紧强化 CMC 监管科技需求信号",
+              "links": [
+                {
+                  "label": "Shafaq（警告/禁令）",
+                  "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBBbkU2Y1FhWDYzWFluUTRXclo5SE1jc21hVHlrOXFZLWs2TWVZQjlxS2tCZVJYdkJFSkQtUzJ3TF9GZ1JZd1JkcWxiN3RadFFHNzEyaC1nd1ZiUVVnREZ6cEcwc3gwbmJDekVSUm45MFNaTXpJaUxYWg?oc=5"
                 },
                 {
-                  "label": "8/31 原文",
-                  "url": "https://t.me/iraqcmc/10914"
-                }
-              ]
-            },
-            {
-              "title": "CMC 全面停止纸质许可申请，统一转向电子门户",
-              "date": "2026-09-01",
-              "badge": "Telegram · CMC 官方",
-              "text": "📰 官方发布：从 9 月 1 日起，CMC 不再接收纸质许可申请，企业与个人必须通过电子门户提交。🔍 业务解读：监管流程数字化进入强制执行阶段，后续可能扩展到频谱、设备型式批准、运营商报表和在线监管。",
-              "opportunity": "🎯 商机研判跟踪门户二期需求，关注统一身份、流程平台、数据治理、电子签名及监管数据中心机会",
-              "links": [
-                {
-                  "label": "Telegram 原文",
-                  "url": "https://t.me/iraqcmc/10911"
-                }
-              ]
-            },
-            {
-              "title": "CMC 推出网络质量测速应用，并与 Zain Iraq 启动六个月 AI 培训计划",
-              "date": "2026-08-25 ~ 08-26",
-              "badge": "Telegram · CMC 官方",
-              "text": "📰 官方发布：CMC 推出供用户参与的通信与互联网质量实地评估应用 CMC Speed Test；同时与 Zain Iraq 启动为期六个月的人工智能与应用培训计划。🔍 业务解读：监管重心正从牌照管理扩展到众包网络体验数据与 AI 能力建设，将产生数据平台、智能运维和人才培养需求。",
-              "opportunity": "🎯 商机研判向 CMC 推进体验管理、网络洞察与 AI 监管能力方案；向运营商输出智能运维和联合认证培训",
-              "links": [
-                {
-                  "label": "Speed Test 原文",
-                  "url": "https://t.me/iraqcmc/10904"
+                  "label": "Shafaq（节目停播）",
+                  "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQSjBPQTByODN0RzFpMDhmcGFtZUFYaUZTR0pFSGFoLV9WdzNYb2w2cThUQmFWNmFxOFdsbkxLSjJNY3lrN3pZMUZranNNX1ZwYlc0NElwNFdERkdzYTZuV1dwTG5EVW11ZUp5c1cyU256eE5RaFhMZG9xWkNHLWpDWG93TUNFdXFxR0E?oc=5"
                 },
                 {
-                  "label": "AI 培训原文",
-                  "url": "https://t.me/iraqcmc/10902"
-                }
-              ]
-            },
-            {
-              "title": "📱 INA @ 通信部 · 8/29 Sanad 全国同步 5G 声明官方分发",
-              "date": "2026-08-29",
-              "badge": "INA 官方 · 通信部长渠道",
-              "text": "📝 原文摘录（英译）：existing technical and administrative differences between the federal ministry and the KRG are \"manageable\"，bilateral discussions progressing toward unified protocols。🌐 中文翻译：联邦部与库区政府之间现存的技术与行政分歧\"可控\"，双边讨论正走向统一协议。🔍 业务解读：① Sanad 通过 INA 国家通讯社分发，属政策定调级信号；② \"可控\"措辞是对外释放\"库区问题不会拖累全国 5G\"的信心；③ 华为应将 INA 通信版块维持为 Sanad 政策信号 T1 监控源。",
-              "opportunity": "🎯 商机研判政策定调级信号 = 频谱与过境走廊技术输入的政治窗口已开",
-              "links": [
-                {
-                  "label": "Iraqi News 8/29",
-                  "url": "https://www.iraqinews.com/iraq/iraq-simultaneous-5g-rollout-kurdistan-region-mustafa-sanad-2026/"
-                }
-              ]
-            },
-            {
-              "title": "📱 Sanad 记者会 · 8/22 宣布访库区：\"5G 与第四张牌照联合同步启动\"",
-              "date": "2026-08-22",
-              "badge": "The New Region · 记者会",
-              "text": "📝 原文摘录（英译）：during the visit \"we will discuss the activation of fourth-generation mobile network licences and fifth-generation (5G) services, so that both processes begin jointly and simultaneously in Baghdad and Erbil.\"🌐 中文翻译：访问期间将讨论第四代移动牌照与 5G 服务的激活，使两个进程在巴格达和埃尔比勒联合、同步启动。🔍 业务解读：① \"联合同步\"是 Sanad 对全国统一的核心措辞；② 把 4G 牌照激活与 5G 绑一起谈，说明库区的牌照/频谱历史遗留问题要一次性收口；③ 对华为：库区（Korek 主场）与联邦须双线维护。",
-              "opportunity": "🎯 商机研判库区-联邦一次性收口 = 华为需确保在两套采购体系中都不掉队",
-              "links": [
-                {
-                  "label": "The New Region 8/22",
-                  "url": "https://thenewregion.com/posts/6298"
-                }
-              ]
-            },
-            {
-              "title": "📱 CMC 官方 · 委员会推进吸引国际公司参与项目实施",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "CMC 官方渠道",
-              "text": "📝 观察要点：CMC 委员会近期例会决定推进相关措施，吸引尽可能多的国际公司参与 CMC 项目实施，以促进投资、提升服务水平。🔍 业务解读：① CMC 主动为\"引入国际公司\"铺垫，与年底频谱/C-band 动作的传闻方向一致；② 结合 8/29 全国频谱统一分配，CMC 是频谱规则制定的轴心；③ 华为应把 CMC 委员会公告纳入 T1 监控，第一时间捕捉招标/引资信号。",
-              "opportunity": "🎯 商机研判CMC 引资铺垫 + 频谱轴心地位 = 频谱技术输入与引资方案应同步递交 CMC",
-              "links": [
-                {
-                  "label": "X @iraqcmc",
-                  "url": "https://x.com/iraqcmc"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国运营商最新动态",
-          "items": [
-            {
-              "title": "📌 8/24 Orange Jordan（JTEL）向安曼交易所提交例行披露，三家运营商处 690 站承诺执行期",
-              "date": "2026-08-24",
-              "badge": "Amman Stock Exchange 披露",
-              "text": "📰 要点：Jordan Telecommunications Company（JTEL / Orange Jordan）8/24 向约旦证券委员会与安曼交易所提交例行交易披露。三家运营商（Orange / Zain / Umniah）当前处于 TRC 690 站建设承诺的执行期，无重大新业务公告。研判：约旦运营商市场稳定，华为在三家 RAN 无存量突破空间，主战场在固网/金融 IT/eKYC 中台与数据中心差异化领域。",
-              "opportunity": "🎯 商机研判运营商 RAN 无突破口，聚焦 eKYC 中台+数据中心+政府云差异化",
-              "links": [
-                {
-                  "label": "MarketScreener 8/24",
-                  "url": "https://www.marketscreener.com/quote/stock/JORDAN-TELECOMMUNICATIONS-6497217/news/"
+                  "label": "Shafaq（媒体人被捕）",
+                  "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5sYm5oaUEtR04tdFlzaHFLMjlfdC1jdTA2R0VpRVNReFFackpIdTNUYWR1UU1HWmxubk5jbFJXUEw2djBGZ2pRaE95U3ZMQkVVS28wdDM0cjBUMlNqMXF0TVdfQllPYURkRkRTTXRBWENqX3A4YjNnWGJR?oc=5"
                 }
               ]
             }
@@ -281,197 +205,181 @@
           "category": "本国部委最新动态",
           "items": [
             {
-              "title": "⭐ TRC 2026 双优先明确：号码携转 MNP（2027/4 上线）+ 5G 扩容；主席 Lara Khateeb",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "TRC + Al-Mamlaka",
-              "text": "📰 要点：约旦电信监管委员会 TRC 将 2026 年两大重点定为号码携转（MNP）项目与 5G 服务扩容。MNP 允许用户携号转网，预计 2027 年 4 月在约旦市场全面可用。TRC 现任主席兼委员会主席为 Lara Khateeb，2026 年 TRC 营收约 $1.027 亿，员工 125 人。研判：① MNP 上线将加剧运营商竞争，推动其网络与 IT 系统升级——承载网/核心网/BSS 改造窗口；② 5G 扩容是持续机会，但 RAN 由 Nokia/Ericsson 占据，华为走承载+核心+数据中心差异化；③ TRC 监管成熟、亲欧标（ETSI），华为需以合规+差异化并重切入。",
-              "opportunity": "🎯 商机研判MNP（2027/4）驱动运营商 IT/承载升级 = BSS/核心网改造窗口；5G 扩容走承载+DC 差异化",
+              "title": "⭐🔥 约旦与沙特主权 AI HUMAIN 签署战略 MoU，推进人工智能发展与创新",
+              "date": "2026-09-06 ~ 09-08",
+              "badge": "Telecompaper + 金融科技门户 双源交叉",
+              "text": "📰 双源报道：Telecompaper 9/8 与《金融科技门户》9/6 各自报道：约旦与沙特阿拉伯的 HUMAIN 签署战略备忘录，推进 AI 发展与创新合作。（报道为标题级信息，MoU 条款与落实机构未。）研判：① 这是约旦 AI 议程从\"政务 AI\"升级为\"海湾资本+主权 AI 合作\"的标志性一步；② HUMAIN 为沙特主权 AI 旗舰（算力/大模型方向），约旦可借此海湾 AI 基础设施与人才生态；③ 与本期\"政府 AI\"计划、TRC×GSMA 区域 AI 培训同周发布，构成\"主权合作+能力建设+行业人才\"完整政策拼图——约旦正系统性卡位区域 AI 枢纽。",
+              "opportunity": "🎯 商机研判（🔴 最高）主权 AI 合作落地算力/数据中心承载——跟踪 MoU 落实机构与预算，尽早递交 AI 基础设施（算力+DC+政务 AI 平台）方案",
               "links": [
                 {
-                  "label": "SAMENA / Al-Mamlaka",
-                  "url": "https://www.samenacouncil.org/samena_daily_news?news=109931"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国头部客户的新机会点",
-          "items": [
-            {
-              "title": "📌 MNP（2027/4）+ eKYC 生态延续：银行业与运营商 IT 升级窗口叠加",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "MNP 推演",
-              "text": "📰 机会拼图：TRC 号码携转 2027/4 上线，运营商须完成 BSS/核心网/中央数据库改造以支持携号转网；同时约旦银行业 eKYC 生态（Arab Bank 已落地 Sanad 数字 ID）持续铺开。两条 IT 升级需求叠加。研判：华为可在运营商侧（MNP 承载/数据库）+ 银行侧（eKYC 中台/灾备数据中心）双线切入，均属\"非核心系统差异化\"路径，避开 RAN 与核心银行系统壁垒。",
-              "opportunity": "🎯 商机研判MNP + eKYC 双 IT 升级窗口 = 运营商数据库/承载 + 银行中台/灾备双线切入",
-              "links": [
-                {
-                  "label": "SAMENA",
-                  "url": "https://www.samenacouncil.org/samena_daily_news?news=109931"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "社交媒体新闻追踪",
-          "items": [
-            {
-              "title": "📱 TRC · 号码携转 MNP 与 5G 扩容列为 2026 双优先",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "TRC 官方渠道",
-              "text": "📝 要点：TRC 通过官方渠道明确 2026 两大重点文件为 MNP 与 5G 扩容。🔍 解读：监管层主动释放 IT/网络升级信号，是华为承载+数据中心方案的对接切口。",
-              "opportunity": "🎯 商机研判监管驱动升级信号 = 主动对接 TRC 与运营商 IT 团队",
-              "links": [
-                {
-                  "label": "SAMENA",
-                  "url": "https://www.samenacouncil.org/samena_daily_news?news=109931"
-                }
-              ]
-            },
-            {
-              "title": "📱 Orange Jordan · 8/24 交易所例行披露",
-              "date": "2026-08-24",
-              "badge": "Orange Jordan / JTEL",
-              "text": "📝 要点：JTEL 8/24 提交安曼交易所交易披露，无重大战略公告。🔍 解读：运营商处平稳执行期，无并购/大额投资信号。",
-              "opportunity": "🎯 商机研判维持对 Orange/Zain/Umniah IT 升级需求的常态监控",
-              "links": [
-                {
-                  "label": "MarketScreener",
-                  "url": "https://www.marketscreener.com/quote/stock/JORDAN-TELECOMMUNICATIONS-6497217/news/"
-                }
-              ]
-            },
-            {
-              "title": "📱 MoDEE · Sanad 数字 ID 生态持续推广（银行/政务多场景）",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "MoDEE 官方渠道",
-              "text": "📝 要点：MoDEE 持续推动 Sanad 数字身份在银行、政务等多场景落地，作为国家数字化 KPI。🔍 解读：生态落地阶段 = 政府云+身份中台采购需求逐步显性化。",
-              "opportunity": "🎯 商机研判保持 MoDEE 部级对话，捕捉政府云/身份中台采购信号",
-              "links": [
-                {
-                  "label": "MoDEE 官网",
-                  "url": "https://www.modee.gov.jo/"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国运营商最新动态",
-          "items": [
-            {
-              "title": "⭐ Hajj 部长改革蓝图落地延续：2025 投网络超 $5000 万，光纤一期覆盖 35 万户，三年宽带 5 万→50 万",
-              "date": "2026-07-30（本期延续）",
-              "badge": "NNA / Tele Liban",
-              "text": "📰 NNA / Tele Liban 原文要点：通信部长 Charles Hajj 在 Tele Liban 节目阐述改革进展——五年金融危机+疫情+战争后行业投资不足、网络接近服役末期，政府正推结构改革同时维持基本服务。关键数据：① 已启动 Law 431 落实（通过后 22 年首次），经由 TRA、部委重组与 Liban Telecom 设立；② 向 Ogero/部委员工保证转入新公司将保留并改善其权益薪资；③ 通过 Alfa 与 Touch 更严格支出，2025 年投网络超 $5000 万、增加国库转移约 $2500 万；④ 光纤一期覆盖约 35 万户，三年内宽带用户从 5 万提升至 50 万。研判：改革从\"总统审查\"转入\"部长执行+数据交付\"，Ogero/Alfa/Touch 三家进入网络重建与光纤扩容采购启动期。",
-              "opportunity": "🎯 商机研判（Ogero 🔴 核心）光纤一期 35 万户 + 三年 10 倍宽带增长 = FTTH 主干+OLT 大规模需求；华为经意大利+本地 SI 路径切入",
-              "links": [
-                {
-                  "label": "NNA / AMAN 7/30",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国部委最新动态",
-          "items": [
-            {
-              "title": "⭐ Hajj 定位黎巴嫩为\"东西方数字枢纽\"：伊-叙区域互联 + 新海缆 + Starlink 定位备份",
-              "date": "2026-07-30（本期延续）",
-              "badge": "NNA / Tele Liban",
-              "text": "📰 要点：Hajj 强调黎巴嫩要成为东西方之间的数字服务枢纽，规划：① 与伊拉克、叙利亚的区域连接；② 新海缆；③ 数据保护与网络安全；④ Starlink 定位为\"互补的、初期面向企业的备份服务\"，而非光纤或移动网络的替代。研判：① \"数字枢纽 + 区域互联\"叙事与伊拉克过境走廊（8/29 Sanad）形成黎凡特跨国数据走廊呼应——Basra→欧洲 与 黎巴嫩东西枢纽可拼接；② 新海缆 = 登陆站+OTN 机会；③ Starlink 定位为备份而非替代，给地面光纤/移动网络留足空间，对华为有利。",
-              "opportunity": "🎯 商机研判① 黎-伊-叙区域互联可与伊拉克过境走廊拼接，跨国方案联合提报；② 新海缆登陆站+OTN；③ Starlink 仅备份=地面网络空间充足",
-              "links": [
-                {
-                  "label": "NNA / AMAN 7/30",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国政治与大选进展及内幕",
-          "items": [
-            {
-              "title": "📌 Hezbollah 解武议程 + 以军持续袭击：南部重建的安全前提仍未落实",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "区域局势综合",
-              "text": "📰 背景：2025/9/5 内阁批准黎军独掌武器计划后，什叶派部长曾集体退场抗议。以军对黎南部的打击持续，Hezbollah 解武进程与南部安全形势仍是重建的前置变量。研判：① 南部 215 站重建的工程安全前提取决于停火稳固与解武进展；② Aoun-Salam 改革推进受银行业游说与教派政治掣肘；③ 对华为：南部重建窗口仍需等安全落实，但 Ogero 光纤扩容（非南部）可先行。",
-              "opportunity": "🎯 商机研判南部重建等安全落实；非南部光纤扩容（35 万户一期）可先推进",
-              "links": [
-                {
-                  "label": "EUAA Lebanon",
-                  "url": "https://www.euaa.europa.eu/lebanon-country-focus/21-recent-political-developments"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国头部客户的新机会点",
-          "items": [
-            {
-              "title": "⭐ Ogero 三件套 + 数字枢纽海缆：光纤一期 35 万户 / LTE 390 站 / 358 站太阳能 / 新海缆登陆",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "Hajj 蓝图综合",
-              "text": "📰 机会拼图：① 光纤一期覆盖约 35 万户，三年宽带 5 万→50 万（FTTH 主干+OLT）；② LTE 扩展至 390 站，LTE-A 容量 10→40Gbps；③ 358 站太阳能（4MW/463kAh，$960 万，年省 $850 万）；④ 新海缆登陆（数字枢纽战略）。研判：Hajj 改革从蓝图转入采购启动，四条线均有华为对口方案（FTTH/LTE-A/PowerCube/海缆登陆 OTN），经意大利+本地 SI 合规路径参与。",
-              "opportunity": "🎯 商机研判（Ogero 三件套+海缆）FTTH 主干+LTE-A 扩容+PowerCube 太阳能+海缆登陆 OTN，四线并进，经意大利+本地 SI 参与",
-              "links": [
-                {
-                  "label": "Arab News（Ogero 规划）",
-                  "url": "https://www.arabnews.pk/node/2587374/business-economy"
+                  "label": "Telecompaper 9/8",
+                  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOVm4tUkxKN0xKVmF0N3VENVBMRG4weUF1bDZaZ3NZNmE0QTlwS3FPNktYYmk3b2duRUtRbWVfdmRlQ3pfSTBoYWhWalY0U0pvaGR1aFRseGVrZy1raTl5TFpIS0hGUnlPWm5ONWl1dnBHaHZhbFdralJUcUxGenk2U3FPOHhWOTJOTUo2Z3FQTVhNYklMeWR0ckoyYzNWTFlKdl9xQV8zM2hnckFCYVE?oc=5"
                 },
                 {
-                  "label": "NNA 7/30",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
+                  "label": "金融科技门户 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1CWmYySEZnQWJDS1RzTWp0UlRhLTZ0N3hfREl5bVlMa3l2QkJXQnpqZUY2MTg1bmp1dGhKTi1KT0ZKN29GalQ1N1ZR?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "⭐ 约旦启动\"政府 AI\"计划，推动部门现代化",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/6 报道：约旦启动\"AI for Government Leaders\"计划，面向部门推动政府现代化。（标题级信息，课程与执行机构细节未披露。）研判：政务 AI 从概念走向组织能力建设的标志——培训，后续才是系统与平台采购；与 HUMAIN MoU、GSMA 培训同周发布，约旦 AI 议程呈\"主权合作+能力建设+行业人才\"三线并进。",
+              "opportunity": "🎯 商机研判政务 AI 培训是后续平台/数据治理/AI 应用场景采购的指标；建议以培训合作+试点场景组合 MoDEE",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOX05hc2NVajRLWXdMMlZzRnUtNTJNblhlVVRWWHppcjhXcnU5dXJvWGE5VVFzV0Y0Vll6NWc0RUJRTHcyM0VfOWNpa2JHdG1jTG5uaXVhVVZ1SmtzVExwelVTcVQzZmt6ZTJMT0VXNlgyYnRpQXBvaHhINzZnNzNLY2U5WXhuN1BTNDJmWjBWSldiTlJaQUtJQnZ1Rmw2b0ZSX0JVdnNQMEVBa1NUeFh1R0RWb2dfblVSNVhzcnZ4dGF0ZWpzWFJHODV3YUt2dw?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "📌 TRC 与 GSMA 合办区域 AI 培训计划",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/6 报道：约旦电信监管委员会（TRC）与 GSMA 主办区域 AI 培训计划。（标题级信息。）研判：TRC 以\"区域主办\"姿态强化监管话语权——约旦 AI 应用市场，还在卡位\"区域监管与人才枢纽\"；GSMA 背书意味着培训贴近运营商/监管实务，5G+AI 运维与 AI 治理是大概率主题。",
+              "opportunity": "🎯 商机研判监管侧 AI 能力建设的对接窗口；可联合 GSMA 生态提供课程/实训平台，绑定 TRC",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdlg5T1VqVEdHTVVJVFhZcENjdjdLUmVUeTgxbzhEUmw3V2NlUURYMnE4UTBrd0xGQnFJUW9BOThRelpscW81WUp3OVQzbUJzV2ZvLTBPUGoxX1hKX3ltc3ZNanRZemtuTEFJWGxnYUVPdk5mRzB0c2drZnZiLVZJN2ZaLUs5US14bUxJUlAxdWZPV21OeXpQNVl1WFZ1c2w3SVVUeGJidDFDZWlC?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "⭐ Sanad 数字身份激活用户突破 260 万，政务数字化渗透率持续攀升",
+              "date": "2026-09-05",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/5 报道： 260 万已在 Sanad 应用上激活数字身份。（标题级信息。）研判：以约旦人口基数衡量，260 万激活意味着成年人口渗透已规模效应——数字身份从\"政务便利\"升级为\"国家数字基础设施\"；银行业 eKYC（Arab Bank 已首发落地）等商用场景将加速向电信、保险等行业复制，身份中台、政务云、数据采购需求放量前夜。",
+              "opportunity": "🎯 商机研判Sanad 生态放量 = 身份中台扩容、政务云、行业 eKYC 复制（银行→电信→保险）窗口；持续绑定 MoDEE",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/5",
+                  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMnhnYmZCUlZtSjZGT09mTWdQUVJQdnpPN1dUVHZ2T2ZtVlU2RDVFV3dDNzZwUnRFNjhJTFFadVl4eVlNd2x2T2N6cTBIdHVoS0FteVVKYno4enBDTmk4SGFuMlZDdWN5Z1NYWHRqQjE4TFhqMjgwX05uNDlvWkgwUjhxR0xNYVhuMWZfOXpJZnF4aGRkbE5QVmk3ZHM3eEVGY1FHcw?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "📌 约旦赢得 APPC 电子商务团队主席职位",
+              "date": "2026-09-07",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/7 报道：约旦赢得 APPC 电子商务团队（E-Commerce Team）主席职位。（标题级信息，机制与细节未披露。）研判：邮政电商是约旦数字经济的传统强项（跨境枢纽），区域机制主席国身份利于参与电商规则与物流数据标准制定——对数据系统、跨境电商枢纽基础设施是长期利好。",
+              "opportunity": "🎯 商机研判约旦邮政/数字化（电商、物流数据平台）的中长期机会",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/7",
+                  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaWNyVk11Q29GcnVPWVpDYzA3dmk5UlJESlNURE9xaENTb2laQ05pdkR3ZEkzdWw5Q0dlREs5dWx2ODYzU3lYak5nZUJlS0cycXlUakJub2gxS1NkX0tuLTJLSU1NVXhuTGpUZGE3bzlZNC11MHRLeE5peHNmUDliR3pfMzQ2R3FPOWtEMy05WXNVZ196UGRKX2kzZGczVEdzSmFqUFl3?oc=5"
                 }
               ]
             }
           ]
         },
         {
-          "category": "社交媒体新闻追踪",
+          "category": "本国头部客户的新机会点",
           "items": [
             {
-              "title": "📱 Hajj 部长 · Tele Liban 专访阐述改革与数字枢纽战略",
-              "date": "2026-07-30（本期延续）",
-              "badge": "通信部 · Hajj 渠道",
-              "text": "📝 要点：Hajj 在 Tele Liban 节目系统阐述 Law 431 落实、Liban Telecom、光纤扩容、区域互联与海缆、数字枢纽定位。🔍 解读：部长亲自密集发声=改革进入实质交付期，采购信号密集释放。",
-              "opportunity": "🎯 商机研判改革实质交付期 = 密集对接 Ogero/TRA/Liban Telecom 技术团队",
+              "title": "📌 机会拼图：AI 三件套（主权 MoU+政务培训+行业培训）+ Sanad 放量 = 约旦 ICT 采购主线从\"连接\"转向\"智能\"",
+              "date": "2026-09-05 ~ 09-08",
+              "badge": "基于本期官方信源综合",
+              "text": "📰 基于本期已证实信源的机会研判：本期约旦 8 条官方信息高度集中于同一方向——AI（HUMAIN MoU、政府 AI 计划、TRC×GSMA 培训、Discover Digital Jordan 2026）与数字身份（Sanad 260 万+）。采购含义：① 算力与数据中心（主权 AI 合作落地承载）；② 政务 AI 平台与数据治理（培训之后的系统采购）；③ 身份中台与行业 eKYC 复制；④ 人才/培训生态（GSMA、青年、三线）。研判：约旦市场体量有限但确定性强、合规环境三国最优，适合作为区域 AI 方案\"样板间\"打造；窗口在 MoU 落实细节厂商方案成形之前。",
+              "opportunity": "🎯 商机研判（MoDEE/TRC 🔴 最高）以\"AI 基础设施+政务 AI 场景+身份中台\"组合方案对接 MoDEE；借 Discover Digital Jordan 2026 做高层与生态卡位",
               "links": [
                 {
-                  "label": "NNA / AMAN",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
+                  "label": "Telecompaper（HUMAIN）",
+                  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOVm4tUkxKN0xKVmF0N3VENVBMRG4weUF1bDZaZ3NZNmE0QTlwS3FPNktYYmk3b2duRUtRbWVfdmRlQ3pfSTBoYWhWalY0U0pvaGR1aFRseGVrZy1raTl5TFpIS0hGUnlPWm5ONWl1dnBHaHZhbFdralJUcUxGenk2U3FPOHhWOTJOTUo2Z3FQTVhNYklMeWR0ckoyYzNWTFlKdl9xQV8zM2hnckFCYVE?oc=5"
+                },
+                {
+                  "label": "约旦通讯社（Sanad）",
+                  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMnhnYmZCUlZtSjZGT09mTWdQUVJQdnpPN1dUVHZ2T2ZtVlU2RDVFV3dDNzZwUnRFNjhJTFFadVl4eVlNd2x2T2N6cTBIdHVoS0FteVVKYno4enBDTmk4SGFuMlZDdWN5Z1NYWHRqQjE4TFhqMjgwX05uNDlvWkgwUjhxR0xNYVhuMWZfOXpJZnF4aGRkbE5QVmk3ZHM3eEVGY1FHcw?oc=5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "社交媒体新闻追踪（官方渠道）",
+          "items": [
+            {
+              "title": "📱 科技企业高管齐聚安曼，Discover Digital Jordan 2026 开幕",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📝 要点：约旦通讯社 9/6 报道，科技高管齐聚安曼参加 Discover Digital Jordan 2026。（标题级信息。）🔍 解读：约旦年度旗舰科技盛会，是跨国厂商与本地政企对接的核心场景；与本周 AI 议程密集发布叠加，显示约旦政府有意借大会窗口集中释放数字化招商信号。",
+              "opportunity": "🎯 商机研判大会是 MoDEE/TRC/运营商高层与海湾资本集中出现的场合——复盘参会名单与签约，锁定 Q4 跟进",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYkNTcklzZkFZR1ZnWi13c082cjFYRGF4R1VBVS1ER0IwRXAyZEotcEhJSmp3NWlGNjBnY05xMThOZUpuQ0RydUFNRGlpQXhDeUk1dUNjM3VqaFpkWUtGX1pBTWwtdXZPc094R3JUSHVacXdDYW5STmRxdjBaaU13SjJUcldyUTFoZjlKUVVNT3RqTWoyNnlmS1JoeExWSTd2WGc?oc=5"
                 }
               ]
             },
             {
-              "title": "📱 Ogero · 持续 LTE 扩展与光纤一期宣传",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "Ogero 官方渠道",
-              "text": "📝 要点：Ogero 官方持续宣传 LTE 扩展（至 390 站）与光纤一期（35 万户）进展。🔍 解读：Ogero 是黎巴嫩采购主体，其宣传节奏反映项目推进节点。",
-              "opportunity": "🎯 商机研判维护 Ogero 主席 Kreidieh 技术团队关系，捕捉招标节点",
+              "title": "📱 多部委联合启动数字技能培训",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📝 要点：约旦通讯社 9/6 报道，部委联合启动面向教育工作数字技能培训计划。（标题级信息。）🔍 解读：数字人才底线工程，通常与教育数字化平台、校园网络等基础设施。",
+              "opportunity": "🎯 商机研判教育数字化（校园连接、教育云）的后续预算信号",
               "links": [
                 {
-                  "label": "Ogero 官网",
-                  "url": "https://www.ogero.gov.lb/"
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZ1FzV3c0RXVveVFoS0dMdTlUZlRRdUdfYlV3S3pBNHlMWnlURnVGd0RuZW1RVUphaU9menVyaXF6SzhKYkV3N014SnRxUzM2R3F6ZF9FMm9mQ0dSNUh3UXJYcEV3WWFjM1dNWmVkMFVvbzJpSVhLSW9UbUFMVUt5d2tIQVVac0JSS25jTGRWNEk3SU1uVDlqY0x1Q1RZUlBkekl1ZA?oc=5"
                 }
               ]
             },
             {
-              "title": "📱 总统府 · 持续推动电信改革与南部重建议程",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "总统府 · Aoun 渠道",
-              "text": "📝 要点：Aoun 总统持续将电信改革与南部重建列为国家优先议程。🔍 解读：总统级背书使改革不可逆，华为可建立长期伙伴关系。",
-              "opportunity": "🎯 商机研判总统级背书=改革不可逆，建立长期技术伙伴定位",
+              "title": "📱 约旦签署青年技术与数字赋能合作备忘录",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📝 要点：约旦通讯社 9/6 报道，签署合作备忘录，增强约旦青年的技术与数字赋能。（标题级信息。）🔍 解读：青年数字赋能是约旦 ICT 外交与援助资金的常见载体（EU/世行资金偏好），后续可能培训平台与数字中心建设项目。",
+              "opportunity": "🎯 商机研判青年数字中心/培训平台类项目通常随援助资金落地——跟踪资金方与执行机构",
               "links": [
                 {
-                  "label": "黎总统府",
-                  "url": "https://www.presidency.gov.lb/"
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdWNnLTF5cXN5akYwdGVyT2JrX2lxd240X1JUdnJBSFZENmJFMzdhckpZeVMyXzliOTltTVJMM3JQelBCUGxuNHhBOXgxTE9FVzc4TndpLUNsbEVIV1VZR2c1V2RUd0V4Uk9rRUNuQndMUDNUZV9iR2QyUElsMm14VDJfWFAyd3Y5a1JLOXN6X3RkT3c1bHZWZnEzbDBNRVJ1UEhrSGNpVFZwNzhKUGRaSTB3?oc=5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "本国政治与大选进展及",
+          "items": [
+            {
+              "title": "🔴 以军空袭黎南部致 12 死（含 2 名儿童）等多起打击；Aoun 总统称\"危险升级\"吁美制止",
+              "date": "2026-09-06 ~ 09-08",
+              "badge": "CTV + Dawn + Yahoo + Arab News + Iran International + Firstpost 多源",
+              "text": "📰 本周期黎以局势显著升级，多源证实：① 9/8 以军空袭黎南部一村庄，致 12 人死亡、含 2 名儿童（CTV News）；② 9/6 以军打击致 7 人死亡（Dawn）；③ 9/7 以军击中一栋楼，多人死亡（Yahoo）；④ 以军在打击前对黎南部一区发布撤离令（Arab News）；⑤ 以军称在无人机发射后打击真主目标（Iran International）；⑥ Aoun 总统称此为\"危险升级\"，敦促美国制止以方攻击（Firstpost）；黎政府谴责以方占领领土，并感谢在挑战中的支持（Arab News）。另有观点类文章讨论\"真主是否已被逼绝境\"（Yahoo，分析向，未证实，）。研判：南部 215 站重建与扩容的工程前提再度恶化；重建资金到位节奏与停火谈判是唯一解，南部 ICT 工程维持\"观察+准备\"；非南部项目（一期/太阳能）不受直接影响。",
+              "opportunity": "⚠️ 风险研判南部重建窗口后移；非南部（贝鲁特/北部）与太阳能项目继续推进；密集跟踪停火谈判与美/海湾斡旋信号",
+              "links": [
+                {
+                  "label": "CTV News 9/8",
+                  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNYW9qMTVDM1pCQ0ZDZV94aW9TNTh2M1NVWHByUDVUWFRmR2I1OWxyM2drUDAyWG04Ym5aMjE2RVJCUEMtS1A0LXdGNjR1WTd5TGZuTDRlMDRwUDZadmZSclB6anZsUGFYRmE1NXlSRXlMY0gyaVpQeFhZOVp2ZnltekFhQ2hRRFFNRkYxbjNscTM3WF9QNTlXS2RQV2czNm9HSExpUTYyWHJkb29EODd0LUpYaDNzUUhROHA2T3lybXhlRzA?oc=5"
+                },
+                {
+                  "label": "Firstpost 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQc2x6SVhTN0w5dDJNOVhSM1NHTFVKaXlUSm11UzhuX1VuVHBzMXk2UUNjTXRWb190emxRZWxNSHdKOW5MbWMxX1hkYkZvQ1VGOXlLeHdFQVRIbkhZTV82MDF2dUpvZGtqeG83N0lmZGVCN25ydmhZSUNVTEpwaTQwYVY2Wl9taWpveFRkOUNabkRNVUFtQmRVOWVkNWZ4ZEFscHhUdDBBcThGLUs0V3lqUnVsMlkxNWRwSU1PeWxB0gG-AUFVX3lxTFBzbHpJWFM3TDl0Mk05WFIzU0dMVUppeVRKbXVTOG5fVW5UcHMxeTZRQ2NNdFZvX3R6bFFlbE1Id0o5bkxtYzFfWGRiRm9DVUY5eUt4d0VBVEhuSFlNXzYwMXZ1Sm9ka2p4bzc3SWZkZUI3bnJ2aFlJQ1VMSnBpNDBhVjZaX21pam94VGQ5Q1puRE1VQW1CZFU5ZWQ1ZnhkQWxweFR0MEFxOEYtSzRXeWpSdWwyWTE1ZHBJTU95bEE?oc=5"
+                },
+                {
+                  "label": "Dawn 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9hQjJTN0VfSGVLNlh5dkVBOUlnN0pXbGphWXIzbU5PbWhPbThYeXNYVmhQN09sLUhjc0VSQ1dZUWFCaUhJcDNnV2d2TkkxdG92aTJjVW85UG1OTUMtWnRBMk9EWl9GLVM0aURqeTNDcmR3bGwyRmZabE9fd9IBTkFVX3lxTE9JOEdnM0poNlIzRDFIYktJY3QwZWZkR1NQOU53Q185YzRXZWxEMmpnWm0wXzB1RWlyZmFELTBYVG9uQ003dnIyUGdrcDh3UQ?oc=5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "社交媒体/媒体追踪",
+          "items": [
+            {
+              "title": "📱 专家访谈：黎巴嫩的\"数字数据缺口\"引发",
+              "date": "2026-09-07",
+              "badge": "未交叉验证 · 单一访谈源",
+              "text": "📝 要点：Breaking AC News 9/7 刊发访谈，Mohamed Soufan 谈黎巴嫩的数字数据缺口（digital data gap）问题。（标题级信息，访谈未获取；单一信源，未交叉验证。）🔍 解读：数据缺口话题指向黎巴嫩统计体系、政务数据与数据基础设施的长期欠账——在 Hajj 部长\"数字枢纽\"蓝图下，数据治理与国家数据平台是迟早要补的课，值得对黎数字议程的长期观察。",
+              "opportunity": "🎯 商机研判数据治理/国家数据平台属长期需求储备；当前以跟踪为主，对黎数字议程观察",
+              "links": [
+                {
+                  "label": "Breaking AC News 9/7",
+                  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMThvR2xDbHJMRER2T3lPekV1Tkt5dTJ0WmhNZzZGTEhuVWJTRk9lWUFZNjhCYzhnb25uRmNEcWE3V0FNNGtxTVdmbi03a3VZMEctd1VjeXFTMFFhMWFwcG1INERQRnE4OTM3RjJZTTcxLTRDdEEzZU1vT2g4d2Jiak1LazRpSTl1Y1NfSnhqMkwwMTk3?oc=5"
                 }
               ]
             }
@@ -483,36 +391,74 @@
       "name": "约旦",
       "sections": [
         {
-          "category": "本国运营商最新动态",
-          "items": [
-            {
-              "title": "📌 8/24 Orange Jordan（JTEL）向安曼交易所提交例行披露，三家运营商处 690 站承诺执行期",
-              "date": "2026-08-24",
-              "badge": "Amman Stock Exchange 披露",
-              "text": "📰 要点：Jordan Telecommunications Company（JTEL / Orange Jordan）8/24 向约旦证券委员会与安曼交易所提交例行交易披露。三家运营商（Orange / Zain / Umniah）当前处于 TRC 690 站建设承诺的执行期，无重大新业务公告。研判：约旦运营商市场稳定，华为在三家 RAN 无存量突破空间，主战场在固网/金融 IT/eKYC 中台与数据中心差异化领域。",
-              "opportunity": "🎯 商机研判运营商 RAN 无突破口，聚焦 eKYC 中台+数据中心+政府云差异化",
-              "links": [
-                {
-                  "label": "MarketScreener 8/24",
-                  "url": "https://www.marketscreener.com/quote/stock/JORDAN-TELECOMMUNICATIONS-6497217/news/"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "category": "本国部委最新动态",
           "items": [
             {
-              "title": "⭐ TRC 2026 双优先明确：号码携转 MNP（2027/4 上线）+ 5G 扩容；主席 Lara Khateeb",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "TRC + Al-Mamlaka",
-              "text": "📰 要点：约旦电信监管委员会 TRC 将 2026 年两大重点定为号码携转（MNP）项目与 5G 服务扩容。MNP 允许用户携号转网，预计 2027 年 4 月在约旦市场全面可用。TRC 现任主席兼委员会主席为 Lara Khateeb，2026 年 TRC 营收约 $1.027 亿，员工 125 人。研判：① MNP 上线将加剧运营商竞争，推动其网络与 IT 系统升级——承载网/核心网/BSS 改造窗口；② 5G 扩容是持续机会，但 RAN 由 Nokia/Ericsson 占据，华为走承载+核心+数据中心差异化；③ TRC 监管成熟、亲欧标（ETSI），华为需以合规+差异化并重切入。",
-              "opportunity": "🎯 商机研判MNP（2027/4）驱动运营商 IT/承载升级 = BSS/核心网改造窗口；5G 扩容走承载+DC 差异化",
+              "title": "⭐🔥 约旦与沙特主权 AI HUMAIN 签署战略 MoU，推进人工智能发展与创新",
+              "date": "2026-09-06 ~ 09-08",
+              "badge": "Telecompaper + 金融科技门户 双源交叉",
+              "text": "📰 双源报道：Telecompaper 9/8 与《金融科技门户》9/6 各自报道：约旦与沙特阿拉伯的 HUMAIN 签署战略备忘录，推进 AI 发展与创新合作。（报道为标题级信息，MoU 条款与落实机构未。）研判：① 这是约旦 AI 议程从\"政务 AI\"升级为\"海湾资本+主权 AI 合作\"的标志性一步；② HUMAIN 为沙特主权 AI 旗舰（算力/大模型方向），约旦可借此海湾 AI 基础设施与人才生态；③ 与本期\"政府 AI\"计划、TRC×GSMA 区域 AI 培训同周发布，构成\"主权合作+能力建设+行业人才\"完整政策拼图——约旦正系统性卡位区域 AI 枢纽。",
+              "opportunity": "🎯 商机研判（🔴 最高）主权 AI 合作落地算力/数据中心承载——跟踪 MoU 落实机构与预算，尽早递交 AI 基础设施（算力+DC+政务 AI 平台）方案",
               "links": [
                 {
-                  "label": "SAMENA / Al-Mamlaka",
-                  "url": "https://www.samenacouncil.org/samena_daily_news?news=109931"
+                  "label": "Telecompaper 9/8",
+                  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOVm4tUkxKN0xKVmF0N3VENVBMRG4weUF1bDZaZ3NZNmE0QTlwS3FPNktYYmk3b2duRUtRbWVfdmRlQ3pfSTBoYWhWalY0U0pvaGR1aFRseGVrZy1raTl5TFpIS0hGUnlPWm5ONWl1dnBHaHZhbFdralJUcUxGenk2U3FPOHhWOTJOTUo2Z3FQTVhNYklMeWR0ckoyYzNWTFlKdl9xQV8zM2hnckFCYVE?oc=5"
+                },
+                {
+                  "label": "金融科技门户 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1CWmYySEZnQWJDS1RzTWp0UlRhLTZ0N3hfREl5bVlMa3l2QkJXQnpqZUY2MTg1bmp1dGhKTi1KT0ZKN29GalQ1N1ZR?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "⭐ 约旦启动\"政府 AI\"计划，推动部门现代化",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/6 报道：约旦启动\"AI for Government Leaders\"计划，面向部门推动政府现代化。（标题级信息，课程与执行机构细节未披露。）研判：政务 AI 从概念走向组织能力建设的标志——培训，后续才是系统与平台采购；与 HUMAIN MoU、GSMA 培训同周发布，约旦 AI 议程呈\"主权合作+能力建设+行业人才\"三线并进。",
+              "opportunity": "🎯 商机研判政务 AI 培训是后续平台/数据治理/AI 应用场景采购的指标；建议以培训合作+试点场景组合 MoDEE",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOX05hc2NVajRLWXdMMlZzRnUtNTJNblhlVVRWWHppcjhXcnU5dXJvWGE5VVFzV0Y0Vll6NWc0RUJRTHcyM0VfOWNpa2JHdG1jTG5uaXVhVVZ1SmtzVExwelVTcVQzZmt6ZTJMT0VXNlgyYnRpQXBvaHhINzZnNzNLY2U5WXhuN1BTNDJmWjBWSldiTlJaQUtJQnZ1Rmw2b0ZSX0JVdnNQMEVBa1NUeFh1R0RWb2dfblVSNVhzcnZ4dGF0ZWpzWFJHODV3YUt2dw?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "📌 TRC 与 GSMA 合办区域 AI 培训计划",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/6 报道：约旦电信监管委员会（TRC）与 GSMA 主办区域 AI 培训计划。（标题级信息。）研判：TRC 以\"区域主办\"姿态强化监管话语权——约旦 AI 应用市场，还在卡位\"区域监管与人才枢纽\"；GSMA 背书意味着培训贴近运营商/监管实务，5G+AI 运维与 AI 治理是大概率主题。",
+              "opportunity": "🎯 商机研判监管侧 AI 能力建设的对接窗口；可联合 GSMA 生态提供课程/实训平台，绑定 TRC",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdlg5T1VqVEdHTVVJVFhZcENjdjdLUmVUeTgxbzhEUmw3V2NlUURYMnE4UTBrd0xGQnFJUW9BOThRelpscW81WUp3OVQzbUJzV2ZvLTBPUGoxX1hKX3ltc3ZNanRZemtuTEFJWGxnYUVPdk5mRzB0c2drZnZiLVZJN2ZaLUs5US14bUxJUlAxdWZPV21OeXpQNVl1WFZ1c2w3SVVUeGJidDFDZWlC?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "⭐ Sanad 数字身份激活用户突破 260 万，政务数字化渗透率持续攀升",
+              "date": "2026-09-05",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/5 报道： 260 万已在 Sanad 应用上激活数字身份。（标题级信息。）研判：以约旦人口基数衡量，260 万激活意味着成年人口渗透已规模效应——数字身份从\"政务便利\"升级为\"国家数字基础设施\"；银行业 eKYC（Arab Bank 已首发落地）等商用场景将加速向电信、保险等行业复制，身份中台、政务云、数据采购需求放量前夜。",
+              "opportunity": "🎯 商机研判Sanad 生态放量 = 身份中台扩容、政务云、行业 eKYC 复制（银行→电信→保险）窗口；持续绑定 MoDEE",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/5",
+                  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMnhnYmZCUlZtSjZGT09mTWdQUVJQdnpPN1dUVHZ2T2ZtVlU2RDVFV3dDNzZwUnRFNjhJTFFadVl4eVlNd2x2T2N6cTBIdHVoS0FteVVKYno4enBDTmk4SGFuMlZDdWN5Z1NYWHRqQjE4TFhqMjgwX05uNDlvWkgwUjhxR0xNYVhuMWZfOXpJZnF4aGRkbE5QVmk3ZHM3eEVGY1FHcw?oc=5"
+                }
+              ]
+            },
+            {
+              "title": "📌 约旦赢得 APPC 电子商务团队主席职位",
+              "date": "2026-09-07",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📰 约旦通讯社 9/7 报道：约旦赢得 APPC 电子商务团队（E-Commerce Team）主席职位。（标题级信息，机制与细节未披露。）研判：邮政电商是约旦数字经济的传统强项（跨境枢纽），区域机制主席国身份利于参与电商规则与物流数据标准制定——对数据系统、跨境电商枢纽基础设施是长期利好。",
+              "opportunity": "🎯 商机研判约旦邮政/数字化（电商、物流数据平台）的中长期机会",
+              "links": [
+                {
+                  "label": "约旦通讯社 9/7",
+                  "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaWNyVk11Q29GcnVPWVpDYzA3dmk5UlJESlNURE9xaENTb2laQ05pdkR3ZEkzdWw5Q0dlREs5dWx2ODYzU3lYak5nZUJlS0cycXlUakJub2gxS1NkX0tuLTJLSU1NVXhuTGpUZGE3bzlZNC11MHRLeE5peHNmUDliR3pfMzQ2R3FPOWtEMy05WXNVZ196UGRKX2kzZGczVEdzSmFqUFl3?oc=5"
                 }
               ]
             }
@@ -522,59 +468,63 @@
           "category": "本国头部客户的新机会点",
           "items": [
             {
-              "title": "📌 MNP（2027/4）+ eKYC 生态延续：银行业与运营商 IT 升级窗口叠加",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "MNP 推演",
-              "text": "📰 机会拼图：TRC 号码携转 2027/4 上线，运营商须完成 BSS/核心网/中央数据库改造以支持携号转网；同时约旦银行业 eKYC 生态（Arab Bank 已落地 Sanad 数字 ID）持续铺开。两条 IT 升级需求叠加。研判：华为可在运营商侧（MNP 承载/数据库）+ 银行侧（eKYC 中台/灾备数据中心）双线切入，均属\"非核心系统差异化\"路径，避开 RAN 与核心银行系统壁垒。",
-              "opportunity": "🎯 商机研判MNP + eKYC 双 IT 升级窗口 = 运营商数据库/承载 + 银行中台/灾备双线切入",
+              "title": "📌 机会拼图：AI 三件套（主权 MoU+政务培训+行业培训）+ Sanad 放量 = 约旦 ICT 采购主线从\"连接\"转向\"智能\"",
+              "date": "2026-09-05 ~ 09-08",
+              "badge": "基于本期官方信源综合",
+              "text": "📰 基于本期已证实信源的机会研判：本期约旦 8 条官方信息高度集中于同一方向——AI（HUMAIN MoU、政府 AI 计划、TRC×GSMA 培训、Discover Digital Jordan 2026）与数字身份（Sanad 260 万+）。采购含义：① 算力与数据中心（主权 AI 合作落地承载）；② 政务 AI 平台与数据治理（培训之后的系统采购）；③ 身份中台与行业 eKYC 复制；④ 人才/培训生态（GSMA、青年、三线）。研判：约旦市场体量有限但确定性强、合规环境三国最优，适合作为区域 AI 方案\"样板间\"打造；窗口在 MoU 落实细节厂商方案成形之前。",
+              "opportunity": "🎯 商机研判（MoDEE/TRC 🔴 最高）以\"AI 基础设施+政务 AI 场景+身份中台\"组合方案对接 MoDEE；借 Discover Digital Jordan 2026 做高层与生态卡位",
               "links": [
                 {
-                  "label": "SAMENA",
-                  "url": "https://www.samenacouncil.org/samena_daily_news?news=109931"
+                  "label": "Telecompaper（HUMAIN）",
+                  "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOVm4tUkxKN0xKVmF0N3VENVBMRG4weUF1bDZaZ3NZNmE0QTlwS3FPNktYYmk3b2duRUtRbWVfdmRlQ3pfSTBoYWhWalY0U0pvaGR1aFRseGVrZy1raTl5TFpIS0hGUnlPWm5ONWl1dnBHaHZhbFdralJUcUxGenk2U3FPOHhWOTJOTUo2Z3FQTVhNYklMeWR0ckoyYzNWTFlKdl9xQV8zM2hnckFCYVE?oc=5"
+                },
+                {
+                  "label": "约旦通讯社（Sanad）",
+                  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMnhnYmZCUlZtSjZGT09mTWdQUVJQdnpPN1dUVHZ2T2ZtVlU2RDVFV3dDNzZwUnRFNjhJTFFadVl4eVlNd2x2T2N6cTBIdHVoS0FteVVKYno4enBDTmk4SGFuMlZDdWN5Z1NYWHRqQjE4TFhqMjgwX05uNDlvWkgwUjhxR0xNYVhuMWZfOXpJZnF4aGRkbE5QVmk3ZHM3eEVGY1FHcw?oc=5"
                 }
               ]
             }
           ]
         },
         {
-          "category": "社交媒体新闻追踪",
+          "category": "社交媒体新闻追踪（官方渠道）",
           "items": [
             {
-              "title": "📱 TRC · 号码携转 MNP 与 5G 扩容列为 2026 双优先",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "TRC 官方渠道",
-              "text": "📝 要点：TRC 通过官方渠道明确 2026 两大重点文件为 MNP 与 5G 扩容。🔍 解读：监管层主动释放 IT/网络升级信号，是华为承载+数据中心方案的对接切口。",
-              "opportunity": "🎯 商机研判监管驱动升级信号 = 主动对接 TRC 与运营商 IT 团队",
+              "title": "📱 科技企业高管齐聚安曼，Discover Digital Jordan 2026 开幕",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📝 要点：约旦通讯社 9/6 报道，科技高管齐聚安曼参加 Discover Digital Jordan 2026。（标题级信息。）🔍 解读：约旦年度旗舰科技盛会，是跨国厂商与本地政企对接的核心场景；与本周 AI 议程密集发布叠加，显示约旦政府有意借大会窗口集中释放数字化招商信号。",
+              "opportunity": "🎯 商机研判大会是 MoDEE/TRC/运营商高层与海湾资本集中出现的场合——复盘参会名单与签约，锁定 Q4 跟进",
               "links": [
                 {
-                  "label": "SAMENA",
-                  "url": "https://www.samenacouncil.org/samena_daily_news?news=109931"
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYkNTcklzZkFZR1ZnWi13c082cjFYRGF4R1VBVS1ER0IwRXAyZEotcEhJSmp3NWlGNjBnY05xMThOZUpuQ0RydUFNRGlpQXhDeUk1dUNjM3VqaFpkWUtGX1pBTWwtdXZPc094R3JUSHVacXdDYW5STmRxdjBaaU13SjJUcldyUTFoZjlKUVVNT3RqTWoyNnlmS1JoeExWSTd2WGc?oc=5"
                 }
               ]
             },
             {
-              "title": "📱 Orange Jordan · 8/24 交易所例行披露",
-              "date": "2026-08-24",
-              "badge": "Orange Jordan / JTEL",
-              "text": "📝 要点：JTEL 8/24 提交安曼交易所交易披露，无重大战略公告。🔍 解读：运营商处平稳执行期，无并购/大额投资信号。",
-              "opportunity": "🎯 商机研判维持对 Orange/Zain/Umniah IT 升级需求的常态监控",
+              "title": "📱 多部委联合启动数字技能培训",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📝 要点：约旦通讯社 9/6 报道，部委联合启动面向教育工作数字技能培训计划。（标题级信息。）🔍 解读：数字人才底线工程，通常与教育数字化平台、校园网络等基础设施。",
+              "opportunity": "🎯 商机研判教育数字化（校园连接、教育云）的后续预算信号",
               "links": [
                 {
-                  "label": "MarketScreener",
-                  "url": "https://www.marketscreener.com/quote/stock/JORDAN-TELECOMMUNICATIONS-6497217/news/"
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZ1FzV3c0RXVveVFoS0dMdTlUZlRRdUdfYlV3S3pBNHlMWnlURnVGd0RuZW1RVUphaU9menVyaXF6SzhKYkV3N014SnRxUzM2R3F6ZF9FMm9mQ0dSNUh3UXJYcEV3WWFjM1dNWmVkMFVvbzJpSVhLSW9UbUFMVUt5d2tIQVVac0JSS25jTGRWNEk3SU1uVDlqY0x1Q1RZUlBkekl1ZA?oc=5"
                 }
               ]
             },
             {
-              "title": "📱 MoDEE · Sanad 数字 ID 生态持续推广（银行/政务多场景）",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "MoDEE 官方渠道",
-              "text": "📝 要点：MoDEE 持续推动 Sanad 数字身份在银行、政务等多场景落地，作为国家数字化 KPI。🔍 解读：生态落地阶段 = 政府云+身份中台采购需求逐步显性化。",
-              "opportunity": "🎯 商机研判保持 MoDEE 部级对话，捕捉政府云/身份中台采购信号",
+              "title": "📱 约旦签署青年技术与数字赋能合作备忘录",
+              "date": "2026-09-06",
+              "badge": "约旦通讯社 Petra（官方）",
+              "text": "📝 要点：约旦通讯社 9/6 报道，签署合作备忘录，增强约旦青年的技术与数字赋能。（标题级信息。）🔍 解读：青年数字赋能是约旦 ICT 外交与援助资金的常见载体（EU/世行资金偏好），后续可能培训平台与数字中心建设项目。",
+              "opportunity": "🎯 商机研判青年数字中心/培训平台类项目通常随援助资金落地——跟踪资金方与执行机构",
               "links": [
                 {
-                  "label": "MoDEE 官网",
-                  "url": "https://www.modee.gov.jo/"
+                  "label": "约旦通讯社 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdWNnLTF5cXN5akYwdGVyT2JrX2lxd240X1JUdnJBSFZENmJFMzdhckpZeVMyXzliOTltTVJMM3JQelBCUGxuNHhBOXgxTE9FVzc4TndpLUNsbEVIV1VZR2c1V2RUd0V4Uk9rRUNuQndMUDNUZV9iR2QyUElsMm14VDJfWFAyd3Y5a1JLOXN6X3RkT3c1bHZWZnEzbDBNRVJ1UEhrSGNpVFZwNzhKUGRaSTB3?oc=5"
                 }
               ]
             }
@@ -586,120 +536,44 @@
       "name": "黎巴嫩",
       "sections": [
         {
-          "category": "本国运营商最新动态",
+          "category": "本国政治与大选进展及",
           "items": [
             {
-              "title": "⭐ Hajj 部长改革蓝图落地延续：2025 投网络超 $5000 万，光纤一期覆盖 35 万户，三年宽带 5 万→50 万",
-              "date": "2026-07-30（本期延续）",
-              "badge": "NNA / Tele Liban",
-              "text": "📰 NNA / Tele Liban 原文要点：通信部长 Charles Hajj 在 Tele Liban 节目阐述改革进展——五年金融危机+疫情+战争后行业投资不足、网络接近服役末期，政府正推结构改革同时维持基本服务。关键数据：① 已启动 Law 431 落实（通过后 22 年首次），经由 TRA、部委重组与 Liban Telecom 设立；② 向 Ogero/部委员工保证转入新公司将保留并改善其权益薪资；③ 通过 Alfa 与 Touch 更严格支出，2025 年投网络超 $5000 万、增加国库转移约 $2500 万；④ 光纤一期覆盖约 35 万户，三年内宽带用户从 5 万提升至 50 万。研判：改革从\"总统审查\"转入\"部长执行+数据交付\"，Ogero/Alfa/Touch 三家进入网络重建与光纤扩容采购启动期。",
-              "opportunity": "🎯 商机研判（Ogero 🔴 核心）光纤一期 35 万户 + 三年 10 倍宽带增长 = FTTH 主干+OLT 大规模需求；华为经意大利+本地 SI 路径切入",
+              "title": "🔴 以军空袭黎南部致 12 死（含 2 名儿童）等多起打击；Aoun 总统称\"危险升级\"吁美制止",
+              "date": "2026-09-06 ~ 09-08",
+              "badge": "CTV + Dawn + Yahoo + Arab News + Iran International + Firstpost 多源",
+              "text": "📰 本周期黎以局势显著升级，多源证实：① 9/8 以军空袭黎南部一村庄，致 12 人死亡、含 2 名儿童（CTV News）；② 9/6 以军打击致 7 人死亡（Dawn）；③ 9/7 以军击中一栋楼，多人死亡（Yahoo）；④ 以军在打击前对黎南部一区发布撤离令（Arab News）；⑤ 以军称在无人机发射后打击真主目标（Iran International）；⑥ Aoun 总统称此为\"危险升级\"，敦促美国制止以方攻击（Firstpost）；黎政府谴责以方占领领土，并感谢在挑战中的支持（Arab News）。另有观点类文章讨论\"真主是否已被逼绝境\"（Yahoo，分析向，未证实，）。研判：南部 215 站重建与扩容的工程前提再度恶化；重建资金到位节奏与停火谈判是唯一解，南部 ICT 工程维持\"观察+准备\"；非南部项目（一期/太阳能）不受直接影响。",
+              "opportunity": "⚠️ 风险研判南部重建窗口后移；非南部（贝鲁特/北部）与太阳能项目继续推进；密集跟踪停火谈判与美/海湾斡旋信号",
               "links": [
                 {
-                  "label": "NNA / AMAN 7/30",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国部委最新动态",
-          "items": [
-            {
-              "title": "⭐ Hajj 定位黎巴嫩为\"东西方数字枢纽\"：伊-叙区域互联 + 新海缆 + Starlink 定位备份",
-              "date": "2026-07-30（本期延续）",
-              "badge": "NNA / Tele Liban",
-              "text": "📰 要点：Hajj 强调黎巴嫩要成为东西方之间的数字服务枢纽，规划：① 与伊拉克、叙利亚的区域连接；② 新海缆；③ 数据保护与网络安全；④ Starlink 定位为\"互补的、初期面向企业的备份服务\"，而非光纤或移动网络的替代。研判：① \"数字枢纽 + 区域互联\"叙事与伊拉克过境走廊（8/29 Sanad）形成黎凡特跨国数据走廊呼应——Basra→欧洲 与 黎巴嫩东西枢纽可拼接；② 新海缆 = 登陆站+OTN 机会；③ Starlink 定位为备份而非替代，给地面光纤/移动网络留足空间，对华为有利。",
-              "opportunity": "🎯 商机研判① 黎-伊-叙区域互联可与伊拉克过境走廊拼接，跨国方案联合提报；② 新海缆登陆站+OTN；③ Starlink 仅备份=地面网络空间充足",
-              "links": [
-                {
-                  "label": "NNA / AMAN 7/30",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国政治与大选进展及内幕",
-          "items": [
-            {
-              "title": "📌 Hezbollah 解武议程 + 以军持续袭击：南部重建的安全前提仍未落实",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "区域局势综合",
-              "text": "📰 背景：2025/9/5 内阁批准黎军独掌武器计划后，什叶派部长曾集体退场抗议。以军对黎南部的打击持续，Hezbollah 解武进程与南部安全形势仍是重建的前置变量。研判：① 南部 215 站重建的工程安全前提取决于停火稳固与解武进展；② Aoun-Salam 改革推进受银行业游说与教派政治掣肘；③ 对华为：南部重建窗口仍需等安全落实，但 Ogero 光纤扩容（非南部）可先行。",
-              "opportunity": "🎯 商机研判南部重建等安全落实；非南部光纤扩容（35 万户一期）可先推进",
-              "links": [
-                {
-                  "label": "EUAA Lebanon",
-                  "url": "https://www.euaa.europa.eu/lebanon-country-focus/21-recent-political-developments"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "本国头部客户的新机会点",
-          "items": [
-            {
-              "title": "⭐ Ogero 三件套 + 数字枢纽海缆：光纤一期 35 万户 / LTE 390 站 / 358 站太阳能 / 新海缆登陆",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "Hajj 蓝图综合",
-              "text": "📰 机会拼图：① 光纤一期覆盖约 35 万户，三年宽带 5 万→50 万（FTTH 主干+OLT）；② LTE 扩展至 390 站，LTE-A 容量 10→40Gbps；③ 358 站太阳能（4MW/463kAh，$960 万，年省 $850 万）；④ 新海缆登陆（数字枢纽战略）。研判：Hajj 改革从蓝图转入采购启动，四条线均有华为对口方案（FTTH/LTE-A/PowerCube/海缆登陆 OTN），经意大利+本地 SI 合规路径参与。",
-              "opportunity": "🎯 商机研判（Ogero 三件套+海缆）FTTH 主干+LTE-A 扩容+PowerCube 太阳能+海缆登陆 OTN，四线并进，经意大利+本地 SI 参与",
-              "links": [
-                {
-                  "label": "Arab News（Ogero 规划）",
-                  "url": "https://www.arabnews.pk/node/2587374/business-economy"
+                  "label": "CTV News 9/8",
+                  "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNYW9qMTVDM1pCQ0ZDZV94aW9TNTh2M1NVWHByUDVUWFRmR2I1OWxyM2drUDAyWG04Ym5aMjE2RVJCUEMtS1A0LXdGNjR1WTd5TGZuTDRlMDRwUDZadmZSclB6anZsUGFYRmE1NXlSRXlMY0gyaVpQeFhZOVp2ZnltekFhQ2hRRFFNRkYxbjNscTM3WF9QNTlXS2RQV2czNm9HSExpUTYyWHJkb29EODd0LUpYaDNzUUhROHA2T3lybXhlRzA?oc=5"
                 },
                 {
-                  "label": "NNA 7/30",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
+                  "label": "Firstpost 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQc2x6SVhTN0w5dDJNOVhSM1NHTFVKaXlUSm11UzhuX1VuVHBzMXk2UUNjTXRWb190emxRZWxNSHdKOW5MbWMxX1hkYkZvQ1VGOXlLeHdFQVRIbkhZTV82MDF2dUpvZGtqeG83N0lmZGVCN25ydmhZSUNVTEpwaTQwYVY2Wl9taWpveFRkOUNabkRNVUFtQmRVOWVkNWZ4ZEFscHhUdDBBcThGLUs0V3lqUnVsMlkxNWRwSU1PeWxB0gG-AUFVX3lxTFBzbHpJWFM3TDl0Mk05WFIzU0dMVUppeVRKbXVTOG5fVW5UcHMxeTZRQ2NNdFZvX3R6bFFlbE1Id0o5bkxtYzFfWGRiRm9DVUY5eUt4d0VBVEhuSFlNXzYwMXZ1Sm9ka2p4bzc3SWZkZUI3bnJ2aFlJQ1VMSnBpNDBhVjZaX21pam94VGQ5Q1puRE1VQW1CZFU5ZWQ1ZnhkQWxweFR0MEFxOEYtSzRXeWpSdWwyWTE1ZHBJTU95bEE?oc=5"
+                },
+                {
+                  "label": "Dawn 9/6",
+                  "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9hQjJTN0VfSGVLNlh5dkVBOUlnN0pXbGphWXIzbU5PbWhPbThYeXNYVmhQN09sLUhjc0VSQ1dZUWFCaUhJcDNnV2d2TkkxdG92aTJjVW85UG1OTUMtWnRBMk9EWl9GLVM0aURqeTNDcmR3bGwyRmZabE9fd9IBTkFVX3lxTE9JOEdnM0poNlIzRDFIYktJY3QwZWZkR1NQOU53Q185YzRXZWxEMmpnWm0wXzB1RWlyZmFELTBYVG9uQ003dnIyUGdrcDh3UQ?oc=5"
                 }
               ]
             }
           ]
         },
         {
-          "category": "社交媒体新闻追踪",
+          "category": "社交媒体/媒体追踪",
           "items": [
             {
-              "title": "📱 Hajj 部长 · Tele Liban 专访阐述改革与数字枢纽战略",
-              "date": "2026-07-30（本期延续）",
-              "badge": "通信部 · Hajj 渠道",
-              "text": "📝 要点：Hajj 在 Tele Liban 节目系统阐述 Law 431 落实、Liban Telecom、光纤扩容、区域互联与海缆、数字枢纽定位。🔍 解读：部长亲自密集发声=改革进入实质交付期，采购信号密集释放。",
-              "opportunity": "🎯 商机研判改革实质交付期 = 密集对接 Ogero/TRA/Liban Telecom 技术团队",
+              "title": "📱 专家访谈：黎巴嫩的\"数字数据缺口\"引发",
+              "date": "2026-09-07",
+              "badge": "未交叉验证 · 单一访谈源",
+              "text": "📝 要点：Breaking AC News 9/7 刊发访谈，Mohamed Soufan 谈黎巴嫩的数字数据缺口（digital data gap）问题。（标题级信息，访谈未获取；单一信源，未交叉验证。）🔍 解读：数据缺口话题指向黎巴嫩统计体系、政务数据与数据基础设施的长期欠账——在 Hajj 部长\"数字枢纽\"蓝图下，数据治理与国家数据平台是迟早要补的课，值得对黎数字议程的长期观察。",
+              "opportunity": "🎯 商机研判数据治理/国家数据平台属长期需求储备；当前以跟踪为主，对黎数字议程观察",
               "links": [
                 {
-                  "label": "NNA / AMAN",
-                  "url": "https://www.aman-alliance.org/Home/ContentDetail/105401"
-                }
-              ]
-            },
-            {
-              "title": "📱 Ogero · 持续 LTE 扩展与光纤一期宣传",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "Ogero 官方渠道",
-              "text": "📝 要点：Ogero 官方持续宣传 LTE 扩展（至 390 站）与光纤一期（35 万户）进展。🔍 解读：Ogero 是黎巴嫩采购主体，其宣传节奏反映项目推进节点。",
-              "opportunity": "🎯 商机研判维护 Ogero 主席 Kreidieh 技术团队关系，捕捉招标节点",
-              "links": [
-                {
-                  "label": "Ogero 官网",
-                  "url": "https://www.ogero.gov.lb/"
-                }
-              ]
-            },
-            {
-              "title": "📱 总统府 · 持续推动电信改革与南部重建议程",
-              "date": "2026-08-24 ~ 09-04",
-              "badge": "总统府 · Aoun 渠道",
-              "text": "📝 要点：Aoun 总统持续将电信改革与南部重建列为国家优先议程。🔍 解读：总统级背书使改革不可逆，华为可建立长期伙伴关系。",
-              "opportunity": "🎯 商机研判总统级背书=改革不可逆，建立长期技术伙伴定位",
-              "links": [
-                {
-                  "label": "黎总统府",
-                  "url": "https://www.presidency.gov.lb/"
+                  "label": "Breaking AC News 9/7",
+                  "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPMThvR2xDbHJMRER2T3lPekV1Tkt5dTJ0WmhNZzZGTEhuVWJTRk9lWUFZNjhCYzhnb25uRmNEcWE3V0FNNGtxTVdmbi03a3VZMEctd1VjeXFTMFFhMWFwcG1INERQRnE4OTM3RjJZTTcxLTRDdEEzZU1vT2g4d2Jiak1LazRpSTl1Y1NfSnhqMkwwMTk3?oc=5"
                 }
               ]
             }
@@ -709,13 +583,13 @@
     }
   },
   "stats": {
-    "news": 29,
-    "opportunities": 24,
-    "telegram": 5,
+    "news": 21,
+    "opportunities": 31,
+    "telegram": 6,
     "countryCounts": {
-      "iq": 13,
-      "jo": 4,
-      "lb": 6
+      "iq": 10,
+      "jo": 9,
+      "lb": 2
     }
   }
 }
