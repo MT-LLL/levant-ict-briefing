@@ -25,6 +25,7 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -113,6 +114,8 @@ def call_llm(system, user):
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ],
+        # 流式输出：长 HTML 生成耗时数分钟，非流式请求长时间无数据会被断开。
+        "stream": True,
         # 不显式设置 max_tokens：让模型用剩余上下文生成长 HTML，
         # 输出被截断时结构校验会失败并阻断流程。
     }
@@ -120,36 +123,71 @@ def call_llm(system, user):
     # 需要覆盖时通过 LLM_TEMPERATURE 环境变量指定。
     if os.environ.get("LLM_TEMPERATURE"):
         payload["temperature"] = float(os.environ["LLM_TEMPERATURE"])
+
+    attempts = 3
+    for attempt in range(1, attempts + 1):
+        try:
+            return _stream_chat(base, api_key, payload)
+        except requests.HTTPError as e:
+            resp = e.response
+            # 模型不接受自定义 temperature：移除后重试
+            if resp is not None and resp.status_code == 400 and "temperature" in resp.text and "temperature" in payload:
+                print("模型不接受自定义 temperature，移除该参数后重试")
+                payload.pop("temperature")
+                continue
+            # 模型不存在/无权限时，列出账号当前可用模型，方便直接修正 LLM_MODEL
+            if resp is not None and resp.status_code in (400, 404):
+                try:
+                    models = requests.get(
+                        f"{base}/models",
+                        headers={"Authorization": f"Bearer {api_key}"},
+                        timeout=30,
+                    ).json()
+                    ids = [m.get("id") for m in models.get("data", [])]
+                    print(f"账号当前可用模型：{ids}", file=sys.stderr)
+                except Exception:  # noqa: BLE001
+                    pass
+            body = resp.text[:500] if resp is not None else str(e)
+            raise SystemExit(f"LLM 调用失败 {resp.status_code if resp is not None else ''}: {body}")
+        except (requests.ConnectionError, requests.Timeout, requests.ChunkedEncodingError) as e:
+            print(f"第 {attempt}/{attempts} 次请求连接中断：{e}", file=sys.stderr)
+            if attempt == attempts:
+                raise SystemExit("LLM 连接多次中断，请稍后重跑；若持续失败可尝试将 LLM_BASE_URL 改为 https://api.moonshot.ai/v1（国际站）")
+            time.sleep(10 * attempt)
+
+
+def _stream_chat(base, api_key, payload):
+    """流式调用 chat/completions，持续接收数据保持连接存活，返回完整文本。"""
     resp = requests.post(
         f"{base}/chat/completions",
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
         json=payload,
-        timeout=600,
+        stream=True,
+        timeout=(30, 120),  # 连接 30s；每个数据块间隔不超过 120s
     )
-    if resp.status_code == 400 and "temperature" in resp.text and "temperature" in payload:
-        print("模型不接受自定义 temperature，移除该参数后重试")
-        payload.pop("temperature")
-        resp = requests.post(
-            f"{base}/chat/completions",
-            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-            json=payload,
-            timeout=600,
-        )
     if resp.status_code != 200:
-        # 模型不存在/无权限时，列出账号当前可用模型，方便直接修正 LLM_MODEL
-        if resp.status_code in (400, 404):
-            try:
-                models = requests.get(
-                    f"{base}/models",
-                    headers={"Authorization": f"Bearer {api_key}"},
-                    timeout=30,
-                ).json()
-                ids = [m.get("id") for m in models.get("data", [])]
-                print(f"账号当前可用模型：{ids}", file=sys.stderr)
-            except Exception:  # noqa: BLE001
-                pass
-        raise SystemExit(f"LLM 调用失败 {resp.status_code}: {resp.text[:500]}")
-    return resp.json()["choices"][0]["message"]["content"]
+        raise requests.HTTPError(f"HTTP {resp.status_code}", response=resp)
+    chunks, received = [], 0
+    for line in resp.iter_lines(decode_unicode=True):
+        if not line or not line.startswith("data:"):
+            continue
+        data = line[5:].strip()
+        if data == "[DONE]":
+            break
+        try:
+            delta = json.loads(data)["choices"][0].get("delta", {}).get("content")
+        except (json.JSONDecodeError, KeyError, IndexError):
+            continue
+        if delta:
+            chunks.append(delta)
+            received += len(delta)
+            if received % 20000 < len(delta):
+                print(f"  已接收 {received} 字符…")
+    text = "".join(chunks)
+    print(f"流式接收完成，共 {len(text)} 字符")
+    if not text:
+        raise SystemExit("LLM 返回为空")
+    return text
 
 
 def extract_html(text):
