@@ -107,21 +107,34 @@ def call_llm(system, user):
     base = (os.environ.get("LLM_BASE_URL") or "https://api.moonshot.cn/v1").rstrip("/")
     model = os.environ.get("LLM_MODEL") or "kimi-k2.6"
     print(f"调用 LLM：{base} / {model}")
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        # 不显式设置 max_tokens：让模型用剩余上下文生成长 HTML，
+        # 输出被截断时结构校验会失败并阻断流程。
+    }
+    # 部分模型（如 kimi-k3）只允许 temperature=1，默认不传该参数；
+    # 需要覆盖时通过 LLM_TEMPERATURE 环境变量指定。
+    if os.environ.get("LLM_TEMPERATURE"):
+        payload["temperature"] = float(os.environ["LLM_TEMPERATURE"])
     resp = requests.post(
         f"{base}/chat/completions",
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-        json={
-            "model": model,
-            "messages": [
-                {"role": "system", "content": system},
-                {"role": "user", "content": user},
-            ],
-            "temperature": 0.3,
-            # 不显式设置 max_tokens：让模型用剩余上下文生成长 HTML，
-            # 输出被截断时结构校验会失败并阻断流程。
-        },
+        json=payload,
         timeout=600,
     )
+    if resp.status_code == 400 and "temperature" in resp.text and "temperature" in payload:
+        print("模型不接受自定义 temperature，移除该参数后重试")
+        payload.pop("temperature")
+        resp = requests.post(
+            f"{base}/chat/completions",
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+            json=payload,
+            timeout=600,
+        )
     if resp.status_code != 200:
         # 模型不存在/无权限时，列出账号当前可用模型，方便直接修正 LLM_MODEL
         if resp.status_code in (400, 404):
