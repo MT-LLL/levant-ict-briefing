@@ -1,0 +1,16 @@
+name: Weekly Briefing Mail
+on:
+  schedule:
+    - cron: "0 1 * * 5"      # 每周五 UTC 01:00 = 北京时间 09:00
+  workflow_dispatch:          # 允许在网页上手动触发
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python send_mail.py
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
