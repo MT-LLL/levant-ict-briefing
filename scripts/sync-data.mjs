@@ -20,6 +20,17 @@ const reportFiles = (await fs.readdir("legacy"))
   });
 if (!reportFiles.length) throw new Error("No briefing found in legacy/");
 const latestReport = reportFiles[0];
+
+// 确保每期简报在 public/archive/ 有可访问副本（"查看原版长报告"链接目标）
+for (const file of reportFiles) {
+  try {
+    await fs.access(`public/archive/${file}`);
+  } catch {
+    await fs.copyFile(`legacy/${file}`, `public/archive/${file}`);
+    console.log(`Archived ${file} to public/archive/`);
+  }
+}
+
 const reportHtml = await fs.readFile(`legacy/${latestReport}`, "utf8");
 const $ = cheerio.load(reportHtml);
 const summary = $(".ov-list li").map((_, el) => $(el).text().replace(/\s+/g, " ").trim()).get();
