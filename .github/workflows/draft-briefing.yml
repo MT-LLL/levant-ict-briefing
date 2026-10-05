@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: '0 6 * * 1'   # 每周一 UTC 06:00（巴格达 09:00 / 北京 14:00）
   workflow_dispatch:
+    inputs:
+      issue:
+        description: '指定期号（如 37-38），留空则自动计算下一期'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -56,7 +61,14 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
-        run: python scripts/draft_briefing.py
+          ISSUE_OVERRIDE: ${{ github.event.inputs.issue }}
+        run: |
+          if [ -n "$ISSUE_OVERRIDE" ]; then
+            echo "指定期号：$ISSUE_OVERRIDE"
+            python scripts/draft_briefing.py --issue "$ISSUE_OVERRIDE"
+          else
+            python scripts/draft_briefing.py
+          fi
 
       - name: Push branch and open PR
         if: steps.gate.outputs.run == 'true'
