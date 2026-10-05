@@ -116,8 +116,9 @@ def call_llm(system, user):
         ],
         # 流式输出：长 HTML 生成耗时数分钟，非流式请求长时间无数据会被断开。
         "stream": True,
-        # 不显式设置 max_tokens：让模型用剩余上下文生成长 HTML，
-        # 输出被截断时结构校验会失败并阻断流程。
+        # 部分模型（如 kimi-k2.6）不显式指定 max_tokens 时默认输出上限很小，
+        # 会导致长 HTML 被截断。默认 32k，可用 LLM_MAX_TOKENS 覆盖。
+        "max_tokens": int(os.environ.get("LLM_MAX_TOKENS", "32768")),
     }
     # 部分模型（如 kimi-k3）只允许 temperature=1，默认不传该参数；
     # 需要覆盖时通过 LLM_TEMPERATURE 环境变量指定。
