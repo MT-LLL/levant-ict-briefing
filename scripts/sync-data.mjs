@@ -35,10 +35,8 @@ const reportHtml = await fs.readFile(`legacy/${latestReport}`, "utf8");
 const $ = cheerio.load(reportHtml);
 const summary = $(".ov-list li").map((_, el) => $(el).text().replace(/\s+/g, " ").trim()).get();
 const issue = latestReport.replace(/\.html$/i, "").toUpperCase();
-const generatedMatch = $(".top-meta").first().text().match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
-const generated = generatedMatch
-  ? `${generatedMatch[1]}-${generatedMatch[2].padStart(2, "0")}-${generatedMatch[3].padStart(2, "0")}`
-  : new Date().toISOString().slice(0, 10);
+// 顶栏"更新于"显示发布日期（构建部署时间，巴格达时区 UTC+3）
+const generated = new Date(Date.now() + 3 * 3600 * 1000).toISOString().slice(0, 10);
 const period = $(".retro-date").first().text().replace(/\s+/g, " ").trim() || "最近完整14天";
 const report = { issue, period, generated, sourceFile: latestReport, summary, countries: {}, stats: {} };
 for (const [code, name] of [["iq","伊拉克"],["jo","约旦"],["lb","黎巴嫩"]]) {
