@@ -21,13 +21,27 @@ const reportFiles = (await fs.readdir("legacy"))
 if (!reportFiles.length) throw new Error("No briefing found in legacy/");
 const latestReport = reportFiles[0];
 
-// 确保每期简报在 public/archive/ 有可访问副本（"查看原版长报告"链接目标）
+// 发布日期（构建部署时间，巴格达时区 UTC+3）：顶栏、归档列表、原版报告三处统一联动
+const generated = new Date(Date.now() + 3 * 3600 * 1000).toISOString().slice(0, 10);
+const [gy, gm, gd] = generated.split("-").map(Number);
+const generatedZh = `${gy}年${gm}月${gd}日`;
+
+// 确保每期简报在 public/archive/ 有可访问副本（"查看原版长报告"链接目标）：
+// 最新一期的副本每次构建都重写，顶部日期同步为发布日期；历史期仅在缺失时复制，保持原貌
 for (const file of reportFiles) {
-  try {
-    await fs.access(`public/archive/${file}`);
-  } catch {
-    await fs.copyFile(`legacy/${file}`, `public/archive/${file}`);
-    console.log(`Archived ${file} to public/archive/`);
+  const target = `public/archive/${file}`;
+  if (file === latestReport) {
+    let archived = await fs.readFile(`legacy/${file}`, "utf8");
+    archived = archived.replace(/自动生成 · \d{4}年\d{1,2}月\d{1,2}日/, `自动生成 · ${generatedZh}`);
+    await fs.writeFile(target, archived);
+    console.log(`Archived ${file}（发布日期已同步：${generatedZh}）`);
+  } else {
+    try {
+      await fs.access(target);
+    } catch {
+      await fs.copyFile(`legacy/${file}`, target);
+      console.log(`Archived ${file} to public/archive/`);
+    }
   }
 }
 
@@ -35,8 +49,6 @@ const reportHtml = await fs.readFile(`legacy/${latestReport}`, "utf8");
 const $ = cheerio.load(reportHtml);
 const summary = $(".ov-list li").map((_, el) => $(el).text().replace(/\s+/g, " ").trim()).get();
 const issue = latestReport.replace(/\.html$/i, "").toUpperCase();
-// 顶栏"更新于"显示发布日期（构建部署时间，巴格达时区 UTC+3）
-const generated = new Date(Date.now() + 3 * 3600 * 1000).toISOString().slice(0, 10);
 const period = $(".retro-date").first().text().replace(/\s+/g, " ").trim() || "最近完整14天";
 const report = { issue, period, generated, sourceFile: latestReport, summary, countries: {}, stats: {} };
 for (const [code, name] of [["iq","伊拉克"],["jo","约旦"],["lb","黎巴嫩"]]) {
