@@ -1,7 +1,8 @@
 name: Auto draft briefing
 
-# 半自动出刊流水线：
-#   定时/手动触发 → 检查是否到期 → 采集素材 → LLM 起草简报 → 自动建 PR → 人工审阅合并 → pages.yml 自动部署
+# 全自动出刊流水线：
+#   定时/手动触发 → 检查是否到期 → 采集素材 → LLM 起草简报 → 结构校验 → 建 PR → 自动合并 → 触发部署
+# 校验不通过则整轮失败、不会产生 PR；合并后可随时在 History 中回退。
 # 定时任务只在"到期"时执行；手动触发（workflow_dispatch）视为有意为之，强制执行。
 
 on:
@@ -18,6 +19,7 @@ permissions:
   contents: write
   pull-requests: write
   issues: write   # 用于自动创建 auto-draft 标签
+  actions: write  # 合并后触发 pages.yml 部署（GITHUB_TOKEN 的合并不会自动触发 push 事件）
 
 jobs:
   draft:
@@ -72,6 +74,7 @@ jobs:
 
       - name: Push branch and open PR
         if: steps.gate.outputs.run == 'true'
+        id: pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ steps.draft.outputs.issue }}
@@ -82,29 +85,49 @@ jobs:
           BRANCH="auto/briefing-${ISSUE}"
           git checkout -B "$BRANCH"
           git add "legacy/${ISSUE}.html" data/raw/
-          git commit -m "auto: ${ISSUE} 双周简报草稿（AI 生成，待人工审阅）"
+          git commit -m "auto: ${ISSUE} 双周简报（AI 生成）"
           git push -f -u origin "$BRANCH"
-          gh label create "auto-draft" --color "7C3AED" --description "AI 自动起草，待人工审阅" --force || true
-          gh pr create \
-            --title "📰 ${ISSUE} 双周简报草稿（AI 生成，待审阅）" \
+          gh label create "auto-draft" --color "7C3AED" --description "AI 自动起草" --force || true
+          PR_URL=$(gh pr create \
+            --title "auto: ${ISSUE} 双周简报（AI 自动生成）" \
             --body "$(cat <<'EOF'
           ## 🤖 自动起草说明
 
-          本 PR 由 **Auto draft briefing** 工作流生成：
+          本 PR 由 **Auto draft briefing** 工作流生成并将**自动合并**：
 
           1. `scripts/collect.py` 采集 Google News RSS + Telegram 公开频道素材（见 `data/raw/`）
           2. `scripts/draft_briefing.py` 调用 LLM 以上一期为结构模板生成本期 HTML
-          3. 结构校验已通过（必需标记齐全）
+          3. 结构校验已通过（必需标记齐全）后方才建 PR
 
-          ## ✅ 合并前请人工审阅
+          合并后自动触发 `pages.yml` 部署到 GitHub Pages。
 
-          - [ ] 新闻条目真实、与三国 ICT 相关，无编造内容
-          - [ ] 链接可打开、指向正确来源
-          - [ ] KPI 数字与条目数一致
-          - [ ] 期号、日期、统计周期正确
-          - [ ] 商机与合规内容表述恰当
+          ## 🔍 事后审阅与回退
 
-          合并后 `pages.yml` 会自动构建并部署到 GitHub Pages。
+          如内容有问题，可直接在 main 历史里 revert 本次 squash 合并提交，或编辑 `legacy/` 中对应期号 HTML 后推送。
           EOF
           )" \
-            --label "auto-draft" || echo "PR 可能已存在，分支已更新：$BRANCH"
+            --label "auto-draft" 2>/dev/null) || PR_URL=$(gh pr list --head "$BRANCH" --json url --jq '.[0].url')
+          echo "PR: $PR_URL"
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Auto-merge PR and trigger deploy
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ steps.pr.outputs.pr_url }}
+        run: |
+          MERGED=0
+          for i in 1 2 3 4 5; do
+            if gh pr merge "$PR_URL" --squash --delete-branch; then MERGED=1; break; fi
+            echo "合并未就绪，10s 后重试（$i/5）"
+            sleep 10
+          done
+          if [ "$MERGED" = "1" ]; then
+            echo "已自动合并：$PR_URL"
+            sleep 3
+            # GITHUB_TOKEN 执行的合并不会触发 push 事件，需手动触发部署
+            gh workflow run pages.yml
+            echo "已触发 pages.yml 部署"
+          else
+            echo "::warning::自动合并失败，PR 保留待人工处理：$PR_URL"
+          fi
