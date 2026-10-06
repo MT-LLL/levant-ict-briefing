@@ -37,7 +37,7 @@ REQUIRED_MARKERS = [
     'ov-list', 'kpi', 'ch-card', 'ni-title', 'top-meta', 'retro-date',
 ]
 MAX_ITEMS_IN_PROMPT = 80
-MAX_TEXT_LEN = 400
+MAX_TEXT_LEN = 800
 
 
 def next_issue():
@@ -105,6 +105,13 @@ def build_prompt(issue, template_html, items):
 6. 只采用与三国 ICT / 通信 / 数字化 / 网络安全 / 政商环境相关的素材，丢弃无关条目（如社会新闻、体育、娱乐）；素材不足时如实减少条目数，禁止编造新闻、数据或链接。
 7. 商机信号放入 opp-box；无法交叉验证的条目使用 unverified 徽标。
 8. KPI 数字必须与实际内容条目数一致。
+9. 【信源内容内嵌】每条新闻条目（ni）必须在 ni-src 之前插入一个可展开的信源内容块，让读者不点开链接也能看到信源具体内容：
+   <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">…</div></details>
+   ni-detail-body 内容要求：第一行注明「来源：来源名 · 发布日期(YYYY-MM-DD)」；随后用简体中文概括该信源的具体内容（3-5 句，须严格依据素材 JSON 中该条的 text 字段，禁止编造）；若素材含较长正文，可在概括后附 1-2 句原文关键引述（可翻译为中文）；若该条 text 字段为空，则依据标题写 1-2 句并注明「（仅有标题信息，详情请点击原文链接）」。
+10. 在 <style> 中补充以下样式（保留原有全部 CSS，只做新增）：
+   .ni-detail{{margin-top:6px;font-size:12px;}}
+   .ni-detail summary{{cursor:pointer;color:#185FA5;font-size:12px;user-select:none;}}
+   .ni-detail-body{{margin-top:6px;padding:8px 10px;background:#f8fafc;border-left:3px solid #185FA5;border-radius:0 6px 6px 0;color:#3e4a5c;line-height:1.7;font-size:12px;}}
 
 【采集素材（JSON，含 platform/source/country/title/text/url/date）】
 {json.dumps(items, ensure_ascii=False, indent=1)}
@@ -251,7 +258,12 @@ def validate(html):
     mojibake = len(re.findall(r"[ÃÄÅ][\x80-\xbf»¼]", html))
     if mojibake > 10:
         raise SystemExit(f"编码校验失败：检测到 {mojibake} 处疑似双重编码乱码")
-    print(f"结构校验通过（{len(html)} 字符）")
+    # 软校验：信源内容块（ni-detail）缺失时告警但不阻断（人工审阅 PR 时可发现）
+    n_detail = html.count('class="ni-detail"')
+    n_items = len(re.findall(r'class="ni[ "]', html))
+    if n_detail < max(1, n_items // 2):
+        print(f"警告：信源内容块偏少（ni-detail {n_detail} 个 / 新闻条目约 {n_items} 条），请在 PR 审阅时检查")
+    print(f"结构校验通过（{len(html)} 字符，ni-detail {n_detail} 个）")
 
 
 def main():

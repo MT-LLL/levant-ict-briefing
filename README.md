@@ -62,7 +62,7 @@ npm run dev
 
 `.github/workflows/draft-briefing.yml` 每周一 UTC 06:00 检查是否到出刊时间，到期则自动执行（也可在 Actions 页面手动触发，手动触发会跳过到期检查强制执行）：
 
-1. **采集**：`scripts/collect.py` 抓取 Google News RSS（三国 × ICT 关键词，查询配置见 `config/collection.json`）和 `config/sources.json` 中的 Telegram 公开频道，素材存入 `data/raw/`，单个信源失败不阻断流程，健康度写入 `data/raw/health-*.json`
+1. **采集**：`scripts/collect.py` 抓取 Google News RSS（三国 × ICT 关键词，查询配置见 `config/collection.json`）和 `config/sources.json` 中的 Telegram 公开频道，并为新闻条目补抓报道正文（`fetch_article_text` 开关，best-effort），素材存入 `data/raw/`，单个信源失败不阻断流程，健康度写入 `data/raw/health-*.json`。生成的简报在每条新闻下内嵌可展开的「查看信源内容」块（ni-detail），读者不点链接也能看到信源要点
 2. **起草**：`scripts/draft_briefing.py` 调用 LLM（OpenAI 兼容接口），以上一期 `legacy/` 简报为结构模板生成新期 HTML，并通过结构校验（必需标记缺失或输出过短则失败中止）
 3. **审阅**：自动推送 `auto/briefing-wN-N` 分支并创建 PR，人工核对内容真实性、链接、KPI 数字后合并
 4. **部署**：合并到 `main` 触发 `pages.yml` 自动上线

@@ -65,6 +65,7 @@ for (const [code, name] of [["iq","伊拉克"],["jo","约旦"],["lb","黎巴嫩"
         date: $(item).find(".ni-date").first().text().trim(),
         badge: $(item).find(".vbadge,.sbadge,.unverified").first().text().trim(),
         text: $(item).find(".ni-text").first().text().replace(/\s+/g, " ").trim(),
+        detail: $(item).find(".ni-detail .ni-detail-body").first().text().replace(/\s+/g, " ").trim(),
         opportunity: $(item).find(".opp-box").first().text().replace(/\s+/g, " ").trim(),
         links: $(item).find(".ni-src a").map((_, a) => ({ label: $(a).text().replace(/^→\s*/, "").trim(), url: $(a).attr("href") })).get()
       });

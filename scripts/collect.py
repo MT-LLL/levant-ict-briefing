@@ -99,6 +99,66 @@ def dedupe(items):
     return out
 
 
+def _extract_main_text(html, max_chars):
+    """从新闻页面 HTML 提取正文段落（启发式：优先 article，其次长段落）。"""
+    soup = BeautifulSoup(html, "lxml")
+    for tag in soup(["script", "style", "nav", "header", "footer", "aside", "form"]):
+        tag.decompose()
+    root = soup.find("article") or soup.body or soup
+    paras = [p.get_text(" ", strip=True) for p in root.find_all(["p", "li"])]
+    paras = [p for p in paras if len(p) >= 40]
+    text = "\n".join(paras)
+    return text[:max_chars].strip()
+
+
+def fetch_article_text(item, max_chars):
+    """抓取新闻条目的正文，写入 item['text']（best-effort，失败保持原样）。
+
+    Google News 跳转页不执行 JS 时拿不到真实 URL，退而求其次：
+    在跳转页里正则搜索指向站外的文章链接再抓一次。
+    """
+    url = item.get("url") or ""
+    if not url.startswith("http"):
+        return False
+    try:
+        resp = requests.get(url, headers=UA, timeout=12, allow_redirects=True)
+        resp.raise_for_status()
+        html = resp.text
+        final_host = re.sub(r"^https?://(www\.)?", "", resp.url).split("/")[0]
+        if "google." in final_host:
+            # 跳转中间页：找站外原文链接
+            ext = re.findall(r'href="(https?://[^"]+)"', html)
+            ext = [u for u in ext if not re.search(r"google\.|gstatic|youtube|schema\.org", u)]
+            if not ext:
+                return False
+            resp = requests.get(ext[0], headers=UA, timeout=12, allow_redirects=True)
+            resp.raise_for_status()
+            html = resp.text
+        text = _extract_main_text(html, max_chars)
+        if len(text) >= 80:
+            item["text"] = text
+            return True
+    except Exception:  # noqa: BLE001 单个条目失败不影响整体
+        pass
+    return False
+
+
+def enrich_article_texts(items, cfg):
+    """为没有正文的新闻条目补抓正文，数量与开关由配置控制。"""
+    if not cfg.get("fetch_article_text", False):
+        return {"fetched": 0, "skipped": 0}
+    limit = cfg.get("article_fetch_limit", 40)
+    max_chars = cfg.get("article_max_chars", 1500)
+    targets = [it for it in items if it.get("platform") == "News" and not it.get("text")][:limit]
+    fetched = 0
+    for it in targets:
+        if fetch_article_text(it, max_chars):
+            fetched += 1
+        time.sleep(0.5)
+    print(f"正文补抓：成功 {fetched}/{len(targets)} 条新闻")
+    return {"fetched": fetched, "skipped": len(targets) - fetched}
+
+
 def main():
     cfg = load_json(ROOT / "config" / "collection.json")
     sources = load_json(ROOT / "config" / "sources.json")
@@ -143,6 +203,10 @@ def main():
 
     all_items = dedupe(all_items)
     all_items.sort(key=lambda x: x.get("date") or "", reverse=True)
+
+    # 3) 为新闻条目补抓正文（供 LLM 生成内嵌信源内容）
+    enrich = enrich_article_texts(all_items, cfg)
+    health.append({"source": "article_text", "status": "ok", **enrich})
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")

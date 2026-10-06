@@ -1,6 +1,9 @@
 {
   "days": 14,
   "max_items_per_query": 20,
+  "fetch_article_text": true,
+  "article_fetch_limit": 40,
+  "article_max_chars": 1500,
   "news_queries": [
     { "country": "iq", "q": "Iraq telecom OR 5G OR internet OR cybersecurity OR \"digital transformation\"" },
     { "country": "iq", "q": "Iraq \"ministry of communications\" OR CMC OR ITPC" },
