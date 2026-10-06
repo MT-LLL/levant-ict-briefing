@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 REQUIRED_MARKERS = [
     'id="tab-iq"', 'id="tab-jo"', 'id="tab-lb"',
     'ov-list', 'kpi', 'ch-card', 'ni-title', 'top-meta', 'retro-date',
+    '<script', 'switchTab', 'toggleCh',
 ]
 MAX_ITEMS_IN_PROMPT = 80
 MAX_TEXT_LEN = 800
@@ -98,7 +99,7 @@ def build_prompt(issue, template_html, items):
 
 【硬性要求】
 1. 输出且仅输出一个完整 HTML 文件，不要输出任何解释文字，不要用 Markdown 代码围栏包裹。
-2. 完整保留模板中的全部 CSS、JS、页面骨架与页脚结构，仅替换内容区域。
+2. 完整保留模板中的全部 CSS、**所有 <script> 交互脚本（switchTab / toggleCh / openRetro / closeRetro 等，逐字保留）**、页面骨架与页脚结构，仅替换内容区域；输出必须以 </html> 完整收尾，中途不得截断。
 3. 必须保留这些结构标记（构建系统依赖）：id="tab-iq" / id="tab-jo" / id="tab-lb" 三个国家面板、ov-list 决策总览列表、kpi 指标卡、ch-card 栏目卡 + ni 新闻条目（ni-title / ni-date / ni-text / ni-src / opp-box）、top-meta 头部信息、retro-date 周期标注。
 4. top-meta 必须更新为：伊拉克代表处 李辉 00621351 · MSSD AI团队 · 自动生成 · {today.year}年{today.month}月{today.day}日；页面标题与期号更新为 W{w1}—{w2}；retro-date 更新为统计周期。
 5. 全部正文使用简体中文；引用外文素材时翻译为中文，保留原始链接到 ni-src。
@@ -252,6 +253,8 @@ def validate(html):
         raise SystemExit(f"结构校验失败，缺少标记：{missing}")
     if len(html) < 20000:
         raise SystemExit(f"结构校验失败：HTML 过短（{len(html)} 字符），疑似截断")
+    if not html.rstrip().endswith("</html>"):
+        raise SystemExit(f"结构校验失败：HTML 未以 </html> 收尾（{len(html)} 字符），输出被截断")
     # 编码健全性：双重编码的乱码文本不含正常中文，且含大量 Latin-1 扩展字符
     if "伊拉克" not in html or "代表处" not in html:
         raise SystemExit("编码校验失败：未找到正常中文（疑似乱码或内容缺失）")
