@@ -62,7 +62,7 @@ jobs:
         env:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
-          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_MODEL: kimi-k3  # 固定 kimi-k3（长输出与模板遵循稳定）；如需更换模型请改这里。仓库 Variable LLM_MODEL 已不再使用
           ISSUE_OVERRIDE: ${{ github.event.inputs.issue }}
         run: |
           if [ -n "$ISSUE_OVERRIDE" ]; then
