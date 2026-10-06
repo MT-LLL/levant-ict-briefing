@@ -37,8 +37,8 @@ REQUIRED_MARKERS = [
     'ov-list', 'kpi', 'ch-card', 'ni-title', 'top-meta', 'retro-date',
     '<script', 'switchTab', 'toggleCh',
 ]
-MAX_ITEMS_IN_PROMPT = 80
-MAX_TEXT_LEN = 800
+MAX_ITEMS_IN_PROMPT = 60
+MAX_TEXT_LEN = 500
 
 
 def next_issue():
@@ -140,7 +140,7 @@ def call_llm(system, user):
         "stream": True,
         # 部分模型（如 kimi-k2.6）不显式指定 max_tokens 时默认输出上限很小，
         # 会导致长 HTML 被截断。默认 32k，可用 LLM_MAX_TOKENS 覆盖。
-        "max_tokens": int(os.environ.get("LLM_MAX_TOKENS", "32768")),
+        "max_tokens": int(os.environ.get("LLM_MAX_TOKENS", "65536")),
     }
     # 部分模型（如 kimi-k3）只允许 temperature=1，默认不传该参数；
     # 需要覆盖时通过 LLM_TEMPERATURE 环境变量指定。
@@ -294,8 +294,24 @@ def main():
         print(f"[dry-run] prompt 已写入 {out.relative_to(ROOT)}（{len(user)} 字符），未调用 API")
         return
 
-    html = postprocess(extract_html(call_llm(system, user)))
-    validate(html)
+    html = None
+    last_err = None
+    for attempt in (1, 2):
+        raw = call_llm(system, user)
+        candidate = postprocess(extract_html(raw))
+        try:
+            validate(candidate)
+            html = candidate
+            break
+        except SystemExit as e:
+            last_err = e
+            print(f"第 {attempt} 次生成未通过校验：{e}")
+            print(f"输出开头：{raw[:200]!r}")
+            print(f"输出结尾：{raw[-200:]!r}")
+            if attempt == 1:
+                print("自动重试一次…")
+    if html is None:
+        raise SystemExit(f"两次生成均未通过校验：{last_err}")
 
     out_path = ROOT / "legacy" / f"w{w1}-{w2}.html"
     with open(out_path, "w", encoding="utf-8") as f:
