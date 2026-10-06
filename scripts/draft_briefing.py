@@ -26,7 +26,7 @@ import os
 import re
 import sys
 import time
-from datetime import datetime, timedelta
+from datetime import date, datetime
 from pathlib import Path
 
 import requests
@@ -71,10 +71,24 @@ def load_raw_items():
     return items
 
 
+def issue_period(w1, w2):
+    """根据期号（ISO 周）计算统计周期：W{w1} 周一 ~ W{w2} 周日。跨年自动回退上一年。"""
+    today = datetime.now().date()
+    for year in (today.isocalendar().year, today.isocalendar().year - 1):
+        try:
+            start = date.fromisocalendar(year, w1, 1)
+            end = date.fromisocalendar(year, w2, 7)
+        except ValueError:
+            continue
+        if (start - today).days <= 7:
+            return start, end
+    raise SystemExit(f"无法计算 W{w1}-{w2} 的统计周期")
+
+
 def build_prompt(issue, template_html, items):
     today = datetime.now()
-    period_start = today - timedelta(days=14)
-    period = f"{period_start.year}年{period_start.month}月{period_start.day}日 — {today.year}年{today.month}月{today.day}日"
+    start, end = issue_period(*issue)
+    period = f"{start.year}年{start.month}月{start.day}日 — {end.year}年{end.month}月{end.day}日"
     w1, w2 = issue
     system = (
         "你是伊拉克代表处 MSSD AI 团队的情报分析师，负责撰写面向伊拉克、约旦、黎巴嫩市场的 ICT 双周决策简报。"
