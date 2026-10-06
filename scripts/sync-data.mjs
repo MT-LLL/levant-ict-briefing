@@ -96,10 +96,11 @@ const archive = [];
 for (const file of archiveFiles) {
   const html = await fs.readFile(`public/archive/${file}`, "utf8");
   const page = cheerio.load(html);
-  const date = page(".top-meta").first().text().match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+  const dateMatch = page(".top-meta").first().text().match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
   archive.push({
     week: file.replace(/\.html$/i, "").toUpperCase().replace("-", "—"),
-    date: date ? `${date[1]}-${date[2].padStart(2, "0")}-${date[3].padStart(2, "0")}` : page(".retro-date").first().text().trim() || "历史期",
+    // 最新一期显示发布日期（与顶栏一致），历史期保留各自起草日期
+    date: file === latestReport ? generated : (dateMatch ? `${dateMatch[1]}-${dateMatch[2].padStart(2, "0")}-${dateMatch[3].padStart(2, "0")}` : page(".retro-date").first().text().trim() || "历史期"),
     file,
     current: file === latestReport
   });
