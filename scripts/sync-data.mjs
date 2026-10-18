@@ -88,7 +88,41 @@ report.stats = {
 };
 
 const sources = JSON.parse(await fs.readFile("config/sources.json", "utf8"));
-const socialSignals = JSON.parse(await fs.readFile("config/social-signals.json", "utf8"));
+// 社媒快讯 = config 人工精选 + 最新采集的 Telegram 条目自动补新（去重、按日期降序、取前 15 条）
+let socialSignals = JSON.parse(await fs.readFile("config/social-signals.json", "utf8"));
+try {
+  const rawFiles = (await fs.readdir("data/raw")).filter((n) => /^\d{4}-\d{2}-\d{2}\.json$/.test(n)).sort();
+  if (rawFiles.length) {
+    const raw = JSON.parse(await fs.readFile(`data/raw/${rawFiles[rawFiles.length - 1]}`, "utf8"));
+    const ccMap = { iq: "伊拉克", jo: "约旦", lb: "黎巴嫩" };
+    const hiKw = /招标|采购|许可|牌照|部长|签署|启动|上线|5G|价格|下调|安全|漏洞|攻击|断网|中断|华为|中兴/;
+    const seenUrls = new Set(socialSignals.map((s) => s.url));
+    const auto = (raw.items || [])
+      .filter((it) => it.platform === "Telegram" && it.url && !seenUrls.has(it.url))
+      .map((it) => {
+        const text = (it.text || "").replace(/\s+/g, " ").trim();
+        return {
+          id: "auto-" + Buffer.from(it.url).toString("base64url").slice(0, 12),
+          date: (it.date || "").slice(0, 10),
+          country: ccMap[it.country] || it.country || "",
+          platform: "Telegram",
+          account: (it.source || "").replace(/^@/, "@"),
+          priority: hiKw.test(text) ? "高" : "中",
+          title: (it.title || text).slice(0, 60),
+          summary: text.slice(0, 120),
+          impact: "请关注后续官方通报与招标、采购动态。",
+          url: it.url
+        };
+      })
+      .filter((s) => s.date && s.title);
+    socialSignals = [...auto, ...socialSignals]
+      .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+      .slice(0, 15);
+    console.log(`社媒快讯：人工 ${seenUrls.size} 条 + 自动补入 ${auto.length} 条`);
+  }
+} catch (e) {
+  console.warn("社媒快讯自动合并跳过：", e.message);
+}
 const complianceAnalysis = JSON.parse(await fs.readFile("config/compliance-analysis.json", "utf8"));
 
 await fs.mkdir("data", { recursive: true });
