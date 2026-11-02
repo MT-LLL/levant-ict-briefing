@@ -88,6 +88,30 @@ report.stats = {
 };
 
 const sources = JSON.parse(await fs.readFile("config/sources.json", "utf8"));
+// 接入状态与账号真实性分开：Telegram 自动采集；X / Facebook / LinkedIn 仅展示已核验官方链接。
+// Telegram 的 14 天消息数和异常状态取自最近一次采集健康度，避免沿用 config 中的历史计数。
+for (const source of sources) {
+  source.collectionMode = source.platform === "Telegram" ? "auto" : "link";
+  source.collectionDate = null;
+}
+try {
+  const healthFiles = (await fs.readdir("data/raw")).filter((n) => /^health-\d{4}-\d{2}-\d{2}\.json$/.test(n)).sort();
+  if (healthFiles.length) {
+    const healthFile = healthFiles[healthFiles.length - 1];
+    const health = JSON.parse(await fs.readFile(`data/raw/${healthFile}`, "utf8"));
+    const bySource = new Map(health.map((item) => [item.source, item]));
+    const collectionDate = healthFile.match(/\d{4}-\d{2}-\d{2}/)[0];
+    for (const source of sources.filter((item) => item.platform === "Telegram")) {
+      const result = bySource.get(`telegram:@${source.handle}`);
+      if (!result) continue;
+      source.collectionDate = collectionDate;
+      source.posts14d = result.status === "ok" ? (result.count || 0) : null;
+      source.status = result.status === "ok" ? "正常" : "采集异常";
+    }
+  }
+} catch (e) {
+  console.warn("信源健康度同步跳过：", e.message);
+}
 // 社媒快讯 = config 人工精选 + 最新采集的 Telegram 条目自动补新（去重、按日期降序、取前 15 条）
 let socialSignals = JSON.parse(await fs.readFile("config/social-signals.json", "utf8"));
 try {

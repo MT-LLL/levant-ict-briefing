@@ -8,10 +8,12 @@
     "owner": "Mustafa Sanad",
     "country": "伊拉克",
     "category": "通信部",
-    "posts14d": 10,
+    "posts14d": 4,
     "tier": "T1",
     "status": "正常",
-    "verifiedBy": "机构频道"
+    "verifiedBy": "机构频道",
+    "collectionMode": "auto",
+    "collectionDate": "2026-11-02"
   },
   {
     "id": "iq-sanad-x",
@@ -25,7 +27,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "账号明确标注伊拉克通信部长官方账号"
+    "verifiedBy": "账号明确标注伊拉克通信部长官方账号",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-cmc-tg",
@@ -36,10 +40,12 @@
     "owner": "Baligh Abu Kalal",
     "country": "伊拉克",
     "category": "通信监管",
-    "posts14d": 16,
+    "posts14d": 9,
     "tier": "T1",
     "status": "正常",
-    "verifiedBy": "CMC 官方频道"
+    "verifiedBy": "CMC 官方频道",
+    "collectionMode": "auto",
+    "collectionDate": "2026-11-02"
   },
   {
     "id": "iq-cmc-x",
@@ -53,7 +59,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "X 账号链接 cmc.iq，Telegram 官方频道反向列出"
+    "verifiedBy": "X 账号链接 cmc.iq，Telegram 官方频道反向列出",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-cmc-fb",
@@ -67,7 +75,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "CMC Telegram 官方频道反向列出"
+    "verifiedBy": "CMC Telegram 官方频道反向列出",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-itpc-x",
@@ -81,7 +91,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "X 账号链接 itpc.gov.iq"
+    "verifiedBy": "X 账号链接 itpc.gov.iq",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-pmo-x",
@@ -95,7 +107,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "总理府官方媒体账号"
+    "verifiedBy": "总理府官方媒体账号",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-mofa-x",
@@ -109,7 +123,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "外交部机构账号"
+    "verifiedBy": "外交部机构账号",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-mofa-tg",
@@ -120,10 +136,12 @@
     "owner": "Fuad Hussein",
     "country": "伊拉克",
     "category": "政府官员",
-    "posts14d": 22,
+    "posts14d": 8,
     "tier": "T2",
     "status": "正常",
-    "verifiedBy": "外交部机构频道"
+    "verifiedBy": "外交部机构频道",
+    "collectionMode": "auto",
+    "collectionDate": "2026-11-02"
   },
   {
     "id": "jo-trc-x",
@@ -137,7 +155,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "X 账号链接 trc.gov.jo"
+    "verifiedBy": "X 账号链接 trc.gov.jo",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "jo-modee-x",
@@ -151,7 +171,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "MoDEE 机构账号"
+    "verifiedBy": "MoDEE 机构账号",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "jo-pm-x",
@@ -165,7 +187,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "账号明确标注约旦首相府官方账号并链接 pm.gov.jo"
+    "verifiedBy": "账号明确标注约旦首相府官方账号并链接 pm.gov.jo",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "jo-ytj-x",
@@ -179,7 +203,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "账号链接 modee.gov.jo/ytj"
+    "verifiedBy": "账号链接 modee.gov.jo/ytj",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-tra-x",
@@ -193,7 +219,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "TRA 机构账号，持续发布监管招标"
+    "verifiedBy": "TRA 机构账号，持续发布监管招标",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-ogero-x",
@@ -207,7 +235,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "X 账号链接 ogero.gov.lb"
+    "verifiedBy": "X 账号链接 ogero.gov.lb",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-pm-x",
@@ -221,7 +251,9 @@
     "posts14d": null,
     "tier": "T1",
     "status": "已核验",
-    "verifiedBy": "账号明确标注黎巴嫩总理府官方账号并链接 pcm.gov.lb"
+    "verifiedBy": "账号明确标注黎巴嫩总理府官方账号并链接 pcm.gov.lb",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-mod-tg",
@@ -232,10 +264,12 @@
     "owner": "机构账号",
     "country": "伊拉克",
     "category": "政府机构",
-    "posts14d": 21,
+    "posts14d": 15,
     "tier": "T2",
     "status": "正常",
-    "verifiedBy": "机构频道"
+    "verifiedBy": "机构频道",
+    "collectionMode": "auto",
+    "collectionDate": "2026-11-02"
   },
   {
     "id": "iq-moi-tg",
@@ -246,10 +280,12 @@
     "owner": "机构账号",
     "country": "伊拉克",
     "category": "政府机构",
-    "posts14d": 98,
+    "posts14d": 6,
     "tier": "T2",
     "status": "正常",
-    "verifiedBy": "机构频道"
+    "verifiedBy": "机构频道",
+    "collectionMode": "auto",
+    "collectionDate": "2026-11-02"
   },
   {
     "id": "iq-mohe-tg",
@@ -260,10 +296,12 @@
     "owner": "机构账号",
     "country": "伊拉克",
     "category": "政府机构",
-    "posts14d": 18,
+    "posts14d": 19,
     "tier": "T2",
     "status": "正常",
-    "verifiedBy": "机构频道"
+    "verifiedBy": "机构频道",
+    "collectionMode": "auto",
+    "collectionDate": "2026-11-02"
   },
   {
     "id": "iq-mof-tg",
@@ -277,7 +315,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "正常",
-    "verifiedBy": "财政部官网 mof.gov.iq 首页社交链接（2026-11-03）"
+    "verifiedBy": "财政部官网 mof.gov.iq 首页社交链接（2026-11-03）",
+    "collectionMode": "auto",
+    "collectionDate": null
   },
   {
     "id": "iq-mof-x",
@@ -291,7 +331,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "财政部官网 mof.gov.iq 首页社交链接（2026-11-03）"
+    "verifiedBy": "财政部官网 mof.gov.iq 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-mof-fb",
@@ -305,7 +347,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "财政部官网 mof.gov.iq 首页社交链接（2026-11-03）"
+    "verifiedBy": "财政部官网 mof.gov.iq 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "iq-mop-fb",
@@ -319,7 +363,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "规划部官网 mop.gov.iq 首页社交链接（2026-11-03）"
+    "verifiedBy": "规划部官网 mop.gov.iq 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "jo-mofa-x",
@@ -333,7 +379,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "外交部官网 mfa.gov.jo 首页社交链接（2026-11-03）"
+    "verifiedBy": "外交部官网 mfa.gov.jo 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "jo-mofa-fb",
@@ -347,7 +395,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "外交部官网 mfa.gov.jo 首页社交链接（2026-11-03）"
+    "verifiedBy": "外交部官网 mfa.gov.jo 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-moph-x",
@@ -361,7 +411,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "公共卫生部官网 moph.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "公共卫生部官网 moph.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-moph-fb",
@@ -375,7 +427,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "公共卫生部官网 moph.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "公共卫生部官网 moph.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-mehe-x",
@@ -389,7 +443,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "教育部官网 mehe.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "教育部官网 mehe.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-mehe-fb",
@@ -403,7 +459,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "教育部官网 mehe.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "教育部官网 mehe.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-moe-fb",
@@ -417,7 +475,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "环境部官网 moe.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "环境部官网 moe.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-moa-x",
@@ -431,7 +491,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "农业部官网 agriculture.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "农业部官网 agriculture.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-moa-fb",
@@ -445,7 +507,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "农业部官网 agriculture.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "农业部官网 agriculture.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-moc-x",
@@ -459,7 +523,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "文化部官网 culture.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "文化部官网 culture.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-moc-fb",
@@ -473,7 +539,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "文化部官网 culture.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "文化部官网 culture.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-mot-x",
@@ -487,7 +555,9 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "旅游部官网 mot.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "旅游部官网 mot.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   },
   {
     "id": "lb-mot-fb",
@@ -501,6 +571,120 @@
     "posts14d": null,
     "tier": "T2",
     "status": "已核验",
-    "verifiedBy": "旅游部官网 mot.gov.lb 首页社交链接（2026-11-03）"
+    "verifiedBy": "旅游部官网 mot.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
+  },
+  {
+    "id": "jo-moin-x",
+    "platform": "X",
+    "handle": "moin_gov_jo",
+    "url": "https://x.com/moin_gov_jo",
+    "name": "约旦投资部",
+    "owner": "Tareq Abu Ghazaleh",
+    "country": "约旦",
+    "category": "投资与经商环境",
+    "posts14d": null,
+    "tier": "T1",
+    "status": "已核验",
+    "verifiedBy": "投资部官网 moin.gov.jo 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
+  },
+  {
+    "id": "jo-moin-fb",
+    "platform": "Facebook",
+    "handle": "moin.gov.jo",
+    "url": "https://www.facebook.com/moin.gov.jo",
+    "name": "约旦投资部",
+    "owner": "Tareq Abu Ghazaleh",
+    "country": "约旦",
+    "category": "投资与经商环境",
+    "posts14d": null,
+    "tier": "T1",
+    "status": "已核验",
+    "verifiedBy": "投资部官网 moin.gov.jo 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
+  },
+  {
+    "id": "jo-nepco-fb",
+    "platform": "Facebook",
+    "handle": "nepcoface",
+    "url": "https://www.facebook.com/nepcoface",
+    "name": "约旦国家电力公司 NEPCO",
+    "owner": "机构账号",
+    "country": "约旦",
+    "category": "国家输电",
+    "posts14d": null,
+    "tier": "T2",
+    "status": "已核验",
+    "verifiedBy": "NEPCO 官网 nepco.com.jo 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
+  },
+  {
+    "id": "jo-nepco-li",
+    "platform": "LinkedIn",
+    "handle": "national-electric-power-company-nepco-",
+    "url": "https://www.linkedin.com/company/national-electric-power-company-nepco-",
+    "name": "约旦国家电力公司 NEPCO",
+    "owner": "机构账号",
+    "country": "约旦",
+    "category": "国家输电",
+    "posts14d": null,
+    "tier": "T2",
+    "status": "已核验",
+    "verifiedBy": "NEPCO 官网 nepco.com.jo 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
+  },
+  {
+    "id": "lb-idal-x",
+    "platform": "X",
+    "handle": "Invest_Lebanon",
+    "url": "https://x.com/Invest_Lebanon",
+    "name": "黎巴嫩投资发展局 IDAL",
+    "owner": "机构账号",
+    "country": "黎巴嫩",
+    "category": "投资促进",
+    "posts14d": null,
+    "tier": "T1",
+    "status": "已核验",
+    "verifiedBy": "IDAL 官网 investinlebanon.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
+  },
+  {
+    "id": "lb-idal-fb",
+    "platform": "Facebook",
+    "handle": "InvestinLebanon",
+    "url": "https://www.facebook.com/InvestinLebanon",
+    "name": "黎巴嫩投资发展局 IDAL",
+    "owner": "机构账号",
+    "country": "黎巴嫩",
+    "category": "投资促进",
+    "posts14d": null,
+    "tier": "T1",
+    "status": "已核验",
+    "verifiedBy": "IDAL 官网 investinlebanon.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
+  },
+  {
+    "id": "lb-idal-li",
+    "platform": "LinkedIn",
+    "handle": "investment-development-authority-of-lebanon",
+    "url": "https://www.linkedin.com/company/investment-development-authority-of-lebanon",
+    "name": "黎巴嫩投资发展局 IDAL",
+    "owner": "机构账号",
+    "country": "黎巴嫩",
+    "category": "投资促进",
+    "posts14d": null,
+    "tier": "T1",
+    "status": "已核验",
+    "verifiedBy": "IDAL 官网 investinlebanon.gov.lb 首页社交链接（2026-11-03）",
+    "collectionMode": "link",
+    "collectionDate": null
   }
 ]

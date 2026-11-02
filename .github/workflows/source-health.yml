@@ -1,0 +1,41 @@
+name: Source Health Check
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install collector dependencies
+        run: pip install feedparser beautifulsoup4 lxml requests
+      - name: Collect sources and write health report
+        run: python scripts/collect.py
+      - name: Commit current collection results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw
+          if git diff --cached --quiet; then
+            echo "采集结果无变化"
+            exit 0
+          fi
+          git commit -m "更新信源采集健康度"
+          git pull --rebase origin main
+          git push origin main
+      - name: Refresh source status page
+        if: always()
+        run: gh workflow run pages.yml
+        env:
+          GH_TOKEN: ${{ github.token }}
