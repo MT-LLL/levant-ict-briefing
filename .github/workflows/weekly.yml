@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pip install beautifulsoup4 lxml
       - run: python scripts/send_mail.py
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
