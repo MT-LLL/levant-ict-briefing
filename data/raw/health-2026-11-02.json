@@ -7,7 +7,7 @@
  {
   "source": "news:iq:Iraq \"ministry of communications\" OR CMC",
   "status": "ok",
-  "count": 18
+  "count": 20
  },
  {
   "source": "news:jo:Jordan telecom OR 5G OR internet OR cybe",
@@ -17,7 +17,7 @@
  {
   "source": "news:jo:Jordan TRC OR \"ministry of digital econo",
   "status": "ok",
-  "count": 5
+  "count": 9
  },
  {
   "source": "news:lb:Lebanon telecom OR internet OR cybersecu",
@@ -42,7 +42,7 @@
  {
   "source": "news:lb:لبنان اتصالات OR انترنت OR أوجيرو",
   "status": "ok",
-  "count": 13
+  "count": 8
  },
  {
   "source": "telegram:@mociraq2023",
@@ -67,12 +67,17 @@
  {
   "source": "telegram:@moiiraqi",
   "status": "ok",
-  "count": 6
+  "count": 5
  },
  {
   "source": "telegram:@moheiq",
   "status": "ok",
   "count": 19
+ },
+ {
+  "source": "telegram:@mofiraq",
+  "status": "ok",
+  "count": 9
  },
  {
   "source": "article_text",
