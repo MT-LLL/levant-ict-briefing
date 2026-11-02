@@ -86,7 +86,7 @@ def inline_css(soup):
         except Exception:
             continue
         for el in elements:
-            el["style"] = (el.get("style", "") + ";" + decl).strip(";")
+            el["style"] = (decl + ";" + el.get("style", "")).strip(";")  # 元素已有内联样式优先
 
 
 def build_email_html(source_html):
@@ -102,18 +102,6 @@ def build_email_html(source_html):
     for nav in soup.select(".nav"):
         nav.decompose()
 
-    # 邮件无法使用 Tab：三个国家全部展开，并插入明显标题
-    for panel in soup.select(".country-panel"):
-        panel["style"] = "display:block;"
-        name = {"tab-iq": "🇮🇶 伊拉克", "tab-jo": "🇯🇴 约旦", "tab-lb": "🇱🇧 黎巴嫩"}.get(panel.get("id"), "")
-        if name:
-            h = soup.new_tag("h2")
-            h["style"] = "font-size:20px;color:#0b315b;margin:24px 0 10px;padding-bottom:8px;border-bottom:2px solid #0b315b;"
-            h.string = name
-            panel.insert(0, h)
-    # 邮件无法手风琴展开：栏目全部打开
-    for body in soup.select(".ch-body"):
-        body["style"] = "display:block;"
     # details 折叠在多数邮箱不可用：信源内容直接显示
     for d in soup.select("details.ni-detail"):
         body = d.select_one(".ni-detail-body")
@@ -121,9 +109,20 @@ def build_email_html(source_html):
         box["style"] = "margin-top:6px;padding:8px 10px;background:#f8fafc;border-left:3px solid #185FA5;color:#3e4a5c;line-height:1.7;font-size:12px;"
         box.string = "信源内容｜" + (body.get_text(" ", strip=True) if body else d.get_text(" ", strip=True))
         d.replace_with(box)
-    inline_css(soup)
-    return str(soup)
 
+    # 先内联原页面样式，再强制展开；顺序不能反，否则 display:none 会覆盖展开设置
+    inline_css(soup)
+    for panel in soup.select(".country-panel"):
+        panel["style"] = re.sub(r"(?:^|;)\s*display\s*:[^;]*", "", panel.get("style", "")) + ";display:block;"
+        name = {"tab-iq": "🇮🇶 伊拉克", "tab-jo": "🇯🇴 约旦", "tab-lb": "🇱🇧 黎巴嫩"}.get(panel.get("id"), "")
+        if name:
+            h = soup.new_tag("h2")
+            h["style"] = "font-size:20px;color:#0b315b;margin:24px 0 10px;padding-bottom:8px;border-bottom:2px solid #0b315b;"
+            h.string = name
+            panel.insert(0, h)
+    for body in soup.select(".ch-body"):
+        body["style"] = re.sub(r"(?:^|;)\s*display\s*:[^;]*", "", body.get("style", "")) + ";display:block;"
+    return str(soup)
 
 def main():
     filename = latest_issue()
