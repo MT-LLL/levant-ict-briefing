@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""在浏览器中展开原版简报全部内容，生成完整长页面截图。"""
+"""截取原版简报的综述首页首屏，不做任何内容展开或修改。"""
 
 import re
 from pathlib import Path
@@ -28,27 +28,9 @@ def main():
         browser = p.chromium.launch(args=["--no-sandbox", "--disable-dev-shm-usage"])
         page = browser.new_page(viewport={"width": 1280, "height": 1000}, device_scale_factor=1)
         page.goto(source.resolve().as_uri(), wait_until="load")
-        page.evaluate("""() => {
-          document.querySelectorAll('.country-panel').forEach(p => p.style.display = 'block');
-          document.querySelectorAll('.ch-body').forEach(b => b.style.display = 'block');
-          document.querySelectorAll('details').forEach(d => d.open = true);
-          document.querySelectorAll('.nav').forEach(n => n.remove());
-          document.getElementById('retroModal')?.remove();
-          const names = {'tab-iq':'🇮🇶 伊拉克', 'tab-jo':'🇯🇴 约旦', 'tab-lb':'🇱🇧 黎巴嫩'};
-          for (const [id, name] of Object.entries(names)) {
-            const panel = document.getElementById(id);
-            if (panel) {
-              const h = document.createElement('h2');
-              h.textContent = name;
-              h.style.cssText = 'font-size:22px;color:#0b315b;margin:28px 0 12px;padding-bottom:8px;border-bottom:2px solid #0b315b;';
-              panel.prepend(h);
-            }
-          }
-          window.scrollTo(0, 0);
-        }""")
-        page.screenshot(path=str(target), full_page=True, animations="disabled")
+        page.screenshot(path=str(target), full_page=False, animations="disabled")
         browser.close()
-    print(f"完整页面截图：{target}（{target.stat().st_size} 字节）")
+    print(f"综述首页首屏截图：{target}（{target.stat().st_size} 字节）")
 
 
 if __name__ == "__main__":
