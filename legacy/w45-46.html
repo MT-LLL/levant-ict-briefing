@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伊拉克代表处 ICT 双周简报 · 第45—46周</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:#EDEAE4;color:#1a1a1a;padding:20px 12px 40px;}
+.db{max-width:720px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #ddd;}
+.top-bar{background:#042C53;color:#fff;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;}
+.top-title{font-size:16px;font-weight:600;}
+.top-meta{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;}
+.top-week{font-size:11px;background:rgba(255,255,255,.12);padding:3px 12px;border-radius:20px;color:#B5D4F4;white-space:nowrap;}
+.top-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.retro-btn{background:#E8C76F;color:#3D2F05;border:none;padding:7px 14px;border-radius:18px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
+.personnel-link{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+.contact-info{margin:16px 14px 0;padding:14px 16px;background:linear-gradient(135deg,#FEF8E7 0%,#FCEFC7 100%);border:1px solid #E8C76F;border-radius:10px;display:flex;align-items:center;gap:12px;}
+.contact-icon{font-size:20px;flex-shrink:0;}
+.contact-text{font-size:13px;color:#3D2F05;line-height:1.5;}
+.contact-text b{color:#B8860B;font-weight:700;}
+.retro-btn:hover{background:#F4D284;transform:translateY(-1px);box-shadow:0 3px 10px rgba(232,199,111,0.4);}
+.retro-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:999;padding:20px;overflow-y:auto;}
+.retro-modal.show{display:flex;align-items:flex-start;justify-content:center;}
+.retro-panel{background:#fff;max-width:640px;width:100%;border-radius:14px;overflow:hidden;margin:20px auto;}
+.retro-head{background:linear-gradient(135deg,#042C53,#0A4A87);color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;}
+.retro-head h3{font-size:16px;font-weight:600;margin:0;}
+.retro-close{background:rgba(255,255,255,0.15);color:#fff;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;line-height:1;}
+.retro-close:hover{background:rgba(255,255,255,0.3);}
+.retro-body{padding:16px 18px;max-height:calc(100vh - 160px);overflow-y:auto;}
+.retro-item{border:1px solid #e0ddd8;border-radius:10px;padding:14px;margin-bottom:10px;transition:all 0.2s;background:#fff;}
+.retro-item:hover{border-color:#042C53;box-shadow:0 2px 8px rgba(4,44,83,0.1);}
+.retro-clickable{cursor:pointer;border-color:#042C53;background:linear-gradient(135deg,#fff 0%,#F0F6FC 100%);}
+.retro-clickable:hover{border-color:#0656A0;background:linear-gradient(135deg,#F0F6FC 0%,#E1EEFA 100%);transform:translateY(-2px);box-shadow:0 4px 12px rgba(4,44,83,0.15);}
+.retro-jump-hint{font-size:10.5px;color:#042C53;background:#B5D4F4;padding:3px 8px;border-radius:8px;font-weight:600;}
+.retro-item-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+.retro-week{font-size:11px;background:#EDEAE4;color:#042C53;padding:3px 9px;border-radius:10px;font-weight:600;}
+.retro-date{font-size:11px;color:#9a9a9a;}
+.retro-title{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:4px;}
+.retro-summary{font-size:11.5px;color:#555;line-height:1.55;}
+.retro-tags{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap;}
+.retro-tag{font-size:10px;background:#F5F3EF;color:#4a4a4a;padding:2px 8px;border-radius:8px;}
+.retro-current{background:#FFF9E6;border-color:#E8C76F;}
+.retro-current-badge{font-size:10px;background:#E8C76F;color:#3D2F05;padding:2px 8px;border-radius:8px;font-weight:700;}
+.retro-empty{text-align:center;padding:30px 20px;color:#999;font-size:12px;}
+.kpi-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px 16px;background:#F5F3EF;}
+.kpi{background:#fff;border:0.5px solid #e0ddd8;border-radius:8px;padding:10px 12px;}
+.kpi-lbl{font-size:11px;color:#888780;margin-bottom:4px;}
+.kpi-val{font-size:20px;font-weight:600;color:#1a1a1a;}
+.kpi-sub{font-size:11px;color:#b4b2a9;margin-top:2px;}
+.nav{display:flex;padding:0 16px;border-bottom:0.5px solid #e0ddd8;margin-top:4px;overflow-x:auto;}
+.nav-btn{font-size:12px;font-weight:600;padding:9px 14px;cursor:pointer;border:none;background:none;color:#888780;border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s,border-color .15s;}
+.nav-btn.active{color:#185FA5;border-bottom-color:#185FA5;}
+.nav-btn:hover{color:#1a1a1a;}
+.country-panel{display:none;padding:14px 16px 0;}
+.country-panel.active{display:block;}
+.flag-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+.flag-ico{font-size:20px;} .flag-name{font-size:16px;font-weight:600;}
+.flag-badge{font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;margin-left:4px;}
+.biq{background:#FAEEDA;color:#633806;} .bjo{background:#EAF3DE;color:#27500A;} .blb{background:#FCEBEB;color:#791F1F;}
+.ch-list{display:flex;flex-direction:column;gap:8px;padding-bottom:16px;}
+.ch-card{border:0.5px solid #e0ddd8;border-radius:8px;overflow:hidden;}
+.ch-card.secret{border-color:#534AB7;border-width:1px;}
+.ch-head{display:flex;align-items:center;gap:8px;padding:9px 13px;background:#fafaf8;cursor:pointer;user-select:none;}
+.ch-head.secret-head{background:#EEEDFE;}
+.ch-ico{font-size:14px;width:18px;text-align:center;}
+.ch-lbl{font-size:13px;font-weight:600;flex:1;}
+.ch-lbl.secret-lbl{color:#3C3489;}
+.ch-tag{font-size:10px;font-weight:600;padding:1px 8px;border-radius:20px;}
+.tag-blue{background:#E6F1FB;color:#0C447C;} .tag-gray{background:#F1EFE8;color:#5F5E5A;}
+.tag-lock{background:#3C3489;color:#CECBF6;}
+.ch-arr{font-size:11px;color:#b4b2a9;transition:transform .2s;}
+.ch-arr.open{transform:rotate(90deg);}
+.ch-body{display:none;border-top:0.5px solid #e0ddd8;}
+.ch-body.open{display:block;}
+.ni{padding:11px 13px;}
+.ni+.ni{border-top:0.5px solid #ece9e4;}
+.ni-meta{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap;}
+.tier-dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+.t1{background:#A32D2D;} .t2{background:#BA7517;} .t3{background:#3B6D11;} .ts{background:#534AB7;}
+.ni-date{font-size:11px;color:#b4b2a9;}
+.vbadge{font-size:10px;font-weight:600;padding:1px 6px;border-radius:10px;background:#EAF3DE;color:#27500A;}
+.sbadge{font-size:10px;font-weight:600;padding:1px 6px;border-radius:10px;background:#EEEDFE;color:#3C3489;}
+.unverified{font-size:10px;font-weight:600;padding:1px 6px;border-radius:10px;background:#FCEBEB;color:#791F1F;}
+.ni-title{font-size:13px;font-weight:600;color:#111;margin-bottom:5px;line-height:1.4;}
+.ni-text{font-size:13px;color:#444;line-height:1.65;}
+.ni-src{font-size:11px;color:#185FA5;margin-top:5px;} .ni-src a{color:#185FA5;text-decoration:none;}
+.opp-box{background:#FAEEDA;border-left:3px solid #BA7517;padding:7px 10px;margin-top:8px;font-size:12px;color:#633806;line-height:1.55;border-radius:0 4px 4px 0;}
+.opp-lbl{font-weight:700;margin-bottom:2px;font-size:10px;letter-spacing:.5px;}
+.empty-txt{font-size:12px;color:#b4b2a9;font-style:italic;padding:10px 13px;}
+.overview-box{background:#F5F3EF;border-radius:8px;padding:13px 15px;margin-bottom:14px;}
+.ov-lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#888780;margin-bottom:9px;}
+.ov-list{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.ov-list li{font-size:13px;color:#444;padding-left:13px;position:relative;line-height:1.6;}
+.ov-list li::before{content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:#185FA5;}
+.opp-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px;}
+.opp-card{border:0.5px solid #e0ddd8;border-radius:8px;padding:13px;background:#fff;}
+.opp-card-ctry{font-size:10px;color:#b4b2a9;margin-bottom:6px;font-weight:600;}
+.opp-card-title{font-size:13px;font-weight:600;margin-bottom:5px;}
+.opp-card-desc{font-size:12px;color:#666;line-height:1.5;}
+.opp-card-tag{display:inline-block;margin-top:9px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:6px;}
+.tier-legend{display:flex;align-items:center;gap:14px;padding:11px 16px;border-top:0.5px solid #e0ddd8;flex-wrap:wrap;}
+.tl-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#666;}
+.lock-gate{padding:20px 16px;display:flex;flex-direction:column;align-items:center;gap:12px;background:#EEEDFE;}
+.lock-icon{font-size:32px;}
+.lock-desc{font-size:12px;color:#534AB7;text-align:center;line-height:1.6;}
+.lock-row{display:flex;gap:8px;width:100%;max-width:280px;}
+.lock-row input{flex:1;font-size:13px;padding:8px 12px;border:1.5px solid #AFA9EC;border-radius:8px;background:#fff;color:#3C3489;outline:none;font-family:inherit;letter-spacing:4px;}
+.lock-row input:focus{border-color:#534AB7;}
+.lock-row input.err-shake{border-color:#A32D2D;animation:shake .3s;}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.lock-btn{padding:8px 16px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;}
+.lock-btn:hover{background:#3C3489;}
+.lock-err{font-size:11px;color:#A32D2D;text-align:center;min-height:16px;}
+.secret-content{display:none;}
+.secret-content.unlocked{display:block;}
+.secret-ni{padding:11px 13px;border-top:0.5px solid #AFA9EC;}
+.rumor-box{background:#EEEDFE;border-left:3px solid #534AB7;padding:7px 10px;margin-top:8px;font-size:12px;color:#3C3489;line-height:1.55;border-radius:0 4px 4px 0;}
+.rumor-lbl{font-weight:700;margin-bottom:2px;font-size:10px;color:#534AB7;letter-spacing:.5px;}
+.unlock-hint{font-size:11px;color:#534AB7;text-align:center;padding:8px 13px 4px;background:#EEEDFE;border-bottom:0.5px solid #AFA9EC;}
+@media(max-width:520px){
+  .kpi-row{grid-template-columns:repeat(2,1fr);}
+  .opp-cards{grid-template-columns:1fr;}
+  .top-bar{flex-direction:column;align-items:flex-start;gap:8px;}
+  .top-right{flex-direction:row;align-items:center;gap:8px;align-self:stretch;justify-content:space-between;}
+  .retro-panel{margin:10px auto;}
+}
+
+/* === Compat: aliases for older class names used in W13-14 === */
+.channels{padding:0;}
+.news-item{padding:11px 13px;}
+.news-item+.news-item{border-top:0.5px solid #ece9e4;}
+.ni-head{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap;}
+.ni-tag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px;display:inline-block;letter-spacing:0.2px;}
+.tag-red{background:#FDEBE9;color:#9A2420;}
+.src-list{font-size:11px;color:#185FA5;margin-top:6px;display:flex;gap:10px;flex-wrap:wrap;}
+.src-link{color:#185FA5;text-decoration:none;}
+.src-link:hover{text-decoration:underline;}
+
+.slogan-banner{background:#E8C76F;padding:14px 24px;text-align:center;margin-top:16px;border-radius:0 0 12px 12px;}
+.slogan-zh{color:#3D2F05;font-size:14px;font-weight:700;line-height:22px;letter-spacing:1px;}
+.slogan-en{color:#5A4208;font-size:11px;font-style:italic;margin-top:4px;line-height:16px;}
+
+/* === 2026 Intelligence Dashboard UI refresh === */
+:root{--bg:#f4f6f8;--surface:#fff;--surface-soft:#f8fafc;--ink:#172033;--muted:#64748b;--line:#e2e8f0;--navy:#0b2748;--blue:#2563eb;--gold:#d5a72f;--radius:14px;--shadow:0 10px 30px rgba(15,23,42,.07)}
+html{scroll-behavior:smooth}body{background:radial-gradient(circle at 8% 0%,#e8f0fa 0,transparent 30%),radial-gradient(circle at 96% 10%,#f8edcf 0,transparent 24%),var(--bg);color:var(--ink);padding:28px 18px 52px}
+.db{max-width:1180px;border:1px solid rgba(148,163,184,.35);border-radius:18px;box-shadow:0 18px 55px rgba(15,23,42,.10);background:var(--surface)}
+.top-bar{position:relative;overflow:hidden;background:linear-gradient(125deg,#071d36 0%,#0b3765 64%,#17558f 100%);padding:25px 30px;min-height:108px}
+.top-bar::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-100px;top:-190px;background:rgba(255,255,255,.08)}
+.top-title{font-size:22px;letter-spacing:-.3px}.top-meta{font-size:12px;margin-top:7px;color:rgba(255,255,255,.62)}
+.top-right{position:relative;z-index:1;flex-direction:row;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;max-width:520px}
+.top-week{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.09);backdrop-filter:blur(8px);padding:6px 12px}
+.retro-btn{min-height:34px;border:1px solid rgba(255,255,255,.14);box-shadow:0 4px 12px rgba(0,0,0,.10)}
+.live-pill{display:inline-flex;align-items:center;gap:6px;color:#d8fbe5;background:rgba(16,185,129,.14);border:1px solid rgba(110,231,183,.3);padding:6px 10px;border-radius:18px;font-size:11px;font-weight:700}.live-pill::before{content:"";width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.14)}
+.kpi-row{gap:12px;padding:16px 20px;background:var(--surface-soft);border-bottom:1px solid var(--line)}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:13px 15px;box-shadow:0 1px 2px rgba(15,23,42,.03);transition:transform .18s ease,box-shadow .18s ease}.kpi:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(15,23,42,.07)}
+.kpi-lbl{text-transform:uppercase;letter-spacing:.7px;font-size:10px;color:var(--muted)}.kpi-val{font-size:26px;letter-spacing:-1px}.kpi-sub{color:#94a3b8}
+.nav{position:sticky;top:0;z-index:60;gap:6px;padding:9px 20px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 5px 16px rgba(15,23,42,.04)}
+.nav-btn{border:0;border-radius:9px;padding:9px 15px;color:var(--muted);font-weight:650}.nav-btn.active{color:#fff;background:var(--navy);border-bottom-color:transparent;box-shadow:0 4px 12px rgba(11,39,72,.18)}.nav-btn:hover{color:var(--ink);background:#edf2f7}.nav-btn.active:hover{color:#fff;background:var(--navy)}
+.country-panel{padding:20px 22px 0}.flag-row{margin-bottom:16px}.flag-name{font-size:19px;letter-spacing:-.2px}.flag-badge{padding:4px 10px}
+.overview-box{border:1px solid var(--line);background:linear-gradient(135deg,#f8fafc,#f3f7fb);padding:17px 18px;border-radius:12px}.ov-lbl{color:#2563eb}.ov-list{gap:9px}.ov-list li{line-height:1.7}
+.opp-cards{gap:13px}.opp-card{border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(15,23,42,.035);transition:transform .18s ease,border-color .18s ease}.opp-card:hover{transform:translateY(-2px);border-color:#b8c7da}.opp-card-title{font-size:14px}
+.ch-list,.channels{display:flex;flex-direction:column;gap:10px}.ch-card{border:1px solid var(--line);border-radius:12px;box-shadow:0 2px 7px rgba(15,23,42,.035);transition:border-color .18s ease,box-shadow .18s ease}.ch-card:hover{border-color:#c6d2e1;box-shadow:0 7px 20px rgba(15,23,42,.06)}
+.ch-head{min-height:47px;padding:11px 14px;background:linear-gradient(180deg,#fff,#fafbfd)}.ch-head:hover{background:#f4f7fb}.ch-lbl{font-size:13px}.ch-arr{background:#eef2f7;width:23px;height:23px;display:grid;place-items:center;border-radius:7px}
+.ch-body{background:#fff}.ni{padding:16px 17px}.ni-title{font-size:14px;line-height:1.55}.ni-text{font-size:13px;line-height:1.75;color:#3e4a5c}.ni-src a{display:inline-block;padding:3px 7px;border-radius:6px;background:#eff6ff;margin-top:3px}.opp-box{border-radius:6px;background:#fff8e6;padding:10px 12px}
+.contact-info{border-radius:12px;box-shadow:0 4px 15px rgba(213,167,47,.10)}.tier-legend{background:#fafbfd}.slogan-banner{margin:18px 22px 0;border-radius:12px;background:linear-gradient(120deg,#f5d878,#e8bf48)}
+.footer{padding:20px}.retro-panel{box-shadow:0 25px 70px rgba(15,23,42,.28)}
+/* Light treatment for the legacy political-business analysis module */
+#tab-pbe>div:first-child .flag-badge{background:#f3f0ff!important;color:#51458f!important;border-color:#c8c1eb!important}
+#tab-pbe>[style*="background:#16213e"]{background:#fff!important;border-color:var(--line)!important;box-shadow:var(--shadow);overflow-x:auto}
+#tab-pbe [style*="grid-template-columns:140px 1fr 1fr 1fr"]{min-width:780px}
+#tab-pbe [style*="background:#1f0e0e"],#tab-pbe [style*="background:#1a0e0e"]{background:#fff6f4!important;border-color:#f2c9c1!important}
+#tab-pbe [style*="background:#0c2818"],#tab-pbe [style*="background:#0a1a0a"],#tab-pbe [style*="background:#1a2d1a"]{background:#f1fbf4!important;border-color:#bfe4ca!important}
+#tab-pbe [style*="background:#1c1a0e"],#tab-pbe [style*="background:#2d2110"]{background:#fff9e9!important;border-color:#ead79f!important}
+#tab-pbe [style*="background:#0d1822"],#tab-pbe [style*="background:#0a1020"],#tab-pbe [style*="background:#1d2d4e"]{background:#f1f7fd!important;border-color:#bfd5e9!important}
+#tab-pbe [style*="background:#16122a"],#tab-pbe [style*="background:#1a1020"]{background:#f7f3ff!important;border-color:#d8cbed!important}
+#tab-pbe [style*="background:#161b22"],#tab-pbe [style*="background:#3d1f1f"]{background:#f8fafc!important;border-color:var(--line)!important}
+#tab-pbe [style*="background:#21262d"]{background:#e7edf3!important}
+#tab-pbe [style*="border-bottom:1px solid #21262d"]{border-bottom-color:#e5eaf0!important}
+#tab-pbe [style*="border-bottom:2px solid #30363d"]{border-bottom-color:#d8e0e8!important}
+#tab-pbe .ch-head[style]{background:#f8fafc!important}
+#tab-pbe .ch-head[style] .ch-lbl{color:var(--ink)!important}
+#tab-pbe [style*="color:#8b949e"],#tab-pbe [style*="color:#6e7681"]{color:#64748b!important}
+#tab-pbe [style*="color:#c9d1d9"]{color:#334155!important}
+#tab-pbe [style*="color:#ffa198"]{color:#9f3428!important}
+#tab-pbe [style*="color:#79e993"]{color:#18733a!important}
+#tab-pbe [style*="color:#f5d98d"]{color:#765817!important}
+#tab-pbe [style*="color:#a5d6ff"]{color:#245b88!important}
+#tab-pbe [style*="color:#e8c7ff"],#tab-pbe [style*="color:#d2a8ff"]{color:#6d43a4!important}
+#tab-pbe .ch-card{margin-bottom:10px}
+@media(max-width:760px){body{padding:0;background:#fff}.db{border:0;border-radius:0;box-shadow:none}.top-bar{align-items:flex-start;padding:20px;gap:16px}.top-title{font-size:19px}.top-right{justify-content:flex-start}.kpi-row{grid-template-columns:repeat(2,minmax(0,1fr));padding:12px}.nav{padding:8px 12px}.nav-btn{padding:8px 11px}.country-panel{padding:16px 12px 0}.opp-cards{grid-template-columns:1fr}.slogan-banner{margin:14px 12px 0}.ni{padding:14px 13px}}
+@media(max-width:760px){#tab-pbe [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
+
+/* === W41-42 新增：信源内容内嵌展开块 === */
+.ni-detail{margin-top:6px;font-size:12px;}
+.ni-detail summary{cursor:pointer;color:#185FA5;font-size:12px;user-select:none;}
+.ni-detail-body{margin-top:6px;padding:8px 10px;background:#f8fafc;border-left:3px solid #185FA5;border-radius:0 6px 6px 0;color:#3e4a5c;line-height:1.7;font-size:12px;}
+</style>
+</head>
+<body>
+<div class="db">
+
+<!-- HEADER -->
+<div class="top-bar">
+  <div>
+    <div class="top-title">代表处 ICT 双周简报</div>
+    <div class="top-meta">伊拉克代表处 李辉 00621351 · MSSD AI团队 · 自动生成 · 2026年11月2日</div>
+  </div>
+  <div class="top-right">
+    <span class="live-pill">Telegram 已接入 · 6 源</span>
+    <span class="top-week">第45—46周 · 11月2日—11月15日</span>
+    <a class="retro-btn personnel-link" href="personnel-monitoring.html">👥 政府人员监控</a>
+    <button class="retro-btn" onclick="openRetro()">📚 历史双周回顾</button>
+  </div>
+</div>
+
+<!-- KPI -->
+<div class="kpi-row">
+  <div class="kpi"><div class="kpi-lbl">本期新闻</div><div class="kpi-val">15</div><div class="kpi-sub">条有效新闻</div></div>
+  <div class="kpi"><div class="kpi-lbl">商机信号</div><div class="kpi-val">9</div><div class="kpi-sub">个</div></div>
+  <div class="kpi"><div class="kpi-lbl">交叉验证</div><div class="kpi-val">3</div><div class="kpi-sub">条多源独立证实</div></div>
+  <div class="kpi"><div class="kpi-lbl">参考</div><div class="kpi-val" style="color:#6e7681;">—</div><div class="kpi-sub">未随站点发布</div></div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button class="nav-btn active" onclick="switchTab('ov',this)">综述</button>
+  <button class="nav-btn" onclick="switchTab('iq',this)">🇮🇶 伊拉克</button>
+  <button class="nav-btn" onclick="switchTab('jo',this)">🇯🇴 约旦</button>
+  <button class="nav-btn" onclick="switchTab('lb',this)">🇱🇧 黎巴嫩</button>
+</div>
+
+<!-- ── 综述 ── -->
+<div id="tab-ov" class="country-panel active">
+  <div style="padding-top:14px;padding-bottom:16px;">
+    <div class="overview-box">
+      <div class="ov-lbl">本期核心摘要</div>
+      <ul class="ov-list">
+        <li>🇮🇶 <b>CMC 正式关停 Korek：关闭 4 个主交换局、14 省网络覆盖停止，与国家安全局联合执法</b>（CMC 官方 + IraqiNews/964media/Rudaw/Shafaq 等 5 家媒体交叉验证）— 一个月宽限期届满后执行，伊拉克电信监管史上最强硬执法；<b>Korek 随即法律反击</b>：指控 CMC 违抗法院裁决并威胁索赔（The New Region/Shafaq/BasNews 三源交叉），事件进入"行政执行 vs 司法救济"拉锯</li>
+        <li>🇮🇶 <b>伊拉克拟签署三项国际互联网过境协议</b>（IraqiNews/PUKmedia/Shafaq 三源交叉）— 拟在多哈签约，将欧洲互联网流量经伊拉克路由过境；与前期 IGWS/TELEPORT 开通、Sanad 过境走廊叙事衔接，"东西数字走廊"进入签约落地期</li>
+        <li>🇮🇶 <b>支付与采购双信号</b> — Shafaq 独家：伊拉克正与 Apple 商谈推出 Apple Pay（单一信源，待官方证实）；CMC 官方延长 2026 年第 M1 号"综合服务"公开招标公告期——直接投标窗口仍在</li>
+        <li>🇮🇶 <b>政务与媒体环境</b> — 高教部启动一年级新生经"قدم"（Qaddem）平台自助注册（录取选择为最终结果）；内政部长基尔库克会见新闻界，指示撤销针对记者的全部诉讼——媒体环境边际改善</li>
+        <li>🇯🇴 <b>TEDCO 中东行</b> — 美国马里兰州科创机构 TEDCO 在约旦、卡塔尔、阿联酋"搭建桥梁"（单一信源），约旦创新引资通道获新观察点；其余 ICT 条目仍稀缺</li>
+        <li>🇱🇧 <b>电信部长 Charles Hage 专访三连发</b> — Liban Telecom 启动程序推进（Alfa/Touch 资产清点估值、内阁决议划转）；<b>1,800+ 非法互联网网络 90 天内拆除</b>（持牌覆盖区）；Ogero 员工罢工解除——黎电信秩序重建组合拳进入执行期；ReliefWeb 发布电信形势报告 #11（中东升级背景下）</li>
+      </ul>
+      <div style="font-size:11px;color:#94a3b8;margin-top:10px;">注：本期于统计周期第 1 天（11/2）生成，覆盖 10月29日—11月2日采集素材中相对上期已报道条目的增量部分；11月3日—11月15日动态将并入下期补全。上期已报道事项（SIM 条例 7+7 配额、韩国大使会见、OIC 闭幕、Qaddem 异议表单等）不再重复，仅更新后续进展。</div>
+    </div>
+    <div class="opp-cards">
+      <div class="opp-card">
+        <div class="opp-card-ctry">🇮🇶 IRAQ</div>
+        <div class="opp-card-title">Korek 事件重塑市场 + 过境协议落地 + 支付/招标窗口</div>
+        <div class="opp-card-desc">Korek 14 省停网 → 用户迁移承接（Asiacell/Zain 扩容）、监管执法系统与合规审计需求；三项过境协议 → 骨干网/陆地光缆/数据中心/结算全链条；Apple Pay 若在案 → 收单与 Tokenization 生态；CMC M1 综合服务招标延长 → 立即调标书评估</div>
+        <span class="opp-card-tag" style="background:#FAEEDA;color:#633806;">最高</span>
+      </div>
+      <div class="opp-card">
+        <div class="opp-card-ctry">🇯🇴 JORDAN</div>
+        <div class="opp-card-title">TEDCO 科创搭桥（单一信源），存量管道继续跟踪</div>
+        <div class="opp-card-desc">TEDCO 中东行将约旦列为搭桥对象之一，跟踪是否演变为孵化器/基金/市场对接实体合作；存量机会（人口普查数据安全、网安执法协作、GII 背书）继续有效；持续加强 Petra / MoDEE / TRC 渠道定向补采</div>
+        <span class="opp-card-tag" style="background:#EAF3DE;color:#27500A;">观察</span>
+      </div>
+      <div class="opp-card">
+        <div class="opp-card-ctry">🇱🇧 LEBANON</div>
+        <div class="opp-card-title">Liban Telecom 重组 + 非法网络清退 + 应急电信韧性</div>
+        <div class="opp-card-desc">Alfa/Touch 资产评估划转 → BSS/计费迁移、网络整合与治理咨询；1,800+ 非法网络 90 天清退 → 持牌运营商用户回流、批发容量与监测定位技术需求；LTC SitRep #11 → 应急通信/网络韧性获人道资金持续投入；政局与资金仍是最大变量</div>
+        <span class="opp-card-tag" style="background:#FCEBEB;color:#791F1F;">改革执行·准备</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 政商环境分析 ── -->
+<div class="country-panel active" id="tab-pbe" style="display:block;">
+<div style="padding:14px 0 12px;">
+  <span class="flag-badge" style="background:#2d2a42;color:#c8b7ff;border:1px solid #6e5fb8;">🔭 政商环境综合分析 · W45-46 期</span>
+</div>
+
+<div class="ch-card" style="border-left:3px solid #C13515;">
+  <div class="ch-head" onclick="toggleCh(this)" style="background:#1a0e0e;">
+    <span class="ch-ico">🇮🇶</span>
+    <span class="ch-lbl" style="color:#ff8a76;">伊拉克 — 政商环境深度分析</span>
+    <span class="ch-tag tag-iq">高风险 · 高机会</span>
+    <span class="ch-arr">▶</span>
+  </div>
+  <div class="ch-body">
+    <div class="ni">
+      <div class="ni-text" style="line-height:1.85;">
+        <div style="background:#1f0e0e;border:1px solid #3d1f1f;border-radius:8px;padding:14px;">
+          <div style="font-size:11px;color:#f85149;font-weight:700;letter-spacing:1px;margin-bottom:8px;">📊 客观指标（基线）</div>
+          <div style="font-size:12px;color:#ffa198;line-height:1.9;">
+            • 营商便利 EDB：<b>172/190</b>（末尾梯队）<br>
+            • 感知 CPI：<b>28/100</b>，排名 <b>136/180</b><br>
+            • Coface 国家风险：<b>E 级</b>（最高风险）<br>
+            • 本期新增：<b>CMC 11/1 关停 Korek 4 个主交换局、14 省网络覆盖停止</b>（官方+5 媒体交叉）；<b>三项国际互联网过境协议拟签</b>（三源交叉）
+          </div>
+        </div>
+        <div style="background:#0c2818;border:1px solid #1a4a2e;border-radius:8px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;color:#56d364;font-weight:700;letter-spacing:1px;margin-bottom:8px;">📈 正向变量（W45-46 最新）</div>
+          <div style="font-size:12px;color:#79e993;line-height:1.9;">
+            • <b>11/1 CMC 关停 Korek 交换局</b>（官方 Telegram + IraqiNews/964media/Rudaw/Shafaq/Insight 交叉）——监管执法强度史无前例，市场出清<br>
+            • <b>10/30-31 三项国际互联网过境协议拟签</b>（IraqiNews/PUKmedia/Shafaq 三源交叉）——"东西数字走廊"进入签约落地期<br>
+            • <b>11/1 伊拉克据称与 Apple 商谈推出 Apple Pay</b>（Shafaq 单一信源）——支付数字化或获国际级背书<br>
+            • <b>11/1 CMC 延长 M1 号综合服务公开招标</b>（官方）——采购窗口延长<br>
+            • <b>11/1 高教部 Qaddem 平台启动一年级新生自助注册</b>（官方）——教育电子政务常态运转<br>
+            • <b>11/1 内政部长指示撤销针对记者的全部诉讼</b>（官方）——媒体环境边际改善
+          </div>
+        </div>
+        <div style="background:#1c1a0e;border:1px solid #3d3a1f;border-radius:8px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;color:#e8c76f;font-weight:700;letter-spacing:1px;margin-bottom:8px;">⚠️ 核心结构性风险</div>
+          <div style="font-size:12px;color:#f5d98d;line-height:1.8;">
+            <b>① 监管—司法对抗风险（新增）</b><br>
+            Korek 指控 CMC 违抗法院裁决并威胁索赔（三源交叉），事件存在反复可能；若司法推翻行政执行，监管权威与市场预期将再波动。<br><br>
+            <b>② 14 省服务中断的社会面影响（新增）</b><br>
+            大面积停网引发用户迁移执行、舆情与存量 Korek 合同/资产坏账风险，设备与运维合作方需评估敞口。<br><br>
+            <b>③ 制裁合规维持 Tier 1（存量）</b><br>
+            所有合同 OFAC 自审不放松。<br><br>
+            <b>④ 内容与实名监管延续（存量）</b><br>
+            SIM 实名条例（7+7 配额）执行推进中，数字内容条例细则待出。<br><br>
+            <b>⑤ 民兵格局固化（存量）</b><br>
+            安全溢价长期化，关键基础设施安保与尽调成本不减。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-card" style="border-left:3px solid #0656A0;">
+  <div class="ch-head" onclick="toggleCh(this)" style="background:#0a1020;">
+    <span class="ch-ico">🇯🇴</span>
+    <span class="ch-lbl" style="color:#79c0ff;">约旦 — 政商环境深度分析</span>
+    <span class="ch-tag tag-jo">低风险 · 稳增长</span>
+    <span class="ch-arr">▶</span>
+  </div>
+  <div class="ch-body">
+    <div class="ni">
+      <div class="ni-text" style="line-height:1.85;">
+        <div style="background:#0a1020;border:1px solid #1d3a5e;border-radius:8px;padding:14px;">
+          <div style="font-size:11px;color:#79c0ff;font-weight:700;letter-spacing:1px;margin-bottom:8px;">📊 客观指标（基线）</div>
+          <div style="font-size:12px;color:#a5d6ff;line-height:1.9;">
+            • 营商便利 EDB：<b>75/190</b><br>
+            • 感知 CPI：<b>50/100</b>，排名 <b>56/180</b><br>
+            • 政治稳定：King Abdullah II 长期稳定执政<br>
+            • 本期新增：TEDCO 中东行将约旦列为搭桥对象（单一信源，细节待落地）
+          </div>
+        </div>
+        <div style="background:#0c2818;border:1px solid #1a4a2e;border-radius:8px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;color:#56d364;font-weight:700;letter-spacing:1px;margin-bottom:8px;">📈 最新催化剂（W45-46）</div>
+          <div style="font-size:12px;color:#79e993;line-height:1.9;">
+            • <b>11/1 TEDCO（美国马里兰州技术经济发展机构）中东行</b>：在约旦、卡塔尔与阿联酋搭建科创桥梁（The Business Journals，单一信源）——约旦创新生态获美国州级机构关注<br>
+            • 存量正向延续有效：网安执法协作信誉、GII 全球第 60 位、人口普查数据安全公众沟通（详见前三期）<br>
+            • 下期动作：继续加强 Petra / MoDEE / TRC / 运营商官方渠道定向补采，验证 TEDCO 合作落地形式
+          </div>
+        </div>
+        <div style="background:#1c1a0e;border:1px solid #3d3a1f;border-radius:8px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;color:#e8c76f;font-weight:700;letter-spacing:1px;margin-bottom:8px;">⚠️ 主要风险点</div>
+          <div style="font-size:12px;color:#f5d98d;line-height:1.8;">
+            <b>① 结构性财政赤字与外援依赖（存量）</b><br>
+            外债/GDP 高企，ICT 投资仍依赖 EU/海湾援助资金，到位节奏决定采购节奏。<br><br>
+            <b>② 区域外溢风险（存量）</b><br>
+            区域多点紧张延续（黎以、伊朗叙事升温），风险溢价存续；约旦政局与合规环境三国最优，避风港效应持续。<br><br>
+            <b>③ 信源能见度低（延续）</b><br>
+            连续三期官方 ICT 发声节奏放缓，警惕信息真空期对存量项目节奏的误判。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ch-card" style="border-left:3px solid #2F7A2F;">
+  <div class="ch-head" onclick="toggleCh(this)" style="background:#0a1a0a;">
+    <span class="ch-ico">🇱🇧</span>
+    <span class="ch-lbl" style="color:#56d364;">黎巴嫩 — 政商环境深度分析</span>
+    <span class="ch-tag tag-lb">结构性高风险 · 冲突持续</span>
+    <span class="ch-arr">▶</span>
+  </div>
+  <div class="ch-body">
+    <div class="ni">
+      <div class="ni-text" style="line-height:1.85;">
+        <div style="background:#0a1a0a;border:1px solid #1a4a1a;border-radius:8px;padding:14px;">
+          <div style="font-size:11px;color:#56d364;font-weight:700;letter-spacing:1px;margin-bottom:8px;">📊 客观指标（基线）</div>
+          <div style="font-size:12px;color:#79e993;line-height:1.9;">
+            • 营商便利 EDB：<b>143/190</b><br>
+            • 感知 CPI：<b>23/100</b>，排名 <b>153/180</b><br>
+            • 国家债务/GDP：<b>约 250%</b><br>
+            • 本期新增：ReliefWeb 发布《LTC 电信形势报告 #11（2026年10月）》——冲突升级背景下电信部门状态跟踪
+          </div>
+        </div>
+        <div style="background:#0c2818;border:1px solid #1a4a2e;border-radius:8px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;color:#56d364;font-weight:700;letter-spacing:1px;margin-bottom:8px;">📈 W45-46 信号</div>
+          <div style="font-size:12px;color:#79e993;line-height:1.9;">
+            • <b>10/29 电信部长 Charles Hage 专访三连发（MTV）</b>：① Liban Telecom 启动程序推进——Alfa/Touch 资产清点估值、内阁决议确定划转资产；② 境内 <b>1,800+ 非法互联网网络</b>，持牌覆盖区内 <b>90 天内拆除</b>；③ 与 Ogero 员工达成协议、<b>罢工解除</b>——前期 Hajj 改革蓝图（Law 431 + Liban Telecom）开始兑现<br>
+            • <b>11/2 ReliefWeb LTC 电信 SitRep #11</b>：人道电信工作组持续跟踪，应急通信资金通道存续<br>
+            • <b>11/2 电力公司开始切断欠费公共机构供电</b>（单一信源）——电力危机外溢至政府部门
+          </div>
+        </div>
+        <div style="background:#1c1a0e;border:1px solid #3d3a1f;border-radius:8px;padding:14px;margin-top:12px;">
+          <div style="font-size:11px;color:#e8c76f;font-weight:700;letter-spacing:1px;margin-bottom:8px;">⚠️ 核心风险</div>
+          <div style="font-size:12px;color:#f5d98d;line-height:1.8;">
+            <b>① 冲突与区域升级压制投资（存量·强化）</b><br>
+            SitRep #11 主题即"中东升级"，安全叙事下重建资金与工程窗口不确定，ICT 采购以运维与小额数字化为主。<br><br>
+            <b>② 电力危机外溢（新增）</b><br>
+            公共机构遭断电——电信站点/机房供电保障风险同步上升，备电与油机成本承压，项目交付电力条款需重估。<br><br>
+            <b>③ 主权债务与银行危机（存量）</b><br>
+            政府大型 ICT 支出依赖外援，捐助方观望情绪不减。<br><br>
+            <b>④ 合规附件趋严（存量）</b><br>
+            海湾/EU 资金的"可信供应商"与透明采购要求从严，本地 SI 联合体仍是主要合规手段。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- ── /政商环境分析 ── -->
+
+
+<!-- ── 🇮🇶 伊拉克 ── -->
+<div id="tab-iq" class="country-panel">
+  <div class="flag-row"><span class="flag-ico">🇮🇶</span><span class="flag-name">伊拉克</span><span class="flag-badge biq">本期 8 条新闻</span></div>
+  <div class="channels">
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📡</span><span class="ch-lbl">本国运营商最新动态</span><span class="ch-tag tag-iq">2条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t1"></span><span class="ni-date">2026-11-01 ~ 11-02</span><span class="vbadge">✓ 多源交叉（CMC官方 + 5家媒体）</span></div>
+          <div class="ni-title">⭐ CMC 正式关停 Korek：关闭 4 个主交换局，14 省网络覆盖停止，与国家安全局联合执法</div>
+          <div class="ni-text"><b>📰 CMC 官方 Telegram 11/1</b>：CMC 宣布自 11/1（周日）起正式执行关停 Korek Telecom 交换局的程序，与<b>伊拉克国家安全局</b>合作实施；此前给予该公司用户的宽限期已届满，此举属针对该公司的监管与法律措施框架。专业团队已关闭 <b>4 个主交换局</b>：巴比伦省 1 个、巴士拉省 1 个、首都巴格达 2 个（官方原文在此截断）。<b>📰 媒体交叉（11/1-2）</b>：IraqiNews（"CMC suspends Korek services"）、964media（"14 省关停"）、Rudaw（"一个月宽限期结束后开始关停"）、Shafaq（"14 省关停启动"）、The Insight International（"宽限期结束后关停"）多源印证，确认关停覆盖 <b>14 个省</b>。<br><br><b>研判</b>：① 监管执法从牌照/合规处罚升级为<b>物理关停</b>，强度史无前例，Korek 市场地位实质出清；② 14 省在网用户面临迁移，<b>Asiacell / Zain 迎来承接窗口</b>（放号、携转、容量扩容需求即时上升）；③ Korek 已启动法律反击（见下条），事件存在反复可能，跟踪法院裁决与执行稳定性。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：伊拉克通信与媒体委员会 Telegram（@iraqcmc）· 2026-11-01（另经 IraqiNews · 2026-11-02、964media · 2026-11-02、Rudaw · 2026-11-01、شفق نيوز · 2026-11-01、The Insight International · 2026-11-02 交叉报道）<br>CMC 官方宣布：2026 年 11 月 1 日（周日）起正式启动关停 Korek Telecom 交换局的措施，与伊拉克国家安全局合作实施。官方称此举发生在给予该公司用户的宽限期届满之后，属于针对该公司采取的监管与法律措施框架的一部分。委员会说明，专业团队已关闭该公司 4 个主要交换局：巴比伦省 1 个、巴士拉省 1 个、首都巴格达 2 个（官方原文在此截断）。多家媒体补充确认：关停导致 Korek 网络在 14 个省的覆盖停止，一个月宽限期结束后开始执行。关键引述："المباشرة رسمياً بتنفيذ إجراءات إطفاء بدالات شركة كورك تيليكوم"（正式启动关停 Korek Telecom 交换局的程序）。</div></details>
+          <div class="ni-src"><a href="https://t.me/iraqcmc/11116" target="_blank" rel="noopener">→ Telegram 原文（CMC 11/1）</a> | <a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9GUE4xTjVTc2lrT0l2dVl4azVUaUZ1RGVMSEY4WEZzS3E0ZFdEU0thNGxhMGNxSUlsWWhlTy1xSThPN3c5U0dKUEZrTGJiX2lxS2d0Um05SXlJYUxHVUE?oc=5" target="_blank" rel="noopener">Rudaw</a> | <a href="https://news.google.com/rss/articles/CBMiREFVX3lxTE8wUzdtcHRmT2ZxOUc4SWFGcTlvV3JHcEFGUUxFTmxaNThyZ3RJQWp3UmZmTE1rNzNoRThDbFl3bW4tZmlT?oc=5" target="_blank" rel="noopener">964media</a> | <a href="https://news.google.com/rss/articles/CBMic0FVX3lxTE9QQ2Q0c1BmeE9sTTJYQm9fQTd4Y00xaFZLSEZUYUp4a29uT3ByX3ZSMlEwekd6VFRqTmF4SXViT0g0TzV1TEFtU2sxUS1ZN3VhU2ljc0V5Zm00T0tRcmxiRzFRQUY3blN6ZTBFWWhIdnVPekE?oc=5" target="_blank" rel="noopener">IraqiNews</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>用户迁移承接（Asiacell/Zain 放号与容量扩容）、监管执法与合规审计系统、关停区域网络资产处置与利旧；立即评估我方在 Korek 存量设备/运维敞口，同时跟踪承接方的扩容采购</div>
+        </div>
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t1"></span><span class="ni-date">2026-11-01</span><span class="vbadge">✓ 多源交叉（3家媒体）</span></div>
+          <div class="ni-title">⭐ Korek 法律反击：指控 CMC 违抗法院裁决，威胁就关停措施索赔</div>
+          <div class="ni-text"><b>📰 三源交叉（11/1）</b>：The New Region 报道 Korek 表示<b>可能就 CMC 措施寻求赔偿</b>；Shafaq News 报道 Korek 就<b>办公室关闭与法院裁决</b>问题向 CMC 发起挑战；BasNews 报道 Korek <b>指控伊拉克电信监管机构违抗法院裁决</b>。三条独立信源指向同一事实：Korek 已对 CMC 关停措施启动法律对抗。<br><br><b>研判</b>：① 事件进入"行政执行 vs 司法救济"拉锯，关停措施的稳定性存疑；② 若法院裁定支持 Korek，CMC 执法权威受挫、市场预期再波动；若维持，Korek 退出风险实质化；③ 对涉及 Korek 的存量合同、设备与运维合作，需按"坏账+资产处置"双情景评估风险敞口。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：The New Region · 2026-11-01；شفق نيوز（Shafaq News）· 2026-11-01；باسنیوز（BasNews）· 2026-11-01（三源标题交叉）<br>The New Region 报道：Korek 表示可能就 CMC 采取的措施寻求赔偿。Shafaq News 报道：Korek 就办公室关闭及法院裁决问题向 CMC 发起挑战。BasNews 报道：Korek 指控伊拉克电信监管机构违抗法院裁决。三条独立信源相互印证：Korek 已对 CMC 的关停措施启动法律对抗。（三篇均仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE9IMW81T3kxbFJYRVpLQXZicnhfRmNJWjZtdncxM1ZYN2xVY3QycnRZWXpyYVZFX2taaWRTWnB5RFc3VGFLbjM5SU1KSQ?oc=5" target="_blank" rel="noopener">→ The New Region</a> | <a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxPWC1wT1FVb3I2T1lXQzFRdW03NTM0cUdBSkpkT1hGQ2RYMk1SeEdTMmlBTnhXM01RN3otVHhVd1AwcXVKWk92amNwOXpfQjB6ODI5M0d0c25taS1adTJkcWd3Y1FQSkJwM1dOVTJ3dnRwYkhMZzgwREpuU3dxcWI0bHZQTHc1Ynd2cUFoWjF1eU1qQQ?oc=5" target="_blank" rel="noopener">Shafaq News</a> | <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE1VMEFuQUhSTkFKYmRvSnFkSlRDVzRxZTU4MGU3SFFHaVFoZmRQUWVjTGg2WEM3bm52OEZmbW5FV3VIZWFWRkhoZHYwdktUcVBB?oc=5" target="_blank" rel="noopener">BasNews</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🏛️</span><span class="ch-lbl">本国部委最新动态</span><span class="ch-tag tag-iq">2条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t2"></span><span class="ni-date">2026-11-01</span><span class="unverified">单一信源 · 待官方证实</span></div>
+          <div class="ni-title">📱 伊拉克据称正与 Apple 商谈推出 Apple Pay</div>
+          <div class="ni-text"><b>📰 Shafaq News 11/1 独家</b>："Iraq in talks with Apple to launch Apple Pay"——伊拉克正与苹果公司商谈在伊推出 Apple Pay 支付服务。素材仅含标题，谈判主体（央行/通信部）、时间表与落地条件均未披露，暂无官方确认。<br><br><b>研判</b>：若属实，将呼应伊拉克前期数字支付推进节奏（本地钱包与收单侧扩容），国际支付巨头入场会抬升 POS/收单/Tokenization 生态标准与合规门槛；待央行或官方渠道证实后再评估介入深度。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：شفق نيوز（Shafaq News）· 2026-11-01<br>标题显示：伊拉克正与苹果（Apple）公司商谈在伊拉克推出 Apple Pay 支付服务。本素材仅含标题，未披露谈判主体（央行或通信部）、时间表与落地条件等细节。（仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9vbi1QX3NPekNyTlJDSS0wcG1QYk85MTJra2xJUmdqNV9NRXIxZXNjNHcxNm1UMmhOOENpV3ZTWkZfc0hzbEFzZVBBUTFZMW1YYVRYcHV1UU9lc3lIdjZPQkppeHNKUXJrODExWU80cjd4V05xbFJzNG5RYjhTTHc?oc=5" target="_blank" rel="noopener">→ Shafaq News 原文</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>支付数字化生态（收单、Tokenization、风控合规）、银行侧系统改造；先核实谈判主体与阶段，再评估与本地收单/银行客户的联合切入点</div>
+        </div>
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t2"></span><span class="ni-date">2026-11-01</span><span class="vbadge">Telegram · CMC 官方</span></div>
+          <div class="ni-title">📌 CMC 延长 2026 年第 M1 号"综合服务"公开招标公告期</div>
+          <div class="ni-text"><b>📰 CMC 官方 Telegram 11/1</b>：发布《公告——延长公开招标公告（编号：م١ / خدمة شاملة / ٢٠٢٦）》，即 2026 年第 M1 号"综合服务"类公开招标延期。素材仅含标题，延长期限、标书范围与预算未披露。<br><br><b>研判</b>：监管机构综合服务类采购窗口延长=投标机会仍在；"综合服务"标的可能涵盖 IT 服务、系统运维或支撑外包，建议立即调取招标文件确认范围与资质要求。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：伊拉克通信与媒体委员会 Telegram（@iraqcmc）· 2026-11-01<br>官方公告：延长公开招标公告，招标编号为（م١ / خدمة شاملة / ٢٠٢٦），即 2026 年第 M1 号"综合服务"类公开招标。素材未含延长期限、标书范围、预算与资质要求等细节。（仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://t.me/iraqcmc/11114" target="_blank" rel="noopener">→ Telegram 原文（CMC 11/1）</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>直接投标窗口：立即获取 M1 号标书，评估"综合服务"范围（IT 服务/运维/外包）与我方资质匹配度，注意延期后的截标节点</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">💼</span><span class="ch-lbl">本国财团投资动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">W45-46 财团层面无可报道的重大 ICT 投资动态。</div></div></div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🗳️</span><span class="ch-lbl">本国政治与大选进展及</span><span class="ch-tag tag-iq">1条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t3"></span><span class="ni-date">2026-10-30</span><span class="vbadge">Telegram · 外交部官方</span></div>
+          <div class="ni-title">📌 外交部次长出席土耳其建国 103 周年招待会：强调深化伊土战略伙伴关系</div>
+          <div class="ni-text"><b>📰 外交部官方 Telegram 10/30</b>：次长、大使 Mohammed Hussein Bahr al-Uloom 10/29 出席土耳其驻巴格达使馆举办的建国 103 周年庆祝活动，转达外长 Fuad Hussein 祝贺，强调伊拉克致力于发展与土耳其的战略关系，拓展<b>政治、经济、安全</b>领域合作。<br><br><b>研判</b>：政商环境信号——伊土关系热络利于"发展之路"跨境项目推进，间接利好本期"欧洲流量经伊过境"的数字走廊叙事落地。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：伊拉克外交部 Telegram（@iqmofa）· 2026-10-30<br>外交部次长、大使穆罕默德·侯赛因·巴赫尔·阿勒乌卢姆 2026 年 10 月 29 日出席土耳其驻巴格达大使馆举办的土耳其共和国成立 103 周年庆祝活动。他致辞转达外长福阿德·侯赛因对土耳其政府与人民的祝贺，强调伊拉克致力于发展与土耳其的战略关系，拓展两国在政治、经济、安全领域的共同合作前景（原文在此截断）。</div></details>
+          <div class="ni-src"><a href="https://t.me/iqmofa/15767" target="_blank" rel="noopener">→ Telegram 原文（外交部 10/30）</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🌐</span><span class="ch-lbl">本国 ISP/DSP 和互联网运营商的投资动态</span><span class="ch-tag tag-iq">1条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t1"></span><span class="ni-date">2026-10-30 ~ 10-31</span><span class="vbadge">✓ 多源交叉（3家媒体）</span></div>
+          <div class="ni-title">⭐ 伊拉克拟签署三项国际互联网过境协议：多哈签约，欧洲流量经伊过境</div>
+          <div class="ni-text"><b>📰 三源交叉</b>：IraqiNews 10/31（"Iraq to sign transit deals in Doha routing European internet traffic"——将在多哈签署过境协议，把欧洲互联网流量经伊拉克路由）+ PUKmedia 10/30（"与<b>三个国家</b>签约便利通往欧洲的互联网流量"）+ Shafaq 10/30（"Iraq plans three international internet transit deals"——计划签署三项国际互联网过境协议）。<br><br><b>研判</b>：① 与上期 IGWS/TELEPORT 开通、Sanad 过境走廊叙事衔接，伊拉克"东西数字走廊"从宣示进入<b>签约落地期</b>；② 过境容量变现需要骨干网、陆地光缆、数据中心与互联互通结算体系全链条配套；③ 跟踪签约主体（通信部/ITPC）、合作三国名单与落地时间表。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：IraqiNews · 2026-10-31；PUKmedia · 2026-10-30；شفق نيوز（Shafaq News）· 2026-10-30（三源标题交叉）<br>IraqiNews 报道：伊拉克将在多哈签署过境协议，将欧洲互联网流量经伊拉克路由。PUKmedia 报道：伊拉克将与三个国家签署协议，便利通往欧洲的互联网流量。Shafaq News 报道：伊拉克计划签署三项国际互联网过境协议。三条独立信源相互印证：伊拉克正推进与三国的国际互联网过境签约安排。（三篇均仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNMUdkNHQxUXl3RU1QY2V4NFktWnJlWGtET3l4dGVlSTZBT3RjN0prZG9TZDRwd0VCbmZGbWwxSDQ5ZHhfcmZjbVNkVENFTDJJenRfM3hxb2dVdHpoS3otZjJ6aGVlWUVOcGxqOTV1dlhMWDE5TFFHZk04NS15OTN6QzlaTVM2SExLOEFyNG16emZZWlA0MHZIZDZFcw?oc=5" target="_blank" rel="noopener">→ IraqiNews</a> | <a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5FSHl3OFBZVXJIWU1lWThFMXg4R1pyeHk3T2FGSUx4YUlkWEdURVdKektOa0dlWng3TG5qLWQ5ZURaQXhlYVM4bWR0NV9kRDBPN09v?oc=5" target="_blank" rel="noopener">PUKmedia</a> | <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQNzJ3UWszRFB5aTBUZmJXOE9PUUJmcGpOSHI1aFRXUFJLUlVCdUx5OWtCZ1hCYW9uTkVneGtVcmRKOG1pWGF1ajJSZ0lQbi1MMFJaNFpRNmNONzJWSWVLejlTMnVtZHdsQk1lc1NzWnZNX3NQdkpYMGNYREZNR0ZRUkZVazNMZDktZWNv?oc=5" target="_blank" rel="noopener">Shafaq News</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>骨干传输网、陆地跨境光缆、数据中心与互联结算平台全链条机会；过境协议落地将拉动配套扩容，提前卡位技术方案与融资路径</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">⚔️</span><span class="ch-lbl">ICT 竞争对手最新动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">W45-46 无 ZTE / Ericsson / Nokia 在伊新的公开动作；Korek 事件引发的用户迁移利好 Asiacell/Zain（见"运营商"栏目）。</div></div></div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🌍</span><span class="ch-lbl">运营商在集团侧</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">Zain Group 层面本期无影响伊拉克业务的重大动态。</div></div></div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🇺🇸</span><span class="ch-lbl">美国对本国政治和经济活动的干预</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">W45-46 美方对伊拉克无 ICT 直接干预新动作；制裁合规审查维持 Tier 1。</div></div></div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📰</span><span class="ch-lbl">本国主流媒体对华为的报道与评价</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">W45-46 主流媒体未出现针对华为的报道与评价。</div></div></div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🎯</span><span class="ch-lbl">本国头部客户的新机会点</span><span class="ch-tag tag-iq">1条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t3"></span><span class="ni-date">2026-11-01</span><span class="vbadge">Telegram · 高等教育部官方</span></div>
+          <div class="ni-title">📌 高教部：一年级新生本周内经"قدم"（Qaddem）平台自助注册，录取选择为最终结果</div>
+          <div class="ni-text"><b>📰 高教部官方 Telegram 11/1</b>：第一阶段（一年级）学生将在本周内通过"قدم"（Qaddem）平台<b>由学生本人</b>完成注册；高教部提醒学生须精确、谨慎选择录取志愿，因该选择将成为<b>最终录取、不可撤回</b>。<br><br><b>解读</b>：招生季收官环节电子化，Qaddem 平台角色持续固化（前期已承载录取、异议表单与奖学金申请）；注册高峰并发下平台稳定性与数据一致性是刚需，后续学年扩容与运维可预期。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：伊拉克高等教育部 Telegram（@moheiq）· 2026-11-01<br>高等教育部宣布：第一阶段（一年级）学生将在本周内通过"قدم"（Qaddem）平台由学生本人完成注册。高教部提醒学生须精确、谨慎地选择录取志愿，因为该选择将成为最终录取结果、不可撤回。关键引述："على الطالب اختيار قبول بدقه وحذر كونه سيكون قبول نهائي لا رجعة فيه"（学生须准确谨慎选择录取，因其为最终录取、不可撤回）。</div></details>
+          <div class="ni-src"><a href="https://t.me/moheiq/14984" target="_blank" rel="noopener">→ Telegram 原文（高教部 11/1）</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>教育数字化平台运维扩容、高并发注册/查询系统、学籍数据治理；跟踪 Qaddem 平台注册季承载表现与扩容采购</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📱</span><span class="ch-lbl">社交媒体新闻追踪</span><span class="ch-tag tag-iq">1条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t3"></span><span class="ni-date">2026-11-01</span><span class="vbadge">Telegram · 内政部官方</span></div>
+          <div class="ni-title">📱 内政部长基尔库克会见新闻界：指示撤销针对记者的全部诉讼与投诉</div>
+          <div class="ni-text"><b>📝 官方发布（11/1）</b>：内政部长 Yasser al-Maliki 在基尔库克会见新闻界人士，指示<b>终止所有针对记者的司法诉讼与投诉案件</b>，以肯定"自由之笔"在支持安全与社会和平中的作用。<br><br><b>解读</b>：媒体环境边际改善信号，与 CMC 数字内容监管收紧形成对冲观察点；对媒体行业营商环境与舆论场活跃度是正面变量。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：伊拉克内政部 Telegram（@moiiraqi）· 2026-11-01<br>内政部长亚西尔·马利基在基尔库克会见新闻界人士，指示终止所有针对记者的司法诉讼与投诉案件，以肯定"自由之笔"在支持安全与社会和平中的作用。素材并附内政部官网文章链接（moi.gov.iq/?article=21201）。</div></details>
+          <div class="ni-src"><a href="https://t.me/moiiraqi/73845" target="_blank" rel="noopener">→ Telegram 原文（内政部 11/1）</a></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── 🇯🇴 约旦 ── -->
+<div id="tab-jo" class="country-panel" style="display:none;">
+  <div class="flag-row"><span class="flag-ico">🇯🇴</span><span class="flag-name">约旦</span><span class="flag-badge bjo">本期 1 条新闻</span></div>
+  <div class="channels">
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📡</span><span class="ch-lbl">本国运营商最新动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">W45-46 Orange Jordan / Zain Jordan / Umniah 无重大业务新动态。</div></div></div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🏛️</span><span class="ch-lbl">本国部委最新动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期无可核实条目；前期存量（人口普查数据安全公众沟通、GII 第 60 位）继续有效，下期加强 Petra / MoDEE / TRC 渠道定向补采。</div></div></div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">💼</span><span class="ch-lbl">本国财团投资动态</span><span class="ch-tag tag-jo">1条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t3"></span><span class="ni-date">2026-11-01</span><span class="unverified">单一信源 · 待验证</span></div>
+          <div class="ni-title">💼 美国马里兰 TEDCO 中东行：在约旦、卡塔尔与阿联酋搭建科创桥梁</div>
+          <div class="ni-text"><b>📰 The Business Journals 11/1</b>："TEDCO in the Middle East: Building bridges across Jordan, Qatar and the UAE"——美国马里兰州技术经济发展机构 TEDCO 在中东开展活动，于约旦、卡塔尔、阿联酋之间搭建合作桥梁，主题涉及跨区域科创合作。素材仅含标题，具体项目、金额与签约方未披露。<br><br><b>研判</b>：若属实，约旦科创生态获美国州级技术经济发展机构关注，利于初创引资与创新合作通道；需跟踪是否演变为孵化器/基金/市场对接等实体合作。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：The Business Journals · 2026-11-01<br>标题显示：美国马里兰州技术经济发展机构 TEDCO 在中东开展活动，在约旦、卡塔尔与阿联酋之间"搭建桥梁"，主题涉及跨区域科创合作。素材仅含标题，未披露具体项目、金额与签约方。（仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNVFVWc1lsaWFWNGktU29odk8yaVdERnB1ZFd4ejg3c1hMeEVIOTQ4T0dxRy1rMTc3T3ZZRzBJZFl6RmlKNGZsZ2F2Z1pwNjV1SkdFZDNyQW8yaTVyekM0TElRbmF3RlY1UUs4aVlIYU1kU3NuUDNLNTR6Yjl1YWpNSU9jM3NvLWdGWUhTQWs5b1BUc2FaS0R1blNCY3JEQzVGTHRHMQ?oc=5" target="_blank" rel="noopener">→ The Business Journals 原文</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>创新生态合作通道（孵化器/基金/初创对接）；跟踪 TEDCO 与约旦对口机构（MoDEE/ JSC 等）是否形成实体合作，评估生态卡位价值</div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🗳️</span><span class="ch-lbl">本国政治与大选进展及</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">约旦政治面平稳，本期无重大政治更迭。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🌐</span><span class="ch-lbl">本国 ISP/DSP 和互联网运营商的投资动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期约旦 ISP/数据中心层面无重大新动态。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">⚔️</span><span class="ch-lbl">ICT 竞争对手最新动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期 Nokia/Ericsson 在约旦无重大新动作。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🌍</span><span class="ch-lbl">运营商在集团侧</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期 Orange/Zain/Batelco 层面无影响约旦业务的重大动态。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🇺🇸</span><span class="ch-lbl">美国对本国政治和经济活动的干预</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期美国对约旦无 ICT 直接干预动作；前期 FBI 与约旦执法协作案件（ShinyHunters）继续跟踪。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📰</span><span class="ch-lbl">本国主流媒体对华为的报道与评价</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期约旦主流媒体未刊登针对华为报道。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🎯</span><span class="ch-lbl">本国头部客户的新机会点</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期无可证实的新客户机会点；TEDCO 科创搭桥信号见"财团投资动态"，存量机会见政商环境分析。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📱</span><span class="ch-lbl">社交媒体新闻追踪（官方渠道）</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">W45-46 约旦官方 Telegram/社交媒体无新增 ICT 相关动态。</div></div></div></div>
+  </div>
+</div>
+
+<!-- ── 🇱🇧 黎巴嫩 ── -->
+<div id="tab-lb" class="country-panel" style="display:none;">
+  <div class="flag-row"><span class="flag-ico">🇱🇧</span><span class="flag-name">黎巴嫩</span><span class="flag-badge blb">本期 6 条新闻</span></div>
+  <div class="channels">
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📡</span><span class="ch-lbl">本国运营商最新动态</span><span class="ch-tag tag-lb">2条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t1"></span><span class="ni-date">2026-10-29</span><span class="vbadge">MTV · 部长专访（官方表态）</span></div>
+          <div class="ni-title">⭐ 电信部长 Hage：Liban Telecom 启动程序推进中，正对 Alfa 与 Touch 资产清点估值</div>
+          <div class="ni-text"><b>📰 MTV Lebanon 10/29 专访</b>：电信部长 Charles Hage 表示，正努力完成 <b>Liban Telecom</b> 启动的各项程序，包括对 <b>Alfa 与 Touch</b> 两家移动运营商资产进行清点与估值，并确定哪些资产将<b>经内阁决议</b>划入新公司（专访内容在标题处截断；目前仅 MTV 单一渠道，建议跟踪官方通告二次确认）。<br><br><b>研判</b>：① 黎巴嫩移动行业国有化重组（Alfa/Touch 回归国有 Liban Telecom）进入<b>资产处置实操阶段</b>——前期 Hajj 改革蓝图（Law 431 + Liban Telecom）开始兑现；② 资产评估—划转—新公司治理链条将产生咨询、BSS/计费迁移、网络整合需求；③ 政局与资金仍是最大变量，跟踪内阁决议时点。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：MTV Lebanon · 2026-10-29（电信部长 Charles Hage 专访）<br>Hage 对 MTV 表示：正在努力完成 Liban Telecom 公司启动的各项程序，包括对 Alfa 与 Touch 两家移动运营商的资产进行清点与估值，并确定哪些资产将经内阁决议划入新公司（专访内容在标题处截断，后续细节未获取）。（以标题信息为主，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMi4wJBVV95cUxQWUdXN1VpTVpsNjZUVDk0ZEIwUmdMNkZQTjZLcGhLR09zQnl0enhFVThlVWRTV1g4WkFyU2lvSjk1WlhSenBlTU1GVGZhLUdQemtRSzFqWTZQNTg0WnVqa0laeUVSVVFGVkY1M3piWm9JWGtSOGNpTi1FWnB4dWg4UGtrQXg5aVAzcTJUNDZHakl0YTRfYlBCdEtyc3JvQkdLOFpHYVpKTHV6NVVnOTV6ZjlHcTV3MXppU0dVTnR0QjJzYzRHMEVKY0k2OVNIcDRUdnlWeTdYMkNCWnlzNlE1ZW84S09wUW5ZNEVCeTRLMmNoQTdVZklBWU85N1F0VUdhN1dJZDFaVEN3NWdybjNVRWJjMTJyVTk1MnY1Vk9Ea2RjVEVvbXI2R1RjaDJYV3B2NUp1aGpmWXdxakNoZlQ2Q0RQWWQ2SWZlemZNX2x4TmZFSjhVUWNScmI0LXBPLTFPV1lJ?oc=5" target="_blank" rel="noopener">→ MTV Lebanon 原文</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>BSS/计费系统迁移、两网资产与网络整合咨询、新公司治理 IT 架构；跟踪内阁决议与资产划转清单，提前准备整合方案包</div>
+        </div>
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t2"></span><span class="ni-date">2026-10-29</span><span class="vbadge">MTV · 部长专访（官方表态）</span></div>
+          <div class="ni-title">📌 Hage：已与 Ogero 员工达成协议，罢工取消</div>
+          <div class="ni-text"><b>📰 MTV Lebanon 10/29</b>：Hage 表示已与国有固网运营商 <b>Ogero</b> 的员工达成协议，员工方面已取消罢工。<br><br><b>研判</b>：固网运营恢复稳定，前期罢工导致的运维与服务风险解除；Ogero 现代化议程（前期改革蓝图中宽带扩容目标）有望回到正轨，但员工待遇与资金安排仍是长期变量。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：MTV Lebanon · 2026-10-29（电信部长 Charles Hage 专访）<br>Hage 对 MTV 表示：已与国有固网运营商 Ogero 的员工达成协议，员工方面已取消罢工。素材未披露协议具体条款（薪资、编制或资金安排）。（以标题信息为主，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxQdVllaGVpY0V1T3lJakFzRmI2WW1xVm5zR3EwazRPVjdlVzJXUk43dmJwTFE5ZmRMalV1MmhsUjF0YS11Wk5YRUlTSVNrcGlmMjNlU05hbmtTREFTMFpxd0RZRTdDYnlLcUJudWxlaFBqeTdkcEpzUG9TbjRpRmFDQjBtZ3cwV1NpX3NVdGNGV1ZZMGt6RnZZTGJwdkNBYWZ3NlJBRkVfNTZ6RDFxUHQ5VktNTlJucXF6NHZNUEZiRlVYeTB5SVhTQXZTMXNnNTQxRGdBc1BZaHpqR0RxRGhKaDJJN1B0dURFZmc?oc=5" target="_blank" rel="noopener">→ MTV Lebanon 原文</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🏛️</span><span class="ch-lbl">本国部委最新动态</span><span class="ch-tag tag-lb">2条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t1"></span><span class="ni-date">2026-10-29</span><span class="vbadge">MTV · 部长专访（官方表态）</span></div>
+          <div class="ni-title">⭐ Hage：境内超 1,800 个非法互联网网络，持牌覆盖区内 90 天内拆除</div>
+          <div class="ni-text"><b>📰 MTV Lebanon 10/29 专访</b>：Hage 表示黎巴嫩境内有<b>超过 1,800 个无牌照互联网网络</b>在运营，当局正努力遏制违规行为并提供替代方案；凡<b>持牌服务可达的区域，无牌照网络将在 90 天内被拆除</b>（专访内容在标题处截断；目前仅 MTV 单一渠道）。<br><br><b>研判</b>：① 灰色 ISP 清退=持牌运营商用户回流 + 骨干批发容量需求上升；② 执法需要监测/定位技术手段（频谱监测、流量识别、地理测绘）；③ 与 Liban Telecom 重组、Ogero 复工并读，黎巴嫩电信秩序重建"组合拳"成形，执行落地是关键观察点。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：MTV Lebanon · 2026-10-29（电信部长 Charles Hage 专访）<br>Hage 对 MTV 表示：黎巴嫩境内有超过 1,800 个无牌照互联网网络在运营，当局正努力遏制违规行为并提供替代方案；凡持牌服务可达的区域，无牌照网络将在 90 天内被拆除（专访内容在标题处截断）。（以标题信息为主，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMi4wJBVV95cUxNWU1DelZ3bF9hMzFPRHlOTTZrR2FtNEFNeTN3VmJmWFdvZ3JfQmsxcTgzdF94X21CZGxGVWZpTU5tYXo0cHk3bHdpOVVhZlhyZFNOalBJeHVRZFQ0TDRwOEctbDlxdDAyenBkcnV5RGFobS1MR2h2Z3ByRjd4dlpfd2gxdnJyYnZEUldRbFJUbElhRlNqeElHc3l4VUZ0Z3doYlZqSE0xZFM4a1pYNHVUcDI4b21DTFZidWFqd1FJV2JnR1l0R0o5VGU1WU5GajRVNU5uczJqUXVpMXFGMzV4VVFwMHdhd3VRSHpWeUhaR0RLU2NPai1yV1puTksxTVhrS1JxbXAxUkxWOUowYm5lYmI5MTNVNjN4VVVDb196azFUTFpIWE5sV2lMaldpRExvM25YS21Xcy1JdkptUkxyUUtiamZpeUNVSkhDaV9IZlRnU0NOWnhsWFVMNTdUbEhEQlZJ?oc=5" target="_blank" rel="noopener">→ MTV Lebanon 原文</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>持牌运营商用户承接与宽带扩容、骨干批发容量、非法网络监测/定位执法技术；跟踪 90 天清退令的执行机制与责任主体</div>
+        </div>
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t3"></span><span class="ni-date">2026-11-02</span><span class="unverified">单一信源 · 待验证</span></div>
+          <div class="ni-title">⚡ 黎巴嫩电力公司开始切断欠费公共机构供电</div>
+          <div class="ni-text"><b>📰 Daily Beirut 11/2</b>："Lebanon Electricity Begins Cutting Power to Public Agencies in Arrears"——黎巴嫩电力公司（EDL）开始对拖欠电费的公共机构实施断电。素材仅含标题，涉及机构范围与执行时间表未披露。<br><br><b>研判</b>：电力危机外溢至政府机构——电信站点/机房供电保障风险同步上升，运营商油机与备电成本承压；ICT 项目交付的电力保障条款需重新评估。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：Daily Beirut · 2026-11-02<br>标题显示：黎巴嫩电力公司（Electricity of Lebanon）开始对拖欠电费的公共机构实施断电。素材未披露涉及机构范围、欠费规模与执行时间表。（仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOd2I2aXA5Y3NZVzJyZW5IdUx0b2NPc20wbVdvd1U1S095bGhyRnNJdmFKQVpnTVNHX1ZVMVd0bVQxRWRaYWtIYUNXaF83OUFvbEFnS3N6VEh0Q3o3MV9iRV8wMDU3alczQ2djcmtyaWQ0X09kSmR0VnA4UkZMYTdyR3Vna3dBcnJ0c0FrODE1dWhBUURsdEUyN1ItbFNIbGFGLURraUtUTFNGUFIyZ2d0bA?oc=5" target="_blank" rel="noopener">→ Daily Beirut 原文</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">💼</span><span class="ch-lbl">本国财团投资动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期财团层面无可报道的重大 ICT 投资；前期捷克外交部邀约企业赴黎展会为存量信号。</div></div></div></div>
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🗳️</span><span class="ch-lbl">本国政治与大选进展及</span><span class="ch-tag tag-lb">1条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t3"></span><span class="ni-date">2026-10-31</span><span class="unverified">单一信源 · 待验证</span></div>
+          <div class="ni-title">🛡️ 伊朗参谋总长（经黎媒）：战时保护基础设施、要害资产与网络安全并确保其持续运行至关重要</div>
+          <div class="ni-text"><b>📰 MTV Lebanon 10/31</b>：伊朗武装力量参谋总长表示，战时保护基础设施、要害资产与<b>网络安全</b>并确保其持续运行至关重要。该表态经黎巴嫩媒体转述，素材仅含标题，完整讲话语境未获取。<br><br><b>研判</b>：区域网络战叙事升温信号——伊朗公开把网络安全与关键基础设施防护并列表态，海湾—黎凡特关键基础设施的网络防护预算有望上行；黎媒高亮转载亦反映区域对基础设施韧性的关注。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：MTV Lebanon · 2026-10-31<br>标题显示：伊朗武装力量参谋总长表示，战时保护基础设施、要害资产与网络安全并确保其持续运行至关重要。该表态经黎巴嫩媒体 MTV 转述，素材未含完整讲话语境。（仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE9CWlp3SkZqX2EzQU9kTEctbnplMTc5MEdncHhkRXlYMUxCZDc0aXdQQUFvYVBOWEI1MGJUMTc5Uk5VeU9Ca183MFlfVHJQZk0?oc=5" target="_blank" rel="noopener">→ MTV Lebanon 原文</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-card">
+      <div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🌐</span><span class="ch-lbl">本国 ISP/DSP 和互联网运营商的投资动态</span><span class="ch-tag tag-lb">1条</span><span class="ch-arr">▶</span></div>
+      <div class="ch-body">
+        <div class="ni">
+          <div class="ni-meta"><span class="tier-dot t2"></span><span class="ni-date">2026-11-02</span><span class="vbadge">ReliefWeb 官方报告</span></div>
+          <div class="ni-title">📡 ReliefWeb 发布黎巴嫩电信形势报告 #11（2026 年 10 月）：中东升级下的电信运行状态</div>
+          <div class="ni-text"><b>📰 ReliefWeb 11/2</b>：发布《Lebanon: Middle East Escalation, LTC Situation Report (Telecoms) #11: October 2026》。该报告属黎巴嫩人道主义电信工作组（LTC）例行形势通报，跟踪地区冲突升级背景下黎巴嫩电信部门运行状态；素材未含报告正文要点。<br><br><b>研判</b>：应急通信/网络韧性是人道资金持续投入方向；建议调取报告全文，定位受损节点、覆盖缺口与修复需求，对接人道采购通道。</div>
+          <details class="ni-detail"><summary>查看信源内容</summary><div class="ni-detail-body">来源：ReliefWeb · 2026-11-02<br>ReliefWeb 发布报告《黎巴嫩：中东升级，LTC 形势报告（电信）第 11 期：2026 年 10 月》。该报告属黎巴嫩人道主义电信工作组（LTC）例行形势通报，跟踪地区冲突升级背景下黎巴嫩电信部门的运行状况；素材未含报告正文要点与数据。（仅有标题信息，详情请点击原文链接）</div></details>
+          <div class="ni-src"><a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxPdkVZWDR4cHZlckhHMGdERWM4bGZGRTB3aWRjOUF1ZmdjNFJJTXF2ajBrQ1lzOWVSNHR3WVBLUjRxQUxRVGQ1ZHRtNkRtWmRHN2p3Q2RLZEZvOEl3ZUszVUF3OWUzdEZGdjZJeE53ODEtYUxlMEQwaEkyWU94THZrV29NY0VIQUk3Wlo3bzZ4U3h1U1VLcnhQQWd6a2EzN2hiSDZzdVJqV3RNbWpzbjlGWUkxbw?oc=5" target="_blank" rel="noopener">→ ReliefWeb 原文</a></div>
+          <div class="opp-box"><div class="opp-lbl">🎯 商机研判</div>应急通信设备、网络韧性修复、人道机构通信保障；调取 SitRep #11 全文定位受损节点与修复需求，对接 UNDP/人道采购通道</div>
+        </div>
+      </div>
+    </div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">⚔️</span><span class="ch-lbl">ICT 竞争对手最新动态</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期 Nokia/Ericsson/ZTE 在黎巴嫩无重大新动作。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🌍</span><span class="ch-lbl">运营商在集团侧</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期 Zain Group（touch 管理方）无影响黎巴嫩业务的重大集团动态；Alfa/Touch 资产划转进展见"运营商"栏目。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🇺🇸</span><span class="ch-lbl">美国对本国政治和经济活动的干预</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期美方对黎巴嫩无 ICT 直接干预新动作；美斡旋角色持续观察。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📰</span><span class="ch-lbl">本国主流媒体对华为的报道与评价</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期黎巴嫩主流媒体未刊登针对华为报道。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">🎯</span><span class="ch-lbl">本国头部客户的新机会点</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">本期无可证实的新客户机会点；Liban Telecom 重组与非法网络清退带来的机会见"运营商/部委"栏目。</div></div></div></div>
+    <div class="ch-card"><div class="ch-head" onclick="toggleCh(this)"><span class="ch-ico">📱</span><span class="ch-lbl">社交媒体/媒体追踪</span><span class="ch-tag tag-gray">无</span><span class="ch-arr">▶</span></div><div class="ch-body"><div class="ni" style="background:#FAF8F0;border-left:3px solid #E0DDD8;"><div class="ni-text" style="color:#8B8A85;font-style:italic;">W45-46 黎巴嫩官方 Telegram/社交媒体无新增 ICT 相关动态。</div></div></div></div>
+  </div>
+</div>
+
+<div class="retro-modal" id="retroModal" onclick="if(event.target===this)closeRetro()">
+  <div class="retro-panel">
+    <div class="retro-head">
+      <h3>📚 历史双周回顾</h3>
+      <button class="retro-close" onclick="closeRetro()">✕</button>
+    </div>
+    <div class="retro-body">
+
+      <!-- 最新期：第45—46周（当前）-->
+      <div class="retro-item retro-current">
+        <div class="retro-item-head">
+          <span class="retro-week">第45—46周</span>
+          <span class="retro-current-badge">当前</span>
+        </div>
+        <div class="retro-date">2026年11月2日 — 2026年11月15日</div>
+        <div class="retro-title">🇮🇶 CMC 关停 Korek 4 主交换局、14 省停网（官方+5 媒体交叉）；Korek 法律反击威胁索赔；三项国际互联网过境协议拟签（多哈/三源交叉）；Apple Pay 商谈（单一信源）；🇯🇴 TEDCO 中东搭桥；🇱🇧 Hage 三连发：Liban Telecom 资产评估、1800+ 非法网络 90 天清退、Ogero 罢工解除</div>
+        <div class="retro-tags">
+          <span class="retro-tag">15条新闻</span>
+          <span class="retro-tag">9商机</span>
+          <span class="retro-tag">3条多源交叉</span>
+          <span class="retro-tag">AI 自动起草</span>
+        </div>
+      </div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w43-44.html'">
+<div class="retro-item-head">
+<span class="retro-week">第43—44周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年10月19日 — 2026年11月1日</div>
+<div class="retro-title">🇮🇶 CMC SIM 条例正式批准（116号决定）+ 每人 7+7 配额；通信部长会见韩国大使；OIC 巴格达闭幕（55国/22外长）；内政部长宣布情报局"新季节"；🇯🇴 零条目；🇱🇧 伊黎外长会谈银行业挑战</div>
+<div class="retro-summary">🇮🇶 <b>CMC SIM 实名条例完成"批准—细则—配额"三步走</b>（720 天窗口+7 普通卡/7 上网卡上限），eKYC 采购窗口确认打开；<b>通信部长会见韩国大使</b>探讨通信与数字技术合作；<b>OIC 第52届外长会巴格达闭幕</b>；高教部电子政务双落地（异议表单+Qaddem 奖学金）。🇯🇴 有效条目为零。🇱🇧 伊黎外长会讨论黎银行业挑战。</div>
+<div class="retro-tags">
+<span class="retro-tag">9条新闻</span>
+<span class="retro-tag">6商机</span>
+<span class="retro-tag">🇮🇶8</span>
+<span class="retro-tag">🇱🇧1</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w41-42.html'">
+<div class="retro-item-head">
+<span class="retro-week">第41—42周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年10月5日 — 2026年10月18日</div>
+<div class="retro-title">🇮🇶 CMC 启动 SIM 实名重登记（720 天+人脸活体核验）+ IGWS/TELEPORT 卫星通信开通 + iQ Networks×Ooredoo 光纤协议；新防长/内政部长履职 + OIC 落地巴格达；🇯🇴🇱🇧 信源噪声高、条目收紧</div>
+<div class="retro-summary">🇮🇶 <b>CMC 实名重登记（Telecompaper+官方双源交叉）</b>：720 天过渡+证件读取/人脸活体比对；<b>通信部 IGWS 国际网关+TELEPORT 地面站投运</b>；<b>iQ Networks×Ooredoo 光纤协议</b>；国防部计算机局牵头跨安全机构数字系统会议。🇯🇴 有效条目为零。🇱🇧 真主党认领走私爆炸物（单一信源）。</div>
+<div class="retro-tags">
+<span class="retro-tag">16条新闻</span>
+<span class="retro-tag">1条多源交叉</span>
+<span class="retro-tag">🇮🇶15</span>
+<span class="retro-tag">🇱🇧1</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w39-40.html'">
+<div class="retro-item-head">
+<span class="retro-week">第39—40周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年9月21日 — 2026年10月4日</div>
+<div class="retro-title">🇮🇶 Starlink 正式获伊拉克官方运营许可 + 三城数据中心 + 部委电子政务扩容</div>
+<div class="retro-summary">🇮🇶 <b>Starlink 获 CMC 官方运营许可（三源交叉）</b>，数据不存卡塔尔、暂无本地网关；<b>巴格达、巴士拉、摩苏尔三城数据中心计划</b>出炉；国防部/内政部/高等教育电子政务高频落地；议会审议通信与信息部法案草案。🇯🇴 约旦在阿拉伯邮政论坛输出主动式监管模型并赢得 APPC 电商主席。🇱🇧 UAE-黎巴嫩百万人 AI 培训倡议 + RIPE NCC/ITU 数字会议。</div>
+<div class="retro-tags">
+<span class="retro-tag">18条新闻</span>
+<span class="retro-tag">12商机</span>
+<span class="retro-tag">🇮🇶12</span>
+<span class="retro-tag">🇯🇴1</span>
+<span class="retro-tag">🇱🇧5</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w37-38.html'">
+<div class="retro-item-head">
+<span class="retro-week">第37—38周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年8月25日 — 9月8日</div>
+<div class="retro-title">🇯🇴 约旦 AI 组合拳（HUMAIN MoU+政务 AI+GSMA 培训+DDJ2026+Sanad 260万）；🇮🇶 CMC 监管收紧（Korek 扩围+幽灵SIM/无人机法规）；🇱🇧 黎以升级；🌍 霍尔木兹"开放"</div>
+<div class="retro-summary">🇯🇴 <b>约旦与沙特 HUMAIN 签 AI 战略 MoU（双源交叉）+ "政府 AI"计划 + TRC×GSMA 区域 AI 培训 + Discover Digital Jordan 2026 + Sanad 数字身份破 260 万 + APPC 电商主席</b>，系统性卡位区域 AI 枢纽。🇮🇶 <b>CMC 关闭 Korek 另外三省（单一信源）+ 幽灵SIM/无人机法规；Sanad 会见阿巴斯圣地代表团；外交部法兰克福 eID；媒体执法收紧</b>。🇱🇧 <b>以军空袭黎南，Aoun 称"危险升级"</b>。🌍 <b>美方称霍尔木兹"开放、美海军控制"</b>；英国扩大对伊制裁。</div>
+<div class="retro-tags">
+<span class="retro-tag">18条已证实</span>
+<span class="retro-tag">3条单一信源</span>
+<span class="retro-tag">4条多源交叉</span>
+<span class="retro-tag">🇮🇶10</span>
+<span class="retro-tag">🇯🇴9</span>
+<span class="retro-tag">🇱🇧2</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w35-36.html'">
+<div class="retro-item-head">
+<span class="retro-week">第35—36周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年8月24日 — 9月4日</div>
+<div class="retro-title">🔥 8/29 Sanad 同步 5G（含库区）+ 频谱统一 + 过境；🇯🇴 TRC MNP+5G 双；🇱🇧 Hajj 数字枢纽蓝图</div>
+<div class="retro-summary">🇮🇶 <b>8/29 Sanad 宣布同步 5G 含库区 + 频谱统一 + Basra→欧洲过境</b>，联邦部为唯一主权代表，NMTC 司法冻结仍是前置障碍。🇯🇴 <b>TRC 2026 双：号码携转 MNP（2027/4）+ 5G 扩容</b>，主席 Lara Khateeb。🇱🇧 <b>Hajj 改革蓝图：Law 431+Liban Telecom，一期 35 万户、三年宽带 5万→50万，定位东西方数字枢纽 + 伊叙区域互联 + 新海缆</b>。</div>
+<div class="retro-tags">
+<span class="retro-tag">18条已证实</span>
+<span class="retro-tag">🇮🇶8</span>
+<span class="retro-tag">🇯🇴4</span>
+<span class="retro-tag">🇱🇧6</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w26-27.html'">
+<div class="retro-item-head">
+<span class="retro-week">第26—27周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年6月24日 — 7月7日</div>
+<div class="retro-title">霍尔木再度（第134天）+ 7/13 al-Zaidi 访美 + 7/1 Sanad 过境走廊峰会 + 7/2 约旦四部长访巴格达 + 7/6 Aoun-Hajj 电信改革 + Arab Bank eKYC</div>
+<div class="retro-summary">🌍 <b>6/17 Trump-Pezeshkian 凡尔赛结束战争 MOU</b>（60 天窗口至 8/17）+ 海峡 6/21 再度、美伊第三轮交火；🇮🇶 <b>🔥 7/13 al-Zaidi 访美见 Trump</b>（首次外访，油气 MOU + 替代出口路线）+ <b>⭐ 7/1 Sanad 通信峰会</b>"区域数字枢纽 + 过境走廊" + <b>🔴 霍尔木再度（第134天，出口窗口逆转）</b> + <b>6/24 追回 98B 第纳尔</b> + 7/6 CMC 警告 Al-Arabiya；🇯🇴 <b>⭐ 7/1 Arab Bank 行 Sanad eKYC</b>（首家银行）+ <b>7/2 四部长访巴格达</b>（Basra-Aqaba + 400kV）；🇱🇧 <b>⭐ 7/6 Aoun-Hajj 电信改革审查</b>（Law 431 + TRA + Liban Telecom + 南部重建）+ <b>7/6 Ogero 员工斡旋</b> + 7/15-16 罗马黎以谈判。加密章节含 2 条未证实参考。</div>
+<div class="retro-tags">
+<span class="retro-tag">24条已证实</span>
+<span class="retro-tag">2条未证实</span>
+<span class="retro-tag">🇮🇶10+2</span>
+<span class="retro-tag">🇯🇴6</span>
+<span class="retro-tag">🇱🇧8</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w18-19.html'">
+<div class="retro-item-head">
+<span class="retro-week">第18—19周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年4月29日 — 5月12日</div>
+<div class="retro-title">EBRD $14.1M Aqaba + 黎以三轮谈判 + ITPC 海缆 + CMC Telegram + 5/10 黎议会大选 + 5/11-12 伊议会信任投票</div>
+<div class="retro-summary">🇮🇶 <b>5/11 Asiacell-1001 OTT</b> + <b>5/9 CMC 解禁 Telegram</b>（VPN 1200% 飙升）+ <b>5/7 al-Zaidi 14 大支柱纲领</b> + <b>5/11-12 议会信任投票</b> + 5/7 OFAC 制裁副石油部长；🇯🇴 <b>⭐ 5/11 Sanad 数字 ID 法定地位</b>（260 万用户，MoDEE 重大）+ <b>5/4 MoDEE-TEDCO MoU</b> + <b>5/5 OSTP AI/半导体</b> + <b>5/6 三方峰会</b> + <b>5/7-9 NEPCO 跨境电网</b> + <b>5/7-8 $10亿绿氨</b> + <b>5/8 €308M 巨型签约日</b>；🇱🇧 <b> 5/10 议会大选</b>（128 席）+ <b>5/14-15 第三轮华盛顿谈判</b> + <b>5/9 Salam 访大马士革</b> + 5/8 Aoun-Lahbib。加密章节含未证实参考。</div>
+<div class="retro-tags">
+<span class="retro-tag">43条已证实</span>
+<span class="retro-tag">10条未证实</span>
+<span class="retro-tag">🇮🇶12+4</span>
+<span class="retro-tag">🇯🇴19+3</span>
+<span class="retro-tag">🇱🇧12+3</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w17-18.html'">
+<div class="retro-item-head">
+<span class="retro-week">第17—18周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年4月22日 — 5月5日</div>
+<div class="retro-title">CMC 双重决议 + Trump 以黎二轮谈判 + UAE-约旦 $2.3B 铁路</div>
+<div class="retro-summary">🇮🇶 总统任命 al-Zaidi（Sudani 结束）+ CMC 双重决议（4/27+4/30）+ 霍尔木封锁致石油出口降 70%；🇯🇴 4/28 EBRD-能源部 MoU + 4/15 UAE-约旦 $2.3B 铁路 + 4/21 EU 投资峰会；🇱🇧 4/23 Trump 主持以黎二轮谈判停火延长 3 周。</div>
+<div class="retro-tags">
+<span class="retro-tag">16条已证实</span>
+<span class="retro-tag">9条未证实</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w15-16.html'">
+<div class="retro-item-head">
+<span class="retro-week">第15—16周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年4月7日 — 4月21日</div>
+<div class="retro-title">伊以战争升级 + 黎以谈判启动 + EU-约旦 SCP 战略</div>
+<div class="retro-tags">
+<span class="retro-tag">15条新闻</span>
+<span class="retro-tag">9商机</span>
+</div>
+</div>
+
+<div class="retro-item retro-clickable" onclick="location.href='w13-14.html'">
+<div class="retro-item-head">
+<span class="retro-week">第13—14周</span>
+<span class="retro-jump-hint">→ 点击查看</span>
+</div>
+<div class="retro-date">2026年3月24日 — 4月6日</div>
+<div class="retro-title">伊以战争开战 + 霍尔木海峡封锁 + 区域 ICT 紧急应对</div>
+<div class="retro-tags">
+<span class="retro-tag">12条新闻</span>
+<span class="retro-tag">7商机</span>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function openRetro(){document.getElementById('retroModal').classList.add('show');document.body.style.overflow='hidden';}
+function closeRetro(){document.getElementById('retroModal').classList.remove('show');document.body.style.overflow='';}
+
+function switchTab(id,btn){
+  document.querySelectorAll('.country-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleCh(head){
+  const body=head.nextElementSibling;
+  const arr=head.querySelector('.ch-arr');
+  if(!body||!arr)return;
+  const open=body.classList.toggle('open');
+  arr.classList.toggle('open',open);
+}
+
+</script>
+<div style="max-width:900px;margin:30px auto 20px;padding:20px 16px;border-top:1px solid #E8E4DC;text-align:center;font-size:11px;color:#9A948A;line-height:1.9;">
+  <div>📋 黎凡特地区 ICT 双周简报 · 第45—46周（2026年11月2日—11月15日）</div>
+  <div>🔒 站点版未含一手口头或未预算信息</div>
+  <div style="margin-top:8px;color:#B8860B;font-weight:600;">代表处 李辉 00621351</div>
+  <div style="margin-top:4px;color:#C4BDB0;font-size:10px;">铸梦黎凡特，赢领数智化 · Forge the Dream in Levant, Win with Customer through Leading Digitalization</div>
+</div>
+</body>
+</html>
