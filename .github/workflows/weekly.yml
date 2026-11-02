@@ -9,7 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: pip install beautifulsoup4 lxml
+      - name: Generate original-page screenshot
+        run: |
+          LATEST=$(ls legacy/w*-*.html | sort -V | tail -n 1)
+          BROWSER=$(command -v chromium || command -v chromium-browser || command -v google-chrome)
+          "$BROWSER" --headless --no-sandbox --disable-gpu --disable-dev-shm-usage \
+            --hide-scrollbars --virtual-time-budget=3000 --window-size=1280,1800 \
+            --screenshot="$PWD/data/briefing-preview.png" "file://$PWD/$LATEST"
+          test -s data/briefing-preview.png
       - run: python scripts/send_mail.py
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
