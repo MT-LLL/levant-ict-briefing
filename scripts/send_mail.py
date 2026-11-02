@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-"""
-每周五群发最新一期双周简报邮件。
-
-邮件正文使用“邮件适配版”：将原版 HTML 的 CSS 内联、删除脚本、展开全部国家/栏目/信源内容，
-规避 QQ/Outlook/Gmail 等客户端过滤 <style>/<script> 导致的排版错乱。
-同时附加原版 HTML 附件，下载后用浏览器打开即为完全一致的原版页面。
-
-Secrets:
-  SMTP_USER  发件邮箱（QQ 邮箱）
-  SMTP_PASS  邮箱 SMTP 授权码
-  MAIL_TO    收件人列表，多个地址用英文逗号分隔
-"""
+"""每周五群发最新一期双周简报：原版截图预览 + 点击跳转在线 HTML + HTML 附件。"""
 
 import os
 import re
@@ -19,14 +8,14 @@ import time
 import urllib.request
 from email.header import Header
 from email.mime.application import MIMEApplication
+from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
 
-from bs4 import BeautifulSoup
-
 ROOT = Path(__file__).resolve().parent.parent
-SEND_INTERVAL = 3  # 每封间隔秒数，避免触发 SMTP 限流
+SEND_INTERVAL = 3
+PREVIEW_PATH = ROOT / "data" / "briefing-preview.png"
 
 
 def latest_issue():
@@ -45,99 +34,61 @@ def parse_recipients():
     raw = os.environ.get("MAIL_TO", "")
     recipients = [addr.strip() for addr in re.split(r"[,;\n]", raw) if addr.strip()]
     if not recipients:
-        raise SystemExit("MAIL_TO 为空：请在 Secrets 中配置收件人，多个地址用逗号分隔")
+        raise SystemExit("MAIL_TO 为空：请在 Secrets 中配置收件人")
     return recipients
 
 
-def _strip_at_rules(css):
-    """删除 @media/@supports/@keyframes 等嵌套规则，仅保留普通 CSS 规则用于内联。"""
-    out, i, n = [], 0, len(css)
-    while i < n:
-        if css.startswith(("@media", "@supports", "@keyframes"), i):
-            j = css.find("{", i)
-            if j < 0:
-                break
-            depth, k = 1, j + 1
-            while k < n and depth:
-                if css[k] == "{":
-                    depth += 1
-                elif css[k] == "}":
-                    depth -= 1
-                k += 1
-            i = k
-        else:
-            out.append(css[i])
-            i += 1
-    return "".join(out)
+def build_email_html(issue, online_url, has_preview):
+    preview = ""
+    if has_preview:
+        preview = f"""
+        <a href="{online_url}" target="_blank" style="display:block;text-decoration:none;">
+          <img src="cid:briefing-preview" alt="双周简报原版预览"
+               style="display:block;width:100%;max-width:960px;height:auto;border:1px solid #e5e7eb;border-radius:8px;" />
+        </a>"""
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN"><body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,'Microsoft YaHei',sans-serif;">
+  <div style="max-width:980px;margin:0 auto;padding:24px 16px;">
+    <div style="background:#0b315b;color:#ffffff;padding:24px;border-radius:10px 10px 0 0;">
+      <div style="font-size:22px;font-weight:bold;">黎凡特地区 ICT 双周简报</div>
+      <div style="font-size:14px;margin-top:8px;color:#dbeafe;">{issue} · 伊拉克代表处 李辉 00621351 · MSSD AI团队</div>
+    </div>
+    <div style="background:#ffffff;padding:20px;border:1px solid #e5e7eb;">
+      <p style="font-size:14px;color:#374151;line-height:1.8;margin:0 0 16px;">
+        点击下方预览图，即可在浏览器中打开<strong>与网站完全一致、可交互的原版简报</strong>。
+        邮件附件也包含原版 HTML，可下载后离线打开。
+      </p>
+      <p style="text-align:center;margin:0 0 18px;">
+        <a href="{online_url}" target="_blank"
+           style="display:inline-block;background:#185FA5;color:#ffffff;text-decoration:none;padding:12px 26px;border-radius:7px;font-size:15px;font-weight:bold;">
+          打开可交互原版简报 →
+        </a>
+      </p>
+      {preview}
+      <p style="font-size:12px;color:#6b7280;line-height:1.7;margin:16px 0 0;">
+        如果未显示图片，可直接点击上方按钮；国家切换和栏目展开请在浏览器中使用。
+      </p>
+    </div>
+  </div>
+</body></html>"""
 
-
-def inline_css(soup):
-    """把 <style> 中的普通规则内联到元素 style；伪类/伪元素规则在邮件中无意义，跳过。"""
-    rules = []
-    for st in soup.find_all("style"):
-        css = _strip_at_rules(re.sub(r"/\*.*?\*/", "", st.get_text(), flags=re.S))
-        rules.extend((sel.strip(), decl.strip()) for sel, decl in re.findall(r"([^{}]+)\{([^{}]*)\}", css))
-        st.decompose()
-    for selector, decl in rules:
-        if ":" in selector:
-            continue
-        try:
-            elements = soup.select(selector)
-        except Exception:
-            continue
-        for el in elements:
-            el["style"] = (decl + ";" + el.get("style", "")).strip(";")  # 元素已有内联样式优先
-
-
-def build_email_html(source_html):
-    """将交互式简报转为邮箱可稳定展示的静态 HTML。"""
-    soup = BeautifulSoup(source_html, "lxml")
-    for tag in soup.find_all("script"):
-        tag.decompose()
-    modal = soup.find(id="retroModal")
-    if modal:
-        modal.decompose()
-    for el in soup.select("[onclick]"):
-        del el["onclick"]
-    for nav in soup.select(".nav"):
-        nav.decompose()
-
-    # details 折叠在多数邮箱不可用：信源内容直接显示
-    for d in soup.select("details.ni-detail"):
-        body = d.select_one(".ni-detail-body")
-        box = soup.new_tag("div")
-        box["style"] = "margin-top:6px;padding:8px 10px;background:#f8fafc;border-left:3px solid #185FA5;color:#3e4a5c;line-height:1.7;font-size:12px;"
-        box.string = "信源内容｜" + (body.get_text(" ", strip=True) if body else d.get_text(" ", strip=True))
-        d.replace_with(box)
-
-    # 先内联原页面样式，再强制展开；顺序不能反，否则 display:none 会覆盖展开设置
-    inline_css(soup)
-    for panel in soup.select(".country-panel"):
-        panel["style"] = re.sub(r"(?:^|;)\s*display\s*:[^;]*", "", panel.get("style", "")) + ";display:block;"
-        name = {"tab-iq": "🇮🇶 伊拉克", "tab-jo": "🇯🇴 约旦", "tab-lb": "🇱🇧 黎巴嫩"}.get(panel.get("id"), "")
-        if name:
-            h = soup.new_tag("h2")
-            h["style"] = "font-size:20px;color:#0b315b;margin:24px 0 10px;padding-bottom:8px;border-bottom:2px solid #0b315b;"
-            h.string = name
-            panel.insert(0, h)
-    for body in soup.select(".ch-body"):
-        body["style"] = re.sub(r"(?:^|;)\s*display\s*:[^;]*", "", body.get("style", "")) + ";display:block;"
-    return str(soup)
 
 def main():
     filename = latest_issue()
-    url = f"https://raw.githubusercontent.com/MT-LLL/levant-ict-briefing/main/legacy/{filename}"
-    print(f"本期简报：{filename}（{url}）")
-    with urllib.request.urlopen(url, timeout=60) as resp:
+    issue = filename.replace(".html", "").upper()
+    raw_url = f"https://raw.githubusercontent.com/MT-LLL/levant-ict-briefing/main/legacy/{filename}"
+    online_url = f"https://mt-lll.github.io/levant-ict-briefing/archive/{filename}"
+    print(f"本期简报：{filename}")
+    with urllib.request.urlopen(raw_url, timeout=60) as resp:
         source_html = resp.read().decode("utf-8")
-    email_html = build_email_html(source_html)
-    print(f"邮件适配完成：{len(source_html)} → {len(email_html)} 字符，CSS 已内联，交互内容已展开")
+
+    has_preview = PREVIEW_PATH.exists() and PREVIEW_PATH.stat().st_size > 0
+    print("截图预览：", "已生成" if has_preview else "未找到，将仅发送链接和附件")
+    email_html = build_email_html(issue, online_url, has_preview)
 
     sender = os.environ["SMTP_USER"]
     recipients = parse_recipients()
-    issue = filename.replace(".html", "").upper()
     print(f"收件人：{len(recipients)} 人")
-
     failed = []
     with smtplib.SMTP_SSL("smtp.qq.com", 465) as s:
         s.login(sender, os.environ["SMTP_PASS"])
@@ -145,15 +96,25 @@ def main():
             msg = MIMEMultipart("mixed")
             msg["Subject"] = Header(f"Levant ICT 双周简报 · {issue}", "utf-8")
             msg["From"] = sender
-            msg["To"] = addr  # 逐个发送，收件人互不可见
-            msg.attach(MIMEText(email_html, "html", "utf-8"))
+            msg["To"] = addr
+
+            related = MIMEMultipart("related")
+            related.attach(MIMEText(email_html, "html", "utf-8"))
+            if has_preview:
+                with open(PREVIEW_PATH, "rb") as f:
+                    image = MIMEImage(f.read(), _subtype="png")
+                image.add_header("Content-ID", "<briefing-preview>")
+                image.add_header("Content-Disposition", "inline", filename="briefing-preview.png")
+                related.attach(image)
+            msg.attach(related)
+
             attachment = MIMEApplication(source_html.encode("utf-8"), _subtype="html")
             attachment.add_header("Content-Disposition", "attachment", filename=filename)
             msg.attach(attachment)
             try:
                 s.sendmail(sender, [addr], msg.as_string())
                 print(f"[{i}/{len(recipients)}] ✓ {addr}")
-            except Exception as e:  # noqa: BLE001
+            except Exception as e:
                 failed.append((addr, str(e)))
                 print(f"[{i}/{len(recipients)}] ✗ {addr}: {e}")
             if i < len(recipients):
