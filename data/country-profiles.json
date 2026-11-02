@@ -1,0 +1,1012 @@
+{
+  "meta": {
+    "title": "国家画像",
+    "updated": "2026-11-03",
+    "scope": [
+      "IRQ",
+      "JOR",
+      "LBN"
+    ],
+    "note": "国际官方数据与本土政府披露并列；不同年份、定义和单位不作强行一致性判断。"
+  },
+  "countries": {
+    "IRQ": {
+      "name": "伊拉克",
+      "flag": "🇮🇶",
+      "color": "#c24135"
+    },
+    "JOR": {
+      "name": "约旦",
+      "flag": "🇯🇴",
+      "color": "#2563eb"
+    },
+    "LBN": {
+      "name": "黎巴嫩",
+      "flag": "🇱🇧",
+      "color": "#16805b"
+    }
+  },
+  "groups": [
+    {
+      "id": "core",
+      "name": "国家核心指标",
+      "description": "经济规模、增长与人口的可比快照"
+    },
+    {
+      "id": "ict",
+      "name": "ICT 市场指标",
+      "description": "互联网使用、移动蜂窝与固定宽带"
+    },
+    {
+      "id": "society",
+      "name": "人口与社会",
+      "description": "人口结构、城镇化、寿命与劳动力"
+    },
+    {
+      "id": "logistics",
+      "name": "交通与物流",
+      "description": "航空、港口与世界银行物流绩效"
+    },
+    {
+      "id": "fiscal",
+      "name": "营商、财政与外部缓冲",
+      "description": "债务、财政平衡、储备、资源租金与资本市场"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "population",
+      "group": "core",
+      "label": "总人口",
+      "unit": "百万人",
+      "format": "millions",
+      "digits": 2,
+      "source": "wb",
+      "note": "",
+      "values": {
+        "IRQ": {
+          "value": 47020774.0,
+          "year": 2025
+        },
+        "JOR": {
+          "value": 11520684.0,
+          "year": 2025
+        },
+        "LBN": {
+          "value": 5849421.0,
+          "year": 2025
+        }
+      }
+    },
+    {
+      "id": "gdp",
+      "group": "core",
+      "label": "名义 GDP",
+      "unit": "十亿美元",
+      "format": "decimal",
+      "digits": 1,
+      "source": "imf",
+      "note": "IMF WEO 2025 年估计值",
+      "values": {
+        "IRQ": {
+          "value": 264.167401,
+          "year": 2025,
+          "flag": "E"
+        },
+        "JOR": {
+          "value": 61.697074,
+          "year": 2025,
+          "flag": "E"
+        },
+        "LBN": {
+          "value": 34.494318,
+          "year": 2025,
+          "flag": "E"
+        }
+      }
+    },
+    {
+      "id": "growth",
+      "group": "core",
+      "label": "实际 GDP 增速",
+      "unit": "%",
+      "format": "percent",
+      "digits": 1,
+      "source": "imf",
+      "note": "IMF WEO 2025 年估计值",
+      "values": {
+        "IRQ": {
+          "value": -0.414488,
+          "year": 2025,
+          "flag": "E"
+        },
+        "JOR": {
+          "value": 2.826615,
+          "year": 2025,
+          "flag": "E"
+        },
+        "LBN": {
+          "value": 4.0,
+          "year": 2025,
+          "flag": "E"
+        }
+      }
+    },
+    {
+      "id": "inflation",
+      "group": "core",
+      "label": "消费者价格通胀（年均）",
+      "unit": "%",
+      "format": "percent",
+      "digits": 1,
+      "source": "imf",
+      "note": "IMF WEO 2025 年估计值",
+      "values": {
+        "IRQ": {
+          "value": 0.31126,
+          "year": 2025,
+          "flag": "E"
+        },
+        "JOR": {
+          "value": 1.767327,
+          "year": 2025,
+          "flag": "E"
+        },
+        "LBN": {
+          "value": 14.597696,
+          "year": 2025,
+          "flag": "E"
+        }
+      }
+    },
+    {
+      "id": "internet",
+      "group": "ict",
+      "label": "互联网用户占人口比例",
+      "unit": "%",
+      "format": "percent",
+      "digits": 1,
+      "source": "wbInternet",
+      "note": "",
+      "values": {
+        "IRQ": {
+          "value": 81.47450256,
+          "year": 2024
+        },
+        "JOR": {
+          "value": 95.62244985,
+          "year": 2024
+        },
+        "LBN": {
+          "value": 80.63400269,
+          "year": 2024
+        }
+      }
+    },
+    {
+      "id": "mobile",
+      "group": "ict",
+      "label": "移动蜂窝订阅量",
+      "unit": "每百人",
+      "format": "decimal",
+      "digits": 1,
+      "source": "wbMobile",
+      "note": "订阅数可超过人口数；不等同于独立用户数",
+      "values": {
+        "IRQ": {
+          "value": 100.080276677726,
+          "year": 2024
+        },
+        "JOR": {
+          "value": 69.6426153972396,
+          "year": 2024
+        },
+        "LBN": {
+          "value": 74.0148340435503,
+          "year": 2022
+        }
+      }
+    },
+    {
+      "id": "broadband",
+      "group": "ict",
+      "label": "固定宽带订阅量",
+      "unit": "每百人",
+      "format": "decimal",
+      "digits": 1,
+      "source": "wbBroadband",
+      "note": "",
+      "values": {
+        "IRQ": {
+          "value": 17.6333290365333,
+          "year": 2024
+        },
+        "JOR": {
+          "value": 7.01801006087142,
+          "year": 2024
+        },
+        "LBN": {
+          "value": 7.29166684799988,
+          "year": 2022
+        }
+      }
+    },
+    {
+      "id": "urban",
+      "group": "society",
+      "label": "城镇人口占比",
+      "unit": "%",
+      "format": "percent",
+      "digits": 1,
+      "source": "wbUrban",
+      "note": "",
+      "values": {
+        "IRQ": {
+          "value": 69.9396739468105,
+          "year": 2025
+        },
+        "JOR": {
+          "value": 93.2085150119551,
+          "year": 2025
+        },
+        "LBN": {
+          "value": 90.9602314263044,
+          "year": 2025
+        }
+      }
+    },
+    {
+      "id": "populationGrowth",
+      "group": "society",
+      "label": "人口年增长率",
+      "unit": "%",
+      "format": "percent",
+      "digits": 2,
+      "source": "wbPopGrowth",
+      "note": "",
+      "values": {
+        "IRQ": {
+          "value": 2.10351548706844,
+          "year": 2025
+        },
+        "JOR": {
+          "value": -0.279038179525473,
+          "year": 2025
+        },
+        "LBN": {
+          "value": 0.745736135898232,
+          "year": 2025
+        }
+      }
+    },
+    {
+      "id": "life",
+      "group": "society",
+      "label": "出生时预期寿命",
+      "unit": "岁",
+      "format": "decimal",
+      "digits": 1,
+      "source": "wbLife",
+      "note": "",
+      "values": {
+        "IRQ": {
+          "value": 72.424,
+          "year": 2024
+        },
+        "JOR": {
+          "value": 77.981,
+          "year": 2024
+        },
+        "LBN": {
+          "value": 77.945,
+          "year": 2024
+        }
+      }
+    },
+    {
+      "id": "labor",
+      "group": "society",
+      "label": "劳动力总量（15 岁以上）",
+      "unit": "百万人",
+      "format": "millions",
+      "digits": 2,
+      "source": "wbLabor",
+      "note": "按 ILO 模型估计",
+      "values": {
+        "IRQ": {
+          "value": 12493376.0,
+          "year": 2025
+        },
+        "JOR": {
+          "value": 3220931.0,
+          "year": 2025
+        },
+        "LBN": {
+          "value": 1837294.0,
+          "year": 2023
+        }
+      }
+    },
+    {
+      "id": "land",
+      "group": "society",
+      "label": "陆地面积",
+      "unit": "万平方公里",
+      "format": "land",
+      "digits": 2,
+      "source": "wbLand",
+      "note": "不含内陆水体；不等于领土总面积",
+      "values": {
+        "IRQ": {
+          "value": 434130.0,
+          "year": 2024
+        },
+        "JOR": {
+          "value": 88794.0,
+          "year": 2024
+        },
+        "LBN": {
+          "value": 10230.0,
+          "year": 2024
+        }
+      }
+    },
+    {
+      "id": "air",
+      "group": "logistics",
+      "label": "航空客运量",
+      "unit": "百万人次",
+      "format": "millions",
+      "digits": 2,
+      "source": "wbAir",
+      "note": "注册承运人全球客运量",
+      "values": {
+        "IRQ": {
+          "value": 3756178.0,
+          "year": 2023
+        },
+        "JOR": {
+          "value": 3731345.0,
+          "year": 2023
+        },
+        "LBN": {
+          "value": 2693218.0,
+          "year": 2023
+        }
+      }
+    },
+    {
+      "id": "port",
+      "group": "logistics",
+      "label": "港口集装箱吞吐量",
+      "unit": "百万 TEU",
+      "format": "millions",
+      "digits": 2,
+      "source": "wbPort",
+      "note": "",
+      "values": {
+        "IRQ": {
+          "value": 932728.6,
+          "year": 2019
+        },
+        "JOR": {
+          "value": 824199.0,
+          "year": 2024
+        },
+        "LBN": {
+          "value": 762062.0,
+          "year": 2024
+        }
+      }
+    },
+    {
+      "id": "lpi",
+      "group": "logistics",
+      "label": "物流绩效指数（LPI）",
+      "unit": "1—5 分",
+      "format": "decimal",
+      "digits": 1,
+      "source": "wbLpi",
+      "note": "仅列世界银行有记录的国家与年份",
+      "values": {
+        "IRQ": {
+          "value": 2.4,
+          "year": 2022
+        }
+      }
+    },
+    {
+      "id": "debt",
+      "group": "fiscal",
+      "label": "政府总债务／GDP",
+      "unit": "%",
+      "format": "percent",
+      "digits": 1,
+      "source": "imf",
+      "note": "IMF WEO 2025 年估计值",
+      "values": {
+        "IRQ": {
+          "value": 52.786291,
+          "year": 2025,
+          "flag": "E"
+        },
+        "JOR": {
+          "value": 83.578599,
+          "year": 2025,
+          "flag": "E"
+        },
+        "LBN": {
+          "value": 139.413732,
+          "year": 2025,
+          "flag": "E"
+        }
+      }
+    },
+    {
+      "id": "balance",
+      "group": "fiscal",
+      "label": "政府净借贷／GDP",
+      "unit": "%",
+      "format": "percent",
+      "digits": 1,
+      "source": "imf",
+      "note": "负数为赤字；IMF WEO 2025 年估计值",
+      "values": {
+        "IRQ": {
+          "value": -6.233964,
+          "year": 2025,
+          "flag": "E"
+        },
+        "JOR": {
+          "value": -6.172172,
+          "year": 2025,
+          "flag": "E"
+        },
+        "LBN": {
+          "value": 3.255292,
+          "year": 2025,
+          "flag": "E"
+        }
+      }
+    },
+    {
+      "id": "reserves",
+      "group": "fiscal",
+      "label": "总储备（含黄金）",
+      "unit": "十亿美元",
+      "format": "bnUSD",
+      "digits": 1,
+      "source": "wbReserves",
+      "note": "不等同于央行净外汇储备",
+      "values": {
+        "IRQ": {
+          "value": 98450303284.422,
+          "year": 2025
+        },
+        "JOR": {
+          "value": 26557371377.9991,
+          "year": 2025
+        },
+        "LBN": {
+          "value": 33301277509.6206,
+          "year": 2024
+        }
+      }
+    },
+    {
+      "id": "oilRent",
+      "group": "fiscal",
+      "label": "石油租金／GDP",
+      "unit": "%",
+      "format": "percent",
+      "digits": 1,
+      "source": "wbOil",
+      "note": "世界银行自然资源租金口径",
+      "values": {
+        "IRQ": {
+          "value": 42.7870984915076,
+          "year": 2021
+        },
+        "JOR": {
+          "value": 0.0143633135367042,
+          "year": 2021
+        },
+        "LBN": {
+          "value": 0.0,
+          "year": 2021
+        }
+      }
+    },
+    {
+      "id": "marketCap",
+      "group": "fiscal",
+      "label": "上市公司总市值",
+      "unit": "十亿美元",
+      "format": "bnUSD",
+      "digits": 1,
+      "source": "wbMarket",
+      "note": "",
+      "values": {
+        "JOR": {
+          "value": 37367150000.0,
+          "year": 2025
+        },
+        "LBN": {
+          "value": 10577280000.0,
+          "year": 2021
+        }
+      }
+    },
+    {
+      "id": "listed",
+      "group": "fiscal",
+      "label": "国内上市公司数量",
+      "unit": "家",
+      "format": "integer",
+      "digits": 0,
+      "source": "wbListed",
+      "note": "",
+      "values": {
+        "JOR": {
+          "value": 162.0,
+          "year": 2025
+        },
+        "LBN": {
+          "value": 10.0,
+          "year": 2021
+        }
+      }
+    }
+  ],
+  "crossChecks": {
+    "IRQ": [
+      {
+        "indicator": "总人口",
+        "international": "46.042 百万人",
+        "internationalPeriod": "世界银行 · 2024 年中估计",
+        "local": "46.118793 百万人",
+        "localPeriod": "规划部 · 2024 年普查",
+        "status": "双源近似",
+        "note": "差约 0.17%；普查时点与国际年中估计处理不同，不表述为完全一致。",
+        "internationalSource": "wb",
+        "localSource": "iraqCensus"
+      },
+      {
+        "indicator": "城镇人口占比",
+        "international": "69.886%",
+        "internationalPeriod": "世界银行 · 2024",
+        "local": "70.3%（初步结果）",
+        "localPeriod": "2024 年普查初步披露",
+        "status": "双源近似",
+        "note": "数值接近；本土值为初步普查披露，最终城乡定义仍需逐项对照。",
+        "internationalSource": "wbUrban",
+        "localSource": "iraqCensus"
+      },
+      {
+        "indicator": "移动市场",
+        "international": "100.08 订阅／百人",
+        "internationalPeriod": "世界银行／ITU · 2024",
+        "local": "42.91 百万移动订阅",
+        "localPeriod": "CMC 白皮书 · 2023",
+        "status": "口径不同",
+        "note": "每百人移动蜂窝订阅与移动订阅总量不可直接比较，且年份不同。",
+        "internationalSource": "wbMobile",
+        "localSource": "iraqCmc"
+      },
+      {
+        "indicator": "宽带下载速率",
+        "international": "WDI 无同口径指标",
+        "internationalPeriod": "—",
+        "local": "移动 28.05；固定 33.60 Mbps",
+        "localPeriod": "CMC 引用 Speedtest · 2024-02",
+        "status": "本土补充",
+        "note": "为下载速率中位数，不是平均值或覆盖率。",
+        "internationalSource": "wbBroadband",
+        "localSource": "iraqCmc"
+      },
+      {
+        "indicator": "ICT 发展指数",
+        "international": "ITU 指数由本土主管部门转引",
+        "internationalPeriod": "2025",
+        "local": "78.4 分（2023 年：69.5）",
+        "localPeriod": "通信部 · 2025",
+        "status": "本土补充",
+        "note": "保留通信部原始披露；不与世界银行互联网使用率混作同一指标。",
+        "internationalSource": "wbInternet",
+        "localSource": "iraqMoc"
+      },
+      {
+        "indicator": "外汇储备",
+        "international": "98.45 十亿美元（含黄金总储备）",
+        "internationalPeriod": "世界银行 · 2025",
+        "local": "127.82 万亿 IQD（净外汇储备）",
+        "localPeriod": "央行 · 2025 Q1",
+        "status": "口径不同",
+        "note": "币种、时点及净额／含黄金总额定义均不同，不进行换算后强行比对。",
+        "internationalSource": "wbReserves",
+        "localSource": "iraqCbi"
+      }
+    ],
+    "JOR": [
+      {
+        "indicator": "总人口",
+        "international": "11.521 百万人",
+        "internationalPeriod": "世界银行 · 2025 年中估计",
+        "local": "11.937 百万人",
+        "localPeriod": "统计局 · 2025 年末估计",
+        "status": "时点不同",
+        "note": "年中与年末人口估计不同时点；差异不代表数据冲突。",
+        "internationalSource": "wb",
+        "localSource": "jordanPopulation"
+      },
+      {
+        "indicator": "移动宽带",
+        "international": "69.64 移动蜂窝订阅／百人",
+        "internationalPeriod": "世界银行／ITU · 2024",
+        "local": "8.3 百万移动宽带订阅",
+        "localPeriod": "Petra／TRC · 2026 Q1",
+        "status": "口径不同",
+        "note": "移动蜂窝与移动宽带定义不同，且披露年份不同。",
+        "internationalSource": "wbMobile",
+        "localSource": "jordanTrc"
+      },
+      {
+        "indicator": "固定宽带",
+        "international": "7.018 订阅／百人",
+        "internationalPeriod": "世界银行／ITU · 2024",
+        "local": "829,000 订阅；家庭渗透率 33.2%",
+        "localPeriod": "Petra／TRC · 2026 Q1",
+        "status": "口径不同",
+        "note": "国际主表按人口归一；本土表同时披露总量和家庭渗透率。",
+        "internationalSource": "wbBroadband",
+        "localSource": "jordanTrc"
+      },
+      {
+        "indicator": "光纤宽带",
+        "international": "WDI 无技术分项",
+        "internationalPeriod": "—",
+        "local": "约 660,000；占固定宽带 79.6%",
+        "localPeriod": "Petra／TRC · 2026 Q1",
+        "status": "本土补充",
+        "note": "用于判断固定宽带技术结构，不与每百人指标直接比较。",
+        "internationalSource": "wbBroadband",
+        "localSource": "jordanTrc"
+      },
+      {
+        "indicator": "5G 订阅",
+        "international": "WDI 无同口径指标",
+        "internationalPeriod": "—",
+        "local": "433,400",
+        "localPeriod": "Petra／TRC · 2026 Q1",
+        "status": "本土补充",
+        "note": "较 2025 Q4 的 320,700 增长 35%。",
+        "internationalSource": "wbMobile",
+        "localSource": "jordanTrc"
+      },
+      {
+        "indicator": "外汇储备",
+        "international": "26.56 十亿美元（含黄金总储备）",
+        "internationalPeriod": "世界银行 · 2025",
+        "local": "27.181 十亿美元（外汇储备）",
+        "localPeriod": "央行 · 2026-05 末",
+        "status": "口径不同",
+        "note": "时点和储备定义不同；本页保留两值，不判为一致或冲突。",
+        "internationalSource": "wbReserves",
+        "localSource": "jordanReserves"
+      }
+    ],
+    "LBN": [
+      {
+        "indicator": "总人口",
+        "international": "5.849 百万人",
+        "internationalPeriod": "世界银行 · 2025 年中估计",
+        "local": "暂无可比的近期公开人口估计",
+        "localPeriod": "CAS 公开页仍以历史数据为主",
+        "status": "待本土核验",
+        "note": "不使用旧人口数或非官方估算替代当前本土官方序列。",
+        "internationalSource": "wb",
+        "localSource": "lebanonCas"
+      },
+      {
+        "indicator": "互联网使用率",
+        "international": "80.634%",
+        "internationalPeriod": "世界银行／ITU · 2024",
+        "local": "TRA 公开页主要为 2010—2011 年市场数据",
+        "localPeriod": "本土公开序列过时",
+        "status": "待本土核验",
+        "note": "旧页面用于说明披露状态，不用于校验当前互联网使用率。",
+        "internationalSource": "wbInternet",
+        "localSource": "lebanonTra"
+      },
+      {
+        "indicator": "移动与固定宽带",
+        "international": "移动 74.01；固定 7.29／百人",
+        "internationalPeriod": "世界银行／ITU · 2022",
+        "local": "未获取近期同口径公开表",
+        "localPeriod": "TRA 公开页主要为 2011 年数据",
+        "status": "本土序列过时",
+        "note": "不以 2011 年数值填充当前市场指标。",
+        "internationalSource": "wbMobile",
+        "localSource": "lebanonTra"
+      },
+      {
+        "indicator": "外汇储备",
+        "international": "33.30 十亿美元（含黄金总储备）",
+        "internationalPeriod": "世界银行 · 2024",
+        "local": "BDL 有外汇资产表，本次未完成字段级核对",
+        "localPeriod": "不填造本土数值",
+        "status": "待字段核验",
+        "note": "搜索摘要存在多列与单位歧义，未核实前不引用具体本土金额。",
+        "internationalSource": "wbReserves",
+        "localSource": "lebanonBdl"
+      },
+      {
+        "indicator": "数字政府战略",
+        "international": "国际指标不覆盖战略文本",
+        "internationalPeriod": "—",
+        "local": "数字转型战略 2020—2030",
+        "localPeriod": "OMSAR · 部长会议批准，实施中",
+        "status": "本土补充",
+        "note": "以 OMSAR 官方战略页面为准。",
+        "internationalSource": "wbInternet",
+        "localSource": "lebanonOmsar"
+      }
+    ]
+  },
+  "strategies": {
+    "IRQ": [
+      {
+        "title": "国家发展规划 2024—2028",
+        "type": "国家发展规划",
+        "description": "规划部与 UNDP 合作编制，覆盖公共服务、基础设施、经济多元化、治理和数字化转型。",
+        "highlights": [
+          "社会市场经济与结构性改革",
+          "基础设施与公共服务",
+          "治理及数字化转型"
+        ],
+        "source": "iraqPlan"
+      },
+      {
+        "title": "ICT 产业与宽带发展白皮书",
+        "type": "数字基础设施路线",
+        "description": "CMC 提出 4G 扩展、5G 与频谱、光纤及骨干网、网络安全和数字技能等行动方向。",
+        "highlights": [
+          "4G 扩展与 5G 启动",
+          "固定／移动宽带提速",
+          "数字技能与云基础设施"
+        ],
+        "source": "iraqCmc"
+      }
+    ],
+    "JOR": [
+      {
+        "title": "经济现代化愿景 2033",
+        "type": "国家经济愿景",
+        "description": "以官方愿景网站及 2026—2029 执行计划为准，连接经济增长、公共服务、基础设施与政府现代化。",
+        "highlights": [
+          "八个驱动领域",
+          "2026—2029 执行计划",
+          "高增长产业与优质服务"
+        ],
+        "source": "jordanVision"
+      },
+      {
+        "title": "通信市场与 5G 发展",
+        "type": "数字市场执行信号",
+        "description": "TRC 季度披露持续覆盖 5G、光纤、固定与移动宽带，为愿景执行提供本土市场观测。",
+        "highlights": [
+          "5G 订阅持续增长",
+          "光纤占固定宽带近八成",
+          "季度官方市场数据"
+        ],
+        "source": "jordanTrc"
+      }
+    ],
+    "LBN": [
+      {
+        "title": "数字转型战略 2020—2030",
+        "type": "国家数字政府战略",
+        "description": "由 OMSAR 牵头，部长会议批准并处于实施阶段，聚焦公民中心服务、互操作和行政效率。",
+        "highlights": [
+          "电子政务服务",
+          "跨部门互操作",
+          "透明度与行政能力"
+        ],
+        "source": "lebanonOmsar"
+      },
+      {
+        "title": "当前官方数据披露边界",
+        "type": "数据可用性提示",
+        "description": "TRA 当前公开市场页以 2010—2011 年信息为主；近期 ICT 数值需等待同口径本土序列核验。",
+        "highlights": [
+          "不以旧值替代现值",
+          "保留国际最新披露期",
+          "本土待核验项明确标识"
+        ],
+        "source": "lebanonTra"
+      }
+    ]
+  },
+  "sources": {
+    "wb": {
+      "publisher": "世界银行",
+      "name": "World Development Indicators：人口",
+      "url": "https://data.worldbank.org/indicator/SP.POP.TOTL",
+      "asOf": "提取于 2026-11-02"
+    },
+    "imf": {
+      "publisher": "国际货币基金组织（IMF）",
+      "name": "World Economic Outlook 数据库",
+      "url": "https://www.imf.org/en/Publications/WEO/weo-database",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbInternet": {
+      "publisher": "世界银行／ITU",
+      "name": "Individuals using the Internet (% of population)",
+      "url": "https://data.worldbank.org/indicator/IT.NET.USER.ZS",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbMobile": {
+      "publisher": "世界银行／ITU",
+      "name": "Mobile cellular subscriptions (per 100 people)",
+      "url": "https://data.worldbank.org/indicator/IT.CEL.SETS.P2",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbBroadband": {
+      "publisher": "世界银行／ITU",
+      "name": "Fixed broadband subscriptions (per 100 people)",
+      "url": "https://data.worldbank.org/indicator/IT.NET.BBND.P2",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbUrban": {
+      "publisher": "世界银行／联合国",
+      "name": "Urban population (% of total population)",
+      "url": "https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbPopGrowth": {
+      "publisher": "世界银行",
+      "name": "Population growth (annual %)",
+      "url": "https://data.worldbank.org/indicator/SP.POP.GROW",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbLife": {
+      "publisher": "世界银行",
+      "name": "Life expectancy at birth, total (years)",
+      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbLabor": {
+      "publisher": "世界银行／ILO",
+      "name": "Labor force, total",
+      "url": "https://data.worldbank.org/indicator/SL.TLF.TOTL.IN",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbLand": {
+      "publisher": "世界银行／FAO",
+      "name": "Land area (sq. km)",
+      "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbAir": {
+      "publisher": "世界银行／ICAO",
+      "name": "Air transport, passengers carried",
+      "url": "https://data.worldbank.org/indicator/IS.AIR.PSGR",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbPort": {
+      "publisher": "世界银行",
+      "name": "Port container traffic (TEU)",
+      "url": "https://data.worldbank.org/indicator/IS.SHP.GOOD.TU",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbLpi": {
+      "publisher": "世界银行",
+      "name": "Logistics Performance Index",
+      "url": "https://lpi.worldbank.org/",
+      "asOf": "2022 年可比序列"
+    },
+    "wbReserves": {
+      "publisher": "世界银行／IMF",
+      "name": "Total reserves (includes gold, current US$)",
+      "url": "https://data.worldbank.org/indicator/FI.RES.TOTL.CD",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbOil": {
+      "publisher": "世界银行",
+      "name": "Oil rents (% of GDP)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.PETR.RT.ZS",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbMarket": {
+      "publisher": "世界银行／WFE",
+      "name": "Market capitalization of listed domestic companies",
+      "url": "https://data.worldbank.org/indicator/CM.MKT.LCAP.CD",
+      "asOf": "提取于 2026-11-02"
+    },
+    "wbListed": {
+      "publisher": "世界银行／WFE",
+      "name": "Listed domestic companies, total",
+      "url": "https://data.worldbank.org/indicator/CM.MKT.LDOM.NO",
+      "asOf": "提取于 2026-11-02"
+    },
+    "iraqCensus": {
+      "publisher": "伊拉克国家通讯社 INA／规划部",
+      "name": "2024 年全国人口普查最终结果",
+      "url": "https://ina.iq/en/local/43822-planning-minister-announces-final-results-of-national-population-census.html",
+      "asOf": "发布于 2025-11-26"
+    },
+    "iraqCmc": {
+      "publisher": "伊拉克通信与媒体委员会（CMC）",
+      "name": "Iraq National ICT Industry Development Whitepaper",
+      "url": "https://cmc.iq/wp-content/uploads/2025/08/The-role-and-importance-of-developing-broadband-infrastructure-in-the-ICT-and-digitization-sector-in-Iraq-in-English-white-paper.pdf",
+      "asOf": "发布于 2025-08"
+    },
+    "iraqMoc": {
+      "publisher": "伊拉克通信部",
+      "name": "2025 年 ICT 发展指数披露",
+      "url": "https://moc.gov.iq/news/article-1037?lang=en",
+      "asOf": "发布于 2025-07-02"
+    },
+    "iraqCbi": {
+      "publisher": "伊拉克中央银行",
+      "name": "Monetary Stability Report — First Quarter 2025",
+      "url": "https://cbi.iq/static/uploads/up/file-175791938992330.pdf",
+      "asOf": "2025 年第一季度"
+    },
+    "iraqPlan": {
+      "publisher": "伊拉克规划部／UNDP",
+      "name": "National Development Plan 2024–2028",
+      "url": "https://www.undp.org/sites/g/files/zskgke326/files/2024-12/national-development-plan-2024-2028.pdf",
+      "asOf": "2024—2028 年规划"
+    },
+    "jordanVision": {
+      "publisher": "约旦政府",
+      "name": "Economic Modernisation Vision 2033",
+      "url": "https://jordanvision.jo/en",
+      "asOf": "含 2026—2029 执行计划"
+    },
+    "jordanPopulation": {
+      "publisher": "约旦通讯社 Petra／统计局 DoS",
+      "name": "2025 年末人口估计与 2026 年展望",
+      "url": "https://petra.gov.jo/en/news/kingdoms-population-surpasses-12-million-expected-to-reach-1214-million-by-end-of-2026-dos",
+      "asOf": "发布于 2026-07-10"
+    },
+    "jordanTrc": {
+      "publisher": "约旦通讯社 Petra／TRC",
+      "name": "2026 年第一季度通信市场统计",
+      "url": "https://petra.gov.jo/en/news/jordan-records-35-quarterly-surge-in-5g-subscriptions",
+      "asOf": "发布于 2026-07-06"
+    },
+    "jordanReserves": {
+      "publisher": "约旦通讯社 Petra／约旦中央银行",
+      "name": "2026 年 5 月末外汇储备",
+      "url": "https://petra.gov.jo/en/news/jordans-foreign-reserves-rise-to-27181-billion",
+      "asOf": "发布于 2026-06-08"
+    },
+    "lebanonCas": {
+      "publisher": "黎巴嫩中央统计局（CAS）",
+      "name": "国家与人口统计入口",
+      "url": "http://cas.gov.lb/index.php/about-lebanon-en",
+      "asOf": "公开人口页仍以历史数据为主"
+    },
+    "lebanonTra": {
+      "publisher": "黎巴嫩电信监管局（TRA）",
+      "name": "Market Data — Facts and figures",
+      "url": "https://www.tra.gov.lb/Market-Data-Facts-and-figures",
+      "asOf": "主要披露 2010—2011 年数据"
+    },
+    "lebanonBdl": {
+      "publisher": "黎巴嫩中央银行（BDL）",
+      "name": "官方统计与资产负债表入口",
+      "url": "https://www.bdl.gov.lb/",
+      "asOf": "本次未抽取字段级储备值"
+    },
+    "lebanonOmsar": {
+      "publisher": "黎巴嫩行政改革部长办公室（OMSAR）",
+      "name": "Digital Transformation Strategy 2020–2030",
+      "url": "https://omsar.gov.lb/en/digital-transformation/digital-transformation-strategy-2020-2030/",
+      "asOf": "部长会议批准，实施中"
+    }
+  }
+}

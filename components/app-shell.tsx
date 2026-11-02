@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Archive, ChartNoAxesCombined, LayoutDashboard, Newspaper, Radio, Scale, Users } from "lucide-react";
+import { Archive, ChartNoAxesCombined, LayoutDashboard, Map, Newspaper, Radio, Scale, Users } from "lucide-react";
 import report from "@/data/report.json";
 import sources from "@/data/sources.json";
 
@@ -10,6 +10,7 @@ const links = [
   { href: "/", label: "情报总览", icon: LayoutDashboard },
   { href: "/briefings", label: "双周简报", icon: Newspaper },
   { href: "/macro", label: "国家宏观总览", icon: ChartNoAxesCombined },
+  { href: "/profile", label: "国家画像", icon: Map },
   { href: "/compliance", label: "合规与营商", icon: Scale },
   { href: "/people", label: "政府人员", icon: Users },
   { href: "/sources", label: "社媒信源", icon: Radio },
