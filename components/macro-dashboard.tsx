@@ -17,8 +17,8 @@ const countryCodes = ["IRQ", "JOR", "LBN"];
 const colors = { IRQ: data.countries.IRQ.color, JOR: data.countries.JOR.color, LBN: data.countries.LBN.color };
 const modules: Module[] = [
   { id: "overview", title: "国家宏观总览（7）", description: "经济规模、增长、物价、债务、外部账户、就业与人口的最新可比快照。", category: "宏观经济", status: "已接入", icon: Globe2 },
-  { id: "oecd-snapshot", title: "OECD 基准数据（2023 快照）", description: "三国并非 OECD 成员国；以 2023 年 IMF／世界银行数据作替代参考。", category: "宏观经济", status: "口径说明", icon: Database },
-  { id: "gdp-path", title: "OECD 基线：实际 GDP 增速路径", description: "以 IMF WEO 基线替代 OECD 路径，明确区分历史、估计和预测年份。", category: "宏观经济", status: "已接入", icon: TrendingUp },
+  { id: "historical-snapshot", title: "IMF WEO 与世界银行：2024 历史基准", description: "三国七项指标采用 2024 年同年的历史值；阿盟联合报告作区域背景交叉参考。", category: "宏观经济", status: "已接入", icon: Database },
+  { id: "gdp-path", title: "IMF WEO：实际 GDP 增速（2024—2028）", description: "展示五年实际 GDP 增速，明确区分历史值、估计值和预测值。", category: "宏观经济", status: "已接入", icon: TrendingUp },
   { id: "structural", title: "国家固定及结构性指标", description: "国土、人口、城镇化、移动与固定宽带、航空客运等结构性指标。", category: "国家结构", status: "已接入", icon: Landmark },
   { id: "hormuz", title: "霍尔木兹海峡通行监测", description: "IMF PortWatch 周度趋势叠加 AIS 实时状态，支持自动与手动检测最新读数。", category: "能源与航运", status: "已接入", icon: Ship },
   { id: "gulf", title: "波斯湾态势与运价指数", description: "海峡通行暴露、绕行能力与高频运价数据的公开可用性说明。", category: "能源与航运", status: "部分数据", icon: Activity },
@@ -59,28 +59,29 @@ function Note({ children, tone = "blue" }: { children: React.ReactNode; tone?: "
 }
 
 function DetailContent({ id }: { id: string }) {
-  if (id === "overview" || id === "oecd-snapshot") {
-    const year = id === "overview" ? 2025 : 2023;
+  if (id === "overview" || id === "historical-snapshot") {
+    const year = id === "overview" ? 2026 : 2024;
+    const populationYear = id === "overview" ? 2025 : year;
     const definitions = [
       ["nominal", "名义 GDP", "十亿美元", 1], ["growth", "实际 GDP 增速", "%", 1], ["inflation", "CPI 通胀", "%", 1],
       ["debt", "政府总债务／GDP", "%", 1], ["currentAccount", "经常账户／GDP", "%", 1], ["unemployment", "失业率", "%", 1]
     ] as const;
     const rows = definitions.map(([key, label, unit, digits]) => [label + `（${unit}）`, ...countryCodes.map(code => fmt(macroValue(key, code, year), digits))]);
-    rows.push(["人口（百万人）", ...countryCodes.map(code => { const row = wbValue("population", code, year); return row ? fmt(row.value / 1e6, 2) : "—"; })]);
+    rows.push(["人口（百万人）", ...countryCodes.map(code => { const row = wbValue("population", code, populationYear); return row ? fmt(row.value / 1e6, 2) : "—"; })]);
     return <>
-      {id === "oecd-snapshot" && <Note tone="amber">伊拉克、约旦、黎巴嫩均非 OECD 成员国，OECD Data Explorer 未提供适用的三国基准序列。本模块保留原栏目名称，但表格使用 IMF WEO 与世界银行 2023 年数据，不将其称为 OECD 数据。</Note>}
-      {id === "overview" && <Note>宏观指标为 2025 年 IMF WEO 估计值；人口为世界银行 2025 年数据。伊拉克失业率缺失，不以其他年份回填。</Note>}
-      <DataTable headers={["指标", "伊拉克", "约旦", "黎巴嫩"]} rows={rows} caption={`${year} 年七项宏观参考指标`}/>
-      <SourceLinks keys={id === "overview" ? ["imf", "wb"] : ["oecd", "imf", "wb"]}/>
+      {id === "historical-snapshot" && <Note>表内七项指标均为 2024 年历史值。阿盟总秘书处、阿拉伯货币基金组织等联合报告仅作 2024 年区域背景交叉参考，不与 IMF 国别序列混合计算。</Note>}
+      {id === "overview" && <Note>宏观指标为 2026 年 IMF WEO 预测值；人口采用世界银行最新可比的 2025 年数据。黎巴嫩部分指标及伊拉克失业率没有 2026 年序列，统一保留为空值。</Note>}
+      <DataTable headers={["指标", "伊拉克", "约旦", "黎巴嫩"]} rows={rows} caption={id === "overview" ? "2026 年宏观预测快照（人口为 2025 年）" : "2024 年七项宏观历史基准"}/>
+      <SourceLinks keys={id === "overview" ? ["imf", "wb"] : ["imf", "wb", "jointArab"]}/>
     </>;
   }
   if (id === "gdp-path") {
-    const labels = Array.from({ length: 7 }, (_, i) => String(2023 + i));
+    const labels = Array.from({ length: 5 }, (_, i) => String(2024 + i));
     return <>
-      <Note>2023—2024 为历史值，2025 为估计值，2026 年起为 IMF WEO 预测。黎巴嫩 2026 年后没有本次 WEO 序列，保留为空值。</Note>
+      <Note>2024 为历史值，2025 为估计值，2026—2028 为 IMF WEO 预测。黎巴嫩 2026—2028 年没有本次 WEO 序列，保留为空值。</Note>
       <MacroLineChart labels={labels} unit="%" forecastFrom="2026" series={countryCodes.map(code => ({ name: data.countries[code as keyof typeof data.countries].name, color: colors[code as keyof typeof colors], values: labels.map(year => macroValue("growth", code, Number(year))) }))}/>
       <DataTable headers={["年份", "数据属性", "伊拉克", "约旦", "黎巴嫩"]} rows={labels.map(year => [year, Number(year) <= 2024 ? "历史" : Number(year) === 2025 ? "估计" : "预测", ...countryCodes.map(code => fmt(macroValue("growth", code, Number(year)), 1))])}/>
-      <SourceLinks keys={["imf", "oecd"]}/>
+      <SourceLinks keys={["imf"]}/>
     </>;
   }
   if (id === "structural") {
@@ -175,7 +176,7 @@ function DetailContent({ id }: { id: string }) {
   }
   if (id === "methodology") {
     return <>
-      <DataTable headers={["口径", "本页处理规则"]} rows={[["历史／估计／预测", "WEO 2023—2024 标为历史，2025 标为估计，2026 年及以后标为预测；图表预测段使用虚线。"], ["缺失值", "统一显示“—”；不以前值填充、不插值，也不把零值当作缺失值。"], ["频率", "年度、月度、季度与半年数据分别标识；周度数据不可用时明确采用年度替代。"], ["币种与单位", "运营商披露保留原币种；宏观金额按十亿美元、万亿 IQD 等单位分别展示。"], ["实体边界", "集团合并数据不与本国运营实体混用；政府机构、运营公司和交易所分别核验。"], ["OECD 栏目", "三国非 OECD 成员国，相关模块只作栏目映射，实际数值来自 IMF 或世界银行。"], ["来源回溯", "每个模块底部列出发布机构、数据截点和原始链接；授权数据只列入口，不复制序列。"]]}/>
+      <DataTable headers={["口径", "本页处理规则"]} rows={[["历史／估计／预测", "WEO 2024 标为历史，2025 标为估计，2026—2028 标为预测；图表预测段使用虚线。"], ["缺失值", "统一显示“—”；不以前值填充、不插值，也不把零值当作缺失值。"], ["频率", "年度、月度、季度与半年数据分别标识；周度数据不可用时明确采用年度替代。"], ["币种与单位", "运营商披露保留原币种；宏观金额按十亿美元、万亿 IQD 等单位分别展示。"], ["实体边界", "集团合并数据不与本国运营实体混用；政府机构、运营公司和交易所分别核验。"], ["信源命名", "模块标题直接使用实际数据集或发布机构名称；区域联合报告只作交叉参考，不与国别预测序列混用。"], ["来源回溯", "每个模块底部列出发布机构、数据截点和原始链接；授权数据只列入口，不复制序列。"]]}/>
       <SourceLinks keys={["imf", "wb", "fredBrent"]}/>
     </>;
   }
