@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Activity, BarChart3, BookOpen, ChevronDown, CircleDollarSign, Container, Database, ExternalLink, Fuel, Globe2, Landmark, LineChart as LineIcon, Search, Ship, TrendingUp, X, type LucideIcon } from "lucide-react";
 import data from "@/data/macro.json";
 import { MacroBarChart, MacroLineChart } from "@/components/macro-charts";
+import { HormuzMonitor } from "@/components/hormuz-monitor";
 
 type Source = { publisher: string; name: string; url: string; asOf: string };
 type WBRow = { country: string; year: number; value: number };
@@ -19,7 +20,7 @@ const modules: Module[] = [
   { id: "oecd-snapshot", title: "OECD 基准数据（2023 快照）", description: "三国并非 OECD 成员国；以 2023 年 IMF／世界银行数据作替代参考。", category: "宏观经济", status: "口径说明", icon: Database },
   { id: "gdp-path", title: "OECD 基线：实际 GDP 增速路径", description: "以 IMF WEO 基线替代 OECD 路径，明确区分历史、估计和预测年份。", category: "宏观经济", status: "已接入", icon: TrendingUp },
   { id: "structural", title: "国家固定及结构性指标", description: "国土、人口、城镇化、移动与固定宽带、航空客运等结构性指标。", category: "国家结构", status: "已接入", icon: Landmark },
-  { id: "hormuz", title: "霍尔木兹海峡通航趋势", description: "展示 EIA 可公开获取的油流量基准；不等同于周度船舶 AIS 过境量。", category: "能源与航运", status: "部分数据", icon: Ship },
+  { id: "hormuz", title: "霍尔木兹海峡通行监测", description: "IMF PortWatch 周度趋势叠加 AIS 实时状态，支持自动与手动检测最新读数。", category: "能源与航运", status: "已接入", icon: Ship },
   { id: "gulf", title: "波斯湾态势与运价指数", description: "海峡通行暴露、绕行能力与高频运价数据的公开可用性说明。", category: "能源与航运", status: "部分数据", icon: Activity },
   { id: "prices", title: "国际油价与天然气价格", description: "布伦特原油与 Henry Hub 天然气月度均价，截至 2026 年 10 月。", category: "能源与航运", status: "已接入", icon: Fuel },
   { id: "production", title: "各国油气产销量", description: "伊拉克生产、出口和炼油能力；其他国家不填造非同口径产量。", category: "能源与财政", status: "部分数据", icon: Fuel },
@@ -95,17 +96,12 @@ function DetailContent({ id }: { id: string }) {
     </>;
   }
   if (id === "hormuz") {
-    return <>
-      <Note tone="amber">本模块采用油流量而非船舶艘次：EIA 的公开基准可回溯，但不能替代周度 AIS 通航统计。2025 上半年值来自 EIA 2026 年更新的海峡专题。</Note>
-      <MacroBarChart items={data.hormuz.map(row => ({ label: row.period, value: row.oilFlow, note: row.basis }))} unit="百万桶/日" color="#b7791f"/>
-      <DataTable headers={["时期", "原油、凝析油及成品油流量", "统计口径"]} rows={data.hormuz.map(row => [row.period, `${fmt(row.oilFlow, 1)} 百万桶/日`, row.basis])}/>
-      <SourceLinks keys={["eia", "eia2025"]}/>
-    </>;
+    return <HormuzMonitor/>;
   }
   if (id === "gulf") {
     return <>
       <DataTable headers={["关键暴露／替代能力", "数值", "单位"]} rows={data.gulfInfrastructure.map(row => [row.item, row.value, row.unit])}/>
-      <h3 className="macro-subtitle">高频数据接入状态</h3><DataTable headers={["数据项", "首版状态", "处理方式"]} rows={[["波斯湾周度船舶态势", "未接入", "可后续接入 IMF PortWatch；不以零散新闻推算周度值"], ["油轮／集装箱运价指数", "未接入", "Baltic Exchange 完整历史序列需授权，仅保留官方入口"], ["海峡油流量与绕行能力", "已接入", "采用 EIA 公开基准"]]}/>
+      <h3 className="macro-subtitle">高频数据接入状态</h3><DataTable headers={["数据项", "当前状态", "处理方式"]} rows={[["波斯湾周度船舶态势", "已接入", "霍尔木兹模块展示 IMF PortWatch 日度序列、周度均值与 AIS 实时监测"], ["油轮／集装箱运价指数", "未接入", "Baltic Exchange 完整历史序列需授权，仅保留官方入口"], ["海峡油流量与绕行能力", "已接入", "采用 EIA 公开基准"]]}/>
       <SourceLinks keys={["eia2025", "portwatch", "baltic"]}/>
     </>;
   }
