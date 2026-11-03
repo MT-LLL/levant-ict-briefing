@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "title": "客户洞察",
+    "updated": "2026-11-03",
+    "scope": ["IRQ", "JOR", "LBN"],
+    "note": "按客户行业整理伊拉克、约旦、黎巴嫩公开信息。预算仅采用已公开的国家规划、项目融资或监管披露；未单独披露的金额不作估算。价值与建议属于我方研判，不代表客户官方立场。"
+  },
+  "countries": {
+    "IRQ": { "name": "伊拉克", "flag": "🇮🇶" },
+    "JOR": { "name": "约旦", "flag": "🇯🇴" },
+    "LBN": { "name": "黎巴嫩", "flag": "🇱🇧" }
+  },
+  "sources": {
+    "iraqPlan": { "publisher": "伊拉克规划部／UNDP", "name": "National Development Plan 2024–2028", "url": "https://www.undp.org/sites/g/files/zskgke326/files/2024-12/national-development-plan-2024-2028.pdf", "date": "2024—2028 年规划" },
+    "iraqCmc": { "publisher": "伊拉克通信与媒体委员会", "name": "ICT 产业与宽带发展白皮书", "url": "https://cmc.iq/wp-content/uploads/2025/08/The-role-and-importance-of-developing-broadband-infrastructure-in-the-ICT-and-digitization-sector-in-Iraq-in-English-white-paper.pdf", "date": "2025-08" },
+    "iraqMoc": { "publisher": "伊拉克通信部", "name": "2025 年 ICT 发展指数披露", "url": "https://moc.gov.iq/news/article-1037?lang=en", "date": "2025-07-02" },
+    "iraqIrena": { "publisher": "国际可再生能源署／伊拉克政府", "name": "Energy Transition Assessment: Iraq", "url": "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA_COU_Energy_transition_assessment_Iraq_2025.pdf", "date": "2025-07" },
+    "iraqCabinet": { "publisher": "伊拉克国家通讯社／内阁", "name": "内阁第 41 次会议：农业、法奥港、机场与天然气事项", "url": "https://ina.iq/en/politics/43003-the-cabinet-holds-the-38th-regular-session-decisions-included.html", "date": "2025-10-14" },
+    "iraqHealth": { "publisher": "伊拉克国家通讯社／内阁", "name": "内阁第 43 次会议：医院与污水处理项目", "url": "https://ina.iq/en/politics/43271-the-cabinet-holds-the-43rd-regular-session-decisions-included.html", "date": "2025-10-28" },
+    "iraqFinance": { "publisher": "伊拉克国家通讯社／财政部", "name": "财政部长介绍经济改革与国际合作项目", "url": "https://ina.iq/en/economy/43046-finance-minister-outlines-iraqs-economic-situation-and-reform-programs-in-washington.html", "date": "2025-10" },
+    "iraqCbi": { "publisher": "伊拉克中央银行", "name": "Monetary Stability Report — First Quarter 2025", "url": "https://cbi.iq/static/uploads/up/file-175791938992330.pdf", "date": "2025 年第一季度" },
+    "zteIraq": { "publisher": "伊拉克通信部／中兴通讯", "name": "ITEX 2026 数字基础设施、数据中心与 AI 合作备忘录", "url": "https://moc.gov.iq/news/article-1361?lang=en", "date": "2026-10-19" },
+    "jordanVision": { "publisher": "约旦政府", "name": "Economic Modernisation Vision 2033", "url": "https://jordanvision.jo/en", "date": "含 2026—2029 执行计划" },
+    "jordanExecution": { "publisher": "约旦政府／经济现代化愿景平台", "name": "2026—2029 政府执行计划发布", "url": "https://jordanvision.jo/en/article/index", "date": "2026-01-12" },
+    "jordanDigital": { "publisher": "约旦通讯社 Petra／政府", "name": "2026 年第一季度数字政府服务进展", "url": "https://petra.gov.jo/en/news/jordan-expands-digital-government-services-under-economic-modernization-vision", "date": "2026-05-21" },
+    "jordanMining": { "publisher": "约旦通讯社 Petra／政府", "name": "矿业 2026—2029 执行计划", "url": "https://petra.gov.jo/en/news/jordan-targets-mining-growth-under-economic-modernisation-plan", "date": "2026-03-17" },
+    "jordanTrc": { "publisher": "约旦通讯社 Petra／TRC", "name": "2026 年第一季度通信市场统计", "url": "https://petra.gov.jo/en/news/jordan-records-35-quarterly-surge-in-5g-subscriptions", "date": "2026-07-06" },
+    "jordanEnergy": { "publisher": "约旦通讯社 Petra／能源与矿产部", "name": "约旦—德国能源合作 2025 工作计划", "url": "https://petra.gov.jo/Include/InnerPage.jsp?ID=66308&lang=en&name=en_news", "date": "2024-12-10" },
+    "jordanCpf": { "publisher": "世界银行", "name": "Jordan Country Partnership Framework FY2024–FY2029", "url": "https://documents1.worldbank.org/curated/en/099030524153512269/pdf/BOSIB1c59bd695098183bb1a7e87019d033.pdf", "date": "2024-02-28" },
+    "umniah": { "publisher": "Umniah／Ericsson", "name": "五年移动网络合作协议", "url": "https://www.ericsson.com/en/press-releases/5/2025/umniah-partners-ericsson-to-boost-jordan-connectivity", "date": "2025-11-05" },
+    "capitalBank": { "publisher": "Capital Bank of Jordan", "name": "Capital Bank、JBS 与 IBM 数据及 AI 平台案例", "url": "https://www.capitalbank.jo/en/personal/about-us/media-centre/capital-bank-partners-with-jbs-and-ibm", "date": "原页面未标日期" },
+    "lebanonOmsar": { "publisher": "黎巴嫩行政改革部长办公室", "name": "Digital Transformation Strategy 2020–2030", "url": "https://omsar.gov.lb/en/digital-transformation/digital-transformation-strategy-2020-2030/", "date": "实施中" },
+    "lebanonLeap": { "publisher": "世界银行／黎巴嫩政府", "name": "Lebanon Emergency Assistance Project", "url": "https://www.worldbank.org/en/news/press-release/2025/06/25/lebanon-new-us-250-million-project-to-kickstart-the-recovery-and-reconstruction-in-conflict-affected-areas", "date": "2025-06-25" },
+    "lebanonNreap": { "publisher": "黎巴嫩能源与水利部／LCEC", "name": "National Renewable Energy Action Plan 2025–2030", "url": "https://lcec.org.lb/sites/default/files/2025-10/NREAP-of-Lebanon-2025_2030.pdf", "date": "2025-10" },
+    "lebanonBdl": { "publisher": "黎巴嫩中央银行", "name": "Basic Decision No. 13790 — Electronic Payment Services Providers", "url": "https://www.bdl.gov.lb/CB%20Com/Laws%20And%20Regulations/Basic%20Circulars/Decision_13790_EN%C2%A711334_3.pdf", "date": "2026-01-09" },
+    "lebanon3rf": { "publisher": "世界银行／联合国／欧盟／黎巴嫩政府", "name": "Lebanon Reform, Recovery and Reconstruction Framework", "url": "https://documents1.worldbank.org/curated/en/948021607068524180/pdf/Lebanon-Reform-Recovery-and-Reconstruction-Framework-3RF.pdf", "date": "2020，历史基线" }
+  },
+  "categories": [
+    {
+      "id": "telecom",
+      "name": "电信运营商",
+      "summary": "移动与固定运营商、监管机构及国家级网络基础设施主体。",
+      "customers": ["伊拉克：通信部、CMC、Asiacell、Zain Iraq", "约旦：TRC、Orange Jordan、Zain Jordan、Umniah", "黎巴嫩：电信部、Alfa、touch"],
+      "foundation": "客户采购覆盖无线接入、核心网、传输、固网、BSS／OSS、节能与政企连接；决策链同时涉及监管机构频谱与牌照政策。",
+      "budget": "三国运营商分类资本开支预算未在本轮统一披露；以运营商合同、频谱安排和监管市场报告逐项核验。",
+      "strategy": "伊拉克侧重光纤、4G 扩展与 5G 启动；约旦进入 5G 与光纤规模运营阶段；黎巴嫩先恢复网络韧性，再评估新增能力。",
+      "operation": "约旦公开季度市场数据最完整；伊拉克以建设与发展指标为主；黎巴嫩监管公开市场页较旧，不以旧数据替代当前经营情况。",
+      "value": ["以现网扩容、传输与节能形成组合方案，避免只推单点设备。", "黎巴嫩项目须将供电、运维与付款保障纳入方案。"],
+      "sources": ["iraqCmc", "jordanTrc", "umniah"],
+      "dynamics": [
+        { "date": "2026-07-06", "country": "JOR", "title": "约旦发布 2026 年第一季度通信市场统计", "detail": "TRC 持续披露 5G、光纤和宽带市场变化，可用于账户优先级与扩容节奏判断。", "sources": ["jordanTrc"] },
+        { "date": "2025-11-05", "country": "JOR", "title": "Umniah 签署五年网络合作协议", "detail": "合作覆盖 3G／4G／5G 无线接入及相关网络能力，属于正式合作公告。", "sources": ["umniah"] }
+      ]
+    },
+    {
+      "id": "government",
+      "name": "政府与主权机构",
+      "summary": "中央政府、数字政府主管部门、主权项目平台与公共服务机构。",
+      "customers": ["伊拉克：规划部、通信部及内阁项目体系", "约旦：首相府、数字经济与创业部、公共部门现代化机构", "黎巴嫩：OMSAR、各部委与市政机构"],
+      "foundation": "核心需求为政务云与数据平台、数字身份、跨部门互操作、公共服务门户、网络安全和项目绩效监测。",
+      "budget": "约旦 2026—2029 执行计划公布整体指示性成本及年度安排，但不是单一 ICT 采购预算；伊拉克和黎巴嫩按国家规划及具体融资项目披露。",
+      "strategy": "伊拉克国家发展规划强调治理和数字化；约旦将经济现代化、公共部门现代化和数字转型合并推进；黎巴嫩实施 2020—2030 数字转型战略。",
+      "operation": "采购正从单部门系统转向跨部门服务和可衡量结果；项目资金可来自国家预算、外援、投资或 PPP，须逐项确认付款与实施主体。",
+      "value": ["优先切入可量化的服务上线、身份认证与数据治理场景。", "对主权项目建立‘预算来源—实施机构—验收指标’三项核验。"],
+      "sources": ["iraqPlan", "jordanExecution", "lebanonOmsar"],
+      "dynamics": [
+        { "date": "2026-05-21", "country": "JOR", "title": "约旦公布数字政府服务季度进展", "detail": "官方披露累计数字化服务、数字身份和平台用户进展，反映项目已进入运营监测阶段。", "sources": ["jordanDigital"] },
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦启动 2026—2029 政府执行计划", "detail": "计划整合经济现代化、公共部门现代化、数字转型与社会保护，采用项目卡和电子仪表盘跟踪。", "sources": ["jordanExecution"] }
+      ]
+    },
+    {
+      "id": "banking",
+      "name": "金融银行",
+      "summary": "中央银行、商业银行、支付服务商、保险与金融基础设施运营方。",
+      "customers": ["伊拉克：中央银行、商业银行与支付机构", "约旦：中央银行、JoPACC、商业银行与金融科技企业", "黎巴嫩：BDL、商业银行与电子支付服务商"],
+      "foundation": "重点系统包括核心银行外围、支付与清结算、数据平台、风控、反洗钱、数字渠道、云与业务连续性。",
+      "budget": "银行科技预算通常不单独公开；仅引用央行报告、银行案例和监管要求，不用行业市场规模代替客户预算。",
+      "strategy": "伊拉克推进金融稳定和数字化；约旦关注数字金融与金融服务增长；黎巴嫩在金融业重组背景下强化电子支付许可、报送、系统控制与本地托管要求。",
+      "operation": "经营分化显著，不宜跨国直接比较资产或收入。机会主要来自合规改造、支付运营、数据分析和韧性建设，而非单纯新增网点。",
+      "value": ["以监管合规、支付和数据平台为切入口，先确认数据驻留与审计要求。", "黎巴嫩账户须单独评估交易对手、结算币种和业务连续性风险。"],
+      "sources": ["iraqCbi", "jordanCpf", "lebanonBdl"],
+      "dynamics": [
+        { "date": "2026-01-09", "country": "LBN", "title": "黎巴嫩发布电子支付服务商监管决定", "detail": "规定许可分类、定期报送、系统控制、反洗钱及本地数据托管材料等要求。", "sources": ["lebanonBdl"] },
+        { "date": "页面未标日期", "country": "JOR", "title": "Capital Bank 披露数据与 AI 平台案例", "detail": "客户官方案例涉及数据、AI／机器学习、风控、KYC 与反洗钱；不按检索日期冒充新增项目。", "sources": ["capitalBank"] }
+      ]
+    },
+    {
+      "id": "utilities",
+      "name": "能源·电力·水利",
+      "summary": "电力与水务主管部门、公用事业公司、发输配水和环保服务机构。",
+      "customers": ["伊拉克：电力部、水务与污水处理公共机构", "约旦：能源与矿产部、水利与灌溉部、公用事业公司", "黎巴嫩：能源与水利部、EDL、水务机构"],
+      "foundation": "典型需求包括 SCADA、智能计量、配电与水务自动化、管网监测、计费、资产管理和应急通信。",
+      "budget": "分类预算未统一公开。黎巴嫩 LEAP 已披露首笔融资，但覆盖多个基础设施部门，不能全额计入能源或水务 ICT 预算。",
+      "strategy": "伊拉克聚焦供电与公共服务修复；约旦将水与能源安全、效率和财务可持续性结合；黎巴嫩将紧急修复与电力、水务长期改革并行。",
+      "operation": "公用事业经营受收费、损耗、供电和融资约束，数字化方案必须能证明减少损失、提高可计费性或改善服务连续性。",
+      "value": ["以智能计量、漏损监测和资产管理形成可量化商业案例。", "避免将多部门重建融资总额当作单一客户可用预算。"],
+      "sources": ["iraqIrena", "jordanCpf", "lebanonLeap"],
+      "dynamics": [
+        { "date": "2025-10-28", "country": "IRQ", "title": "伊拉克内阁调整污水处理项目", "detail": "涉及泵站、污水网络扩展和项目成本调整；公开稿未披露完整分项金额。", "sources": ["iraqHealth"] },
+        { "date": "2025-06-25", "country": "LBN", "title": "黎巴嫩紧急援助项目支持关键基础设施修复", "detail": "首笔融资覆盖交通、水、能源、市政、教育和医疗等多个部门，按优先级分阶段实施。", "sources": ["lebanonLeap"] }
+      ]
+    },
+    {
+      "id": "oilgas",
+      "name": "油气与石化",
+      "summary": "油气主管部门、国家石油公司、炼化企业、天然气处理和工程服务商。",
+      "customers": ["伊拉克：石油部、国家石油与炼化企业、天然气项目主体", "约旦：能源与矿产部、天然气与石化相关企业", "黎巴嫩：石油管理相关机构与潜在项目主体"],
+      "foundation": "需求集中在工业网络、生产数据采集、管道与场站通信、数字孪生、网络安全、资产绩效和 HSE 系统。",
+      "budget": "油气项目资本开支按具体合同和项目披露；本轮未获得三国可比的分类 ICT 预算，不作估算。",
+      "strategy": "伊拉克将天然气利用、减少放空燃烧、炼化和能源安全列为重点；约旦执行计划包括天然气项目；黎巴嫩机会以规划和恢复性项目为主。",
+      "operation": "项目经营与产量、加工能力和长期合同关联，销售切入需同时覆盖生产部门与信息化部门，并满足工业安全和本地交付要求。",
+      "value": ["围绕场站连接、工业安全和资产运维构建可复制的行业方案。", "将 MoU、招标授权、合同签署和投产节点分开跟踪。"],
+      "sources": ["iraqIrena", "jordanExecution", "iraqCabinet"],
+      "dynamics": [
+        { "date": "2025-10-14", "country": "IRQ", "title": "伊拉克内阁授权推进 LNG 固定平台相关谈判", "detail": "该事项仍属授权与谈判流程，不等同于已签署采购合同或项目投产。", "sources": ["iraqCabinet"] },
+        { "date": "2025-07", "country": "IRQ", "title": "伊拉克能源转型评估发布", "detail": "官方与 IRENA 文件覆盖天然气利用、能源结构和电力系统转型方向。", "sources": ["iraqIrena"] }
+      ]
+    },
+    {
+      "id": "digitalEnergy",
+      "name": "数字能源",
+      "summary": "新能源开发商、储能、电网数字化、能源数据与绿色转型项目主体。",
+      "customers": ["伊拉克：电力部、可再生能源项目开发与监管机构", "约旦：能源与矿产部、电网、储能与氢能项目主体", "黎巴嫩：能源与水利部、LCEC、EDL、ERA"],
+      "foundation": "方案包括新能源场站通信、功率预测、储能管理、智能电网、能源数据平台、需求侧管理和电动交通支撑系统。",
+      "budget": "新能源行动计划中的投资需求属于规划或情景估算，不等于已批预算；只有正式融资或合同才列为已落实资金。",
+      "strategy": "伊拉克强调可再生能源许可数字化；约旦推进电网、储能、氢能和能源数据；黎巴嫩 NREAP 2025—2030 提出可再生能源、智能电网和智能计量方向。",
+      "operation": "项目可融资性依赖购电协议、监管、并网和收费机制；数字能源销售应与发电或电网主项目同步，而非孤立销售软件。",
+      "value": ["把通信、边缘计算和网络安全嵌入新能源场站与电网标包。", "对规划情景、意向项目和已融资项目采用不同机会等级。"],
+      "sources": ["iraqIrena", "jordanEnergy", "lebanonNreap"],
+      "dynamics": [
+        { "date": "2025-10", "country": "LBN", "title": "黎巴嫩发布 NREAP 2025—2030", "detail": "文件提出可再生能源路线、智能电网与智能计量，并明确融资和监管是实施约束。", "sources": ["lebanonNreap"] },
+        { "date": "2024-12-10", "country": "JOR", "title": "约旦能源合作工作计划纳入数字化与网络安全", "detail": "2025 工作计划覆盖电网发展、数字化、网络安全、创新和能源数据管理。", "sources": ["jordanEnergy"] }
+      ]
+    },
+    {
+      "id": "datacenter",
+      "name": "数据中心与IDC",
+      "summary": "国家数据中心、运营商 IDC、托管设施及关键业务灾备中心。",
+      "customers": ["伊拉克：通信部、国有合作主体与数据中心生态伙伴", "约旦：国家数据中心、运营商与金融客户", "黎巴嫩：政府、运营商及关键公共服务机构"],
+      "foundation": "采购范围包括机房基础设施、服务器与存储、网络、虚拟化、云平台、灾备、安全、能效和运维服务。",
+      "budget": "除具体项目融资或合同外，本轮未获得三国统一 IDC 投资预算；合作备忘录不作为已落实建设资金。",
+      "strategy": "伊拉克通过政企合作拓展数据中心和算力基础设施；约旦执行计划明确发展国家数据中心；黎巴嫩优先恢复关键服务和数据韧性。",
+      "operation": "市场仍以项目型建设为主，真实机会须核验业主、供电、机房选址、连接、数据驻留和运维责任，不以合作意向推算投产容量。",
+      "value": ["优先提供‘机房＋连接＋云管＋安全’联合方案。", "将供电与能效指标作为黎巴嫩和伊拉克方案的基础约束。"],
+      "sources": ["zteIraq", "jordanExecution", "lebanonOmsar"],
+      "dynamics": [
+        { "date": "2026-10-19", "country": "IRQ", "title": "伊拉克披露数据中心与云合作备忘录", "detail": "合作范围涉及数据中心、云、服务器、存储和 AI；MoU 不等同采购合同或已建成产能。", "sources": ["zteIraq"] },
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦执行计划纳入国家数据中心建设", "detail": "官方将国家数据中心与政务系统、数据和数字服务共同推进，具体采购包需继续跟踪。", "sources": ["jordanExecution"] }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "云服务",
+      "summary": "政务云、行业云、托管云、云集成商与 SaaS 服务生态。",
+      "customers": ["伊拉克：政府、国企和数字化服务商", "约旦：数字政府部门、金融、教育与 SME 客户", "黎巴嫩：公共部门、金融机构与专业服务生态"],
+      "foundation": "核心能力包括云迁移、混合云、云原生平台、数据集成、灾备、云安全、FinOps 和本地运维。",
+      "budget": "云服务通常包含在部门信息化或行业项目预算中，本轮未获得可比的独立云采购预算，不以全球云市场规模代替。",
+      "strategy": "伊拉克以数字基础设施合作为牵引；约旦以公共服务数字化、数字身份和国家数据平台形成需求；黎巴嫩以互操作、服务恢复与成本约束下的渐进迁移为主。",
+      "operation": "经营观察重点应从‘上云率’转为活跃服务、数据治理和持续运维；跨境云还需确认数据驻留、连接质量和退出机制。",
+      "value": ["以单个高价值工作负载和灾备场景起步，再扩展云管平台。", "投标前明确本地托管、跨境传输、安全和持续服务成本。"],
+      "sources": ["iraqCmc", "jordanDigital", "lebanonOmsar"],
+      "dynamics": [
+        { "date": "2026-10-19", "country": "IRQ", "title": "伊拉克合作备忘录覆盖云与行业数字化", "detail": "官方披露显示云已纳入数字基础设施合作议题，但尚无对应采购金额和交付节点。", "sources": ["zteIraq"] },
+        { "date": "2026-05-21", "country": "JOR", "title": "约旦数字服务平台持续扩展", "detail": "政府服务、数字身份和平台用户的运营披露，为云与数据集成需求提供官方观察窗口。", "sources": ["jordanDigital"] }
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "交通·航空·港口",
+      "summary": "港口、机场、铁路、公路、城市公共交通与物流枢纽运营主体。",
+      "customers": ["伊拉克：交通部、法奥港、巴格达国际机场、铁路机构", "约旦：交通与物流机构、亚喀巴相关主体、机场与公共交通机构", "黎巴嫩：公共工程与交通部、贝鲁特港及机场"],
+      "foundation": "信息化需求包括专网与视频、港口／机场运营系统、调度、票务、资产运维、物流数据平台、网络安全和应急通信。",
+      "budget": "交通项目常采用政府预算、国际融资或 PPP；公开项目总投资不能直接视为 ICT 可用预算。",
+      "strategy": "伊拉克推进港口、机场、铁路和走廊建设；约旦将交通物流纳入高价值产业并推进公共服务改善；黎巴嫩优先修复关键交通设施和供应链连续性。",
+      "operation": "经营恢复与客货流、设施可用性和项目治理相关。ICT 方案应围绕吞吐效率、安全和资产可用性建立收益指标。",
+      "value": ["优先绑定港口、机场和铁路主工程的弱电与数字运营标包。", "在 PPP 项目中区分政府业主、特许经营主体和实际付款方。"],
+      "sources": ["iraqCabinet", "jordanVision", "lebanonLeap"],
+      "dynamics": [
+        { "date": "2025-10-14", "country": "IRQ", "title": "伊拉克推进法奥港与巴格达机场相关事项", "detail": "内阁披露港口材料安排及机场修复项目进入下一阶段流程，仍需跟踪实际招标与合同。", "sources": ["iraqCabinet"] },
+        { "date": "2025-06-25", "country": "LBN", "title": "黎巴嫩 LEAP 将交通列入优先修复范围", "detail": "融资用于关键公共基础设施和生命线服务修复，交通与其他部门共享项目框架。", "sources": ["lebanonLeap"] }
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "企业·行业",
+      "summary": "制造业、制药、纺织、工程、贸易、中小企业与产业园区客户。",
+      "customers": ["伊拉克：工业与贸易企业、国有企业和重建供应链", "约旦：制药、食品、化工、纺织、工程与出口制造企业", "黎巴嫩：工商业、中小企业与专业服务企业"],
+      "foundation": "典型需求包括企业网络、ERP／MES 周边、工业互联网、供应链协同、数据安全、园区连接和生产运维。",
+      "budget": "企业数字化预算高度分散且多数不公开；仅按具体公司披露或正式投资项目确认，不按行业产值推算。",
+      "strategy": "伊拉克强调私营部门、农业和工业恢复；约旦执行计划支持工业、出口与投资；黎巴嫩侧重企业经营恢复和营商环境改革。",
+      "operation": "客户经营受出口、能源成本、融资和供应链影响。标准化方案应与行业生产节拍、合规和现金流约束匹配。",
+      "value": ["以园区和龙头企业建立标杆，再向供应链中小企业复制。", "采用分阶段交付和可量化运维收益，降低一次性资本开支门槛。"],
+      "sources": ["iraqFinance", "jordanExecution", "lebanon3rf"],
+      "dynamics": [
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦执行计划继续支持工业与投资", "detail": "包括产业支持、投资和出口相关项目，行业客户机会需进一步映射到具体企业与项目卡。", "sources": ["jordanExecution"] },
+        { "date": "2025-10", "country": "IRQ", "title": "伊拉克讨论农业、工业和基础设施私营部门合作", "detail": "财政部与国际金融机构讨论投资障碍和重点行业支持，不等同具体企业采购。", "sources": ["iraqFinance"] }
+      ]
+    },
+    {
+      "id": "mining",
+      "name": "矿业与建材",
+      "summary": "磷酸盐、钾盐、矿产开发、水泥、建材与工程材料企业。",
+      "customers": ["伊拉克：水泥、建材与重建供应链企业", "约旦：磷酸盐、钾盐、溴及矿业投资机构", "黎巴嫩：建材与重建供应链主体"],
+      "foundation": "需求覆盖矿区通信、生产自动化、车队调度、安全视频、地质数据、能源管理、仓储物流与质量追溯。",
+      "budget": "矿业和建材 ICT 分类预算未公开；地质信息、技能中心等项目应按官方项目卡或招标分别核验。",
+      "strategy": "约旦明确提高矿产生产和出口、扩大投资机会并建设国家地质信息库；伊拉克和黎巴嫩更偏重建带动的建材与供应链需求。",
+      "operation": "约旦矿业经营与出口和外资联系紧密；数字项目可从资源数据、生产效率和物流协同切入，避免只按产量扩张推断 IT 支出。",
+      "value": ["优先跟踪地质信息库、矿区专网和生产调度项目。", "建材客户与重建项目联动，但须核验实际资金和工期。"],
+      "sources": ["jordanMining", "jordanVision", "lebanonLeap"],
+      "dynamics": [
+        { "date": "2026-03-17", "country": "JOR", "title": "约旦公布矿业 2026—2029 执行重点", "detail": "官方列出矿产资源互动地图、国家地质信息库和能力建设等项目方向。", "sources": ["jordanMining"] },
+        { "date": "2025-06-25", "country": "LBN", "title": "黎巴嫩重建项目带动建材与拆除物管理需求", "detail": "LEAP 包含关键设施修复和拆除物可持续管理，但建材采购机会须以后续标包为准。", "sources": ["lebanonLeap"] }
+      ]
+    },
+    {
+      "id": "agriculture",
+      "name": "农业与食品",
+      "summary": "农业主管部门、灌溉机构、粮食与食品加工、农业合作社和出口企业。",
+      "customers": ["伊拉克：农业部、水稻与灌溉相关主体、食品企业", "约旦：农业与食品安全机构、农食出口和加工企业", "黎巴嫩：农业、食品安全与供应链恢复相关主体"],
+      "foundation": "信息化场景包括灌溉监测、农业数据、追溯、冷链、生产管理、食品安全、农村连接与气象服务。",
+      "budget": "农业补偿、补贴或国家规划资金不等于数字化预算；只有明确技术建设内容的项目才纳入 ICT 机会。",
+      "strategy": "伊拉克关注节水种植和农业恢复；约旦执行计划强调粮食安全、农业出口和现代化；黎巴嫩重建与供应链连续性相关。",
+      "operation": "经营受水资源、投入成本、季节和出口渠道影响。数字方案应优先证明节水、减产损失和追溯价值。",
+      "value": ["以灌溉监测、冷链追溯和食品加工连接为优先场景。", "将农户补偿或补贴与真正的技术采购预算严格区分。"],
+      "sources": ["iraqCabinet", "jordanExecution", "jordanCpf"],
+      "dynamics": [
+        { "date": "2025-10-14", "country": "IRQ", "title": "伊拉克内阁讨论稻农补偿与节水种植", "detail": "财政部拟安排补偿，农业部研究低耗水种植方法；补偿资金不应视为数字农业预算。", "sources": ["iraqCabinet"] },
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦执行计划强化食品安全与农业出口", "detail": "农食领域被纳入新阶段项目组合，为追溯、供应链和生产数字化提供跟踪入口。", "sources": ["jordanExecution"] }
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "地产与建筑",
+      "summary": "住房、城市开发、公共建筑、市政工程、重建与设施管理客户。",
+      "customers": ["伊拉克：住房与公共建设项目业主、承包商", "约旦：城市开发、公共建筑与基础设施项目主体", "黎巴嫩：住房、市政、受损建筑与重建项目机构"],
+      "foundation": "需求包括工地连接、项目管理、BIM 协同、智能楼宇、视频与门禁、设施运维和公共安全。",
+      "budget": "重建或住房总投资不等于 ICT 预算；黎巴嫩 LEAP 为跨部门可扩展框架，伊拉克和约旦需按具体项目卡或合同核验。",
+      "strategy": "伊拉克国家规划推动基础设施与公共服务；约旦将城市发展和公共建设纳入执行项目；黎巴嫩优先修复受损建筑、住房和市政服务。",
+      "operation": "行业经营高度依赖项目融资、工程进度和公共付款。数字方案宜绑定总承包、设施管理或长期运营合同。",
+      "value": ["与总包和项目管理方建立前置合作，避免仅在竣工后销售弱电。", "对重建项目跟踪设计、环评、融资和招标四个前置节点。"],
+      "sources": ["iraqPlan", "jordanExecution", "lebanonLeap"],
+      "dynamics": [
+        { "date": "2025-06-25", "country": "LBN", "title": "黎巴嫩启动紧急修复与重建融资框架", "detail": "首笔资金用于受损关键公共设施、建筑和拆除物管理；具体建筑 ICT 标包尚待后续披露。", "sources": ["lebanonLeap"] },
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦新执行计划纳入基础设施和公共服务项目", "detail": "政府将项目、时间表、融资机制和绩效指标结合管理，适合持续跟踪建设业主。", "sources": ["jordanExecution"] }
+      ]
+    },
+    {
+      "id": "tourism",
+      "name": "酒店与旅游",
+      "summary": "旅游主管部门、酒店集团、景区、航空旅游服务和医疗旅游相关客户。",
+      "customers": ["伊拉克：文化遗产、酒店与旅游服务主体", "约旦：旅游主管部门、景区、酒店与医疗旅游机构", "黎巴嫩：酒店、餐饮、文化遗产与城市旅游机构"],
+      "foundation": "需求覆盖酒店网络与 Wi‑Fi、预订与支付周边、客户数据、智能客房、安防、景区数字服务和多语言平台。",
+      "budget": "酒店与景区科技预算多属私营企业或具体投资项目，本轮未获得可比公共预算；旅游项目投资额不直接作为 ICT 预算。",
+      "strategy": "约旦将 Destination Jordan、旅游产品多元化和重点项目纳入经济现代化；伊拉克和黎巴嫩更侧重遗产、城市服务与经营恢复。",
+      "operation": "经营受客流、地区安全、航空连通和支付能力影响，跨国比较需谨慎。应以单体酒店或景区实际运营方作为账户单位。",
+      "value": ["以酒店网络、客户体验和景区数字服务形成轻量化组合。", "大型旅游项目需先确认业主、运营方和融资关闭状态。"],
+      "sources": ["jordanVision", "jordanExecution", "lebanon3rf"],
+      "dynamics": [
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦执行计划推进旅游产品与重点项目", "detail": "官方列出旅游产品多元化及缆车等项目方向；后续采购应以项目卡和招标为准。", "sources": ["jordanExecution"] },
+        { "date": "2020，历史基线", "country": "LBN", "title": "3RF 将旅游与商业列入恢复需求", "detail": "该文件仅作为历史恢复框架，不用于代表 2026 年酒店经营水平或新增采购。", "sources": ["lebanon3rf"] }
+      ]
+    },
+    {
+      "id": "healthEducation",
+      "name": "医疗·教育",
+      "summary": "医院、公共卫生、基础教育与相关公共服务交付机构。",
+      "customers": ["伊拉克：卫生部、教育部、医院与学校建设项目", "约旦：卫生与教育部门、医院、学校和数字服务机构", "黎巴嫩：公共卫生部、教育部门、医院与学校"],
+      "foundation": "重点场景包括医院与校园网络、电子病历周边、数字学习、数据安全、远程服务、资产管理与应急通信。",
+      "budget": "公共建设与设备预算不等于 ICT 预算；约旦总体执行计划和黎巴嫩跨部门融资均不能按类别自行拆分。",
+      "strategy": "伊拉克推进医院、学校和基本服务恢复；约旦将数字健康、学校建设、教师培训和在线学习纳入执行计划；黎巴嫩优先恢复医疗和教育服务。",
+      "operation": "公共医疗教育经营更适合用服务可及性、设施可用性和项目交付衡量，而非商业收入；私营机构需另行获取财务披露。",
+      "value": ["将网络与数字平台绑定医院或学校主项目，提前进入设计阶段。", "公共部门机会以服务连续性和覆盖指标定义验收。"],
+      "sources": ["iraqHealth", "jordanExecution", "lebanonLeap"],
+      "dynamics": [
+        { "date": "2025-10-28", "country": "IRQ", "title": "伊拉克内阁调整医院建设项目", "detail": "涉及医院设计、建设、医疗设备及成本调整；公开稿未提供可直接引用的 ICT 分项预算。", "sources": ["iraqHealth"] },
+        { "date": "2025-06-25", "country": "LBN", "title": "黎巴嫩 LEAP 覆盖医疗与教育设施修复", "detail": "项目分阶段支持关键公共建筑与服务恢复，需继续跟踪具体设施和实施标包。", "sources": ["lebanonLeap"] }
+      ]
+    },
+    {
+      "id": "research",
+      "name": "教育与科研",
+      "summary": "高等教育、职业教育、科研机构、技能培训与创新中心。",
+      "customers": ["伊拉克：大学、科研机构与数字技能项目", "约旦：高校、TVET、卓越中心与教师培训机构", "黎巴嫩：大学、研究机构与职业教育机构"],
+      "foundation": "需求包括科研网络、高性能计算周边、校园云、实验室连接、学习平台、数据治理和数字技能平台。",
+      "budget": "本轮未获得三国统一科研 ICT 预算；学校建设、奖学金或培训总预算不能直接计入科研信息化。",
+      "strategy": "伊拉克国家规划强调人力资本和数字技能；约旦推进 TVET、教师数字技能、卓越中心和未来岗位衔接；黎巴嫩重视保留研究与人才基础。",
+      "operation": "教育和科研客户以招生、培训、研究和服务成果衡量运营，采购常受年度公共预算、捐助和项目制资金影响。",
+      "value": ["以数字技能、校园网络和联合实验室建立长期账户关系。", "将培训项目与基础设施采购分开核验资金和交付主体。"],
+      "sources": ["iraqPlan", "jordanCpf", "jordanExecution"],
+      "dynamics": [
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦执行计划公布教育与技能项目组合", "detail": "包括学校建设、教师培训、在线学习和卓越中心等方向，具体 ICT 内容需逐项目确认。", "sources": ["jordanExecution"] },
+        { "date": "2024-02-28", "country": "JOR", "title": "世界银行约旦合作框架强化教育与未来岗位衔接", "detail": "框架覆盖教育改革、TVET、数字技能及公私合作，为中期项目跟踪提供依据。", "sources": ["jordanCpf"] }
+      ]
+    },
+    {
+      "id": "enterpriseAi",
+      "name": "企业·云·AI",
+      "summary": "正在推进云迁移、数据平台、AI 应用和行业数字化的企业与服务商。",
+      "customers": ["伊拉克：通信部生态、国企、数据中心与行业数字化伙伴", "约旦：金融、政府、制造、教育与数字服务企业", "黎巴嫩：金融、专业服务和数字政府相关机构"],
+      "foundation": "方案覆盖混合云、数据平台、AI 基础设施、模型应用集成、网络安全、治理、行业应用和持续运维。",
+      "budget": "企业 AI 与云预算通常不公开；合作备忘录、培训或概念验证不作为规模采购，必须逐项确认生产部署和资金。",
+      "strategy": "伊拉克以数据中心、云和 AI 基础设施合作切入；约旦将 AI、数据和数字健康纳入公共部门与产业现代化；黎巴嫩侧重低成本、可恢复的数字服务和数据治理。",
+      "operation": "市场处于项目与案例驱动阶段，不能以试点效果外推全网或全行业收益。优先识别已有数据基础、明确业务负责人和运维预算的客户。",
+      "value": ["从金融风控、政务服务和运营提效等可衡量场景切入。", "将 PoC、生产合同、实际用户和经营收益分别记录，避免概念化销售。"],
+      "sources": ["zteIraq", "jordanExecution", "capitalBank"],
+      "dynamics": [
+        { "date": "2026-10-19", "country": "IRQ", "title": "伊拉克披露云、算力与 AI 合作备忘录", "detail": "合作范围覆盖数据中心、云、服务器、存储和 AI；尚不能据此确认采购金额或生产部署。", "sources": ["zteIraq"] },
+        { "date": "2026-01-12", "country": "JOR", "title": "约旦将 AI、数据和数字健康纳入执行计划", "detail": "官方将新兴技术用于公共部门效率和服务简化，具体企业采购仍需单独核验。", "sources": ["jordanExecution"] }
+      ]
+    }
+  ]
+}
