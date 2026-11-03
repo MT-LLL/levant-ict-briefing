@@ -5,6 +5,7 @@ import { Activity, BarChart3, BookOpen, ChevronDown, CircleDollarSign, Container
 import data from "@/data/macro.json";
 import { MacroBarChart, MacroLineChart } from "@/components/macro-charts";
 import { HormuzMonitor } from "@/components/hormuz-monitor";
+import { PortsMonitor } from "@/components/ports-monitor";
 
 type Source = { publisher: string; name: string; url: string; asOf: string };
 type WBRow = { country: string; year: number; value: number };
@@ -27,9 +28,9 @@ const modules: Module[] = [
   { id: "fiscal", title: "油气与非油财政收入", description: "伊拉克中央政府油气与非油收入，列示本币规模及 GDP 占比。", category: "能源与财政", status: "部分数据", icon: CircleDollarSign },
   { id: "swf", title: "各国主权财富基金", description: "仅列可比的公开 AUM；三国首版均不以石油收入或央行储备冒充基金规模。", category: "资本市场", status: "口径说明", icon: Landmark },
   { id: "stocks", title: "各国股票市场", description: "上市公司市值与数量的年度序列，并链接三国官方交易所。", category: "资本市场", status: "部分数据", icon: BarChart3 },
-  { id: "operators-annual", title: "运营商年度经营指标", description: "Zain 伊拉克、Zain 约旦与 Orange 约旦 2025 年本国运营实体披露。", category: "ICT 运营商", status: "部分数据", icon: BarChart3 },
-  { id: "operators-quarterly", title: "运营商季度财务", description: "Zain 伊拉克与约旦 2026 Q2／H1 财务和运营数据。", category: "ICT 运营商", status: "部分数据", icon: LineIcon },
-  { id: "ports", title: "港口吞吐量—周度趋势", description: "公开同口径周度序列暂缺，首版以世界银行年度集装箱吞吐量替代。", category: "能源与航运", status: "部分数据", icon: Container },
+  { id: "operators-annual", title: "运营商年度经营指标", description: "八家运营实体完整列示 2024—2026；2026 年按可比 H1 增速外推或明确不预测。", category: "ICT 运营商", status: "部分数据", icon: BarChart3 },
+  { id: "operators-quarterly", title: "运营商季度财务", description: "汇总已核验的 2024—2026 Q2／H1 实际披露，保留原币种与可比基期。", category: "ICT 运营商", status: "部分数据", icon: LineIcon },
+  { id: "ports", title: "港口吞吐量—周度趋势", description: "九港 AIS 周度到港活动、周环比与周同比；年度 TEU 分口径展示。", category: "能源与航运", status: "已接入", icon: Container },
   { id: "methodology", title: "数据口径说明", description: "历史值、估计值、预测值、币种、缺失值和运营实体边界的统一说明。", category: "说明与来源", status: "口径说明", icon: BookOpen },
   { id: "sources", title: "宏观数据信息来源", description: "集中列出数据集、发布机构、数据截点与原始链接，便于逐项回溯。", category: "说明与来源", status: "已接入", icon: Database }
 ];
@@ -40,7 +41,6 @@ const wbValue = (indicator: string, country: string, year?: number) => {
   const rows = (wb[indicator] || []).filter(row => row.country === country && (!year || row.year === year));
   return rows.sort((a, b) => b.year - a.year)[0] || null;
 };
-const wbRows = (indicator: string) => (wb[indicator] || []).slice().sort((a, b) => a.year - b.year);
 
 function DataTable({ headers, rows, caption }: { headers: string[]; rows: (string | number | null)[][]; caption?: string }) {
   return <div className="macro-table-wrap"><table className="macro-table">{caption && <caption>{caption}</caption>}<thead><tr>{headers.map(header => <th key={header}>{header}</th>)}</tr></thead><tbody>{rows.map((row, index) => <tr key={index}>{row.map((cell, cellIndex) => <td key={cellIndex}>{cell ?? "—"}</td>)}</tr>)}</tbody></table></div>;
@@ -155,28 +155,28 @@ function DetailContent({ id }: { id: string }) {
   }
   if (id === "operators-annual") {
     return <>
-      <DataTable headers={["国家", "运营实体", "年份", "收入", "EBITDA", "净利润", "客户数", "资本开支"]} rows={data.operatorsAnnual.map(row => [data.countries[row.country as keyof typeof data.countries].name, row.operator, row.year, row.revenue, row.ebitda, row.netIncome, row.customers, row.capex])}/>
-      <Note>各行保留披露币种，美元与约旦第纳尔不直接汇总。Zain 数据为本国运营实体，不是 Zain 集团合并数；Orange 客户数包含全业务。</Note><SourceLinks keys={["zainAnnual", "orangeAnnual", "asiacell"]}/>
+      <Note>八家运营商均列出 2024、2025、2026 三年。2024—2025 为实际披露；2026 全年为预测。预测采用“2025 全年实际值 × 2026 H1 实际值 ÷ 2025 H1 实际值”，逐指标外推，公式与基数保留在末列。缺少可靠同口径基数时不预测。</Note>
+      <DataTable headers={["国家", "运营实体", "年份", "数据属性", "收入", "收入同比", "EBITDA", "净利润", "客户数", "资本开支", "预测逻辑／未披露原因"]} rows={data.operatorsAnnual.map(row => [data.countries[row.country as keyof typeof data.countries].name, row.operator, row.year, row.dataType, row.revenue, row.revenueYoY, row.ebitda, row.netIncome, row.customers, row.capex, row.forecastLogic])}/>
+      <Note tone="amber">各行保留披露币种，不跨币种汇总。Asiacell 年度值为 IQD，H1 增速取自 Ooredoo 对 Asiacell 的 QAR 口径可比披露；2025 EBITDA 采用年度专项业绩页的 9,290 亿 IQD，而非汇总页中与增速不一致的 8,600 亿。Orange 2025 资本开支及 EBITDA 未经同口径核实，保留“—”。Zain 数据为本国运营实体，不是集团合并数；Orange 客户数包含全业务。</Note>
+      <SourceLinks keys={["zainAnnual", "zainAnnual2024", "orangeAnnual", "orangeAnnual2024", "asiacell", "zainQuarter", "asiacellQuarter", "orangeQuarter"]}/>
     </>;
   }
   if (id === "operators-quarterly") {
     return <>
-      <DataTable headers={["国家", "运营实体", "期间", "收入", "EBITDA", "净利润", "客户数", "补充披露"]} rows={data.operatorsQuarterly.map(row => [data.countries[row.country as keyof typeof data.countries].name, row.operator, row.period, row.revenue, row.ebitda, row.netIncome, row.customers, row.note])}/>
-      <Note tone="amber">Q2 为单季度，H1 为上半年累计，不可直接横向相加。首版仅纳入已核验的 Zain 本国运营实体披露，Orange 约旦及其他运营商季度值留空。</Note><SourceLinks keys={["zainQuarter"]}/>
+      <DataTable headers={["国家", "运营实体", "期间", "数据属性", "收入", "EBITDA", "净利润", "客户数", "补充披露"]} rows={data.operatorsQuarterly.map(row => [data.countries[row.country as keyof typeof data.countries].name, row.operator, row.period, row.dataType, row.revenue, row.ebitda, row.netIncome, row.customers, row.note])}/>
+      <Note tone="amber">Q2 为单季度，H1 为上半年累计，不可相加；所有记录均为实际值，不是季度预测。仅列已核验披露，未公开期间不以零值或估算补齐。Asiacell 的 QAR 半年度数据不能与其 IQD 年度值直接相加；Orange 2024 H1、Zain 2024 H1 及其他私营运营商未获同口径可比值。</Note>
+      <SourceLinks keys={["zainQuarter", "asiacellQuarter", "asiacellQuarter2024", "orangeQuarter"]}/>
     </>;
   }
   if (id === "ports") {
-    const years = Array.from({ length: 6 }, (_, i) => 2019 + i);
     return <>
-      <Note tone="amber">世界银行当前提供的是年度集装箱吞吐量，不是周度趋势。黎巴嫩 2023 年及伊拉克 2020—2024 年为空值，不做插值。</Note>
-      <MacroLineChart labels={years.map(String)} unit="百万 TEU" series={countryCodes.map(code => ({ name: data.countries[code as keyof typeof data.countries].name, color: colors[code as keyof typeof colors], values: years.map(year => { const row = wbValue("port", code, year); return row ? row.value / 1e6 : null; }) }))}/>
-      <DataTable headers={["国家", "年份", "集装箱吞吐量（TEU）"]} rows={wbRows("port").slice().reverse().map(row => [data.countries[row.country as keyof typeof data.countries].name, row.year, fmt(row.value, 0)])}/>
-      <SourceLinks keys={["wb", "portwatch"]}/>
+      <PortsMonitor/>
+      <SourceLinks keys={["portwatchDaily", "portwatchMethod", "wb"]}/>
     </>;
   }
   if (id === "methodology") {
     return <>
-      <DataTable headers={["口径", "本页处理规则"]} rows={[["历史／估计／预测", "WEO 2024 标为历史，2025 标为估计，2026—2028 标为预测；图表预测段使用虚线。"], ["缺失值", "统一显示“—”；不以前值填充、不插值，也不把零值当作缺失值。"], ["频率", "年度、月度、季度与半年数据分别标识；周度数据不可用时明确采用年度替代。"], ["币种与单位", "运营商披露保留原币种；宏观金额按十亿美元、万亿 IQD 等单位分别展示。"], ["实体边界", "集团合并数据不与本国运营实体混用；政府机构、运营公司和交易所分别核验。"], ["信源命名", "模块标题直接使用实际数据集或发布机构名称；区域联合报告只作交叉参考，不与国别预测序列混用。"], ["来源回溯", "每个模块底部列出发布机构、数据截点和原始链接；授权数据只列入口，不复制序列。"]]}/>
+      <DataTable headers={["口径", "本页处理规则"]} rows={[["历史／估计／预测", "WEO 2024 标为历史，2025 标为估计，2026—2028 标为预测；图表预测段使用虚线。"], ["缺失值", "统一显示“—”；不以前值填充、不插值，也不把零值当作缺失值。"], ["频率", "年度、月度、季度、半年与周度数据分别标识；Q2 与 H1 不相加，AIS 周度活动与年度 TEU 不混算。"], ["运营商 2026 预测", "有可比基期时按“2025 全年实际值 × 2026 H1 实际值 ÷ 2025 H1 实际值”逐指标外推；客户数与资本开支不机械年化，缺基数时不预测。"], ["港口周度同比", "日度数据聚合为周一至周日；同比比较 52 周前（364 天前）的同星期窗口，当前不完整周不计算正式环比或同比。"], ["币种与单位", "运营商披露保留原币种；宏观金额按十亿美元、万亿 IQD 等单位分别展示。"], ["实体边界", "集团合并数据不与本国运营实体混用；政府机构、运营公司和交易所分别核验。"], ["信源命名", "模块标题直接使用实际数据集或发布机构名称；区域联合报告只作交叉参考，不与国别预测序列混用。"], ["来源回溯", "每个模块底部列出发布机构、数据截点和原始链接；授权数据只列入口，不复制序列。"]]}/>
       <SourceLinks keys={["imf", "wb", "fredBrent"]}/>
     </>;
   }

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "sync-data": "node scripts/sync-data.mjs",
+    "sync-ports": "node scripts/sync-ports.mjs",
     "dev": "npm run sync-data && next dev",
     "build": "npm run sync-data && next build",
     "start": "next start"

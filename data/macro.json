@@ -1279,94 +1279,470 @@
     {
       "country": "IRQ",
       "operator": "Zain Iraq",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "10.80 亿美元",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "1.30 亿美元",
+      "customers": "1,970 万",
+      "capex": "2.43 亿美元",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Zain Iraq",
       "year": 2025,
-      "revenue": "12.9 亿美元",
+      "dataType": "实际",
+      "revenue": "12.90 亿美元",
+      "revenueYoY": "+20%",
       "ebitda": "4.73 亿美元",
       "netIncome": "1.50 亿美元",
       "customers": "2,090 万",
-      "capex": "—"
+      "capex": "逾 5.55 亿美元",
+      "forecastLogic": "—"
     },
     {
-      "country": "JOR",
-      "operator": "Zain Jordan",
-      "year": 2025,
-      "revenue": "5.95 亿美元",
-      "ebitda": "2.27 亿美元",
-      "netIncome": "0.75 亿美元",
-      "customers": "420 万",
-      "capex": "逾 8,800 万美元"
+      "country": "IRQ",
+      "operator": "Zain Iraq",
+      "year": 2026,
+      "dataType": "预测",
+      "revenue": "约 14.21 亿美元",
+      "revenueYoY": "+10.2%",
+      "ebitda": "约 4.94 亿美元",
+      "netIncome": "约 1.61 亿美元",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "收入：1,290×660/599≈1,421 百万美元；EBITDA：473×232/222≈494；净利润：150×71/66≈161。按各指标 2026 H1 同比增速外推，客户数与资本开支不机械年化。"
     },
     {
-      "country": "JOR",
-      "operator": "Orange Jordan",
-      "year": 2025,
-      "revenue": "3.613 亿约旦第纳尔",
-      "ebitda": "—",
-      "netIncome": "—",
-      "customers": "逾 500 万（全业务）",
-      "capex": "7,550 万约旦第纳尔"
+      "country": "IRQ",
+      "operator": "Asiacell",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "1.872 万亿伊拉克第纳尔",
+      "revenueYoY": "—",
+      "ebitda": "0.860 万亿伊拉克第纳尔",
+      "netIncome": "0.394 万亿伊拉克第纳尔",
+      "customers": "1,910 万",
+      "capex": "—",
+      "forecastLogic": "—"
     },
     {
       "country": "IRQ",
       "operator": "Asiacell",
       "year": 2025,
-      "revenue": "待提取审计报表",
+      "dataType": "实际",
+      "revenue": "2.024 万亿伊拉克第纳尔",
+      "revenueYoY": "+8.1%",
+      "ebitda": "0.929 万亿伊拉克第纳尔",
+      "netIncome": "0.519 万亿伊拉克第纳尔",
+      "customers": "2,000 万",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Asiacell",
+      "year": 2026,
+      "dataType": "预测",
+      "revenue": "约 2.088 万亿伊拉克第纳尔",
+      "revenueYoY": "+3.2%",
+      "ebitda": "约 0.958 万亿伊拉克第纳尔",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "收入：2,024×2,776/2,691≈2,088 十亿 IQD；EBITDA：929×1,254/1,216≈958。H1 比较采用 Ooredoo 披露的 QAR 口径增速，仅将增速应用于年度 IQD 基数；净利润无可比中期基数，不预测。"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Korek Telecom",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
       "ebitda": "—",
       "netIncome": "—",
       "customers": "—",
-      "capex": "—"
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Korek Telecom",
+      "year": 2025,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Korek Telecom",
+      "year": 2026,
+      "dataType": "不预测",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "未获取 2025 全年及 2026 中期同口径公开财务基数，不预测。"
+    },
+    {
+      "country": "JOR",
+      "operator": "Zain Jordan",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "5.56 亿美元",
+      "revenueYoY": "—",
+      "ebitda": "2.24 亿美元",
+      "netIncome": "—",
+      "customers": "420 万",
+      "capex": "9,000 万美元",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "JOR",
+      "operator": "Zain Jordan",
+      "year": 2025,
+      "dataType": "实际",
+      "revenue": "5.95 亿美元",
+      "revenueYoY": "+7%",
+      "ebitda": "2.27 亿美元",
+      "netIncome": "0.75 亿美元",
+      "customers": "420 万",
+      "capex": "逾 8,800 万美元",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "JOR",
+      "operator": "Zain Jordan",
+      "year": 2026,
+      "dataType": "预测",
+      "revenue": "约 6.22 亿美元",
+      "revenueYoY": "+4.5%",
+      "ebitda": "约 2.37 亿美元",
+      "netIncome": "约 0.77 亿美元",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "收入：595×302/289≈622 百万美元；EBITDA：227×117/112≈237；净利润：75×40/39≈77。按各指标 2026 H1 同比增速外推，客户数与资本开支不机械年化。"
+    },
+    {
+      "country": "JOR",
+      "operator": "Orange Jordan",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "3.61252 亿约旦第纳尔",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "0.41458 亿约旦第纳尔",
+      "customers": "450 万（全业务）",
+      "capex": "7,550 万约旦第纳尔",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "JOR",
+      "operator": "Orange Jordan",
+      "year": 2025,
+      "dataType": "实际",
+      "revenue": "3.63039 亿约旦第纳尔",
+      "revenueYoY": "+0.5%",
+      "ebitda": "—",
+      "netIncome": "0.41701 亿约旦第纳尔",
+      "customers": "逾 500 万（全业务）",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "JOR",
+      "operator": "Orange Jordan",
+      "year": 2026,
+      "dataType": "预测",
+      "revenue": "约 3.7577 亿约旦第纳尔",
+      "revenueYoY": "+3.5%",
+      "ebitda": "—",
+      "netIncome": "约 0.4795 亿约旦第纳尔",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "收入：363.038546×182.41/176.23≈375.77 百万 JOD；净利润：41.700586×20.23/17.59≈47.95。按 2026 H1 同指标增速外推；EBITDA、客户数与资本开支不预测。"
+    },
+    {
+      "country": "JOR",
+      "operator": "Umniah",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "JOR",
+      "operator": "Umniah",
+      "year": 2025,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "JOR",
+      "operator": "Umniah",
+      "year": 2026,
+      "dataType": "不预测",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "未获取 2025 全年及 2026 中期同口径公开财务基数；多年投资计划不等于年度实际资本开支，不预测。"
     },
     {
       "country": "LBN",
-      "operator": "Alfa / touch",
-      "year": 2025,
-      "revenue": "未获取同口径公开披露",
+      "operator": "Alfa",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
       "ebitda": "—",
       "netIncome": "—",
       "customers": "—",
-      "capex": "—"
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "LBN",
+      "operator": "Alfa",
+      "year": 2025,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "LBN",
+      "operator": "Alfa",
+      "year": 2026,
+      "dataType": "不预测",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "未获取该运营实体 2025 全年及 2026 中期同口径公开财务基数；不以黎巴嫩行业规模拆分代替公司披露。"
+    },
+    {
+      "country": "LBN",
+      "operator": "touch",
+      "year": 2024,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "LBN",
+      "operator": "touch",
+      "year": 2025,
+      "dataType": "实际",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "—"
+    },
+    {
+      "country": "LBN",
+      "operator": "touch",
+      "year": 2026,
+      "dataType": "不预测",
+      "revenue": "—",
+      "revenueYoY": "—",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "capex": "—",
+      "forecastLogic": "未获取该运营实体 2025 全年及 2026 中期同口径公开财务基数；不以黎巴嫩行业规模拆分代替公司披露。"
     }
   ],
   "operatorsQuarterly": [
     {
       "country": "IRQ",
       "operator": "Zain Iraq",
+      "period": "2025 H1",
+      "dataType": "实际",
+      "revenue": "5.99 亿美元",
+      "ebitda": "2.22 亿美元",
+      "netIncome": "0.66 亿美元",
+      "customers": "—",
+      "note": "2026 全年预测的 H1 可比基期"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Zain Iraq",
       "period": "2026 Q2",
+      "dataType": "实际",
       "revenue": "3.34 亿美元",
       "ebitda": "—",
       "netIncome": "—",
-      "customers": "2,040 万",
-      "note": "Q2 收入同比 +7%"
+      "customers": "—",
+      "note": "单季度收入同比 +7%"
     },
     {
       "country": "IRQ",
       "operator": "Zain Iraq",
       "period": "2026 H1",
+      "dataType": "实际",
       "revenue": "6.60 亿美元",
       "ebitda": "2.32 亿美元",
       "netIncome": "0.71 亿美元",
       "customers": "2,040 万",
-      "note": "H1 资本开支 5,900 万美元"
+      "note": "H1 收入／EBITDA／净利润同比 +10%／+5%／+7%；资本开支 5,900 万美元"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Asiacell",
+      "period": "2024 H1",
+      "dataType": "实际",
+      "revenue": "24.86 亿卡塔尔里亚尔",
+      "ebitda": "11.76 亿卡塔尔里亚尔",
+      "netIncome": "—",
+      "customers": "1,830 万",
+      "note": "Ooredoo 对 Asiacell 运营实体披露；QAR 口径"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Asiacell",
+      "period": "2025 H1",
+      "dataType": "实际",
+      "revenue": "26.91 亿卡塔尔里亚尔",
+      "ebitda": "12.16 亿卡塔尔里亚尔",
+      "netIncome": "—",
+      "customers": "1,940 万",
+      "note": "Ooredoo 对 Asiacell 运营实体披露；QAR 口径"
+    },
+    {
+      "country": "IRQ",
+      "operator": "Asiacell",
+      "period": "2026 H1",
+      "dataType": "实际",
+      "revenue": "27.76 亿卡塔尔里亚尔",
+      "ebitda": "12.54 亿卡塔尔里亚尔",
+      "netIncome": "—",
+      "customers": "2,020 万",
+      "note": "Ooredoo 对 Asiacell 运营实体披露；QAR 口径"
+    },
+    {
+      "country": "JOR",
+      "operator": "Zain Jordan",
+      "period": "2025 Q2",
+      "dataType": "实际",
+      "revenue": "1.48 亿美元",
+      "ebitda": "—",
+      "netIncome": "—",
+      "customers": "—",
+      "note": "单季度；2026 全年预测的 H1 可比基期另列"
+    },
+    {
+      "country": "JOR",
+      "operator": "Zain Jordan",
+      "period": "2025 H1",
+      "dataType": "实际",
+      "revenue": "2.89 亿美元",
+      "ebitda": "1.12 亿美元",
+      "netIncome": "0.39 亿美元",
+      "customers": "—",
+      "note": "2026 全年预测的 H1 可比基期"
     },
     {
       "country": "JOR",
       "operator": "Zain Jordan",
       "period": "2026 Q2",
+      "dataType": "实际",
       "revenue": "1.54 亿美元",
       "ebitda": "0.60 亿美元",
       "netIncome": "0.21 亿美元",
       "customers": "—",
-      "note": "收入同比 +4%"
+      "note": "单季度"
     },
     {
       "country": "JOR",
       "operator": "Zain Jordan",
       "period": "2026 H1",
-      "revenue": "—",
-      "ebitda": "—",
+      "dataType": "实际",
+      "revenue": "3.02 亿美元",
+      "ebitda": "1.17 亿美元",
       "netIncome": "0.40 亿美元",
+      "customers": "430 万",
+      "note": "H1 收入／EBITDA／净利润同比 +5%／+4%／+1%；资本开支 500 万美元；数据收入占比 57%"
+    },
+    {
+      "country": "JOR",
+      "operator": "Orange Jordan",
+      "period": "2025 Q2",
+      "dataType": "实际",
+      "revenue": "0.8708 亿约旦第纳尔",
+      "ebitda": "—",
+      "netIncome": "0.0870 亿约旦第纳尔",
       "customers": "—",
-      "note": "数据收入占 H1 收入 57%"
+      "note": "单季度；S&P Capital IQ 披露"
+    },
+    {
+      "country": "JOR",
+      "operator": "Orange Jordan",
+      "period": "2025 H1",
+      "dataType": "实际",
+      "revenue": "1.7623 亿约旦第纳尔",
+      "ebitda": "—",
+      "netIncome": "0.1759 亿约旦第纳尔",
+      "customers": "—",
+      "note": "2026 全年预测的 H1 可比基期"
+    },
+    {
+      "country": "JOR",
+      "operator": "Orange Jordan",
+      "period": "2026 Q2",
+      "dataType": "实际",
+      "revenue": "0.9136 亿约旦第纳尔",
+      "ebitda": "—",
+      "netIncome": "0.1089 亿约旦第纳尔",
+      "customers": "—",
+      "note": "单季度；S&P Capital IQ 披露"
+    },
+    {
+      "country": "JOR",
+      "operator": "Orange Jordan",
+      "period": "2026 H1",
+      "dataType": "实际",
+      "revenue": "1.8241 亿约旦第纳尔",
+      "ebitda": "—",
+      "netIncome": "0.2023 亿约旦第纳尔",
+      "customers": "—",
+      "note": "S&P Capital IQ 披露"
     }
   ],
   "sources": {
@@ -1434,25 +1810,25 @@
       "publisher": "Zain Group",
       "name": "Zain Annual Report 2025 — Operations",
       "url": "https://zain.com/AR2025/zain-operations/",
-      "asOf": "发布于 2026-04"
+      "asOf": "2025 全年；发布于 2026-04"
     },
     "zainQuarter": {
       "publisher": "Zain Group",
-      "name": "Q2 / H1 2026 Investor Relations Disclosure",
-      "url": "https://www.zain.com/en/press-release/zaingroup2026-q2",
-      "asOf": "截至 2026-06-30"
+      "name": "Q2 / H1 2026 Investor Relations Presentation",
+      "url": "https://d30ezutk4plts9.cloudfront.net/media/documents/Zain_IR_deck__-_Q2_2026.pdf",
+      "asOf": "截至 2026-06-30；含 2025 H1 可比列"
     },
     "orangeAnnual": {
       "publisher": "Orange Jordan",
-      "name": "2025 年度股东大会及财务披露",
-      "url": "https://orange.jo/en/corporate/media-center/news/general-assembly-jordan-telecom-2026",
-      "asOf": "发布于 2026-05-03"
+      "name": "Orange Jordan Annual Report 2025（审计年报）",
+      "url": "https://orange.jo/sites/default/files/documents/Orange-Jordan-Annual-Report-2025-English.pdf",
+      "asOf": "2025 全年"
     },
     "asiacell": {
       "publisher": "Asiacell",
-      "name": "2025 年度股东大会决议",
-      "url": "https://www.asiacell.com/en/about-us/news-and-event/press-releases/PR2026/AGM2026",
-      "asOf": "发布于 2026-05-23"
+      "name": "Annual Performance — 年度专项业绩披露",
+      "url": "https://www.asiacell.com/en/about-us/investor-relations/SFP-ARFS/AnnualPerformance",
+      "asOf": "2024—2025 全年"
     },
     "isx": {
       "publisher": "Iraq Stock Exchange",
@@ -1489,6 +1865,48 @@
       "name": "官方机构入口",
       "url": "https://www.bdl.gov.lb/",
       "asOf": "持续更新"
+    },
+    "zainAnnual2024": {
+      "publisher": "Zain Group",
+      "name": "2024 全年业绩及 2024 可持续发展报告",
+      "url": "https://zain.com/en/press-release/zaingroup2024-fy",
+      "asOf": "2024 全年"
+    },
+    "orangeAnnual2024": {
+      "publisher": "Orange Jordan",
+      "name": "Orange Jordan Annual Report 2024（审计年报）",
+      "url": "https://orange.jo/sites/default/files/documents/Orange-Jordan-Annual-Report-2024-English.pdf",
+      "asOf": "2024 全年"
+    },
+    "asiacellQuarter": {
+      "publisher": "Ooredoo Group",
+      "name": "H1 2026 Results — Asiacell 运营实体披露",
+      "url": "https://apigateway.adx.ae/adx/cdn/1.0/content/download/5223169",
+      "asOf": "截至 2026-06-30；含 2025 H1 可比列"
+    },
+    "asiacellQuarter2024": {
+      "publisher": "Ooredoo Group",
+      "name": "H1 2024 Results — Asiacell 运营实体披露",
+      "url": "https://www.ooredoo.com/en/media/news_view/ooredoo-group-h1-2024/",
+      "asOf": "截至 2024-06-30"
+    },
+    "orangeQuarter": {
+      "publisher": "S&P Capital IQ / MarketScreener",
+      "name": "Jordan Telecommunications Company Q2 and H1 2026 Results",
+      "url": "https://in.marketscreener.com/news/jordan-telecommunications-company-reports-earnings-results-for-the-second-quarter-and-six-months-end-ce7f50d8dc8df223",
+      "asOf": "发布于 2026-07-30；含 2025 可比列"
+    },
+    "portwatchMethod": {
+      "publisher": "国际货币基金组织（IMF）",
+      "name": "PortWatch Data and Methodology / WP 25/93",
+      "url": "https://portwatch.imf.org/pages/data-and-methodology",
+      "asOf": "AIS 实验性估算方法说明"
+    },
+    "portwatchDaily": {
+      "publisher": "国际货币基金组织（IMF）",
+      "name": "PortWatch Daily Ports Data（ArcGIS 官方服务）",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Ports_Data/FeatureServer/0",
+      "asOf": "日度发布；存在发布延迟与历史修订"
     }
   }
 }
