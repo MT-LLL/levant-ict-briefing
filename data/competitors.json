@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "title": "友商洞察",
+    "updated": "2026-11-03",
+    "scope": ["IRQ", "JOR", "LBN"],
+    "note": "收录厂商、客户、政府与本地合作伙伴公开披露。备忘录不等于采购合同，历史案例不代表当前供应商格局，渠道自述不等同厂商官方核验。"
+  },
+  "countries": {
+    "IRQ": { "name": "伊拉克", "english": "Iraq", "flag": "🇮🇶" },
+    "JOR": { "name": "约旦", "english": "Jordan", "flag": "🇯🇴" },
+    "LBN": { "name": "黎巴嫩", "english": "Lebanon", "flag": "🇱🇧" }
+  },
+  "vendors": [
+    {
+      "id": "zte",
+      "name": "中兴通讯",
+      "english": "ZTE",
+      "monogram": "ZTE",
+      "category": "通信设备 · 算力基础设施",
+      "color": "#1676a3",
+      "summary": "从运营商连接向“连接＋算力”扩展，在伊拉克以政府合作与政企生态为主要公开切入点。",
+      "business": [
+        { "name": "运营商网络", "detail": "5G／5G-A、核心网、光传输、固网接入与网络服务" },
+        { "name": "政企与算力", "detail": "服务器、存储、数据中心、云平台、AI 基础设施与行业数字化" },
+        { "name": "消费者业务", "detail": "家庭终端、移动互联、FWA 与智能终端" }
+      ],
+      "strategy": ["连接＋算力", "数据中心与 AI", "本地生态与人才"],
+      "businessSources": [
+        { "publisher": "中兴通讯", "name": "公司信息与战略转型", "url": "https://www.zte.com.cn/global/about/corporate_information.html" }
+      ]
+    },
+    {
+      "id": "ericsson",
+      "name": "爱立信",
+      "english": "Ericsson",
+      "monogram": "ERI",
+      "category": "移动网络 · 电信软件",
+      "color": "#147d79",
+      "summary": "三国公开记录集中于运营商 RAN、网络扩容、节能和 BSS；约旦近期披露最密集。",
+      "business": [
+        { "name": "Networks", "detail": "无线接入网、传输、站点方案、网络部署与优化" },
+        { "name": "Cloud Software and Services", "detail": "核心网、自动化、运营与业务支撑系统、托管服务" },
+        { "name": "Enterprise", "detail": "企业无线、专网、网络 API 与新兴技术业务" }
+      ],
+      "strategy": ["5G 与可编程网络", "AI 节能与自治", "BSS 云原生"],
+      "businessSources": [
+        { "publisher": "Ericsson", "name": "公司业务组合说明", "url": "https://www.ericsson.com/en/portfolio/cross-portfolio/rapp-directory/network-healing/ericsson-sleeping-cell-detection-rapp" }
+      ]
+    },
+    {
+      "id": "nokia",
+      "name": "诺基亚",
+      "english": "Nokia",
+      "monogram": "NOK",
+      "category": "移动 · IP／光 · 固网",
+      "color": "#315ca8",
+      "summary": "同时覆盖无线接入与跨区域光传输；伊拉克公开动态偏向国际陆缆通道，约旦和黎巴嫩以移动网络为主。",
+      "business": [
+        { "name": "移动基础设施", "detail": "无线接入、核心软件与通信标准技术" },
+        { "name": "网络基础设施", "detail": "IP 路由、光网络、固网接入与数据中心互联" },
+        { "name": "研发与知识产权", "detail": "Nokia Bell Labs、专利许可与开放网络架构" }
+      ],
+      "strategy": ["AI 与云网络需求", "5G-Advanced／6G", "高性能光与 IP 网络"],
+      "businessSources": [
+        { "publisher": "Nokia／GBI", "name": "公司及网络业务说明", "url": "https://www.gbiinc.com/gbi-selects-nokia-to-build-new-network-for-faster-moreresilient-connectivity-across-the-middle-east/" }
+      ]
+    },
+    {
+      "id": "dell",
+      "name": "戴尔科技",
+      "english": "Dell Technologies",
+      "monogram": "DELL",
+      "category": "企业 IT · PC · AI 基础设施",
+      "color": "#386b8c",
+      "summary": "三国可见信息以本地渠道和企业基础设施供给为主，本轮未获得三国近期厂商侧项目公告。",
+      "business": [
+        { "name": "基础设施解决方案", "detail": "PowerEdge 服务器、存储、数据保护、网络与超融合基础设施" },
+        { "name": "客户端解决方案", "detail": "商用 PC、工作站、显示器与终端外设" },
+        { "name": "服务与 AI", "detail": "部署、运维、咨询以及面向 AI 工作负载的基础设施" }
+      ],
+      "strategy": ["AI 服务器与数据中心", "混合环境现代化", "本地渠道交付"],
+      "businessSources": [
+        { "publisher": "Dell Technologies", "name": "公司与产品业务入口", "url": "https://www.dell.com/en-us/dt/corporate/about-us/who-we-are.htm" }
+      ]
+    },
+    {
+      "id": "ibm",
+      "name": "IBM",
+      "english": "IBM",
+      "monogram": "IBM",
+      "category": "混合云 · AI · 咨询",
+      "color": "#31527e",
+      "summary": "约旦有银行数据与 AI 平台客户案例及本地铂金伙伴披露；伊拉克、黎巴嫩近期公开项目有限。",
+      "business": [
+        { "name": "软件", "detail": "watsonx、数据与 AI、自动化、安全及 Red Hat 混合云平台" },
+        { "name": "咨询", "detail": "业务转型、数据与 AI、应用现代化及行业解决方案" },
+        { "name": "基础设施", "detail": "面向关键工作负载的企业计算、存储与相关服务" }
+      ],
+      "strategy": ["企业级 AI", "混合云与开放生态", "受监管行业数字化"],
+      "businessSources": [
+        { "publisher": "IBM", "name": "公司战略与业务入口", "url": "https://www.ibm.com/about" }
+      ]
+    },
+    {
+      "id": "vmware",
+      "name": "VMware（Broadcom）",
+      "english": "VMware by Broadcom",
+      "monogram": "VMW",
+      "category": "私有云 · 虚拟化 · 云软件",
+      "color": "#68558f",
+      "summary": "现属 Broadcom，产品重心为私有云与虚拟化。本轮未获得三国近期可核验的厂商或客户新增项目披露。",
+      "business": [
+        { "name": "VMware Cloud Foundation", "detail": "整合计算、存储、网络与管理的私有云 IaaS 平台" },
+        { "name": "VMware vSphere Foundation", "detail": "虚拟化、容器工作负载与智能运维的企业工作负载平台" },
+        { "name": "网络、应用与边缘", "detail": "NSX、Tanzu、软件定义边缘及相关安全和负载均衡能力" }
+      ],
+      "strategy": ["私有云与混合云", "订阅化产品组合", "虚拟机与容器统一运行"],
+      "businessSources": [
+        { "publisher": "Broadcom", "name": "完成收购 VMware（2023-11-22）", "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-completes-acquisition-vmware" },
+        { "publisher": "VMware", "name": "vSphere 产品组合", "url": "https://www.vmware.com/products/vcenter.html" }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "zte-irq-2026",
+      "vendor": "zte",
+      "country": "IRQ",
+      "date": "2026-10-19",
+      "sortDate": "2026-10-19",
+      "recordType": "official",
+      "evidence": "厂商官方＋政府官方",
+      "partner": "Al-Salam State Company · Mannai Digital Transformation",
+      "title": "中兴在 ITEX 2026 签署两项伊拉克合作备忘录",
+      "summary": "与 Al-Salam 探索通信和数字基础设施、ICT 与行业数字化；与 Mannai 聚焦数据中心、云计算、算力平台及政企数字化。",
+      "details": ["通信部长 Mustafa Sanad 出席并见证签署", "中兴明确提出在伊拉克推进“连接＋算力”战略", "属于 MoU 与合作方向披露，不应解读为已落地采购合同"],
+      "products": ["数字基础设施", "数据中心", "服务器与存储", "AI"],
+      "sources": [
+        { "publisher": "中兴通讯", "name": "ZTE Deepens Strategic Cooperation with Al-Salam and Mannai", "url": "https://www.zte.com.cn/global/about/news/zte-deepens-strategic-cooperation-with-ai-salam-and-mannai-to-advance-iraqs-digital-future.html" },
+        { "publisher": "伊拉克通信部", "name": "Al-Salam 与 ZTE 技术合作及制造转移 MoU（2026-10-03）", "url": "https://moc.gov.iq/news/article-1361?lang=en" }
+      ]
+    },
+    {
+      "id": "zte-jor-2016",
+      "vendor": "zte",
+      "country": "JOR",
+      "date": "2016-07-21",
+      "sortDate": "2016-07-21",
+      "recordType": "history",
+      "evidence": "厂商官方历史访谈",
+      "partner": "Orange Jordan",
+      "title": "Orange Jordan 曾选择中兴实施 SDM 项目",
+      "summary": "Orange Jordan 时任 CTO 在中兴官方访谈中确认，经招标选择中兴 SDM 方案，并讨论 IMS、物联网及客户体验演进。",
+      "details": ["历史案例仅用于识别既有业务关系", "Orange Jordan 于 2023 年另行披露全国 5G RAN 选择诺基亚，不能用本记录推断当前供应格局"],
+      "products": ["SDM", "IMS", "客户数据管理"],
+      "sources": [
+        { "publisher": "中兴通讯", "name": "Orange Jordan: Simplify the Lives of Customers", "url": "https://www.zte.com.cn/global/about/magazine/zte-technologies/2016/4/en_710/459166.html" }
+      ]
+    },
+    {
+      "id": "ericsson-jor-umniah-2025",
+      "vendor": "ericsson",
+      "country": "JOR",
+      "date": "2025-11-05",
+      "sortDate": "2025-11-05",
+      "recordType": "official",
+      "evidence": "厂商官方",
+      "partner": "Umniah",
+      "title": "Umniah 与爱立信签署五年网络合作协议",
+      "summary": "协议覆盖 3G、4G、5G 无线接入网；披露称爱立信为 Umniah 独家 RAN 供应商，并涉及覆盖、容量、能效和乡村连接。",
+      "details": ["采用 Ericsson Radio System、Massive MIMO 与 Spectrum Sharing", "包含节能功能与农村覆盖扩展", "“独家”为公告披露时点的供应关系表述"],
+      "products": ["Ericsson Radio System", "Massive MIMO", "Spectrum Sharing"],
+      "sources": [
+        { "publisher": "Ericsson", "name": "Umniah partners with Ericsson to boost Jordan connectivity", "url": "https://www.ericsson.com/en/press-releases/5/2025/umniah-partners-ericsson-to-boost-jordan-connectivity" }
+      ]
+    },
+    {
+      "id": "ericsson-jor-zain-2025",
+      "vendor": "ericsson",
+      "country": "JOR",
+      "date": "2025-05-19",
+      "sortDate": "2025-05-19",
+      "recordType": "official",
+      "evidence": "厂商官方",
+      "partner": "Zain Jordan",
+      "title": "Zain Jordan 推进 BSS 云原生转型",
+      "summary": "升级 Ericsson Charging，并部署于 Ericsson Cloud Native Infrastructure，以提升计费敏捷性、可扩展性与数字服务体验。",
+      "details": ["项目从传统 BSS 能力延伸至云原生部署", "为运营商产品创新与实时计费提供支撑"],
+      "products": ["Ericsson Charging", "Cloud Native Infrastructure", "BSS"],
+      "sources": [
+        { "publisher": "Ericsson", "name": "Ericsson and Zain Jordan partner to elevate digital experiences", "url": "https://www.ericsson.com/en/press-releases/5/2025/ericsson-and-zain-jordan-partner-to-elevate-digital-experiences-in-jordan" }
+      ]
+    },
+    {
+      "id": "ericsson-jor-ai-2024",
+      "vendor": "ericsson",
+      "country": "JOR",
+      "date": "2024-07-14",
+      "sortDate": "2024-07-14",
+      "recordType": "official",
+      "evidence": "厂商官方",
+      "partner": "Umniah",
+      "title": "Umniah 部署 AI／ML 无线网节能方案",
+      "summary": "双方在约旦开展 AI 驱动 RAN 节能；概念验证披露 5G 站点每日节电能力约 20%，该数值属于特定 PoC 结果。",
+      "details": ["利用机器学习和自动化在网络负载变化时优化能耗", "PoC 结果不应外推为全网或全年平均节能水平"],
+      "products": ["AI／ML", "RAN 节能", "5G"],
+      "sources": [
+        { "publisher": "Ericsson", "name": "Ericsson and Umniah deploy AI-powered energy-saving solution", "url": "https://www.ericsson.com/en/press-releases/5/2024/ericsson-and-umniah-deploy-ai-powered-energy-saving-solution-in-jordan" }
+      ]
+    },
+    {
+      "id": "ericsson-jor-expand-2024",
+      "vendor": "ericsson",
+      "country": "JOR",
+      "date": "2024-05-06",
+      "sortDate": "2024-05-06",
+      "recordType": "official",
+      "evidence": "厂商官方",
+      "partner": "Umniah",
+      "title": "爱立信支持 Umniah 3G／4G 扩容与覆盖扩展",
+      "summary": "双方合作扩大网络容量与覆盖，改善约旦移动宽带体验，并延续既有无线网合作。",
+      "details": ["聚焦 3G／4G 网络扩容", "属于 2025 年五年协议前的连续合作记录"],
+      "products": ["3G", "4G", "RAN 扩容"],
+      "sources": [
+        { "publisher": "Ericsson", "name": "Ericsson and Umniah collaborate for network expansion in Jordan", "url": "https://www.ericsson.com/en/press-releases/5/2024/ericsson-and-umniah-collaborate-for-network-expansion-in-jordan" }
+      ]
+    },
+    {
+      "id": "ericsson-irq-2021",
+      "vendor": "ericsson",
+      "country": "IRQ",
+      "date": "2021-11-01",
+      "sortDate": "2021-11-01",
+      "recordType": "history",
+      "evidence": "厂商官方历史公告",
+      "partner": "Asiacell",
+      "title": "Asiacell 选择爱立信现代化并扩容 LTE 网络",
+      "summary": "项目提供 Ericsson Radio System 无线接入方案，用于伊拉克 LTE 网络现代化与扩容。",
+      "details": ["属于历史项目，不代表 2026 年最新合同状态", "可用于识别 Asiacell 的既有供应商关系"],
+      "products": ["LTE", "Ericsson Radio System", "RAN"],
+      "sources": [
+        { "publisher": "Ericsson", "name": "Asiacell selects Ericsson to modernize and expand its LTE network", "url": "https://www.ericsson.com/en/press-releases/5/2021/asiacell-selects-ericsson-to-modernize-and-expand-its-lte-network" }
+      ]
+    },
+    {
+      "id": "ericsson-lbn-2016",
+      "vendor": "ericsson",
+      "country": "LBN",
+      "date": "2016",
+      "sortDate": "2016-01-01",
+      "recordType": "history",
+      "evidence": "运营商官方历史公告",
+      "partner": "Alfa",
+      "title": "Alfa 与诺基亚、爱立信签署 4.5G 部署合同及 5G MoU",
+      "summary": "Alfa 官方披露在黎巴嫩部署 LTE Advanced，并分别与两家厂商签署 5G 演进合作备忘录。",
+      "details": ["历史合同与 MoU 不代表当前 5G 商用部署状态", "同一运营商公告同时涉及诺基亚与爱立信"],
+      "products": ["4.5G", "LTE Advanced", "5G MoU"],
+      "sources": [
+        { "publisher": "Alfa", "name": "Alfa signs 4.5G LTE deployment contracts with Nokia and Ericsson", "url": "https://www.alfa.com.lb/en/media-center/press-releases/alfa-signs-4.5g-lte-deployment-contracts-with-nokia-and-ericsson-in-all-of-lebanon-and-two-mous-on-5g" }
+      ]
+    },
+    {
+      "id": "nokia-irq-2025",
+      "vendor": "nokia",
+      "country": "IRQ",
+      "date": "2025-10-22",
+      "sortDate": "2025-10-22",
+      "recordType": "official",
+      "evidence": "客户官方",
+      "partner": "GBI · 伊拉克本地合作方",
+      "title": "GBI 采用诺基亚 1830 GX 建设经伊拉克的高容量陆地方案",
+      "summary": "新路由连接欧洲、中东和亚洲并支持海缆回传；规划提供超过 50TB 容量及 100G—400G 服务。",
+      "details": ["诺基亚 1830 Global Express 光网络平台", "为传统海缆走廊提供替代路径并提升网络韧性", "50TB 为公告所述规划能力，不是当前实测流量"],
+      "products": ["1830 GX", "光传输", "100G—400G"],
+      "sources": [
+        { "publisher": "GBI", "name": "GBI selects Nokia to build new network across the Middle East", "url": "https://www.gbiinc.com/gbi-selects-nokia-to-build-new-network-for-faster-moreresilient-connectivity-across-the-middle-east/" }
+      ]
+    },
+    {
+      "id": "nokia-jor-2023",
+      "vendor": "nokia",
+      "country": "JOR",
+      "date": "2023-05-04",
+      "sortDate": "2023-05-04",
+      "recordType": "official",
+      "evidence": "厂商官方新闻稿分发",
+      "partner": "Orange Jordan",
+      "title": "诺基亚获得 Orange Jordan 全国 5G RAN 合同",
+      "summary": "提供 AirScale、Massive MIMO、Single RAN 与 NetAct，替换 Orange Jordan 原有无线接入网并支持全国 5G 部署。",
+      "details": ["合同范围为全国 5G RAN", "与中兴 2016 年 SDM 历史案例属于不同产品层和时期"],
+      "products": ["AirScale", "Massive MIMO", "Single RAN", "NetAct"],
+      "sources": [
+        { "publisher": "Nokia／NTB", "name": "Nokia wins nationwide 5G RAN deal with Orange Jordan", "url": "https://kommunikasjon.ntb.no/pressemelding/17966224/nokia-wins-nationwide-5g-ran-deal-with-orange-jordan?publisherId=4954260" }
+      ]
+    },
+    {
+      "id": "nokia-lbn-2018",
+      "vendor": "nokia",
+      "country": "LBN",
+      "date": "2018-03-19",
+      "sortDate": "2018-03-19",
+      "recordType": "history",
+      "evidence": "运营商官方历史公告",
+      "partner": "Alfa",
+      "title": "Alfa 与诺基亚部署 AirScale 并签署 5G 演进 MoU",
+      "summary": "项目涵盖 3G 与 LTE-Advanced Pro，MoU 用于探索网络向 5G 演进。",
+      "details": ["历史部署记录", "MoU 不等同于 5G 已规模商用"],
+      "products": ["AirScale", "LTE-Advanced Pro", "5G MoU"],
+      "sources": [
+        { "publisher": "Alfa", "name": "Alfa and Nokia partner to deploy Nokia AirScale solution and sign 5G MoU", "url": "https://www.alfa.com.lb/en/media-center/press-releases/alfa-and-nokia-partner-to-deploy-nokia-airscale-solution-sign-5g-mou" }
+      ]
+    },
+    {
+      "id": "dell-irq-channel",
+      "vendor": "dell",
+      "country": "IRQ",
+      "date": "2026-09-15",
+      "sortDate": "2026-09-15",
+      "recordType": "partner",
+      "evidence": "本地合作伙伴自述",
+      "partner": "Osous Al Taqnia",
+      "title": "伊拉克合作伙伴披露戴尔企业基础设施交付能力",
+      "summary": "该合作伙伴自述为戴尔授权合作伙伴，提供 PowerEdge、PowerStore／Unity、网络与 HCI，并覆盖 Baghdad、Erbil、Basra。",
+      "details": ["覆盖评估、采购、部署、配置与售后支持", "授权与项目范围来自合作伙伴页面，本轮未获得戴尔官方独立复核"],
+      "products": ["PowerEdge", "PowerStore／Unity", "HCI"],
+      "sources": [
+        { "publisher": "Osous Al Taqnia", "name": "Dell Partner Iraq", "url": "https://www.osoustaqnia.com/dell-iraq" }
+      ]
+    },
+    {
+      "id": "dell-jor-channel",
+      "vendor": "dell",
+      "country": "JOR",
+      "date": "页面未标注",
+      "sortDate": "2026-11-03",
+      "recordType": "partner",
+      "evidence": "本地合作伙伴自述",
+      "partner": "DC Technologies",
+      "title": "约旦本地伙伴展示戴尔 Titanium Partner 身份",
+      "summary": "DC Technologies 公司页面自述为约旦 Dell Titanium partner，可作为本地渠道能力线索，不是戴尔项目中标公告。",
+      "details": ["伙伴级别和合作关系来自该公司自述", "未披露具体客户、合同金额或新增部署范围"],
+      "products": ["企业 IT", "本地集成", "技术支持"],
+      "sources": [
+        { "publisher": "DC Technologies", "name": "About Us", "url": "https://dc-technologies.net/about-us-it-solutions-company/" }
+      ]
+    },
+    {
+      "id": "dell-lbn-channel",
+      "vendor": "dell",
+      "country": "LBN",
+      "date": "页面未标注",
+      "sortDate": "2026-11-03",
+      "recordType": "partner",
+      "evidence": "本地合作伙伴自述",
+      "partner": "CIS Lebanon",
+      "title": "黎巴嫩渠道商列出戴尔基础设施方案",
+      "summary": "CIS Lebanon 的厂商页面列出戴尔计算、存储与 IT 基础设施方案，可作为本地供给线索。",
+      "details": ["该页面未提供具体项目日期和部署规模", "渠道自述不等同戴尔官方客户案例"],
+      "products": ["计算", "存储", "IT 基础设施"],
+      "sources": [
+        { "publisher": "CIS Lebanon", "name": "Dell vendor page", "url": "https://cis.com.lb/vendors/dell/" }
+      ]
+    },
+    {
+      "id": "ibm-jor-jbs-2024",
+      "vendor": "ibm",
+      "country": "JOR",
+      "date": "2024-09",
+      "sortDate": "2024-09-01",
+      "recordType": "official",
+      "evidence": "合作伙伴集团官方",
+      "partner": "Jordan Business Systems（JBS）",
+      "title": "JBS 披露获得 IBM Platinum Partner 身份",
+      "summary": "Midis Group 披露 JBS 于 2024 年 7 月底获得 IBM Platinum Partner 身份，并称之为黎凡特地区唯一获该命名的 IBM 铂金伙伴。",
+      "details": ["披露主体为 JBS 所属 Midis Group", "体现本地交付与认证能力，不是具体客户采购合同"],
+      "products": ["IBM 解决方案", "本地交付", "技术认证"],
+      "sources": [
+        { "publisher": "Midis Group", "name": "Jordan Business Systems is honored with IBM Platinum Partner status", "url": "https://www.midisgroup.com/jordan-business-systems-jbs-is-honored-with-the-status-of-ibm-platinum-partner/" }
+      ]
+    },
+    {
+      "id": "ibm-jor-capital-bank",
+      "vendor": "ibm",
+      "country": "JOR",
+      "date": "页面未标注",
+      "sortDate": "2023-01-01",
+      "recordType": "official",
+      "evidence": "客户官方",
+      "partner": "Capital Bank of Jordan · JBS",
+      "title": "Capital Bank 与 JBS、IBM 建设数据与 AI 平台",
+      "summary": "银行官方披露采用 IBM Cloud Pak for Data 与 Netezza Performance Server，统一数据管理并支持机器学习、风险管理和客户分析。",
+      "details": ["涵盖数据收集、整理、分析与自动化", "应用场景包括欺诈识别、KYC、反洗钱和客服分析", "原页面未标注发布日期，不将其列为近期新增项目"],
+      "products": ["Cloud Pak for Data", "Netezza Performance Server", "AI／ML"],
+      "sources": [
+        { "publisher": "Capital Bank of Jordan", "name": "Capital Bank partners with JBS and IBM", "url": "https://www.capitalbank.jo/en/personal/about-us/media-centre/capital-bank-partners-with-jbs-and-ibm" }
+      ]
+    },
+    {
+      "id": "ibm-lbn-bbac-2007",
+      "vendor": "ibm",
+      "country": "LBN",
+      "date": "2007",
+      "sortDate": "2007-07-24",
+      "recordType": "history",
+      "evidence": "客户官方历史记录",
+      "partner": "BBAC",
+      "title": "BBAC 历史披露采用 IBM 商业智能与风险管理方案",
+      "summary": "BBAC 官方发展史记录 2007 年与 IBM 合作实施综合商业智能方案，用于效率、风险和 Basel II 合规。",
+      "details": ["历史客户关系，不代表当前合同或产品版本", "仅作为黎巴嫩银行业既有 IBM 足迹参考"],
+      "products": ["商业智能", "金融风险管理", "Basel II"],
+      "sources": [
+        { "publisher": "BBAC", "name": "Our Story", "url": "https://www.bbacbank.com/about-us/our-story" }
+      ]
+    }
+  ]
+}
